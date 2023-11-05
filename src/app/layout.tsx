@@ -9,7 +9,8 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
 	title: 'Juan Dawd',
-	description: 'This is Juan C. Dawd B. Web Dev Portfolio',
+	description:
+		'This is Juan C. Dawd B. Web Dev Portfolio, If you see this, the website is under maintenance or there is a new revision coming underway',
 }
 
 export default function RootLayout({
