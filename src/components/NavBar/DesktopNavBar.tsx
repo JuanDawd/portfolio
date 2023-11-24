@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import CustomLink from './CustomLink';
 import { useTheme } from 'next-themes';
-import { Button } from '../ui/button';
+import { Button } from '../UI/button';
 import {
   Github,
   Linkedin,

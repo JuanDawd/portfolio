@@ -4,7 +4,7 @@ import React from 'react';
 import CustomMobileLink from './CustomMobileLink';
 import { useTheme } from 'next-themes';
 import { Github, Linkedin, MoonStarIcon, SunIcon } from 'lucide-react';
-import { Button } from '../ui/button';
+import { Button } from '../UI/button';
 
 const MobileNavBar = ({ handleClick }: { handleClick: () => void }) => {
   const { theme, setTheme } = useTheme();

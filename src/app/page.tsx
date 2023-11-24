@@ -6,17 +6,16 @@ import Link from 'next/link';
 import profilePic from '@/assets/profile/aboutPicReR.jpg';
 
 import AnimatedText from '@/components/AnimatedText';
-import Layout from '@/components/ui/Layout';
+import Layout from '@/components/UI/Layout';
 import Education from '@/components/Education/Education';
 import Experience from '@/components/Experience/Experience';
 import Skills from '@/components/Skills/Skills';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/UI/button';
 import { Biography } from './Constants';
 import { FileDown } from 'lucide-react';
 
 export default function Home() {
   return (
-    <main className='flex w-full flex-col items-center justify-center'>
       <Layout className='pt-16'>
         <AnimatedText
           text='Passion Fuels Purpose!'
@@ -29,7 +28,6 @@ export default function Home() {
             </h2>
 
             <p className='text-lg font-medium'>{Biography[0]}</p>
-            <p className='mt-4 text-lg font-medium'>{Biography[1]}</p>
             <div className='flex w-full flex-row items-center justify-around pt-24'>
               <Button
                 asChild
@@ -67,6 +65,5 @@ export default function Home() {
         <Experience />
         <Education />
       </Layout>
-    </main>
   );
 }

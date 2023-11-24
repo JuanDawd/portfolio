@@ -1,7 +1,7 @@
 'use client';
 
 import AnimatedText from '@/components/AnimatedText';
-import Layout from '@/components/ui/Layout';
+import Layout from '@/components/UI/Layout';
 
 import FeaturedProject from './FeaturedProject';
 import Project from './Project';
@@ -10,8 +10,7 @@ import { projectsConstants } from './constants';
 const projects = () => {
   const { featuredProject, projects } = projectsConstants;
   return (
-    <main className='mb-16 flex w-full flex-col items-center justify-center'>
-      <Layout className='pt-16'>
+      <Layout className='py-16'>
         <AnimatedText
           text='Imagination Trumps Knowledge!'
           className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'
@@ -27,7 +26,6 @@ const projects = () => {
           ))}
         </div>
       </Layout>
-    </main>
   );
 };
 

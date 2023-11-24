@@ -1,6 +1,6 @@
-import TooltipedElement from '@/components/ui/TooltipedButton';
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
+import TooltipedElement from '@/components/UI/TooltipedButton';
+import { Button } from '@/components/UI/button';
+import { Label } from '@/components/UI/label';
 import { FramerImage } from '@/lib/FramerElements';
 import TechBadge from '@/lib/TechBadge';
 import { ExternalLink } from 'lucide-react';

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import { Share_Tech_Mono } from 'next/font/google'
-import { Label } from '../ui/label'
+import { Label } from '../UI/label'
 
 const ShareTechMono = Share_Tech_Mono({
 	weight: '400',

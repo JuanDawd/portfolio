@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { motion, useScroll } from 'framer-motion';
 import { forwardRef } from 'react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/UI/button';
 import Link from 'next/link';
 
 export const FramerImage = motion(Image);

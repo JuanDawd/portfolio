@@ -3,7 +3,7 @@ import { Roboto_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import NavBar from '@/components/Navbar/Navbar';
-import Footer from '@/components/ui/Footer';
+import Footer from '@/components/UI/Footer';
 import Head from './Head';
 
 const roboto = Roboto_Mono({ subsets: ['latin'], variable: '--font-rob' });

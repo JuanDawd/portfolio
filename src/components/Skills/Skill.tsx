@@ -1,7 +1,7 @@
 import { FramerImage } from '@/lib/FramerElements';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import TooltipedElement from '../ui/TooltipedButton';
+import TooltipedElement from '../UI/TooltipedButton';
 
 type SkillProps = {
   name: string;

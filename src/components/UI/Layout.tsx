@@ -10,11 +10,14 @@ const Layout = ({
 	className?: string
 }) => {
 	return (
+		<main className='flex w-full max-w-[1200px] mx-auto flex-col items-center justify-center'>
+
 		<div
-			className={`w-full h-full bg-background inline-block z-0 p-24 xl:p-16 lg:p-8 md:p-6 sm:p-4 ${className}`}
+			className={`w-full max-w-[1200px] h-full bg-background inline-block z-0 p-24 xl:p-16 lg:p-8 md:p-6 sm:p-4 ${className}`}
 		>
 			{children}
 		</div>
+		</main>
 	)
 }
 
