@@ -15,7 +15,7 @@ const NavBar = () => {
 	}
 
 	return (
-		<header className="w-full px-32 py-8 font-medium flex items-center justify-between relative z-10 lg:px-16 md:px-12 sm:px-8 bg-background">
+		<header className="w-full px-32 py-8 font-medium flex items-center justify-between  z-10 lg:px-16 md:px-12 sm:px-8 bg-background sticky top-0 border-b-2 border-accent">
 			{/*
 			// TODO: change here to radixUI Button
 			*/}
@@ -45,7 +45,7 @@ const NavBar = () => {
 
 			{isOpen && <MobileNavBar handleClick={handleClick} />}
 
-			<div className="absolute left-[50%] top-2 translate-x-[-50%]">
+			<div className="absolute left-1/2  top-1/2 -translate-x-1/2  -translate-y-1/2">
 				<Logo />
 			</div>
 		</header>
