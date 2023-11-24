@@ -33,7 +33,7 @@ const MobileNavBar = ({ handleClick }: { handleClick: () => void }) => {
           target='_blank'
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
-          className='mr-3 w-6 rounded-full bg-secondary sm:mx-1'
+          className='mr-3 w-6 sm:mr-1'
         >
           <Github />
         </motion.a>
@@ -50,7 +50,7 @@ const MobileNavBar = ({ handleClick }: { handleClick: () => void }) => {
         </motion.a>
         <Button
           aria-label='Toggle Dark Mode'
-          className='ml-3 h-6 w-6'
+          className='ml-3 h-6 w-6 sm:ml-1'
           variant='outline'
           size='icon'
           onClick={handleChangeMode}
