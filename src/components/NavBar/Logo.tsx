@@ -20,7 +20,7 @@ const Logo = () => {
 				className={`w-24 h-16 flex items-center justify-center text-2xl ${ShareTechMono.className}`}
 			>
 				<Label className="text-accent">{'<'}</Label>
-				Juank
+				JuanDawd
 				<Label className="text-accent">&nbsp;{'/>'}</Label>
 			</Link>
 		</div>
