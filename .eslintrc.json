@@ -1,3 +1,50 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": { "browser": true, "es2021": true, "node": true },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "next/core-web-vitals",
+    "next"
+  ],
+  "plugins": ["react-refresh", "react-hooks", "prettier", "react"],
+  "settings": { "react": { "version": "detect" } },
+  "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
+  "rules": {
+    // indent: ['error', 'tab'],
+    "linebreak-style": ["error", "unix"],
+
+    "semi": ["error", "always"],
+    "no-console": "error",
+    "no-duplicate-imports": ["error", { "includeExports": true }],
+    "no-self-compare": "error",
+    "no-template-curly-in-string": "warn",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "no-use-before-define": "error",
+
+    // Suggestions
+    "curly": "error",
+    "default-case": "error",
+    "eqeqeq": "error",
+
+    "react-refresh/only-export-components": "warn",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error",
+    "quotes": [
+      "error",
+      "single",
+      { "avoidEscape": true, "allowTemplateLiterals": true }
+    ] // you can remove if you want
+  }
 }

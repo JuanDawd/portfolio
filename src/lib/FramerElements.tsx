@@ -1,18 +1,18 @@
-import Image from 'next/image';
-import { motion, useScroll } from 'framer-motion';
-import { forwardRef } from 'react';
-import { Button } from '@/components/UI/button';
-import Link from 'next/link';
+import Image from 'next/image'
+import { motion, useScroll } from 'framer-motion'
+import { forwardRef } from 'react'
+import { Button } from '@/components/UI/button'
+import Link from 'next/link'
 
-export const FramerImage = motion(Image);
-
+export const FramerImage = motion(Image)
+export const FramerLink = motion(Link)
 type FramerButtonProps = {
-  className: string;
-  children: JSX.Element;
-  href: string;
-  ariaLabel: string;
-};
-const FramerButton = motion(Button);
+  className: string
+  children: JSX.Element
+  href: string
+  ariaLabel: string
+}
+const FramerButton = motion(Button)
 export const FramerButtonIcon = ({
   className,
   children,
@@ -30,16 +30,16 @@ export const FramerButtonIcon = ({
         {children}
       </Link>
     </FramerButton>
-  );
-};
+  )
+}
 
 type FramerLiProps = {
-  className: string;
-  children: React.ReactNode[] | React.ReactNode;
-  initial: any;
-  whileInView: any;
-  viewport: any;
-};
+  className: string
+  children: React.ReactNode[] | React.ReactNode
+  initial: any
+  whileInView: any
+  viewport: any
+}
 
 export const FramerLi = ({
   className,
@@ -57,40 +57,40 @@ export const FramerLi = ({
     >
       {children}
     </motion.li>
-  );
-};
+  )
+}
 
 type SideScrollBarProps = {
-  offset: any;
-};
+  offset: any
+}
 
 export const SideScrollBar = forwardRef(
   ({ offset }: SideScrollBarProps, forwardedRef: React.Ref<any>) => {
     const { scrollYProgress } = useScroll({
       target: forwardedRef as React.MutableRefObject<any>,
       offset: offset,
-    });
+    })
 
     return (
       <motion.div
         style={{ scaleY: scrollYProgress }}
         className='absolute left-9 top-0 mt-2 h-full w-1 origin-top bg-primary md:left-[30px] md:w-[2px] xs:left-[20px]'
       />
-    );
+    )
   }
-);
+)
 
-SideScrollBar.displayName = 'SideScrollBar';
+SideScrollBar.displayName = 'SideScrollBar'
 
 export const LiIcon = ({
   reference,
 }: {
-  reference: React.RefObject<HTMLElement> | undefined;
+  reference: React.RefObject<HTMLElement> | undefined
 }) => {
   const { scrollYProgress } = useScroll({
     target: reference,
     offset: ['center end', 'center center'],
-  });
+  })
   return (
     <figure className='absolute left-0 stroke-accent'>
       <svg
@@ -115,5 +115,13 @@ export const LiIcon = ({
         />
       </svg>
     </figure>
-  );
-};
+  )
+}
+
+type FramerNavbarProps = {
+  className: string
+}
+
+export const FramerNavbar = ({ className }: FramerNavbarProps) => {
+  return <motion.header className={className}></motion.header>
+}

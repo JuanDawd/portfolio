@@ -1,9 +1,9 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { SkillList } from './Constants';
-import Skill from './Skill';
+import React from 'react'
+import { motion } from 'framer-motion'
+import { SkillList } from './Constants'
+import Skill from './Skill'
 
 const Skills = () => {
   return (
@@ -32,7 +32,7 @@ const Skills = () => {
         ))}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Skills;
+export default Skills

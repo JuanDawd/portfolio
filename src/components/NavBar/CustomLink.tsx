@@ -1,17 +1,17 @@
-'use client';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+'use client'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const CustomLink = ({
   href,
   title,
   className = '',
 }: {
-  href: string;
-  title: string;
-  className?: string;
+  href: string
+  title: string
+  className?: string
 }) => {
-  const pathname = usePathname();
+  const pathname = usePathname()
   return (
     <Link href={href} className={`${className} group relative`}>
       {title}
@@ -24,7 +24,7 @@ const CustomLink = ({
         &nbsp;
       </span>
     </Link>
-  );
-};
+  )
+}
 
-export default CustomLink;
+export default CustomLink

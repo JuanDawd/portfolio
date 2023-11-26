@@ -1,34 +1,34 @@
-'use client';
-import React, { useEffect } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-type TickerProps = { children: JSX.Element[]; duration?: number };
+'use client'
+import React, { useEffect } from 'react'
+import { v4 as uuidv4 } from 'uuid'
+type TickerProps = { children: JSX.Element[]; duration?: number }
 
 const Ticker: React.FunctionComponent<TickerProps> = ({
   children,
   duration = 10,
 }: TickerProps) => {
-  const tickerRef = React.useRef<HTMLDivElement>(null);
-  const [tickerUUID, setTickerUUID] = React.useState<string>('');
-  const [tickerContentWidth, setTickerContentWidth] = React.useState<number>(2);
-  const [numDupes, setNumDupes] = React.useState<number>(1);
+  const tickerRef = React.useRef<HTMLDivElement>(null)
+  const [tickerUUID, setTickerUUID] = React.useState<string>('')
+  const [tickerContentWidth, setTickerContentWidth] = React.useState<number>(2)
+  const [numDupes, setNumDupes] = React.useState<number>(1)
 
   useEffect(() => {
-    setTickerUUID(uuidv4());
-  }, []);
+    setTickerUUID(uuidv4())
+  }, [])
 
   useEffect(() => {
-    let contentWidth = 0;
+    let contentWidth = 0
 
     for (let index = 0; index < children.length; index++) {
       const element = document.getElementById(tickerUUID + '_' + index)
-        ?.clientWidth;
+        ?.clientWidth
       if (element) {
-        contentWidth += element;
+        contentWidth += element
       }
     }
 
-    setTickerContentWidth(contentWidth);
-  }, [children.length, tickerUUID]);
+    setTickerContentWidth(contentWidth)
+  }, [children.length, tickerUUID])
 
   useEffect(() => {
     if (tickerRef.current && tickerContentWidth) {
@@ -37,9 +37,9 @@ const Ticker: React.FunctionComponent<TickerProps> = ({
           Math.ceil((2 * tickerRef.current.clientWidth) / tickerContentWidth),
           1
         )
-      );
+      )
     }
-  }, [tickerContentWidth]);
+  }, [tickerContentWidth])
 
   return (
     <div className='my-1 h-full w-full overflow-hidden' ref={tickerRef}>
@@ -57,12 +57,12 @@ const Ticker: React.FunctionComponent<TickerProps> = ({
             {item}
           </div>
         ))}
-        {[...Array(numDupes)].map((_) =>
+        {[...Array(numDupes)].map(_ =>
           children.map((item, index) => <div key={index}>{item}</div>)
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Ticker;
+export default Ticker

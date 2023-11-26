@@ -1,17 +1,17 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from 'react'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from './tooltip';
+} from './tooltip'
 
 const TooltipedElement = ({
   tTMessage,
   children,
 }: {
-  tTMessage: string;
-  children: ReactNode;
+  tTMessage: string
+  children: ReactNode
 }) => {
   return (
     <TooltipProvider delayDuration={50}>
@@ -22,7 +22,7 @@ const TooltipedElement = ({
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  );
-};
+  )
+}
 
-export default TooltipedElement;
+export default TooltipedElement

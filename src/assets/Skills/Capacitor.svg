@@ -1,0 +1,17 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Capacitor" clip-path="url(#clip0_75_979)">
+<g id="Group">
+<path id="Vector" d="M9.96565 13.5283L0.0776485 23.4288L15.3266 38.7234L0 54.0959L9.85707 64.0007L25.2145 48.6239L40.4888 63.8909L50.3768 53.9903L9.96565 13.5283Z" fill="#53B9FF"/>
+<path id="Vector_2" d="M35.1293 38.7236L25.2148 48.6239L40.4891 63.8911L50.3771 53.9906L35.1293 38.7236Z" fill="#119EFF"/>
+<path id="Vector_3" d="M35.1293 38.7236L25.2148 48.6239L29.0315 52.4194L35.1293 38.7236Z" fill="black" fill-opacity="0.2"/>
+<path id="Vector_4" d="M48.6411 25.2463L63.9987 9.86949L54.1064 0L38.7534 15.3459L23.4778 0.0777483L13.5898 9.97824L54.0011 50.4403L63.8891 40.5397L48.6411 25.2463Z" fill="#53B9FF"/>
+<path id="Vector_5" d="M28.8387 25.2467L38.7534 15.3463L23.4778 0.078125L13.5898 9.97861L28.8387 25.2467Z" fill="#119EFF"/>
+<path id="Vector_6" d="M28.8398 25.2467L38.7545 15.3463L34.9369 11.5498L28.8398 25.2467Z" fill="black" fill-opacity="0.2"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_75_979">
+<rect width="64" height="64" fill="white"/>
+</clipPath>
+</defs>
+</svg>

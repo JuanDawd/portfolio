@@ -1,12 +1,25 @@
-import { ProjectSlideshow } from '@/components/Slideshows/ProjectSlideshow';
-import TooltipedElement from '@/components/UI/TooltipedButton';
-import { Button } from '@/components/UI/button';
-import { Label } from '@/components/UI/label';
-import TechBadge from '@/lib/TechBadge';
-import { ExternalLink } from 'lucide-react';
-import { StaticImageData } from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { ProjectSlideshow } from '@/components/Slideshows/ProjectSlideshow'
+import TooltipedElement from '@/components/UI/TooltipedButton'
+import { Button } from '@/components/UI/button'
+import { Label } from '@/components/UI/label'
+import { ExternalLink } from 'lucide-react'
+import Image, { StaticImageData } from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+type Technology = {
+  name: string
+  icon: any
+}
+type FeaturedProjectProps = {
+  title: string
+  technologies: Technology[]
+  github: string | undefined
+  image: StaticImageData
+  type: string
+  deployment: string
+  description: string
+  role: string
+}
 
 const FeaturedProject = ({
   title,
@@ -17,19 +30,10 @@ const FeaturedProject = ({
   deployment,
   description,
   role,
-}: {
-  title: string;
-  technologies: string[];
-  github: string | undefined;
-  image: StaticImageData;
-  type: string;
-  deployment: string;
-  description: string;
-  role: string;
-}) => {
+}: FeaturedProjectProps) => {
   return (
     <Link href={deployment} target='_blank'>
-      <article className='border-primary-background relative flex w-full items-center justify-between rounded-2xl border border-solid bg-background p-12 shadow-2xl lg:flex-col lg:p-8 xs:px-4'>
+      <article className='relative flex w-full items-center justify-between rounded-2xl border border-solid border-foreground bg-background p-12 shadow-2xl lg:flex-col lg:p-8 xs:px-4'>
         <div className='absolute left-3 top-3 -z-10 h-[100%] w-[100%] rounded-[1.75rem] bg-primary/10 xs:w-full' />
         <div className='w-1/2 overflow-hidden lg:w-full'>
           <ProjectSlideshow imagesArray={[image]} />
@@ -83,15 +87,32 @@ const FeaturedProject = ({
             </h2>
           </Link>
           <p className='text-dark my-2 font-medium sm:text-sm'>{description}</p>
-          <div className='mt-2 flex flex-wrap items-center justify-center gap-2'>
-            {technologies.map((value, key) => (
-              <TechBadge name={value} key={key} />
-            ))}
+          {/* <div className='mt-2 flex flex-wrap items-center justify-center gap-2'>
+            // {technologies.map((value, key) => (
+            //   <TechBadge name={value.name} key={key} />
+            // ))}
+          </div> */}
+
+          <div className='mt-2 flex flex-col gap-2'>
+            <span className='text-xl font-medium text-secondary-foreground/50 lg:text-lg md:text-base'>
+              Technologies
+            </span>
+            <div className='mt-2 flex flex-wrap items-center justify-center gap-2'>
+              {technologies.map(({ icon, name }, key) => (
+                <TooltipedElement tTMessage={name} key={name + '-' + key}>
+                  <Image
+                    src={icon}
+                    alt={name}
+                    className=' h-10 w-10 md:h-7 md:w-7'
+                  />
+                </TooltipedElement>
+              ))}
+            </div>
           </div>
         </div>
       </article>
     </Link>
-  );
-};
+  )
+}
 
-export default FeaturedProject;
+export default FeaturedProject

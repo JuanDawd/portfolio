@@ -1,12 +1,23 @@
-import TooltipedElement from '@/components/UI/TooltipedButton';
-import { Button } from '@/components/UI/button';
-import { Label } from '@/components/UI/label';
-import { FramerImage } from '@/lib/FramerElements';
-import TechBadge from '@/lib/TechBadge';
-import { ExternalLink } from 'lucide-react';
-import { StaticImageData } from 'next/image';
-import Link from 'next/link';
-
+import TooltipedElement from '@/components/UI/TooltipedButton'
+import { Button } from '@/components/UI/button'
+import { Label } from '@/components/UI/label'
+import { FramerImage } from '@/lib/FramerElements'
+import { ExternalLink } from 'lucide-react'
+import Image, { StaticImageData } from 'next/image'
+import Link from 'next/link'
+type Technology = {
+  name: string
+  icon: any
+}
+type ProjectProps = {
+  title: string
+  technologies: Technology[]
+  image: StaticImageData
+  github: string | undefined
+  type: string
+  role: string
+  deployment: string
+}
 const Project = ({
   title,
   technologies,
@@ -15,15 +26,7 @@ const Project = ({
   type,
   role,
   deployment,
-}: {
-  title: string;
-  technologies: string[];
-  image: StaticImageData;
-  github: string | undefined;
-  type: string;
-  role: string;
-  deployment: string;
-}) => {
+}: ProjectProps) => {
   return (
     <Link href={deployment} target='_blank'>
       <article className='relative flex w-full flex-col items-center justify-center rounded-2xl border border-solid border-foreground bg-background p-6 xs:p-4'>
@@ -63,10 +66,21 @@ const Project = ({
               {title}
             </h2>
           </Link>
-          <div className='mt-2 flex flex-wrap items-center justify-center gap-2'>
-            {technologies.map((item, index) => (
-              <TechBadge key={index + item} name={item} />
-            ))}
+          <div className='my-2 flex flex-col gap-2'>
+            <span className='text-xl font-medium text-secondary-foreground/50 lg:text-lg md:text-base'>
+              Technologies
+            </span>
+            <div className='mt-2 flex flex-wrap items-center justify-center gap-2'>
+              {technologies.map(({ icon, name }, key) => (
+                <TooltipedElement tTMessage={name} key={name + '-' + key}>
+                  <Image
+                    src={icon}
+                    alt={name}
+                    className=' h-10 w-10  md:h-7 md:w-7'
+                  />
+                </TooltipedElement>
+              ))}
+            </div>
           </div>
 
           <div className='mt-2 flex w-full items-center justify-center'>
@@ -103,7 +117,7 @@ const Project = ({
         </div>
       </article>
     </Link>
-  );
-};
+  )
+}
 
-export default Project;
+export default Project

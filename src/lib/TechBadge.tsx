@@ -1,11 +1,11 @@
-'use client';
+'use client'
 
-import { Badge } from '@/components/UI/badge';
-import { XCircle } from 'lucide-react';
+import { Badge } from '@/components/UI/badge'
+import { XCircle } from 'lucide-react'
 
 type TechBadgeProps = {
-  name: string;
-};
+  name: string
+}
 
 export default function TechBadge({ name }: TechBadgeProps) {
   const currentBadge = {
@@ -133,15 +133,64 @@ export default function TechBadge({ name }: TechBadgeProps) {
     IONIC: <BadgeLayout className='bg-[#176bff]' title='Ionic' />,
     STORYBOOKS: <BadgeLayout className='bg-[#FF4785]' title='Storybook' />,
     CSS: <BadgeLayout className='bg-[#264DE4]' title='CSS3' />,
+    CAPACITOR: <BadgeLayout className='bg-[#119EFF]' title='Capacitor' />,
+    SQLITE3: <BadgeLayout className='bg-[#004B66]' title='SQLite3' />,
+    PG: <BadgeLayout className='bg-[#699eca]' title='Postgress' />,
+    MYSQL: (
+      <BadgeLayout
+        className=' bg-gradient-to-r from-[#02758F] from-25% to-[#F29111]'
+        title='MySQL'
+      />
+    ),
+    AUTH0: <BadgeLayout className=' bg-zinc-950' title='Auth0' />,
+    SWIPER: <BadgeLayout className='bg-[#007aff]' title='Swiper' />,
+    'NGX-DATATABLE': (
+      <BadgeLayout
+        className='bg-gradient-to-tl from-[#00ACFF] from-25% to-[#00FEF4]'
+        title='ngx-datatable'
+      />
+    ),
+    EPAYCO: <BadgeLayout className=' bg-[#FF6720]' title='ePayco' />,
+    FIREBASE: (
+      <BadgeLayout
+        className=' bg-gradient-to-r from-[#FFA300] from-10% via-[#FF7D00] via-25% to-[#FFC900]'
+        title='Firebase'
+      />
+    ),
+    SIIGO: <BadgeLayout className=' bg-[#00A5FF]' title='Siigo' />,
+    NODEMAILER: (
+      <BadgeLayout
+        className=' bg-gradient-to-r from-[#00B86D] from-40% via-[#00AEE7] via-70% to-[#00A0D3]'
+        title='Nodemailer'
+      />
+    ),
+    'SHOULDA-MATCHERS': (
+      <BadgeLayout
+        className=' bg-gradient-to-r from-[#F15F30] from-20%  to-[#39BFC2]'
+        title='shoulda matchers'
+      />
+    ),
+    'RSPEC-RAILS': (
+      <BadgeLayout
+        className='bg-gradient-to-r from-[#77F3FF] from-10% via-[#00DEF8] via-30%  to-[#FF1C5A]'
+        title='RSpec'
+      />
+    ),
+    FAKER: (
+      <BadgeLayout
+        className='bg-gradient-to-r from-[#fff] from-10% via-[#D60010] via-30%  to-[#000]'
+        title='Faker'
+      />
+    ),
   }[name] ?? (
     <BadgeLayout
       className='border border-dashed bg-background'
       title={name}
       icon={<XCircle />}
     />
-  );
+  )
 
-  return <>{currentBadge}</>;
+  return <>{currentBadge}</>
 }
 
 export const BadgeLayout = ({
@@ -149,9 +198,9 @@ export const BadgeLayout = ({
   title,
   icon,
 }: {
-  className: string;
-  title: string;
-  icon?: any;
+  className: string
+  title: string
+  icon?: any
 }) => (
   <>
     <Badge
@@ -162,4 +211,4 @@ export const BadgeLayout = ({
       {title}
     </Badge>
   </>
-);
+)

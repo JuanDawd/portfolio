@@ -1,17 +1,14 @@
-import { FramerImage } from '@/lib/FramerElements';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import TooltipedElement from '../UI/TooltipedButton';
+import { FramerImage } from '@/lib/FramerElements'
+import TooltipedElement from '../UI/TooltipedButton'
 
 type SkillProps = {
-  name: string;
-  icon: any;
-  x: string;
-  y: string;
-  extras?: string;
-};
+  name: string
+  icon: any
+  x: string
+  y: string
+}
 
-const Skill = ({ name, icon, x, y, extras = '' }: SkillProps) => (
+const Skill = ({ name, icon, x, y }: SkillProps) => (
   <TooltipedElement tTMessage={name}>
     <FramerImage
       whileHover={{ scale: 1.05 }}
@@ -20,39 +17,13 @@ const Skill = ({ name, icon, x, y, extras = '' }: SkillProps) => (
         x: x,
         y: y,
 
-        transition: { duration: 2 },
+        transition: { duration: 1.5 },
       }}
-      // animate={{
-      //   x: [
-      //     '25vw',
-      //     '21vw',
-      //     '8vw',
-      //     '-8vw',
-      //     '-21vw',
-      //     '-25vw',
-      //     '-21vw',
-      //     '-8vw',
-      //     '8vw',
-      //     '21vw',
-      //   ],
-      //   y: [
-      //     '0vh',
-      //     '15vh',
-      //     '24vh',
-      //     '24vh',
-      //     '15vh',
-      //     '0vh',
-      //     '-15vh',
-      //     '-24vh',
-      //     '-24vh',
-      //     '-15vh',
-      //   ],
-      // }}
-      transition={{ duration: 3, ease: 'linear', repeat: Infinity }}
+      viewport={{ once: true }}
       src={icon}
       alt={name}
-      className={`absolute h-auto w-14 ${extras}`}
+      className={`absolute h-14 w-14 md:h-7 md:w-7 sm:h-5 sm:w-5`}
     />
   </TooltipedElement>
-);
-export default Skill;
+)
+export default Skill

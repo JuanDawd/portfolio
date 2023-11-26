@@ -1,28 +1,28 @@
-'use client';
+'use client'
 
-import TechBadge from '@/lib/TechBadge';
-import { useEffect, useState } from 'react';
+import TechBadge from '@/lib/TechBadge'
+import { useEffect, useState } from 'react'
 
 type BadgeSlideshowType = {
-  techBadges: string[];
-};
+  techBadges: string[]
+}
 
 export function BadgeSlideshow({ techBadges }: BadgeSlideshowType) {
-  const [slide, setSlide] = useState<number[]>([techBadges.length - 1, 0, 1]);
+  const [slide, setSlide] = useState<number[]>([techBadges.length - 1, 0, 1])
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSlide((prevValue) => [
+      setSlide(prevValue => [
         (prevValue[0] + 1) % techBadges.length,
         (prevValue[1] + 1) % techBadges.length,
         (prevValue[2] + 1) % techBadges.length,
-      ]);
-    }, 2000);
+      ])
+    }, 2000)
 
     return () => {
-      clearInterval(interval);
-    };
-  }, [techBadges.length]);
+      clearInterval(interval)
+    }
+  }, [techBadges.length])
 
   return (
     <div className='relative flex w-full items-center '>
@@ -34,5 +34,5 @@ export function BadgeSlideshow({ techBadges }: BadgeSlideshowType) {
         </div>
       </div>
     </div>
-  );
+  )
 }

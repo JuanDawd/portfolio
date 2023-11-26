@@ -1,16 +1,16 @@
-'use client';
-import { motion } from 'framer-motion';
-import React from 'react';
-import CustomMobileLink from './CustomMobileLink';
-import { useTheme } from 'next-themes';
-import { Github, Linkedin, MoonStarIcon, SunIcon } from 'lucide-react';
-import { Button } from '../UI/button';
+'use client'
+import { motion } from 'framer-motion'
+import React from 'react'
+import CustomMobileLink from './CustomMobileLink'
+import { useTheme } from 'next-themes'
+import { Github, Linkedin, MoonStarIcon, SunIcon } from 'lucide-react'
+import { Button } from '../UI/button'
 
 const MobileNavBar = ({ handleClick }: { handleClick: () => void }) => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme()
   const handleChangeMode = () => {
-    theme === 'dark' ? setTheme('light') : setTheme('dark');
-  };
+    theme === 'dark' ? setTheme('light') : setTheme('dark')
+  }
   return (
     <motion.div
       initial={{ scale: 0, opacity: 0, x: '-50%', y: '-50%' }}
@@ -63,7 +63,7 @@ const MobileNavBar = ({ handleClick }: { handleClick: () => void }) => {
         </Button>
       </nav>
     </motion.div>
-  );
-};
+  )
+}
 
-export default MobileNavBar;
+export default MobileNavBar

@@ -1,22 +1,26 @@
 {
-	"cSpell.words": [
-		"Bootcamp",
-		"Cheeseokay",
-		"Drogueria",
-		"Ecommerce",
-		"Faceself",
-		"Guarapo",
-		"Juank",
-		"Kommit",
-		"Maicao",
-		"nextjs",
-		"Norte",
-		"Pokedex",
-		"Selii",
-		"svgrepo",
-		"Tooltiped",
-		"Udemy",
-		"UNIR",
-		"Universidad"
-	]
+  "cSpell.words": [
+    "Bootcamp",
+    "Chartjs",
+    "Cheeseokay",
+    "Cloudinary",
+    "Drogueria",
+    "Ecommerce",
+    "Faceself",
+    "Guarapo",
+    "Juank",
+    "Kommit",
+    "Maicao",
+    "nextjs",
+    "Norte",
+    "Pokedex",
+    "Selii",
+    "Sendgrid",
+    "svgrepo",
+    "Tooltiped",
+    "Udemy",
+    "UNIR",
+    "Universidad",
+    "Zustand"
+  ]
 }

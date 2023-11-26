@@ -1,24 +1,24 @@
-'use client';
-import { motion } from 'framer-motion';
-import React from 'react';
-import CustomLink from './CustomLink';
-import { useTheme } from 'next-themes';
-import { Button } from '../UI/button';
+'use client'
+import { motion } from 'framer-motion'
+import React from 'react'
+import CustomLink from './CustomLink'
+import { useTheme } from 'next-themes'
+import { Button } from '../UI/button'
 import {
   Github,
   Linkedin,
   LinkedinIcon,
   MoonStarIcon,
   SunIcon,
-} from 'lucide-react';
-import { FramerButtonIcon } from '@/lib/FramerElements';
+} from 'lucide-react'
+import { FramerButtonIcon } from '@/lib/FramerElements'
 
 const DesktopNavBar = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme()
 
   const handleChangeMode = () => {
-    theme === 'dark' ? setTheme('light') : setTheme('dark');
-  };
+    theme === 'dark' ? setTheme('light') : setTheme('dark')
+  }
   return (
     <div className='flex w-full items-center justify-between lg:hidden'>
       <nav>
@@ -63,7 +63,7 @@ const DesktopNavBar = () => {
         </Button>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default DesktopNavBar;
+export default DesktopNavBar
