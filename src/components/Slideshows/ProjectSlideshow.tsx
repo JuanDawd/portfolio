@@ -14,11 +14,10 @@ export function ProjectSlideshow({ imagesArray }: ProjectSlideshowType) {
     const interval = setInterval(() => {
       setSlide(prevValue => (prevValue + 1) % imagesArray.length)
     }, 10000)
-
     return () => {
       clearInterval(interval)
     }
-  }, [])
+  }, [imagesArray.length])
 
   return (
     <div className='relative flex items-center'>
