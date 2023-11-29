@@ -5,7 +5,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import Footer from '@/components/UI/Footer'
 import Head from './Head'
-import Navbar from '@/components/Navbar/Navbar'
+import Navbar from '@/components/TestingNavbar/TestingNavbar'
 
 const roboto = Roboto_Mono({ subsets: ['latin'], variable: '--font-rob' })
 
