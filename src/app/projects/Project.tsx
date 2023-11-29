@@ -28,7 +28,7 @@ const Project = ({
   deployment,
 }: ProjectProps) => {
   return (
-    <article className='relative flex sm:min-h-min md:min-h-[516px] min-h-[516px] w-full flex-col items-center justify-start rounded-2xl border border-solid border-foreground bg-background p-6 xs:p-4'>
+    <article className='relative flex md:min-h-[382px] w-full flex-col items-center justify-start rounded-2xl border border-solid border-foreground bg-background p-6 xs:p-4'>
       <div className='absolute left-3 top-3 -z-10 h-[100%] w-[100%] rounded-[1.75rem] bg-primary/10' />
   
           <FramerImage
@@ -44,12 +44,12 @@ const Project = ({
    
 
       <div className='mt-4 flex w-full flex-col items-start justify-between'>
-        <div className='flex w-full items-center justify-between'>
-          <span className='text-xl font-medium text-secondary-foreground/50 lg:text-lg md:text-base'>
+        <div className='flex w-full items-center justify-between text-xl font-medium text-secondary-foreground/50 lg:text-lg md:text-base md:gap-1'>
+          <span >
             {type}
           </span>
 
-          <span className='text-xl font-medium text-primary-foreground/50 xs:text-base'>
+          <span>
             {role}
           </span>
         </div>
