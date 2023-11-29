@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import Logo from './Logo'
-import MobileNavBar from './MobileNavBar'
-import DesktopNavBar from './DesktopNavBar'
+import MobileNavBar from './MobileNavbar'
+import DesktopNavBar from './DesktopNavbar'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
