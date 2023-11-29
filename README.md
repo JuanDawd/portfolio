@@ -14,7 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 [LightMode](https://www.realtimecolors.com/dashboard?colors=000000-f1f5f9-172554-fdc4c4-1a1aff&fonts=Montserrat-Roboto%20Mono)
 
-
 ## Mocks
 
 [Samsung S21 Ultra](https://mockuphone.com/device/samsung-galaxys21ultra-black/)

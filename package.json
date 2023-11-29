@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export"
+    "lintWBuild": "npx prettier . --write && next build"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.0.6",
