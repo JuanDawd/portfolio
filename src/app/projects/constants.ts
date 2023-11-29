@@ -36,20 +36,18 @@ import Ionic from '@/assets/Skills/Ionic.svg'
 import CSS3 from '@/assets/Skills/CSS3.svg'
 import Storybooks from '@/assets/Skills/Storybook.svg'
 import Capacitor from '@/assets/Skills/Capacitor.svg'
-import Angular from '@/assets/Skills/Angular.svg'
-import Auth0 from '@/assets/Skills/Auth0.svg'
-import Swiper from '@/assets/Skills/Swiper.svg'
-import NGXDatatable from '@/assets/Skills/NgxDatatable.svg'
-//!Fix import Epayco from '@/assets/Skills/E.svg'
-import Firebase from '@/assets/Skills/Firebase.svg'
-import MYSQL from '@/assets/Skills/MySQL.svg'
-import Siigo from '@/assets/Skills/Siigo.svg'
-import Nodemailer from '@/assets/Skills/Nodemailer.svg'
-import Rails from '@/assets/Skills/Rails.svg'
-import SQLite from '@/assets/Skills/Sqlite.svg'
-import ShouldaMatchers from '@/assets/Skills/ShouldaMatchers.svg'
-import RSPec from '@/assets/Skills/RSpec.svg'
-//! Fix import Faker from '@/assets/Skills/Faker.svg'
+// import Angular from '@/assets/Skills/Angular.svg'
+// import Auth0 from '@/assets/Skills/Auth0.svg'
+// import Swiper from '@/assets/Skills/Swiper.svg'
+// import NGXDatatable from '@/assets/Skills/NgxDatatable.svg'
+// import Firebase from '@/assets/Skills/Firebase.svg'
+// import MYSQL from '@/assets/Skills/MySQL.svg'
+// import Siigo from '@/assets/Skills/Siigo.svg'
+// import Nodemailer from '@/assets/Skills/Nodemailer.svg'
+// import Rails from '@/assets/Skills/Rails.svg'
+// import SQLite from '@/assets/Skills/Sqlite.svg'
+// import ShouldaMatchers from '@/assets/Skills/ShouldaMatchers.svg'
+// import RSPec from '@/assets/Skills/RSpec.svg'
 
 export const projectsConstants = {
   featuredProject: {
@@ -68,7 +66,7 @@ export const projectsConstants = {
       { icon: StyledComponents, name: 'Styled Components' },
       { icon: Express, name: 'Express' },
       { icon: TypeScript, name: 'TypeScript' },
-      { icon: Mongoose, name: 'Mongoose' }, // !Fix: Find this logo
+      { icon: Mongoose, name: 'Mongoose' },
       { icon: Cloudinary, name: 'Cloudinary' },
       { icon: Sendgrid, name: 'Sendgrid' },
     ],
@@ -99,7 +97,7 @@ export const projectsConstants = {
       deployment: 'https://my-pokedex-unir.netlify.app/',
     },
     {
-      title: 'NextJs Portfolio with Framer and TailwindCss',
+      title: 'Modern Portfolio',
       technologies: [
         { icon: NextJs, name: 'NextJs' },
         { icon: React, name: 'React' },
