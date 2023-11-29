@@ -1,0 +1,18 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Ionic" clip-path="url(#clip0_75_928)">
+<path id="Vector" d="M7.68 32C7.68 18.5684 18.5684 7.68 32 7.68C37.4069 7.68 42.3989 9.44152 46.4381 12.4271C47.4976 9.93352 49.6325 8.00715 52.2608 7.23027C46.7453 2.71424 39.6875 0 32 0C14.3269 0 0 14.3269 0 32C0 49.6731 14.3269 64 32 64C49.6731 64 64 49.6731 64 32C64 28.3013 63.3709 24.7431 62.2123 21.4308C60.636 23.5621 58.1552 24.984 55.3371 25.1298C55.9765 27.3056 56.32 29.6104 56.32 32C56.32 45.4315 45.4315 56.32 32 56.32C18.5684 56.32 7.68 45.4315 7.68 32Z" fill="url(#paint0_angular_75_928)"/>
+<path id="Vector_2" opacity="0.3" d="M63.341 25.5164C63.0533 24.1197 62.6746 22.7555 62.2111 21.4307C60.6349 23.5619 58.1541 24.9838 55.3359 25.1296C55.7882 26.6687 56.0925 28.2722 56.2317 29.9247C59.1997 29.5599 61.7653 27.8946 63.341 25.5164Z" fill="#3880FF"/>
+<path id="Vector_3" d="M32 46C39.7139 46 46 39.7258 46 32C46 24.2862 39.7259 18 32 18C24.2742 18 18 24.2862 18 32C18 39.7138 24.2862 46 32 46Z" fill="white"/>
+<path id="Vector_4" d="M53 20C56.8659 20 60 16.866 60 13C60 9.134 56.8659 6 53 6C49.1341 6 46 9.134 46 13C46 16.866 49.1341 20 53 20Z" fill="white"/>
+</g>
+<defs>
+<radialGradient id="paint0_angular_75_928" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(32 32) rotate(-20.2249) scale(24.2982 24.6334)">
+<stop stop-color="white" stop-opacity="0.8"/>
+<stop offset="0.114583" stop-color="white"/>
+<stop offset="1" stop-color="white"/>
+</radialGradient>
+<clipPath id="clip0_75_928">
+<rect width="64" height="64" fill="white"/>
+</clipPath>
+</defs>
+</svg>
