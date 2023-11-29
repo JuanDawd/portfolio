@@ -10,7 +10,6 @@ const ShareTechMono = Share_Tech_Mono({
 })
 
 const Logo = () => {
-  // const { theme } = useTheme()
   return (
     <div className='mt-1 flex items-center justify-center'>
       <Link

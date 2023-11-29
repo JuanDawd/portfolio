@@ -6,11 +6,20 @@ import { GithubIcon, LinkedinIcon, MoonStarIcon, SunIcon } from 'lucide-react'
 import CustomLink from './CustomLink'
 
 const DesktopNavBar = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, resolvedTheme } = useTheme()
 
   const handleChangeMode = () => {
     theme === 'dark' ? setTheme('light') : setTheme('dark')
   }
+
+  const checkTheme = () => {
+    if (theme === 'system' && resolvedTheme) {
+      return resolvedTheme === 'dark'
+    } else {
+      return theme === 'dark'
+    }
+  }
+
   return (
     <div className='flex w-full items-center justify-between lg:hidden'>
       <nav>
@@ -47,7 +56,7 @@ const DesktopNavBar = () => {
           size='icon'
           onClick={handleChangeMode}
         >
-          {theme === 'dark' ? (
+          {checkTheme() ? (
             <MoonStarIcon className='h-4 w-4' />
           ) : (
             <SunIcon className='h-4 w-4' />

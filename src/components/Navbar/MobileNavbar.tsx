@@ -6,10 +6,19 @@ import { Github, Linkedin, MoonStarIcon, SunIcon } from 'lucide-react'
 import { Button } from '../UI/button'
 
 const MobileNavBar = ({ handleClick }: { handleClick: () => void }) => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, resolvedTheme } = useTheme()
   const handleChangeMode = () => {
     theme === 'dark' ? setTheme('light') : setTheme('dark')
   }
+
+  const checkTheme = () => {
+    if (theme === 'system' && resolvedTheme) {
+      return resolvedTheme === 'dark'
+    } else {
+      return theme === 'dark'
+    }
+  }
+
   return (
     <motion.div
       initial={{ scale: 0, opacity: 0, x: '-50%', y: '-50%' }}
@@ -54,7 +63,7 @@ const MobileNavBar = ({ handleClick }: { handleClick: () => void }) => {
           size='icon'
           onClick={handleChangeMode}
         >
-          {theme === 'dark' ? (
+          {checkTheme() ? (
             <MoonStarIcon className='h-4 w-4' />
           ) : (
             <SunIcon className='h-4 w-4' />
