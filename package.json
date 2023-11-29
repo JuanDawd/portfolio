@@ -45,8 +45,6 @@
     "typescript": "^5"
   },
   "alias": {
-    "@/assets": "./src/assets",
-    "@/components": "./src/components",
-    "@/lib": "./src/lib"
+    "@/*": ["./src/*"]
   }
 }
