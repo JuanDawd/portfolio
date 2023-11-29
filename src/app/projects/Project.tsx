@@ -28,36 +28,28 @@ const Project = ({
   deployment,
 }: ProjectProps) => {
   return (
-    <article className='relative flex md:min-h-[382px] w-full flex-col items-center justify-start rounded-2xl border border-solid border-foreground bg-background p-6 xs:p-4'>
+    <article className='relative flex w-full flex-col items-center justify-start rounded-2xl border border-solid border-foreground bg-background p-6 md:min-h-[382px] xs:p-4'>
       <div className='absolute left-3 top-3 -z-10 h-[100%] w-[100%] rounded-[1.75rem] bg-primary/10' />
-  
-          <FramerImage
-            src={image}
-            alt={title}
-            className='h-auto w-full overflow-hidden rounded-lg'
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-            priority
-            sizes='(max-width:768px) 100vw, (max-width:1200px) 50vw, 50vw'
-          />
-        
-   
+
+      <FramerImage
+        src={image}
+        alt={title}
+        className='h-auto w-full overflow-hidden rounded-lg'
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.2 }}
+        priority
+        sizes='(max-width:768px) 100vw, (max-width:1200px) 50vw, 50vw'
+      />
 
       <div className='mt-4 flex w-full flex-col items-start justify-between'>
-        <div className='flex w-full items-center justify-between text-xl font-medium text-secondary-foreground/50 lg:text-lg md:text-base md:gap-1'>
-          <span >
-            {type}
-          </span>
+        <div className='flex w-full items-center justify-between text-xl font-medium text-secondary-foreground/50 lg:text-lg md:gap-1 md:text-base'>
+          <span>{type}</span>
 
-          <span>
-            {role}
-          </span>
+          <span>{role}</span>
         </div>
         <TooltipedElement
           tTMessage={
-            deployment === ''
-              ? 'This project has no demo.'
-              : 'Check the demo.'
+            deployment === '' ? 'This project has no demo.' : 'Check the demo.'
           }
         >
           {deployment !== '' ? (
@@ -71,7 +63,7 @@ const Project = ({
               </h2>
             </Link>
           ) : (
-            <h2 className='my-2 w-full text-left text-3xl font-bold lg:text-2xl underline-offset-2 hover:underline'>
+            <h2 className='my-2 w-full text-left text-3xl font-bold underline-offset-2 hover:underline lg:text-2xl'>
               {title}
             </h2>
           )}

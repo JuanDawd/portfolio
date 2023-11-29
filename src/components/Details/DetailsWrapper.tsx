@@ -3,17 +3,12 @@ import { motion } from 'framer-motion'
 import React, { useRef } from 'react'
 
 type DetailsProps = {
- children: React.ReactNode
+  children: React.ReactNode
 }
 
-
-
-const DetailsWrapper = ({
-  children
-}: DetailsProps) => {
+const DetailsWrapper = ({ children }: DetailsProps) => {
   const ref = useRef(null)
 
-  
   return (
     <li
       ref={ref}

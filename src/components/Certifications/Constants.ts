@@ -3,7 +3,6 @@
 }
 
 const CertificationList = [
-  
   {
     type: 'Learn to program Ruby',
     place: 'Udemy',

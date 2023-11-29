@@ -4,7 +4,7 @@ import { CertificationList } from './Constants'
 import KnowledgeDetails from '../Details/KnowledgeDetails'
 
 const Certifications = () => {
-     const ref = useRef(null)
+  const ref = useRef(null)
   const offset = ['start end', 'center start']
   return (
     <div className='my-64'>
