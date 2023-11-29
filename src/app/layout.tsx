@@ -5,7 +5,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import Footer from '@/components/UI/Footer'
 import Head from './Head'
-import NavBar from '@/components/Navbar/Navbar'
+import Navbar from '@/components/Navbar/NavBar'
 
 const roboto = Roboto_Mono({ subsets: ['latin'], variable: '--font-rob' })
 
@@ -24,7 +24,7 @@ export default function RootLayout({
       <Head />
       <body className={`w-full bg-background ${roboto.className} font-rob`}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-          <NavBar />
+          <Navbar />
           {children}
           <Footer />
         </ThemeProvider>

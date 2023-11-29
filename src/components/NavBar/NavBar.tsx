@@ -5,7 +5,7 @@ import { useState } from 'react'
 // import MobileNavBar from './MobileNavBar'
 // import DesktopNavBar from './DesktopNavBar'
 
-const NavBar = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleClick = () => {
@@ -51,4 +51,5 @@ const NavBar = () => {
     </header>
   )
 }
-export default NavBar
+
+export default Navbar
