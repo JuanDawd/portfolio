@@ -13,6 +13,7 @@ import Skills from '@/components/Skills/Skills'
 import { Button } from '@/components/UI/button'
 import { Biography } from './Constants'
 import { FileDown } from 'lucide-react'
+import Certifications from '@/components/Certifications/Certifications'
 
 export default function Home() {
   return (
@@ -64,6 +65,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Education />
+      <Certifications />
     </Layout>
   )
 }

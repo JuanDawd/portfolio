@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
-import Details from './Details'
 import { ExperienceList } from './Constants'
 import { SideScrollBar } from '@/lib/FramerElements'
+import ExperienceDetails from '../Details/ExperienceDetails'
 
 const Experience = () => {
   const ref = useRef(null)
@@ -16,7 +16,7 @@ const Experience = () => {
         <SideScrollBar ref={ref} offset={offset} />
         <ul className='ml-4 flex w-full flex-col items-start justify-between xs:ml-2'>
           {ExperienceList.map((value, key) => (
-            <Details key={key} {...value} />
+            <ExperienceDetails key={key} {...value} />
           ))}
         </ul>
       </div>

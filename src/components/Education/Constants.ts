@@ -9,11 +9,6 @@ const EducationList = [
     time: '2015-2022',
   },
   {
-    type: 'learn to program Ruby',
-    place: 'Udemy',
-    time: '2021',
-  },
-  {
     type: "Master's degree in Web Development",
     place: 'UNIR',
     time: '2023-To Date',

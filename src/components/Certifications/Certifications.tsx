@@ -1,18 +1,15 @@
-import React, { useRef } from 'react'
-
 import { SideScrollBar } from '@/lib/FramerElements'
-
-import { EducationList } from './Constants'
-import Details from '../Details/DetailsWrapper'
+import React, { useRef } from 'react'
+import { CertificationList } from './Constants'
 import KnowledgeDetails from '../Details/KnowledgeDetails'
 
-const Education = () => {
-  const ref = useRef(null)
+const Certifications = () => {
+     const ref = useRef(null)
   const offset = ['start end', 'center start']
   return (
     <div className='my-64'>
       <h2 className='mb-32 w-full text-center text-8xl font-bold md:mb-16 md:text-6xl xs:text-4xl'>
-        Education
+        Certification
       </h2>
       <div
         ref={ref}
@@ -21,7 +18,7 @@ const Education = () => {
         <SideScrollBar ref={ref} offset={offset} />
 
         <ul className='ml-4 flex w-full flex-col items-start justify-between xs:ml-2'>
-          {EducationList.map((value, key) => (
+          {CertificationList.map((value, key) => (
             <KnowledgeDetails key={key} {...value} />
           ))}
         </ul>
@@ -30,4 +27,4 @@ const Education = () => {
   )
 }
 
-export default Education
+export default Certifications

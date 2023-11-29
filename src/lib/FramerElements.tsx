@@ -74,7 +74,7 @@ export const SideScrollBar = forwardRef(
     return (
       <motion.div
         style={{ scaleY: scrollYProgress }}
-        className='absolute left-9 top-0 mt-2 h-full w-1 origin-top bg-primary md:left-[30px] md:w-[2px] xs:left-[20px]'
+        className='absolute left-9 top-0 mt-2 h-full w-1 origin-top bg-accent md:left-[30px] md:w-[2px] xs:left-[20px]'
       />
     )
   }
@@ -104,7 +104,7 @@ export const LiIcon = ({
           cx={75}
           cy={50}
           r={20}
-          className=' fill-primary-background stroke-[5px] '
+          className=' fill-background stroke-[5px] '
           style={{ pathLength: scrollYProgress }}
         />
         <circle
