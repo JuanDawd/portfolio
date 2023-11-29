@@ -33,12 +33,14 @@
     "eslint-config-next": "14.0.1",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react-refresh": "^0.4.4",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.292.0",
     "next-themes": "^0.2.1",
     "postcss": "^8",
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.7",
+    "sharp": "^0.32.6",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }

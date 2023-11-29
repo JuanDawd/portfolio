@@ -1,17 +1,9 @@
 'use client'
 import { motion } from 'framer-motion'
-import React from 'react'
 import CustomLink from './CustomLink'
 import { useTheme } from 'next-themes'
 import { Button } from '../UI/button'
-import {
-  Github,
-  Linkedin,
-  LinkedinIcon,
-  MoonStarIcon,
-  SunIcon,
-} from 'lucide-react'
-import { FramerButtonIcon } from '@/lib/FramerElements'
+import { GithubIcon, LinkedinIcon, MoonStarIcon, SunIcon } from 'lucide-react'
 
 const DesktopNavBar = () => {
   const { theme, setTheme } = useTheme()
@@ -35,7 +27,7 @@ const DesktopNavBar = () => {
           whileTap={{ scale: 0.9 }}
           className='mr-3 w-6'
         >
-          <Github />
+          <GithubIcon />
         </motion.a>
 
         <motion.a

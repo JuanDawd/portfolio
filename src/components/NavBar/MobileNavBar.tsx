@@ -1,6 +1,5 @@
 'use client'
 import { motion } from 'framer-motion'
-import React from 'react'
 import CustomMobileLink from './CustomMobileLink'
 import { useTheme } from 'next-themes'
 import { Github, Linkedin, MoonStarIcon, SunIcon } from 'lucide-react'

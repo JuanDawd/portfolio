@@ -1,6 +1,5 @@
 import TooltipedElement from '@/components/UI/TooltipedButton'
 import { Button } from '@/components/UI/button'
-import { Label } from '@/components/UI/label'
 import { FramerImage } from '@/lib/FramerElements'
 import { ExternalLink } from 'lucide-react'
 import Image, { StaticImageData } from 'next/image'

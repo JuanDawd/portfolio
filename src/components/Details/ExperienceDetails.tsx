@@ -1,4 +1,3 @@
-import React from 'react'
 import DetailsWrapper from './DetailsWrapper'
 
 type ExperienceDetailsProps = {

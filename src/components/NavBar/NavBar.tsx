@@ -1,12 +1,12 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Logo from './Logo'
 import MobileNavBar from './MobileNavBar'
 import DesktopNavBar from './DesktopNavBar'
 
 const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = React.useState(false)
 
   const handleClick = () => {
     setIsOpen(pastValue => {

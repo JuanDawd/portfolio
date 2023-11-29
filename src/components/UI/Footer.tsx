@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import Layout from './Layout'
 import { Heart } from 'lucide-react'
 

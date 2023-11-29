@@ -1,13 +1,12 @@
-import React, { useRef } from 'react'
+import React from 'react'
 
 import { SideScrollBar } from '@/lib/FramerElements'
 
 import { EducationList } from './Constants'
-import Details from '../Details/DetailsWrapper'
 import KnowledgeDetails from '../Details/KnowledgeDetails'
 
 const Education = () => {
-  const ref = useRef(null)
+  const ref = React.useRef(null)
   const offset = ['start end', 'center start']
   return (
     <div className='my-64'>

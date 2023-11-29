@@ -1,10 +1,10 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { ExperienceList } from './Constants'
 import { SideScrollBar } from '@/lib/FramerElements'
 import ExperienceDetails from '../Details/ExperienceDetails'
 
 const Experience = () => {
-  const ref = useRef(null)
+  const ref = React.useRef(null)
   const offset = ['start end', 'center start']
 
   return (

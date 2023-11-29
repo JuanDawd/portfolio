@@ -10,14 +10,11 @@
     "next/core-web-vitals",
     "next"
   ],
-  "plugins": ["react-refresh", "react-hooks", "prettier", "react"],
+  "plugins": ["react-hooks", "prettier", "react"],
   "settings": { "react": { "version": "detect" } },
   "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
   "rules": {
-    // indent: ['error', 'tab'],
     "linebreak-style": ["error", "unix"],
-
-    "semi": ["error", "always"],
     "no-console": "error",
     "no-duplicate-imports": ["error", { "includeExports": true }],
     "no-self-compare": "error",
@@ -37,7 +34,6 @@
     "default-case": "error",
     "eqeqeq": "error",
 
-    "react-refresh/only-export-components": "warn",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": "error",

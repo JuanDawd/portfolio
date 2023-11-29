@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { motion, useScroll } from 'framer-motion'
-import { forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 import { Button } from '@/components/UI/button'
 import Link from 'next/link'
 
@@ -8,7 +8,7 @@ export const FramerImage = motion(Image)
 export const FramerLink = motion(Link)
 type FramerButtonProps = {
   className: string
-  children: JSX.Element
+  children: React.ReactElement
   href: string
   ariaLabel: string
 }

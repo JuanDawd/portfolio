@@ -5,7 +5,6 @@ import { Label } from '@/components/UI/label'
 import { ExternalLink } from 'lucide-react'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 type Technology = {
   name: string

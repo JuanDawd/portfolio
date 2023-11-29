@@ -1,6 +1,6 @@
 'use client'
 
-import TechBadge from '@/lib/TechBadge'
+import TechBadge from '@/lib/TechBadge/TechBadge'
 import { useEffect, useState } from 'react'
 
 type BadgeSlideshowType = {
