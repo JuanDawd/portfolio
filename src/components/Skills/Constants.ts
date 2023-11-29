@@ -1,15 +1,14 @@
 'use client'
-
-import TypeScript from '@/assets/Skills/TypeScript.svg'
-import Angular from '@/assets/Skills/Angular.svg'
-import Javascript from '@/assets/Skills/JavaScript.svg'
-import React from '@/assets/Skills/React.svg'
-import Next from '@/assets/Skills/Nextjs.svg'
-import Sass from '@/assets/Skills/Sass.svg'
-import Styled from '@/assets/Skills/StyledComponents.svg'
-import Figma from '@/assets/Skills/figma.svg'
-import Flutter from '@/assets/Skills/flutter.svg'
-import Tailwind from '@/assets/Skills/Tailwind.svg'
+import TypeScript from '../../../public/Skills/TypeScript.svg'
+import Angular from '../../../public/Skills/Angular.svg'
+import Javascript from '../../../public/Skills/JavaScript.svg'
+import React from '../../../public/Skills/React.svg'
+import Next from '../../../public/Skills/Nextjs.svg'
+import Sass from '../../../public/Skills/Sass.svg'
+import Styled from '../../../public/Skills/StyledComponents.svg'
+import Figma from '../../../public/Skills/figma.svg'
+import Flutter from '../../../public/Skills/flutter.svg'
+import Tailwind from '../../../public/Skills/Tailwind.svg'
 
 const SkillList = [
   {
