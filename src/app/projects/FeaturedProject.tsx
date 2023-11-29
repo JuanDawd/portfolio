@@ -6,10 +6,12 @@ import { ExternalLink } from 'lucide-react'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+
 type Technology = {
   name: string
   icon: any
 }
+
 type FeaturedProjectProps = {
   title: string
   technologies: Technology[]
@@ -32,10 +34,10 @@ const FeaturedProject = ({
   role,
 }: FeaturedProjectProps) => {
   return (
-    <Link href={deployment} target='_blank'>
       <article className='relative flex w-full items-center justify-between rounded-2xl border border-solid border-foreground bg-background p-12 shadow-2xl lg:flex-col lg:p-8 xs:px-4'>
         <div className='absolute left-3 top-3 -z-10 h-[100%] w-[100%] rounded-[1.75rem] bg-primary/10 xs:w-full' />
         <div className='w-1/2 overflow-hidden lg:w-full'>
+          
           <ProjectSlideshow imagesArray={[image]} />
           {github === undefined ? (
             <TooltipedElement tTMessage='This project is private'>
@@ -76,8 +78,12 @@ const FeaturedProject = ({
               {role}
             </span>
           </div>
-
-          <Link
+<TooltipedElement tTMessage={
+            deployment === ''
+              ? 'This project has no demo.'
+              : 'Check the demo.'
+          }>
+{deployment === ''?  <Link
             href={'deployment'}
             target='_blank'
             className='underline-offset-2 hover:underline'
@@ -85,13 +91,16 @@ const FeaturedProject = ({
             <h2 className='my-2 w-full text-left text-4xl font-bold sm:text-sm'>
               {title}
             </h2>
-          </Link>
-          <p className='text-dark my-2 font-medium sm:text-sm'>{description}</p>
-          {/* <div className='mt-2 flex flex-wrap items-center justify-center gap-2'>
-            // {technologies.map((value, key) => (
-            //   <TechBadge name={value.name} key={key} />
-            // ))}
-          </div> */}
+          </Link>:  
+            <h2 className='my-2 w-full text-left text-4xl font-bold sm:text-sm  underline-offset-2 hover:underline'>
+              {title}
+            </h2>
+          }
+</TooltipedElement>
+         
+          <p className='text-dark my-2 text-justify font-normal sm:text-sm'>
+            {description}
+          </p>
 
           <div className='mt-2 flex flex-col gap-2'>
             <span className='text-xl font-medium text-secondary-foreground/50 lg:text-lg md:text-base'>
@@ -103,7 +112,7 @@ const FeaturedProject = ({
                   <Image
                     src={icon}
                     alt={name}
-                    className=' h-10 w-10 md:h-7 md:w-7'
+                    className=' h-9 w-9 md:h-6 md:w-6'
                   />
                 </TooltipedElement>
               ))}
@@ -111,7 +120,6 @@ const FeaturedProject = ({
           </div>
         </div>
       </article>
-    </Link>
   )
 }
 

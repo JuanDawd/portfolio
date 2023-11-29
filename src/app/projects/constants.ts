@@ -77,7 +77,8 @@ export const projectsConstants = {
     deployment: 'https://www.overnights.com/',
     type: 'Freelance',
     role: 'Fullstack',
-    description: 'Change Here!',
+    description:
+      "Discover stress-free travel with Overnights—an intuitive app that simplifies your accommodation search. Easily find the perfect place for your stay with just a few taps, tailored to your preferences. For Jewish travelers, Overnights goes the extra mile by allowing you to locate kosher-friendly establishments and refine your search based on specific kosher standards. Whether you're a business traveler or a family on vacation, experience worry-free journeys with Overnights—your ultimate travel companion.",
   },
 
   projects: [
@@ -112,7 +113,7 @@ export const projectsConstants = {
       type: 'Personal Development',
       role: 'Frontend',
       deployment:
-        'https://next-js-portfolio-with-framer-and-tailwindcss.vercel.app/about',
+        'https://next-js-portfolio-with-framer-and-tailwindcss.vercel.app/',
     },
     {
       title: 'Guarapo-SSR',
@@ -209,24 +210,23 @@ export const projectsConstants = {
     //   role: 'Fullstack',
     //   deployment: '',
     // },
-    {
-      title: 'Kommit',
-      technologies: [
-        { icon: Rails, name: 'Rails' },
-        { icon: SQLite, name: 'SQLite3' },
-        { icon: ShouldaMatchers, name: 'Shoulda matchers' },
-        { icon: RSPec, name: 'RSPec' },
-        //!Fix {icon:Faker,name:'Faker'},
-        { icon: Postgres, name: 'Postgres' },
-        { icon: Sass, name: 'SASS' },
-        { icon: Tailwind, name: 'TAILWIND' },
-      ],
-      github: undefined,
-      image: overnights,
-      type: 'Freelance Job',
-      role: 'Frontend',
-      deployment: '',
-    },
+    // {
+    //   title: 'Kommit',
+    //   technologies: [
+    //     { icon: Rails, name: 'Rails' },
+    //     { icon: SQLite, name: 'SQLite3' },
+    //     { icon: ShouldaMatchers, name: 'Shoulda matchers' },
+    //     { icon: RSPec, name: 'RSPec' },
+    //     { icon: Postgres, name: 'Postgres' },
+    //     { icon: Sass, name: 'SASS' },
+    //     { icon: Tailwind, name: 'TAILWIND' },
+    //   ],
+    //   github: undefined,
+    //   image: overnights,
+    //   type: 'Freelance Job',
+    //   role: 'Frontend',
+    //   deployment: '',
+    // },
     // {
     //   title: 'Doc.tors',
     //   technologies: [
