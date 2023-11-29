@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import profilePic from '../../public/profilePic.jpg'
+import profilePic from '@/public/profilePic.jpg'
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/UI/Layout'
 import Education from '@/components/Education/Education'

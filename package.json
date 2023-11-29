@@ -45,8 +45,7 @@
     "typescript": "^5"
   },
   "alias": {
-    "@/*": [
-      "./src/*"
-    ]
+    "@/*": "./src/*",
+    "@/public/*": "./public/*"
   }
 }
