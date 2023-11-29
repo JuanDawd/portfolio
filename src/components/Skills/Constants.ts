@@ -1,3 +1,5 @@
+'use client'
+
 import TypeScript from '@/assets/Skills/TypeScript.svg'
 import Angular from '@/assets/Skills/Angular.svg'
 import Javascript from '@/assets/Skills/JavaScript.svg'
