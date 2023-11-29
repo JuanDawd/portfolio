@@ -14,6 +14,8 @@ import { Button } from '@/components/UI/button'
 import { Biography } from './Constants'
 import { FileDown } from 'lucide-react'
 import Certifications from '@/components/Certifications/Certifications'
+import { DropdownMenuItem } from '@/components/UI/dropdown-menu'
+import DropdownContext from '@/components/DropdownContext/DropdownContext'
 
 export default function Home() {
   return (
@@ -30,15 +32,21 @@ export default function Home() {
 
           <p className='text-lg font-medium'>{Biography[0]}</p>
           <div className='flex w-full flex-row items-center justify-around pt-24'>
-            <Button
-              asChild
-              className='flex items-center justify-center gap-4  text-lg font-semibold'
+            <DropdownContext
+              triggerButtonTittle={'Resume'}
+              triggerButtonIcon={<FileDown size={20} />}
             >
-              <Link href='/JuanDawdENG.pdf' download={true} target='_blank'>
-                Resume
-                <FileDown size={20} />
-              </Link>
-            </Button>
+              <DropdownMenuItem>
+                <Link href='/JuanDawdENG.pdf' download={true} target='_blank'>
+                  English
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href='/JuanDawdESP.pdf' download={true} target='_blank'>
+                  Spanish
+                </Link>
+              </DropdownMenuItem>
+            </DropdownContext>
             <Button variant='outline' asChild>
               <Link
                 href='mailto:JuanDawdB@gmail.com'
