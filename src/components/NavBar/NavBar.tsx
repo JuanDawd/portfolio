@@ -1,10 +1,12 @@
-import React from 'react'
-import Logo from './Logo'
-import MobileNavBar from './MobileNavBar'
-import DesktopNavBar from './DesktopNavBar'
+'use client'
+
+import { useState } from 'react'
+// import Logo from './Logo'
+// import MobileNavBar from './MobileNavBar'
+// import DesktopNavBar from './DesktopNavBar'
 
 const NavBar = () => {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleClick = () => {
     setIsOpen(pastValue => {
@@ -39,13 +41,13 @@ const NavBar = () => {
         />
       </button>
 
-      <DesktopNavBar />
+      {/* <DesktopNavBar /> */}
 
-      {isOpen && <MobileNavBar handleClick={handleClick} />}
+      {/* {isOpen && <MobileNavBar handleClick={handleClick} />}
 
       <div className='absolute left-1/2  top-1/2 -translate-x-1/2  -translate-y-1/2'>
         <Logo />
-      </div>
+      </div> */}
     </header>
   )
 }
