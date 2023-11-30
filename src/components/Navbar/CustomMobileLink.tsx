@@ -2,17 +2,14 @@
 
 import { usePathname, useRouter } from 'next/navigation'
 
+import { CustomMobileLinkProps } from './Navbar.types'
+
 const CustomMobileLink = ({
   href,
   title,
   className = '',
   toggle,
-}: {
-  href: string
-  title: string
-  className?: string
-  toggle: () => void
-}) => {
+}: CustomMobileLinkProps) => {
   const pathname = usePathname()
   const router = useRouter()
   const handleClick = () => {

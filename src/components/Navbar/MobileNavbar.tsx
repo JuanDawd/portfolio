@@ -1,11 +1,14 @@
 'use client'
 import { motion } from 'framer-motion'
-import CustomMobileLink from './CustomMobileLink'
 import { useTheme } from 'next-themes'
 import { Github, Linkedin, MoonStarIcon, SunIcon } from 'lucide-react'
+
+import CustomMobileLink from './CustomMobileLink'
+
+import { MobileNavbarProps } from './Navbar.types'
 import { Button } from '../UI/button'
 
-const MobileNavBar = ({ handleClick }: { handleClick: () => void }) => {
+const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
   const { theme, setTheme, resolvedTheme } = useTheme()
   const handleChangeMode = () => {
     theme === 'dark' ? setTheme('light') : setTheme('dark')
@@ -74,4 +77,4 @@ const MobileNavBar = ({ handleClick }: { handleClick: () => void }) => {
   )
 }
 
-export default MobileNavBar
+export default MobileNavbar

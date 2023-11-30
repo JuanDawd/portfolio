@@ -1,11 +1,14 @@
 import { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { Roboto_Mono } from 'next/font/google'
-import './globals.css'
+
 import { ThemeProvider } from '@/components/theme-provider'
-import Footer from '@/components/UI/Footer'
+
+import { Navbar } from '@/components/Navbar'
 import Head from './Head'
-import Navbar from '@/components/Navbar/Navbar'
+
+import './globals.css'
+import Footer from '@/components/UI/Footer'
 
 const roboto = Roboto_Mono({ subsets: ['latin'], variable: '--font-rob' })
 

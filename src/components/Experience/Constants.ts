@@ -1,7 +1,3 @@
-{
-  // TODO: Change Information
-}
-
 const ExperienceList = [
   {
     position: 'Software Developer and IT',

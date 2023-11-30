@@ -1,22 +1,14 @@
-import TooltipedElement from '@/components/UI/TooltipedButton'
-import { Button } from '@/components/UI/button'
-import { FramerImage } from '@/lib/FramerElements'
-import { ExternalLink } from 'lucide-react'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
-type Technology = {
-  name: string
-  icon: any
-}
-type ProjectProps = {
-  title: string
-  technologies: Technology[]
-  image: StaticImageData
-  github: string | undefined
-  type: string
-  role: string
-  deployment: string
-}
+import { ExternalLink } from 'lucide-react'
+
+import { FramerImage } from '@/lib/FramerElements'
+
+import TooltipedElement from '@/components/UI/TooltipedButton'
+
+import { ProjectProps } from './projects.type'
+import { Button } from '@/components/UI/button'
+
 const Project = ({
   title,
   technologies,

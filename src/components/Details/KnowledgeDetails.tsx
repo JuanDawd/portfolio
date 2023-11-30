@@ -1,10 +1,9 @@
+'use client'
+
 import DetailsWrapper from './DetailsWrapper'
 
-type KnowledgeDetailsProps = {
-  type: string
-  place: string
-  time: string
-}
+import { KnowledgeDetailsProps } from './Details.type'
+
 const KnowledgeDetails = ({ type, place, time }: KnowledgeDetailsProps) => {
   return (
     <DetailsWrapper>

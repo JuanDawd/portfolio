@@ -1,11 +1,13 @@
 'use client'
-import { motion } from 'framer-motion'
-import { useTheme } from 'next-themes'
-import { Button } from '../UI/button'
-import { GithubIcon, LinkedinIcon, MoonStarIcon, SunIcon } from 'lucide-react'
-import CustomLink from './CustomLink'
 
-const DesktopNavBar = () => {
+import { useTheme } from 'next-themes'
+import { motion } from 'framer-motion'
+import { GithubIcon, LinkedinIcon, MoonStarIcon, SunIcon } from 'lucide-react'
+
+import CustomLink from './CustomLink'
+import { Button } from '../UI/button'
+
+const DesktopNavbar = () => {
   const { theme, setTheme, resolvedTheme } = useTheme()
 
   const handleChangeMode = () => {
@@ -67,4 +69,4 @@ const DesktopNavBar = () => {
   )
 }
 
-export default DesktopNavBar
+export default DesktopNavbar

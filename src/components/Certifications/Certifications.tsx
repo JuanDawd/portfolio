@@ -1,5 +1,8 @@
-import { SideScrollBar } from '@/lib/FramerElements'
+'use client'
 import { useRef } from 'react'
+
+import { SideScrollBar } from '@/lib/FramerElements'
+
 import { CertificationList } from './Constants'
 import KnowledgeDetails from '../Details/KnowledgeDetails'
 

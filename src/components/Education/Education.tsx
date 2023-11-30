@@ -1,9 +1,11 @@
+'use client'
+
 import { useRef } from 'react'
 
 import { SideScrollBar } from '@/lib/FramerElements'
 
-import { EducationList } from './Constants'
 import KnowledgeDetails from '../Details/KnowledgeDetails'
+import { EducationList } from './Constants'
 
 const Education = () => {
   const ref = useRef(null)

@@ -1,19 +1,15 @@
-import { ReactElement, ReactNode } from 'react'
+'use client'
+
+import { Button } from '../UI/button'
 import {
   DropdownMenu,
+  DropdownMenuTrigger,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
+  DropdownMenuGroup,
 } from '../UI/dropdown-menu'
-import { Button } from '../UI/button'
-
-type DropdownContextProps = {
-  triggerButtonTittle: string
-  triggerButtonIcon: ReactElement
-  children: ReactNode
-}
+import { DropdownContextProps } from './DropdownContext.type'
 
 const DropdownContext = ({
   triggerButtonTittle,

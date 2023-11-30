@@ -1,15 +1,11 @@
 import Link from 'next/link'
-import DetailsWrapper from './DetailsWrapper'
+
 import { Label } from '../UI/label'
 
-type ExperienceDetailsProps = {
-  position: string
-  company: string
-  companyLink: string
-  time: string
-  address: string
-  work: string
-}
+import DetailsWrapper from './DetailsWrapper'
+
+import { ExperienceDetailsProps } from './Details.type'
+
 const ExperienceDetails = ({
   position,
   company,

@@ -1,7 +1,11 @@
+'use client'
+
 import { useRef } from 'react'
-import { ExperienceList } from './Constants'
+
 import { SideScrollBar } from '@/lib/FramerElements'
-import ExperienceDetails from '../Details/ExperienceDetails'
+
+import { ExperienceDetails } from '../Details'
+import { ExperienceList } from './Constants'
 
 const Experience = () => {
   const ref = useRef(null)

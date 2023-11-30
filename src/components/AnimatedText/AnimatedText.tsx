@@ -1,36 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { quote, singleWord } from './constants'
+import { AnimatedTextProps } from './AnimatedText.types'
 
-const quote = {
-  initial: { opacity: 1 },
-  animate: {
-    opacity: 1,
-    transition: {
-      delay: 0.5,
-      staggerChildren: 0.08,
-    },
-  },
-}
-
-const singleWord = {
-  initial: { opacity: 0, y: 50 },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-    },
-  },
-}
-
-const AnimatedText = ({
-  text,
-  className = '',
-}: {
-  text: string
-  className?: string
-}) => {
+const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
   return (
     <div className='mx-auto flex w-full items-center justify-center overflow-hidden py-2 text-center sm:py-0'>
       <motion.h1

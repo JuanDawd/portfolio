@@ -8,8 +8,8 @@ import {
   MutableRefObject,
   RefObject,
 } from 'react'
-import { Button } from '@/components/UI/button'
 import Link from 'next/link'
+import { Button } from '@/components/UI/button'
 
 export const FramerImage = motion(Image)
 export const FramerLink = motion(Link)
