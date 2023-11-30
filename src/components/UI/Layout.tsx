@@ -1,12 +1,8 @@
 'use client'
 
-const Layout = ({
-  children,
-  className = '',
-}: {
-  children: any
-  className?: string
-}) => {
+import { LayoutProps } from './UI.types'
+
+const Layout = ({ children, className = '' }: LayoutProps) => {
   return (
     <main className='mx-auto flex w-full max-w-[1200px] flex-col items-center justify-center'>
       <div

@@ -2,18 +2,22 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import profilePic from '../../public/profilePic.jpg'
-import AnimatedText from '@/components/AnimatedText'
-import Layout from '@/components/UI/Layout'
-import Education from '@/components/Education/Education'
-import Experience from '@/components/Experience/Experience'
-import Skills from '@/components/Skills/Skills'
-import { Button } from '@/components/UI/button'
-import { Biography } from './Constants'
 import { FileDown } from 'lucide-react'
-import Certifications from '@/components/Certifications/Certifications'
+
+import profilePic from '@/public/profilePic.jpg'
+
+import Layout from '@/components/UI/Layout'
 import { DropdownMenuItem } from '@/components/UI/dropdown-menu'
-import DropdownContext from '@/components/DropdownContext/DropdownContext'
+import { DropdownContext } from '@/components/DropdownContext'
+
+import { Education } from '@/components/Education'
+import { Experience } from '@/components/Experience'
+import { Certifications } from '@/components/Certifications'
+import { Skills } from '@/components/Skills'
+
+import { Biography } from './Constants'
+import { AnimatedText } from '@/components/AnimatedText'
+import { Button } from '@/components/UI/button'
 
 export default function Home() {
   return (

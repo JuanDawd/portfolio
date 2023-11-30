@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import Logo from './Logo'
-import MobileNavBar from './MobileNavbar'
-import DesktopNavBar from './DesktopNavbar'
+import MobileNavbar from './MobileNavbar'
+import DesktopNavbar from './DesktopNavbar'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -41,9 +41,9 @@ const Navbar = () => {
         />
       </button>
 
-      <DesktopNavBar />
+      <DesktopNavbar />
 
-      {isOpen && <MobileNavBar handleClick={handleClick} />}
+      {isOpen && <MobileNavbar handleClick={handleClick} />}
 
       <div className='absolute left-1/2  top-1/2 -translate-x-1/2  -translate-y-1/2'>
         <Logo />

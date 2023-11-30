@@ -1,6 +1,6 @@
 'use client'
 
-import AnimatedText from '@/components/AnimatedText'
+import AnimatedText from '@/components/AnimatedText/AnimatedText'
 import Layout from '@/components/UI/Layout'
 
 import FeaturedProject from './FeaturedProject'

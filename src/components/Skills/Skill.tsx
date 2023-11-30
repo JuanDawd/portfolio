@@ -1,12 +1,10 @@
+'use client'
+
 import { FramerImage } from '@/lib/FramerElements'
+
 import TooltipedElement from '../UI/TooltipedButton'
 
-type SkillProps = {
-  name: string
-  icon: any
-  x: string
-  y: string
-}
+import { SkillProps } from './Skills.types'
 
 const Skill = ({ name, icon, x, y }: SkillProps) => (
   <TooltipedElement tTMessage={name}>

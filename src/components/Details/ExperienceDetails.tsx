@@ -1,13 +1,11 @@
+import Link from 'next/link'
+
+import { Label } from '../UI/label'
+
 import DetailsWrapper from './DetailsWrapper'
 
-type ExperienceDetailsProps = {
-  position: string
-  company: string
-  companyLink: string
-  time: string
-  address: string
-  work: string
-}
+import { ExperienceDetailsProps } from './Details.type'
+
 const ExperienceDetails = ({
   position,
   company,
@@ -20,13 +18,19 @@ const ExperienceDetails = ({
     <DetailsWrapper>
       <h3 className='text-2xl font-bold capitalize sm:text-xl xs:text-lg'>
         {position}&nbsp;
-        <a
-          target='_blank'
-          href={companyLink}
-          className='capitalize text-primary-foreground/50 hover:underline'
-        >
-          @{company}
-        </a>
+        {companyLink !== '' ? (
+          <Link
+            target='_blank'
+            href={companyLink}
+            className='capitalize text-primary-foreground/50'
+          >
+            @{company}
+          </Link>
+        ) : (
+          <Label className='text-2xl font-bold capitalize text-primary-foreground/50 sm:text-xl xs:text-lg'>
+            @{company}
+          </Label>
+        )}
       </h3>
       <span className='font-medium capitalize text-secondary-foreground/75  xs:text-sm'>
         {time} | {address}

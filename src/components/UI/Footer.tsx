@@ -1,7 +1,8 @@
 'use client'
 
-import Layout from './Layout'
 import { Heart } from 'lucide-react'
+
+import Layout from './Layout'
 
 const Footer = () => {
   return (

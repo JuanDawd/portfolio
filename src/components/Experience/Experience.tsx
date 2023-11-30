@@ -1,14 +1,18 @@
-import React from 'react'
-import { ExperienceList } from './Constants'
+'use client'
+
+import { useRef } from 'react'
+
 import { SideScrollBar } from '@/lib/FramerElements'
-import ExperienceDetails from '../Details/ExperienceDetails'
+
+import { ExperienceDetails } from '../Details'
+import { ExperienceList } from './Constants'
 
 const Experience = () => {
-  const ref = React.useRef(null)
+  const ref = useRef(null)
   const offset = ['start end', 'center start']
 
   return (
-    <div className='my-64'>
+    <div className='my-32'>
       <h2 className='mb-32 w-full text-center text-8xl font-bold md:mb-16 md:text-6xl xs:text-4xl'>
         Experience
       </h2>

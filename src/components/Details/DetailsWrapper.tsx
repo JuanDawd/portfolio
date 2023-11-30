@@ -1,10 +1,11 @@
+'use client'
+
+import { useRef } from 'react'
+
 import { LiIcon } from '@/lib/FramerElements'
 import { motion } from 'framer-motion'
-import React, { useRef } from 'react'
 
-type DetailsProps = {
-  children: React.ReactNode
-}
+import { DetailsProps } from './Details.type'
 
 const DetailsWrapper = ({ children }: DetailsProps) => {
   const ref = useRef(null)

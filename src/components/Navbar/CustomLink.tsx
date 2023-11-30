@@ -3,15 +3,9 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const CustomLink = ({
-  href,
-  title,
-  className = '',
-}: {
-  href: string
-  title: string
-  className?: string
-}) => {
+import { CustomLinkProps } from './Navbar.types'
+
+const CustomLink = ({ href, title, className = '' }: CustomLinkProps) => {
   const pathname = usePathname()
   return (
     <Link href={href} className={`${className} group relative`}>

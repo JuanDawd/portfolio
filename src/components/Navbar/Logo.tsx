@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { Share_Tech_Mono } from 'next/font/google'
+
 import { Label } from '../UI/label'
 
 const ShareTechMono = Share_Tech_Mono({
@@ -10,7 +11,6 @@ const ShareTechMono = Share_Tech_Mono({
 })
 
 const Logo = () => {
-  // const { theme } = useTheme()
   return (
     <div className='mt-1 flex items-center justify-center'>
       <Link

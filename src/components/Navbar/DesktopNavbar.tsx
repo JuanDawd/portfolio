@@ -1,16 +1,27 @@
 'use client'
-import { motion } from 'framer-motion'
-import { useTheme } from 'next-themes'
-import { Button } from '../UI/button'
-import { GithubIcon, LinkedinIcon, MoonStarIcon, SunIcon } from 'lucide-react'
-import CustomLink from './CustomLink'
 
-const DesktopNavBar = () => {
-  const { theme, setTheme } = useTheme()
+import { useTheme } from 'next-themes'
+import { motion } from 'framer-motion'
+import { GithubIcon, LinkedinIcon, MoonStarIcon, SunIcon } from 'lucide-react'
+
+import CustomLink from './CustomLink'
+import { Button } from '../UI/button'
+
+const DesktopNavbar = () => {
+  const { theme, setTheme, resolvedTheme } = useTheme()
 
   const handleChangeMode = () => {
     theme === 'dark' ? setTheme('light') : setTheme('dark')
   }
+
+  const checkTheme = () => {
+    if (theme === 'system' && resolvedTheme) {
+      return resolvedTheme === 'dark'
+    } else {
+      return theme === 'dark'
+    }
+  }
+
   return (
     <div className='flex w-full items-center justify-between lg:hidden'>
       <nav>
@@ -47,7 +58,7 @@ const DesktopNavBar = () => {
           size='icon'
           onClick={handleChangeMode}
         >
-          {theme === 'dark' ? (
+          {checkTheme() ? (
             <MoonStarIcon className='h-4 w-4' />
           ) : (
             <SunIcon className='h-4 w-4' />
@@ -58,4 +69,4 @@ const DesktopNavBar = () => {
   )
 }
 
-export default DesktopNavBar
+export default DesktopNavbar

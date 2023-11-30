@@ -1,24 +1,22 @@
 'use client'
-import { FramerImage } from '@/lib/FramerElements'
-import { StaticImageData } from 'next/image'
+
 import { useEffect, useState } from 'react'
 
-type ProjectSlideshowType = {
-  imagesArray: StaticImageData[]
-}
+import { FramerImage } from '@/lib/FramerElements'
 
-export function ProjectSlideshow({ imagesArray }: ProjectSlideshowType) {
+import { ProjectSlideshowProps } from './ProjectSlideshow.types'
+
+export function ProjectSlideshow({ imagesArray }: ProjectSlideshowProps) {
   const [slide, setSlide] = useState<number>(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
       setSlide(prevValue => (prevValue + 1) % imagesArray.length)
     }, 10000)
-
     return () => {
       clearInterval(interval)
     }
-  }, [])
+  }, [imagesArray.length])
 
   return (
     <div className='relative flex items-center'>

@@ -1,26 +1,13 @@
-import { ProjectSlideshow } from '@/components/Slideshows/ProjectSlideshow'
-import TooltipedElement from '@/components/UI/TooltipedButton'
-import { Button } from '@/components/UI/button'
-import { Label } from '@/components/UI/label'
-import { ExternalLink } from 'lucide-react'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
+import { ExternalLink } from 'lucide-react'
 
-type Technology = {
-  name: string
-  icon: any
-}
+import { ProjectSlideshow } from '@/components/ProjectSlideshow'
+import TooltipedElement from '@/components/UI/TooltipedButton'
+import { Label } from '@/components/UI/label'
 
-type FeaturedProjectProps = {
-  title: string
-  technologies: Technology[]
-  github: string | undefined
-  image: StaticImageData
-  type: string
-  deployment: string
-  description: string
-  role: string
-}
+import { FeaturedProjectProps } from './projects.type'
+import { Button } from '@/components/UI/button'
 
 const FeaturedProject = ({
   title,
@@ -37,7 +24,7 @@ const FeaturedProject = ({
       <div className='absolute left-3 top-3 -z-10 h-[100%] w-[100%] rounded-[1.75rem] bg-primary/10 xs:w-full' />
       <div className='w-1/2 overflow-hidden lg:w-full'>
         <ProjectSlideshow imagesArray={[image]} />
-        {github === undefined ? (
+        {github !== undefined && (
           <TooltipedElement tTMessage='This project is private'>
             <Button
               variant='link'
@@ -50,17 +37,6 @@ const FeaturedProject = ({
               </Label>
             </Button>
           </TooltipedElement>
-        ) : (
-          <Button
-            asChild
-            variant='link'
-            className='mt-4 flex w-full items-center justify-center gap-4 text-primary-foreground'
-          >
-            <Link className='text-lg font-semibold md:text-base' href={github}>
-              Check the source code
-              <ExternalLink className='h-4 w-4' />
-            </Link>
-          </Button>
         )}
       </div>
 

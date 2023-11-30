@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+
 import {
   Tooltip,
   TooltipContent,
@@ -6,13 +7,9 @@ import {
   TooltipTrigger,
 } from './tooltip'
 
-const TooltipedElement = ({
-  tTMessage,
-  children,
-}: {
-  tTMessage: string
-  children: React.ReactNode
-}) => {
+import { TooltipedElementProps } from './UI.types'
+
+const TooltipedElement = ({ tTMessage, children }: TooltipedElementProps) => {
   return (
     <TooltipProvider delayDuration={50}>
       <Tooltip>
