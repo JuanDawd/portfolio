@@ -4,20 +4,20 @@
 
 const ExperienceList = [
   {
-    position: 'Fullstack Developer',
-    company: 'Overnights Technologies Inc',
-    companyLink: 'https://overnights.com/',
-    time: 'Jul. 2023 - Oct. 2023',
-    address: 'Remote',
-    work: 'Led dynamic web app development, expanded to mobile with Ionic. Utilized Typescript, NodeJs for robust backend, addressed bugs, supported team, ensuring seamless, responsive user experience.',
-  },
-  {
     position: 'Software Developer and IT',
     company: 'Drogueria Uno A',
     companyLink: '',
     time: 'Jan. 2018 - Present',
     address: 'Maicao, Colombia.',
     work: 'I manage company IT infrastructure, perform computer and server maintenance, and enhance efficiency by automating tasks, fostering a streamlined, productive work environment for the team.',
+  },
+  {
+    position: 'Fullstack Developer',
+    company: 'Overnights Technologies Inc',
+    companyLink: 'https://overnights.com/',
+    time: 'Jul. 2023 - Oct. 2023',
+    address: 'Remote',
+    work: 'Led dynamic web app development, expanded to mobile with Ionic. Utilized Typescript, NodeJs for robust backend, addressed bugs, supported team, ensuring seamless, responsive user experience.',
   },
   {
     position: 'Frontend Developer',

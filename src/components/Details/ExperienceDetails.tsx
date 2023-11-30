@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import DetailsWrapper from './DetailsWrapper'
+import { Label } from '../UI/label'
 
 type ExperienceDetailsProps = {
   position: string
@@ -20,13 +22,19 @@ const ExperienceDetails = ({
     <DetailsWrapper>
       <h3 className='text-2xl font-bold capitalize sm:text-xl xs:text-lg'>
         {position}&nbsp;
-        <a
-          target='_blank'
-          href={companyLink}
-          className='capitalize text-primary-foreground/50 hover:underline'
-        >
-          @{company}
-        </a>
+        {companyLink !== '' ? (
+          <Link
+            target='_blank'
+            href={companyLink}
+            className='capitalize text-primary-foreground/50'
+          >
+            @{company}
+          </Link>
+        ) : (
+          <Label className='text-2xl font-bold capitalize text-primary-foreground/50 sm:text-xl xs:text-lg'>
+            @{company}
+          </Label>
+        )}
       </h3>
       <span className='font-medium capitalize text-secondary-foreground/75  xs:text-sm'>
         {time} | {address}
