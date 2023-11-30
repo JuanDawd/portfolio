@@ -1,4 +1,4 @@
-import React from 'react'
+import { ReactElement, ReactNode } from 'react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,8 +11,8 @@ import { Button } from '../UI/button'
 
 type DropdownContextProps = {
   triggerButtonTittle: string
-  triggerButtonIcon: React.ReactElement
-  children: React.ReactNode
+  triggerButtonIcon: ReactElement
+  children: ReactNode
 }
 
 const DropdownContext = ({

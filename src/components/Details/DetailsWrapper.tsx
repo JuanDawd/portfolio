@@ -1,9 +1,9 @@
 import { LiIcon } from '@/lib/FramerElements'
 import { motion } from 'framer-motion'
-import React, { useRef } from 'react'
+import { ReactNode, useRef } from 'react'
 
 type DetailsProps = {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 const DetailsWrapper = ({ children }: DetailsProps) => {

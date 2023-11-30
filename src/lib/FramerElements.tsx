@@ -1,6 +1,13 @@
 import Image from 'next/image'
 import { motion, useScroll } from 'framer-motion'
-import React, { forwardRef } from 'react'
+import {
+  ReactElement,
+  forwardRef,
+  ReactNode,
+  Ref,
+  MutableRefObject,
+  RefObject,
+} from 'react'
 import { Button } from '@/components/UI/button'
 import Link from 'next/link'
 
@@ -8,7 +15,7 @@ export const FramerImage = motion(Image)
 export const FramerLink = motion(Link)
 type FramerButtonProps = {
   className: string
-  children: React.ReactElement
+  children: ReactElement
   href: string
   ariaLabel: string
 }
@@ -35,7 +42,7 @@ export const FramerButtonIcon = ({
 
 type FramerLiProps = {
   className: string
-  children: React.ReactNode[] | React.ReactNode
+  children: ReactNode[] | ReactNode
   initial: any
   whileInView: any
   viewport: any
@@ -65,16 +72,16 @@ type SideScrollBarProps = {
 }
 
 export const SideScrollBar = forwardRef(
-  ({ offset }: SideScrollBarProps, forwardedRef: React.Ref<any>) => {
+  ({ offset }: SideScrollBarProps, forwardedRef: Ref<any>) => {
     const { scrollYProgress } = useScroll({
-      target: forwardedRef as React.MutableRefObject<any>,
+      target: forwardedRef as MutableRefObject<any>,
       offset: offset,
     })
 
     return (
       <motion.div
         style={{ scaleY: scrollYProgress }}
-        className='absolute left-9 top-0 mt-2 h-full w-1 origin-top bg-accent md:left-[30px] md:w-[2px] xs:left-[20px]'
+        className='absolute left-9 top-0 mt-2 h-full w-1 origin-top bg-accent md:left-[30px] md:w-[2px] xs:left-[20px] '
       />
     )
   }
@@ -85,7 +92,7 @@ SideScrollBar.displayName = 'SideScrollBar'
 export const LiIcon = ({
   reference,
 }: {
-  reference: React.RefObject<HTMLElement> | undefined
+  reference: RefObject<HTMLElement> | undefined
 }) => {
   const { scrollYProgress } = useScroll({
     target: reference,
