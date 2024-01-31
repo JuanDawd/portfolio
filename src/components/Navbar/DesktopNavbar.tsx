@@ -2,24 +2,45 @@
 
 import { useTheme } from 'next-themes'
 import { motion } from 'framer-motion'
-import { GithubIcon, LinkedinIcon, MoonStarIcon, SunIcon } from 'lucide-react'
+import {
+  GithubIcon,
+  LinkedinIcon,
+  LucideIcon,
+  MoonStarIcon,
+  SunIcon,
+} from 'lucide-react'
 
 import CustomLink from './CustomLink'
 import { Button } from '../UI/button'
+import { useEffect, useState } from 'react'
 
 const DesktopNavbar = () => {
   const { theme, setTheme, resolvedTheme } = useTheme()
+  const [icon, setIcon] = useState<React.ReactNode>(
+    <MoonStarIcon className='h-4 w-4' />
+  )
+  useEffect(() => {
+    const checkTheme = () => {
+      if (theme === 'system' && resolvedTheme) {
+        return resolvedTheme === 'dark'
+      } else {
+        return theme === 'dark'
+      }
+    }
+
+    const value = checkTheme()
+
+    setIcon(
+      value ? (
+        <MoonStarIcon className='h-4 w-4' />
+      ) : (
+        <SunIcon className='h-4 w-4' />
+      )
+    )
+  }, [theme])
 
   const handleChangeMode = () => {
     theme === 'dark' ? setTheme('light') : setTheme('dark')
-  }
-
-  const checkTheme = () => {
-    if (theme === 'system' && resolvedTheme) {
-      return resolvedTheme === 'dark'
-    } else {
-      return theme === 'dark'
-    }
   }
 
   return (
@@ -58,11 +79,7 @@ const DesktopNavbar = () => {
           size='icon'
           onClick={handleChangeMode}
         >
-          {checkTheme() ? (
-            <MoonStarIcon className='h-4 w-4' />
-          ) : (
-            <SunIcon className='h-4 w-4' />
-          )}
+          {icon}
         </Button>
       </nav>
     </div>
