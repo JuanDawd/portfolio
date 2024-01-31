@@ -2,13 +2,7 @@
 
 import { useTheme } from 'next-themes'
 import { motion } from 'framer-motion'
-import {
-  GithubIcon,
-  LinkedinIcon,
-  LucideIcon,
-  MoonStarIcon,
-  SunIcon,
-} from 'lucide-react'
+import { GithubIcon, LinkedinIcon, MoonStarIcon, SunIcon } from 'lucide-react'
 
 import CustomLink from './CustomLink'
 import { Button } from '../UI/button'
