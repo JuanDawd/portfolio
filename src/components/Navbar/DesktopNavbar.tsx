@@ -6,11 +6,11 @@ import { GithubIcon, LinkedinIcon, MoonStarIcon, SunIcon } from 'lucide-react'
 
 import CustomLink from './CustomLink'
 import { Button } from '../UI/button'
-import { useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 
 const DesktopNavbar = () => {
   const { theme, setTheme, resolvedTheme } = useTheme()
-  const [icon, setIcon] = useState<React.ReactNode>(
+  const [icon, setIcon] = useState<ReactNode>(
     <MoonStarIcon className='h-4 w-4' />
   )
   useEffect(() => {
@@ -31,7 +31,7 @@ const DesktopNavbar = () => {
         <SunIcon className='h-4 w-4' />
       )
     )
-  }, [theme])
+  }, [theme, resolvedTheme])
 
   const handleChangeMode = () => {
     theme === 'dark' ? setTheme('light') : setTheme('dark')
