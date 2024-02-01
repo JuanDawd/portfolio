@@ -13,6 +13,7 @@ const DesktopNavbar = () => {
   const [icon, setIcon] = useState<ReactNode>(
     <MoonStarIcon className='h-4 w-4' />
   )
+
   useEffect(() => {
     const checkTheme = () => {
       if (theme === 'system' && resolvedTheme) {
