@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { Roboto_Mono } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 
 import { ThemeProvider } from '@/components/theme-provider'
 
@@ -25,6 +26,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <Navbar />
           {children}
+          <Analytics />
+
           <Footer />
         </ThemeProvider>
       </body>
