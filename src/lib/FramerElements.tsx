@@ -1,13 +1,6 @@
 import Image from 'next/image'
-import { motion, useScroll } from 'framer-motion'
-import {
-  ReactElement,
-  forwardRef,
-  ReactNode,
-  Ref,
-  MutableRefObject,
-  RefObject,
-} from 'react'
+import { motion } from 'framer-motion'
+import { ReactElement, ReactNode } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/UI/button'
 
@@ -64,64 +57,6 @@ export const FramerLi = ({
     >
       {children}
     </motion.li>
-  )
-}
-
-type SideScrollBarProps = {
-  offset: any
-}
-
-export const SideScrollBar = forwardRef(
-  ({ offset }: SideScrollBarProps, forwardedRef: Ref<any>) => {
-    const { scrollYProgress } = useScroll({
-      target: forwardedRef as MutableRefObject<any>,
-      offset: offset,
-    })
-
-    return (
-      <motion.div
-        style={{ scaleY: scrollYProgress }}
-        className='absolute left-9 top-0 mt-2 h-full w-1 origin-top bg-accent md:left-[30px] md:w-[2px] xs:left-[20px] '
-      />
-    )
-  }
-)
-
-SideScrollBar.displayName = 'SideScrollBar'
-
-export const LiIcon = ({
-  reference,
-}: {
-  reference: RefObject<HTMLElement> | undefined
-}) => {
-  const { scrollYProgress } = useScroll({
-    target: reference,
-    offset: ['center end', 'center center'],
-  })
-  return (
-    <figure className='absolute left-0 stroke-accent'>
-      <svg
-        className='-rotate-90 md:h-[60px] md:w-[60px] xs:h-[40px] xs:w-[40px] '
-        width={75}
-        height={75}
-        viewBox='0 0 100 100'
-      >
-        <circle cx={75} cy={50} r={20} className=' fill-none stroke-1' />
-        <motion.circle
-          cx={75}
-          cy={50}
-          r={20}
-          className=' fill-background stroke-[5px] '
-          style={{ pathLength: scrollYProgress }}
-        />
-        <circle
-          cx={75}
-          cy={50}
-          r={10}
-          className='animate-pulse fill-accent stroke-1'
-        />
-      </svg>
-    </figure>
   )
 }
 
