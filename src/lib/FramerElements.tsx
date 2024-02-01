@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { motion, useScroll } from 'framer-motion'
-import { ReactElement, ReactNode, RefObject } from 'react'
+import { motion } from 'framer-motion'
+import { ReactElement, ReactNode } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/UI/button'
 
