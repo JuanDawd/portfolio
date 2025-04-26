@@ -15,7 +15,7 @@ const Navbar = () => {
   }
 
   return (
-    <header className='sticky top-0 z-10 flex w-full items-center justify-between  border-b-2 border-accent bg-background px-32 py-8 font-medium lg:px-16 md:px-12 sm:px-8'>
+    <header className='sticky top-0 z-10 flex w-full items-center justify-between border-b-2 border-accent bg-background px-32 py-8 font-medium lg:px-16 md:px-12 sm:px-8'>
       {/*
 			// TODO: change here to radixUI Button
 			*/}
