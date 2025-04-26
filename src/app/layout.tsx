@@ -8,8 +8,8 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { Navbar } from '@/components/Navbar'
 import Head from './Head'
 
-import './globals.css'
 import Footer from '@/components/UI/Footer'
+import './globals.css'
 
 const roboto = Roboto_Mono({ subsets: ['latin'], variable: '--font-rob' })
 

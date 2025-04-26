@@ -13,11 +13,11 @@ import { DropdownContext } from '@/components/DropdownContext'
 import { Education } from '@/components/Education'
 import { Experience } from '@/components/Experience'
 import { Certifications } from '@/components/Certifications'
-import { Skills } from '@/components/Skills'
 
 import { Biography } from './Constants'
 import { AnimatedText } from '@/components/AnimatedText'
 import { Button } from '@/components/UI/button'
+import { Skills } from '@/components/Skills'
 
 export default function Home() {
   return (
@@ -72,7 +72,9 @@ export default function Home() {
           />
         </div>
       </div>
+
       <Skills />
+
       <Experience />
       <Education />
       <Certifications />
