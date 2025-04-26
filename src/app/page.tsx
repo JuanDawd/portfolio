@@ -17,8 +17,6 @@ import { Certifications } from '@/components/Certifications'
 import { Biography } from './Constants'
 import { AnimatedText } from '@/components/AnimatedText'
 import { Button } from '@/components/UI/button'
-import { SolarSystemPlot } from '@/components/SolarSystem'
-import { PlanetsCarousel } from '@/components/SolarSystem/PlanetsCarousel'
 import { Skills } from '@/components/Skills'
 
 export default function Home() {
