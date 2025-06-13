@@ -17,7 +17,7 @@
     "clsx": "^2.0.0",
     "d3": "^7.9.0",
     "embla-carousel-react": "^8.6.0",
-    "next": "14.2.26",
+    "next": "14.2.30",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.0.0",
