@@ -4,10 +4,16 @@ import * as d3 from 'd3'
 import { PlanetsList } from './Constants'
 import { useD3Render } from '@/hooks/useD3Render'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Orbit, PlanetPosition } from './types'
 
 export function SolarSystemPlot({ width = 700, height = 700 }) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true) // <─ only runs on client
+  }, [])
+
   const orbits = PlanetsList
   const maxRadius = d3.max(orbits.map(d => d.radius))
   const animationFrameRef = useRef<number>()
@@ -75,7 +81,14 @@ export function SolarSystemPlot({ width = 700, height = 700 }) {
       const angleStep = (2 * Math.PI) / numPlanets
       const orbitRadius = Number(radius)
       // Add a random starting angle for each orbit group
-      const orbitStartAngle = Math.random() * 2 * Math.PI
+      const orbitStartAngle = useMemo(() => {
+        // simple hash so each orbit always gets the same angle
+        const hash = (str: string) =>
+          str
+            .split('')
+            .reduce((a, b) => ((a << 5) - a + b.charCodeAt(0)) | 0, 0)
+        return ((hash('orbit') % 1000) / 1000) * 2 * Math.PI
+      }, [])
 
       planetsInOrbit.forEach((planet, index) => {
         const angle = orbitStartAngle + index * angleStep
@@ -164,6 +177,15 @@ export function SolarSystemPlot({ width = 700, height = 700 }) {
         .classed('transition-transform', true)
     },
   })
+
+  if (!mounted)
+    return (
+      <div
+        ref={containerRef}
+        className='flex h-full w-full items-center justify-center'
+        style={{ minHeight: height, minWidth: width }}
+      />
+    )
 
   return (
     <div
