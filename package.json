@@ -33,7 +33,7 @@
     "@types/react-dom": "^18",
     "@vercel/analytics": "^1.1.2",
     "autoprefixer": "^10.0.1",
-    "eslint": "^9.39.1",
+    "eslint": "^9.26.0",
     "eslint-config-next": "16.0.2-canary.21",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
