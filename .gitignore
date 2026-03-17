@@ -1,17 +1,18 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
-/node_modules
-/.pnp
+node_modules
+.pnp
 .pnp.js
 .yarn/install-state.gz
 
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# next.js (2024 app)
+2024/.next/
+2024/out/
+
+# vite (root app)
+/dist
 
 # production
 /build
@@ -33,26 +34,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
-
-# Package
-package-lock.json 
-/package-lock.json 
-./package-lock.json 
-
-# pnpm
-pnpm-lock.yaml
-
-# pnpm workspace
-pnpm-workspace.yaml
-
-
-# .prettierignore
-.prettierignore
-
-# .prettierrc.json
-.prettierrc.json
-
-# .prettierignore
-.prettierignore
+# package lock
+package-lock.json
