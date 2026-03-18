@@ -28,10 +28,11 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
   }
 
   return (
+    <div className='fixed inset-0 z-30 flex items-center justify-center'>
     <motion.div
-      initial={{ scale: 0, opacity: 0, x: '-50%', y: '-50%' }}
+      initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      className='fixed left-1/2 top-1/2 z-30 flex min-w-[70vw] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-between gap-10 rounded-lg bg-background/50 py-20 backdrop-blur-md'
+      className='flex min-w-[70vw] flex-col items-center justify-between gap-10 rounded-lg bg-background/50 py-20 backdrop-blur-md'
     >
       <nav className='flex flex-col items-center justify-center'>
         <CustomMobileLink href='/2024' title='Home' toggle={handleClick} />
@@ -83,6 +84,7 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
         </Button>
       </nav>
     </motion.div>
+    </div>
   )
 }
 
