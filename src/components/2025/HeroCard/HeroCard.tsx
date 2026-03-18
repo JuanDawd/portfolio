@@ -13,7 +13,7 @@ export function HeroCard() {
 	return (
 		<div className="flex h-full flex-col items-center justify-center gap-6 text-center">
 			<Avatar className="h-28 w-28 border-2 border-primary/20">
-				<AvatarImage src="/2024/profilePic.jpeg" alt="Juan Dawd" />
+				<AvatarImage src="/2024/profilePic.webp" alt="Juan Dawd" />
 				<AvatarFallback className="text-2xl">JD</AvatarFallback>
 			</Avatar>
 

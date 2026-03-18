@@ -69,7 +69,7 @@ export default function Home() {
 				<div className="relative col-span-4 h-max rounded-2xl border-2 border-solid border-primary-foreground bg-background p-4 md:order-1 md:col-span-8">
 					<div className="absolute left-3 top-3 -z-10 h-full w-[100%] rounded-[1.75rem] bg-primary/10" />
 					<img
-						src="/2024/profilePic.jpeg"
+						src="/2024/profilePic.webp"
 						alt="JuanDawd"
 						className="h-auto w-full rounded-2xl"
 					/>
