@@ -1,0 +1,1 @@
+export { BiographyCard } from './BiographyCard'
