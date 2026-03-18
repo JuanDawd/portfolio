@@ -24,16 +24,16 @@ export default function HomePage2025() {
 					<SkillsCard />
 				</BentoCard>
 
-				<BentoCard colSpan={1}>
+				<BentoCard colSpan={2}>
 					<EducationCard />
 				</BentoCard>
 
-				<BentoCard colSpan={3} rowSpan={2}>
-					<ExperienceCard />
+				<BentoCard colSpan={2}>
+					<CertificationsCard />
 				</BentoCard>
 
-				<BentoCard colSpan={1}>
-					<CertificationsCard />
+				<BentoCard colSpan={4}>
+					<ExperienceCard />
 				</BentoCard>
 
 				<BentoCard colSpan={4} rowSpan={2}>

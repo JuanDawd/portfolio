@@ -20,9 +20,9 @@ export function SkillsCard() {
               <TooltipTrigger>
                 <Badge
                   variant="secondary"
-                  className="flex cursor-default items-center gap-2 px-3 py-1.5 text-sm transition-colors hover:bg-primary/10"
+                  className="flex h-auto cursor-default items-center gap-2 px-3 py-1.5 text-sm transition-colors hover:bg-primary/10"
                 >
-                  <img src={icon} alt={name} className="h-5 w-5" />
+                  <img src={icon} alt={name} className="h-5 w-5 shrink-0" />
                   {name}
                 </Badge>
               </TooltipTrigger>

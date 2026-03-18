@@ -18,7 +18,7 @@ export default function Home() {
 		<Layout className="pt-16">
 			<AnimatedText
 				text="Passion Fuels Purpose!"
-				className="mb-16 lg:text-7xl! sm:mb-8 sm:text-6xl! xs:!text-4xl"
+				className="mb-16 lg:text-7xl! sm:mb-8 sm:text-6xl! xs:text-4xl!"
 			/>
 			<div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
 				<div className="col-span-4 flex flex-col items-center justify-center md:order-2  md:col-span-8">
@@ -34,7 +34,7 @@ export default function Home() {
 						>
 							<DropdownMenuItem>
 								<a
-									href="/2024/JuanDawdENG.pdf"
+									href="/resume/JuanDawdENG.pdf"
 									download
 									target="_blank"
 									rel="noreferrer"
@@ -44,7 +44,7 @@ export default function Home() {
 							</DropdownMenuItem>
 							<DropdownMenuItem>
 								<a
-									href="/2024/JuanDawdESP.pdf"
+									href="/resume/JuanDawdESP.pdf"
 									download
 									target="_blank"
 									rel="noreferrer"
@@ -67,9 +67,9 @@ export default function Home() {
 				</div>
 
 				<div className="relative col-span-4 h-max rounded-2xl border-2 border-solid border-primary-foreground bg-background p-4 md:order-1 md:col-span-8">
-					<div className="absolute left-3 top-3 -z-10 h-[100%] w-[100%] rounded-[1.75rem] bg-primary/10" />
+					<div className="absolute left-3 top-3 -z-10 h-full w-[100%] rounded-[1.75rem] bg-primary/10" />
 					<img
-						src="/2024/profilePic.jpg"
+						src="/2024/profilePic.jpeg"
 						alt="JuanDawd"
 						className="h-auto w-full rounded-2xl"
 					/>

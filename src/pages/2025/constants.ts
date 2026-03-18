@@ -1,7 +1,7 @@
 const skill = (name: string) => `/2024/Skills/${name}.svg`
 
 export const biography =
-	'Frontend developer with 5+ years of experience building high-performance web applications. Passionate about clean architecture, pixel-perfect UIs, and seamless user experiences.'
+	'Dynamic Frontend Developer with 8 years of experience in creating and enhancing customer-facing systems using React and TypeScript. Led the development and maintenance efforts, streamlining user interface workflows and boosting system efficiency, resulting in enhanced user experiences across platforms. Seeking opportunities to leverage skills in React and TypeScript to drive innovation and user-centric designs in a forward-thinking team.'
 
 export const experienceList = [
 	{
@@ -95,8 +95,13 @@ export const educationList = [
 ]
 
 export const certificationList = [
+	{ name: 'Frontend Developer (React)', issuer: 'HackerRank', year: '2025' },
+	{ name: 'JavaScript (Intermediate)', issuer: 'HackerRank', year: '2025' },
+	{ name: 'JavaScript (Basic)', issuer: 'HackerRank', year: '2025' },
+	{ name: 'SmallTalk English Speaking Level Test', issuer: 'SmallTalk2Me', year: '2024' },
 	{ name: 'React (Basic)', issuer: 'HackerRank', year: '2022' },
-	{ name: 'Learn to program Ruby', issuer: 'Udemy', year: '2021' },
+	{ name: 'Learn to Code with Ruby', issuer: 'Udemy', year: '2021' },
+	{ name: 'Modelado de proceso de Negocios', issuer: 'Avaya', year: '2018' },
 ]
 
 export const skillsList = [
