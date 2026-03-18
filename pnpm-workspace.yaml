@@ -1,7 +1,2 @@
 packages:
-  - '2024'
   - 'archive/*'
-allowBuilds:
-  esbuild: false
-  sharp: false
-  unrs-resolver: false
