@@ -1,18 +1,25 @@
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { ReactElement, ReactNode } from 'react'
-import Link from 'next/link'
-import { Button } from '@/components/UI/button'
+import {
+  motion,
+  type TargetAndTransition,
+  type VariantLabels,
+  type ViewportOptions,
+} from 'framer-motion'
+import { type ReactElement, type ReactNode } from 'react'
+import { Link } from 'react-router-dom'
+import { Button } from '@/components/2024/UI/button'
 
-export const FramerImage = motion(Image)
-export const FramerLink = motion(Link)
+export const FramerImage = motion.img
+export const FramerLink = motion.create(Link)
+
 type FramerButtonProps = {
   className: string
   children: ReactElement
   href: string
   ariaLabel: string
 }
-const FramerButton = motion(Button)
+
+const FramerButton = motion.create(Button)
+
 export const FramerButtonIcon = ({
   className,
   children,
@@ -26,19 +33,19 @@ export const FramerButtonIcon = ({
       className={`w-6 ${className}`}
       aria-label={ariaLabel}
     >
-      <Link href={href} target='_blank'>
+      <a href={href} target='_blank' rel='noreferrer'>
         {children}
-      </Link>
+      </a>
     </FramerButton>
   )
 }
 
 type FramerLiProps = {
   className: string
-  children: ReactNode[] | ReactNode
-  initial: any
-  whileInView: any
-  viewport: any
+  children: ReactNode
+  initial: TargetAndTransition | VariantLabels | boolean
+  whileInView: TargetAndTransition | VariantLabels
+  viewport: ViewportOptions
 }
 
 export const FramerLi = ({
