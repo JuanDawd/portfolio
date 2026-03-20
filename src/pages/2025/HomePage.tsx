@@ -16,16 +16,16 @@ export default function HomePage2025() {
 					<HeroCard />
 				</BentoCard>
 
-				<BentoCard colSpan={2}>
+				<BentoCard colSpan={2} rowSpan={1}>
 					<BiographyCard />
+				</BentoCard>
+
+				<BentoCard colSpan={2} rowSpan={1}>
+					<EducationCard />
 				</BentoCard>
 
 				<BentoCard colSpan={2}>
 					<SkillsCard />
-				</BentoCard>
-
-				<BentoCard colSpan={2}>
-					<EducationCard />
 				</BentoCard>
 
 				<BentoCard colSpan={2}>
