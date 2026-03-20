@@ -6,7 +6,7 @@ import { Navbar } from '@/components/2025/Navbar'
 
 export default function Layout2025() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider>
       <div className="portfolio-2025 min-h-screen bg-background font-sans text-foreground">
         <Navbar />
         <Outlet />

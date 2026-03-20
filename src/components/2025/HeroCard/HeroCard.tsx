@@ -5,7 +5,7 @@ import {
 	DropdownMenu,
 	DropdownMenuTrigger,
 	DropdownMenuContent,
-	DropdownMenuLinkItem,
+	DropdownMenuItem,
 } from '@/components/ui/dropdown-menu'
 import { ChevronDown, FileDown } from 'lucide-react'
 
@@ -38,38 +38,40 @@ export function HeroCard() {
 
 			<div className="flex gap-3">
 				<DropdownMenu>
-					<DropdownMenuTrigger render={<Button size="sm" />}>
-						<FileDown className="mr-1 h-4 w-4" />
-						Resume
-						<ChevronDown className="ml-1 h-3 w-3" />
+					<DropdownMenuTrigger asChild>
+						<Button size="sm">
+							<FileDown className="mr-1 h-4 w-4" />
+							Resume
+							<ChevronDown className="ml-1 h-3 w-3" />
+						</Button>
 					</DropdownMenuTrigger>
 					<DropdownMenuContent>
-						<DropdownMenuLinkItem
-							href="/resume/JuanDawdENG.pdf"
-							download
-							target="_blank"
-							rel="noreferrer"
-						>
-							<FileDown className="h-4 w-4" />
-							English
-						</DropdownMenuLinkItem>
-						<DropdownMenuLinkItem
-							href="/resume/JuanDawdESP.pdf"
-							download
-							target="_blank"
-							rel="noreferrer"
-						>
-							<FileDown className="h-4 w-4" />
-							Español
-						</DropdownMenuLinkItem>
+						<DropdownMenuItem asChild>
+							<a
+								href="/resume/JuanDawdENG.pdf"
+								download
+								target="_blank"
+								rel="noreferrer"
+							>
+								<FileDown className="h-4 w-4" />
+								English
+							</a>
+						</DropdownMenuItem>
+						<DropdownMenuItem asChild>
+							<a
+								href="/resume/JuanDawdESP.pdf"
+								download
+								target="_blank"
+								rel="noreferrer"
+							>
+								<FileDown className="h-4 w-4" />
+								Español
+							</a>
+						</DropdownMenuItem>
 					</DropdownMenuContent>
 				</DropdownMenu>
-				<Button
-					variant="outline"
-					size="sm"
-					render={<a href="mailto:JuanDawdB@gmail.com" />}
-				>
-					Contact Me
+				<Button variant="outline" size="sm" asChild>
+					<a href="mailto:JuanDawdB@gmail.com">Contact Me</a>
 				</Button>
 			</div>
 		</div>

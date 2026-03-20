@@ -7,7 +7,7 @@ import Footer from '@/components/2024/UI/Footer'
 
 export default function Layout2024() {
   return (
-    <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+    <ThemeProvider>
       <div className='portfolio-2024 w-full bg-background font-rob'>
         <Navbar />
         <Outlet />

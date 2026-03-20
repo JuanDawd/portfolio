@@ -9,26 +9,20 @@ export function ContactCard() {
         Let's Connect
       </h2>
       <div className="flex gap-3">
-        <Button
-          variant="outline"
-          size="icon"
-          render={<a href={socialLinks.github} target="_blank" rel="noreferrer" aria-label="GitHub" />}
-        >
-          <Github className="h-5 w-5" />
+        <Button variant="outline" size="icon" asChild>
+          <a href={socialLinks.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+            <Github className="h-5 w-5" />
+          </a>
         </Button>
-        <Button
-          variant="outline"
-          size="icon"
-          render={<a href={socialLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" />}
-        >
-          <Linkedin className="h-5 w-5" />
+        <Button variant="outline" size="icon" asChild>
+          <a href={socialLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <Linkedin className="h-5 w-5" />
+          </a>
         </Button>
-        <Button
-          variant="outline"
-          size="icon"
-          render={<a href={`mailto:${socialLinks.email}`} aria-label="Email" />}
-        >
-          <Mail className="h-5 w-5" />
+        <Button variant="outline" size="icon" asChild>
+          <a href={`mailto:${socialLinks.email}`} aria-label="Email">
+            <Mail className="h-5 w-5" />
+          </a>
         </Button>
       </div>
     </div>

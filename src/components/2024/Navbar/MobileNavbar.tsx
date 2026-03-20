@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react'
 import { motion } from 'framer-motion'
-import { useTheme } from 'next-themes'
+import { useTheme } from '@/lib/theme'
 import { Github, Linkedin, MoonStarIcon, SunIcon } from 'lucide-react'
 
 import CustomMobileLink from './CustomMobileLink'

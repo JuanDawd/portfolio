@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from 'react'
-import { useTheme } from 'next-themes'
+import { useTheme } from '@/lib/theme'
 import { motion } from 'framer-motion'
 import { GithubIcon, LinkedinIcon, MoonStarIcon, SunIcon } from 'lucide-react'
 

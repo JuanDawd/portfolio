@@ -44,25 +44,19 @@ export function ProjectsCard() {
 
               <div className="flex gap-2">
                 {project.deployment && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-8 px-2"
-                    render={<a href={project.deployment} target="_blank" rel="noreferrer" />}
-                  >
-                    <ExternalLink className="mr-1 h-3.5 w-3.5" />
-                    Demo
+                  <Button variant="ghost" size="sm" className="h-8 px-2" asChild>
+                    <a href={project.deployment} target="_blank" rel="noreferrer">
+                      <ExternalLink className="mr-1 h-3.5 w-3.5" />
+                      Demo
+                    </a>
                   </Button>
                 )}
                 {project.github && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-8 px-2"
-                    render={<a href={project.github} target="_blank" rel="noreferrer" />}
-                  >
-                    <Github className="mr-1 h-3.5 w-3.5" />
-                    Code
+                  <Button variant="ghost" size="sm" className="h-8 px-2" asChild>
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      <Github className="mr-1 h-3.5 w-3.5" />
+                      Code
+                    </a>
                   </Button>
                 )}
               </div>

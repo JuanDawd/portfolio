@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from 'react'
-import { useTheme } from 'next-themes'
+import { useTheme } from '@/lib/theme'
 import { Link } from 'react-router-dom'
 import { Moon, Sun } from 'lucide-react'
 import { Button } from '@/components/ui/button'
