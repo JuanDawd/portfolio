@@ -2,17 +2,15 @@ import { Outlet } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 
 import { ThemeProvider } from '@/components/2026/theme-provider'
-import { Navbar } from '@/components/2025/Navbar'
-import Footer from '@/components/2025/UI/Footer'
+import { Navbar } from '@/components/2026/Navbar'
 
-export default function Layout2025() {
+export default function Layout2026() {
 	return (
 		<ThemeProvider>
-			<div className="portfolio-2025 w-full bg-background font-roboto-mono">
+			<div className="portfolio-2026 min-h-screen bg-background font-sans text-foreground">
 				<Navbar />
 				<Outlet />
 				<Analytics />
-				<Footer />
 			</div>
 		</ThemeProvider>
 	)

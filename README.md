@@ -1,23 +1,23 @@
 # Juan Dawd -- Portfolio
 
-Personal developer portfolio built with React 19, Vite 7, and Tailwind CSS 4. Features a multi-year architecture where each portfolio version (2024, 2025) lives in its own scope with independent components, theming, and layout.
+Personal developer portfolio built with React 19, Vite 7, and Tailwind CSS 4. Features a multi-year architecture where each portfolio version (2025, 2026) lives in its own scope with independent components, theming, and layout.
 
 **Live:** [juandawd.dev](https://juandawd.dev)
 
 ## Tech Stack
 
-| Layer | Technology | Why |
-|---|---|---|
-| Framework | React 19 + Vite 7 | Cutting-edge compiler features, sub-second HMR |
-| Styling | Tailwind CSS 4 | Utility-first, CSS-native config via `@theme` |
-| Language | TypeScript 5.9 (strict) | Full type safety across the codebase |
-| UI Primitives | Radix UI via ShadcnUI | Accessible, unstyled headless components |
-| Animation | Framer Motion | Declarative layout and gesture animations |
-| Data Viz | D3 | Custom SVG visualizations |
-| Routing | React Router 7 | File-based year scoping |
-| Testing | Vitest + Testing Library | Native Vite integration, fast execution |
-| Monitoring | Vercel Analytics + Speed Insights | Real-user performance metrics |
-| Package Manager | pnpm | Strict dependency resolution, disk-efficient |
+| Layer           | Technology                        | Why                                            |
+| --------------- | --------------------------------- | ---------------------------------------------- |
+| Framework       | React 19 + Vite 7                 | Cutting-edge compiler features, sub-second HMR |
+| Styling         | Tailwind CSS 4                    | Utility-first, CSS-native config via `@theme`  |
+| Language        | TypeScript 5.9 (strict)           | Full type safety across the codebase           |
+| UI Primitives   | Radix UI via ShadcnUI             | Accessible, unstyled headless components       |
+| Animation       | Framer Motion                     | Declarative layout and gesture animations      |
+| Data Viz        | D3                                | Custom SVG visualizations                      |
+| Routing         | React Router 7                    | File-based year scoping                        |
+| Testing         | Vitest + Testing Library          | Native Vite integration, fast execution        |
+| Monitoring      | Vercel Analytics + Speed Insights | Real-user performance metrics                  |
+| Package Manager | pnpm                              | Strict dependency resolution, disk-efficient   |
 
 ## Project Structure
 
@@ -25,11 +25,11 @@ Personal developer portfolio built with React 19, Vite 7, and Tailwind CSS 4. Fe
 src/
 ├── components/
 │   ├── ui/              # Shared ShadcnUI components (Radix-based)
-│   ├── 2024/            # 2024 portfolio components + theme
-│   └── 2025/            # 2025 portfolio components + theme
+│   ├── 2025/            # 2025 portfolio components + theme
+│   └── 2026/            # 2026 portfolio components + theme
 ├── pages/
-│   ├── 2024/            # 2024 routes, layout, constants
-│   └── 2025/            # 2025 routes, layout, constants
+│   ├── 2025/            # 2025 routes, layout, constants
+│   └── 2026/            # 2026 routes, layout, constants
 ├── lib/
 │   ├── theme.tsx         # Custom theme provider (light/dark/system)
 │   └── utils.ts          # cn() and shared utilities
