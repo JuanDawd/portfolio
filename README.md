@@ -1,23 +1,59 @@
-## Getting Started
+# Juan Dawd -- Portfolio
 
-First, run the development server:
+Personal developer portfolio built with React 19, Vite 7, and Tailwind CSS 4. Features a multi-year architecture where each portfolio version (2025, 2026) lives in its own scope with independent components, theming, and layout.
 
-```bash
-npm run dev
+**Live:** [juandawd.dev](https://juandawd.dev)
+
+## Tech Stack
+
+| Layer           | Technology                        | Why                                            |
+| --------------- | --------------------------------- | ---------------------------------------------- |
+| Framework       | React 19 + Vite 7                 | Cutting-edge compiler features, sub-second HMR |
+| Styling         | Tailwind CSS 4                    | Utility-first, CSS-native config via `@theme`  |
+| Language        | TypeScript 5.9 (strict)           | Full type safety across the codebase           |
+| UI Primitives   | Radix UI via ShadcnUI             | Accessible, unstyled headless components       |
+| Animation       | Framer Motion                     | Declarative layout and gesture animations      |
+| Data Viz        | D3                                | Custom SVG visualizations                      |
+| Routing         | React Router 7                    | File-based year scoping                        |
+| Testing         | Vitest + Testing Library          | Native Vite integration, fast execution        |
+| Monitoring      | Vercel Analytics + Speed Insights | Real-user performance metrics                  |
+| Package Manager | pnpm                              | Strict dependency resolution, disk-efficient   |
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── ui/              # Shared ShadcnUI components (Radix-based)
+│   ├── 2025/            # 2025 portfolio components + theme
+│   └── 2026/            # 2026 portfolio components + theme
+├── pages/
+│   ├── 2025/            # 2025 routes, layout, constants
+│   └── 2026/            # 2026 routes, layout, constants
+├── lib/
+│   ├── theme.tsx         # Custom theme provider (light/dark/system)
+│   └── utils.ts          # cn() and shared utilities
+├── hooks/               # Custom React hooks
+├── test/                # Test setup
+├── index.css            # Global styles, CSS variables, year themes
+└── main.tsx             # App entry point
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Each portfolio year is self-contained: its own layout, theme variables, components, and constants. The shared `ui/` components use Radix primitives and are generated via the ShadcnUI CLI.
 
-## Themes
+## Getting Started
 
-[NightMode](https://www.realtimecolors.com/dashboard?colors=ffffff-0f1729-8f0000-172554-FF1A1A&fonts=Montserrat-Roboto%20Mono)
+```bash
+pnpm install
+pnpm dev          # Start dev server
+pnpm build        # Type-check + production build
+pnpm test         # Run test suite
+pnpm test:watch   # Run tests in watch mode
+pnpm lint         # ESLint
+```
 
-[LightMode](https://www.realtimecolors.com/dashboard?colors=000000-f1f5f9-172554-fdc4c4-1a1aff&fonts=Montserrat-Roboto%20Mono)
+## Architecture Decisions
 
-## Mocks
-
-[Samsung S21 Ultra](https://mockuphone.com/device/samsung-galaxys21ultra-black/)
-
-[iPhone 14 Pro Max](https://mockuphone.com/device/apple-iphone14promax-spaceblack/)
-
-[Macbook Pro 14](https://mockuphone.com/device/apple-macbookpro14/)
+- **Multi-year scoping:** Each portfolio year has its own component tree and CSS custom properties, allowing full visual independence while sharing the same build pipeline and routing.
+- **Custom theme provider:** A lightweight React context replaces `next-themes`, handling class-based dark mode toggling, system preference detection, and localStorage persistence without a Next.js dependency.
+- **ShadcnUI as dev tooling:** Components are generated via `pnpm dlx shadcn@latest add` and committed to `src/components/ui/`. The `shadcn` package is a devDependency only.

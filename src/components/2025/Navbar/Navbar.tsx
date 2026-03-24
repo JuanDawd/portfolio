@@ -1,56 +1,53 @@
-import { useSyncExternalStore } from 'react'
-import { useTheme } from 'next-themes'
-import { Link } from 'react-router-dom'
-import { Moon, Sun } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { useState } from 'react'
+import Logo from './Logo'
+import MobileNavbar from './MobileNavbar'
+import DesktopNavbar from './DesktopNavbar'
 
-const emptySubscribe = () => () => {}
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false)
 
-export function Navbar() {
-  const { theme, setTheme, resolvedTheme } = useTheme()
-  const mounted = useSyncExternalStore(
-    emptySubscribe,
-    () => true,
-    () => false,
-  )
-
-  const isDark =
-    theme === 'system' && resolvedTheme
-      ? resolvedTheme === 'dark'
-      : theme === 'dark'
+  const handleClick = () => {
+    setIsOpen(pastValue => {
+      return !pastValue
+    })
+  }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link to="/" className="text-lg font-bold tracking-tight">
-          JD
-        </Link>
+    <header className='sticky top-0 z-10 flex w-full items-center justify-between border-b-2 border-accent bg-background px-32 py-8 font-medium lg:px-16 md:px-12 sm:px-8'>
+      {/*
+			// TODO: change here to radixUI Button
+			*/}
+      <button
+        aria-label='menu'
+        className='hidden flex-col items-center justify-center lg:flex'
+        onClick={handleClick}
+      >
+        <span
+          className={`block h-0.5 w-6 rounded-sm bg-accent transition-all duration-300 ease-out  ${
+            isOpen ? 'translate-y-1 rotate-45' : '-translate-y-0.5'
+          }`}
+        />
+        <span
+          className={`my-0.5 block h-0.5 w-6 rounded-sm bg-accent transition-all duration-300 ease-out ${
+            isOpen ? 'opacity-0' : 'opacity-100'
+          }`}
+        />
+        <span
+          className={`block h-0.5 w-6 rounded-sm bg-accent transition-all duration-300 ease-out ${
+            isOpen ? '-translate-y-1 -rotate-45' : 'translate-y-0.5'
+          }`}
+        />
+      </button>
 
-        <div className="flex items-center gap-4">
-          <Link
-            to="/2024"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            2024
-          </Link>
+      <DesktopNavbar />
 
-          {mounted && (
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(isDark ? 'light' : 'dark')}
-              aria-label="Toggle theme"
-              className="h-9 w-9"
-            >
-              {isDark ? (
-                <Sun className="h-4 w-4" />
-              ) : (
-                <Moon className="h-4 w-4" />
-              )}
-            </Button>
-          )}
-        </div>
-      </nav>
+      {isOpen && <MobileNavbar handleClick={handleClick} />}
+
+      <div className='absolute left-1/2  top-1/2 -translate-x-1/2  -translate-y-1/2'>
+        <Logo />
+      </div>
     </header>
   )
 }
+
+export default Navbar

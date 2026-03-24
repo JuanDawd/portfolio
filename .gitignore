@@ -7,10 +7,6 @@ node_modules
 # testing
 /coverage
 
-# next.js (2024 app)
-2024/.next/
-2024/out/
-
 # vite (root app)
 /dist
 
