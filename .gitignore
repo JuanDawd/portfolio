@@ -33,3 +33,7 @@ yarn-error.log*
 
 # package lock
 package-lock.json
+
+# vscode
+.vscode
+PROFILE.md

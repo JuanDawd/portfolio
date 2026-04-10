@@ -217,13 +217,13 @@ export const projectsList = [
 		technologies: ['React', 'TypeScript', 'MUI', 'Redux'],
 	},
 	{
-		title: 'Guarapo-SSR',
+		title: 'Guarapo Blocks API',
 		type: 'Technical Review',
 		role: 'Backend',
 		image: '/2025/projects/GuarapoSSR.png',
-		deployment: 'https://guarapo-ssr.vercel.app/blocks/',
+		deployment: 'https://guarapo-ssr.vercel.app/docs',
 		github: 'https://github.com/JuanDawd/guarapo-ssr/tree/main',
-		technologies: ['Next.js', 'Prisma', 'PostgreSQL', 'Jest'],
+		technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Jest', 'OpenAPI'],
 	},
 	{
 		title: 'Modern Portfolio',
