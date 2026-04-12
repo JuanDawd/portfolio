@@ -1,2 +1,5 @@
 packages:
   - 'archive/*'
+allowBuilds:
+  esbuild: true
+  msw: true

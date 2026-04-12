@@ -1,4 +1,5 @@
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, LayoutDashboard } from 'lucide-react'
+import { GithubIcon } from '@/components/icons/GithubIcon'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -17,23 +18,44 @@ export function ProjectsCard() {
 						className="group overflow-hidden border-border/30 bg-secondary/30 p-0"
 					>
 						<div className="relative aspect-video overflow-hidden">
-							<img
-								src={project.image}
-								alt={project.title}
-								className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-							/>
-							<div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
-							<div className="absolute bottom-3 left-3 right-3">
-								<h3 className="font-semibold text-card-foreground">
-									{project.title}
-								</h3>
-								<p className="text-xs text-muted-foreground">
-									{project.type} &middot; {project.role}
-								</p>
-							</div>
+							{project.image ? (
+								<>
+									<img
+										src={project.image}
+										alt={project.title}
+										loading="lazy"
+										decoding="async"
+										className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+									/>
+									<div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+									<div className="absolute bottom-3 left-3 right-3">
+										<h3 className="font-semibold text-card-foreground">
+											{project.title}
+										</h3>
+										<p className="text-xs text-muted-foreground">
+											{project.type} &middot; {project.role}
+										</p>
+									</div>
+								</>
+							) : (
+								<div className="flex h-full flex-col items-center justify-center gap-2 bg-muted/30">
+									<LayoutDashboard className="h-8 w-8 text-muted-foreground/40" />
+									<div className="text-center">
+										<h3 className="font-semibold">{project.title}</h3>
+										<p className="text-xs text-muted-foreground">
+											{project.type} &middot; {project.role}
+										</p>
+									</div>
+								</div>
+							)}
 						</div>
 
 						<div className="flex flex-col gap-3 p-4">
+							{project.description && (
+								<p className="text-sm leading-relaxed text-foreground/70">
+									{project.description}
+								</p>
+							)}
 							<div className="flex flex-wrap gap-1.5">
 								{project.technologies.map((tech) => (
 									<Badge key={tech} variant="outline" className="text-xs">
@@ -68,7 +90,7 @@ export function ProjectsCard() {
 										asChild
 									>
 										<a href={project.github} target="_blank" rel="noreferrer">
-											<Github className="mr-1 h-3.5 w-3.5" />
+											<GithubIcon className="mr-1 h-3.5 w-3.5" />
 											Code
 										</a>
 									</Button>

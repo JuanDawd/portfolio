@@ -1,5 +1,6 @@
-import { Github, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
 
+import { GithubIcon } from '@/components/icons/GithubIcon'
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon'
 import { Button } from '@/components/ui/button'
 import { socialLinks } from '@/pages/2026/constants'
@@ -18,7 +19,7 @@ export function ContactCard() {
 						rel="noreferrer"
 						aria-label="GitHub"
 					>
-						<Github className="h-5 w-5" />
+						<GithubIcon className="h-5 w-5" />
 					</a>
 				</Button>
 				<Button variant="outline" size="icon" asChild>

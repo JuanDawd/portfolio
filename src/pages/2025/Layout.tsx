@@ -1,5 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
+import '@fontsource/roboto-mono/400.css'
+import '@fontsource/share-tech-mono/index.css'
 
 import { ThemeProvider } from '@/components/2026/theme-provider'
 import { Navbar } from '@/components/2025/Navbar'

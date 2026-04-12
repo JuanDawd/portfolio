@@ -8,7 +8,9 @@ import { type ReactElement, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/2025/UI/button'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const FramerImage = motion.img
+// eslint-disable-next-line react-refresh/only-export-components
 export const FramerLink = motion.create(Link)
 
 type FramerButtonProps = {

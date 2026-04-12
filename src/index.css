@@ -1,9 +1,9 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
+/* Geist is used by the 2026 portfolio (default route) — load eagerly */
 @import '@fontsource-variable/geist';
-@import '@fontsource/roboto-mono';
-@import '@fontsource/share-tech-mono';
+/* Roboto Mono and Share Tech Mono are 2025-only — imported in pages/2025/Layout.tsx */
 
 @custom-variant dark (&:is(.dark *));
 

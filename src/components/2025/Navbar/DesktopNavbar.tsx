@@ -1,8 +1,10 @@
 import { useSyncExternalStore } from 'react'
 import { useTheme } from '@/lib/theme'
 import { motion } from 'framer-motion'
-import { GithubIcon, MoonStarIcon, SunIcon } from 'lucide-react'
+import { MoonStar, Sun, ArrowLeft } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
+import { GithubIcon } from '@/components/icons/GithubIcon'
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon'
 import CustomLink from './CustomLink'
 import { Button } from '../UI/button'
@@ -28,7 +30,14 @@ const DesktopNavbar = () => {
 
 	return (
 		<div className="flex w-full items-center justify-between lg:hidden">
-			<nav>
+			<nav className="flex items-center">
+				<Link
+					to="/"
+					className="mr-6 flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+				>
+					<ArrowLeft className="h-3.5 w-3.5" />
+					2026
+				</Link>
 				<CustomLink href="/2025" title="Home" className="mr-4" />
 				<CustomLink href="/2025/projects" title="Projects" className="ml-4" />
 			</nav>
@@ -64,9 +73,9 @@ const DesktopNavbar = () => {
 				>
 					{mounted ? (
 						isDark ? (
-							<MoonStarIcon className="h-4 w-4" />
+							<MoonStar className="h-4 w-4" />
 						) : (
-							<SunIcon className="h-4 w-4" />
+							<Sun className="h-4 w-4" />
 						)
 					) : (
 						<span className="h-4 w-4" />

@@ -1,6 +1,6 @@
 export type SkillProps = {
   name: string
-  icon: any
+  icon: string
   x: string
   y: string
 }

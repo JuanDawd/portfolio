@@ -1,8 +1,10 @@
 import { useSyncExternalStore } from 'react'
 import { motion } from 'framer-motion'
 import { useTheme } from '@/lib/theme'
-import { Github, MoonStarIcon, SunIcon } from 'lucide-react'
+import { MoonStar, Sun, ArrowLeft } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
+import { GithubIcon } from '@/components/icons/GithubIcon'
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon'
 
 import CustomMobileLink from './CustomMobileLink'
@@ -37,6 +39,14 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
 				className="flex min-w-[70vw] flex-col items-center justify-between gap-10 rounded-lg bg-background/50 py-20 backdrop-blur-md"
 			>
 				<nav className="flex flex-col items-center justify-center">
+					<Link
+						to="/"
+						onClick={handleClick}
+						className="group relative my-2 flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+					>
+						<ArrowLeft className="h-3.5 w-3.5" />
+						2026
+					</Link>
 					<CustomMobileLink href="/2025" title="Home" toggle={handleClick} />
 					<CustomMobileLink
 						href="/2025/projects"
@@ -54,7 +64,7 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
 						whileTap={{ scale: 0.9 }}
 						className="mr-3 w-6 sm:mr-1"
 					>
-						<Github />
+						<GithubIcon />
 					</motion.a>
 
 					<motion.a
@@ -76,9 +86,9 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
 					>
 						{mounted ? (
 							isDark ? (
-								<MoonStarIcon className="h-4 w-4" />
+								<MoonStar className="h-4 w-4" />
 							) : (
-								<SunIcon className="h-4 w-4" />
+								<Sun className="h-4 w-4" />
 							)
 						) : (
 							<span className="h-4 w-4" />
