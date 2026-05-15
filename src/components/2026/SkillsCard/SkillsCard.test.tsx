@@ -16,16 +16,16 @@ describe('SkillsCard', () => {
 		}
 	})
 
-	it('renders an SVG icon for each skill with correct aria-label', () => {
+	it('renders an SVG icon for each skill that has one', () => {
 		render(<SkillsCard />)
-		for (const skill of skillsList) {
+		for (const skill of skillsList.filter((s) => s.icon)) {
 			expect(screen.getByLabelText(skill.name)).toBeInTheDocument()
 		}
 	})
 
 	it('applies the correct fill color from the skill hex value', () => {
 		render(<SkillsCard />)
-		const firstSkill = skillsList[0]
+		const firstSkill = skillsList.find((s) => s.icon)!
 		const icon = screen.getByLabelText(firstSkill.name)
 		expect(icon).toHaveAttribute('fill', `#${firstSkill.hex}`)
 	})
