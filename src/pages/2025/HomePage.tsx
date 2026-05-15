@@ -34,7 +34,7 @@ export default function Home() {
 						>
 							<DropdownMenuItem>
 								<a
-									href="/resume/JuanDawdENG.pdf"
+									href="/resume/JuanDawd_ATS_Eng_CV.pdf"
 									download
 									target="_blank"
 									rel="noreferrer"
@@ -44,7 +44,7 @@ export default function Home() {
 							</DropdownMenuItem>
 							<DropdownMenuItem>
 								<a
-									href="/resume/JuanDawdESP.pdf"
+									href="/resume/JuanDawd_ATS_Esp_CV.pdf"
 									download
 									target="_blank"
 									rel="noreferrer"

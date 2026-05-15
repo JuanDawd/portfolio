@@ -48,7 +48,7 @@ export function HeroCard() {
 					<DropdownMenuContent>
 						<DropdownMenuItem asChild>
 							<a
-								href="/resume/JuanDawdENG.pdf"
+								href="/resume/JuanDawd_ATS_Eng_CV.pdf"
 								download
 								target="_blank"
 								rel="noreferrer"
@@ -59,7 +59,7 @@ export function HeroCard() {
 						</DropdownMenuItem>
 						<DropdownMenuItem asChild>
 							<a
-								href="/resume/JuanDawdESP.pdf"
+								href="/resume/JuanDawd_ATS_Esp_CV.pdf"
 								download
 								target="_blank"
 								rel="noreferrer"
