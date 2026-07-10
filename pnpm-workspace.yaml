@@ -3,3 +3,5 @@ packages:
 allowBuilds:
   esbuild: true
   msw: true
+minimumReleaseAge: 10080
+trustPolicy: no-downgrade
