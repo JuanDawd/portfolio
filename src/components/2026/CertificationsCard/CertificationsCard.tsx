@@ -1,5 +1,8 @@
-import { Award, ExternalLink } from 'lucide-react'
+import { Award } from 'lucide-react'
 import { certificationList } from '@/pages/2026/constants'
+
+const tileClass =
+	'flex flex-col items-center justify-start gap-2 rounded-xl border border-border/30 bg-secondary/30 p-4 text-center transition-colors [&:last-child:nth-child(odd)]:col-span-2 sm:[&:last-child:nth-child(odd)]:col-span-1'
 
 export function CertificationsCard() {
 	const visibleCertifications = certificationList.filter((cert) => !cert.hidden)
@@ -9,34 +12,36 @@ export function CertificationsCard() {
 			<h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
 				Certifications
 			</h2>
-			<div className="flex flex-col gap-4">
-				{visibleCertifications.map((cert) => (
-					<div key={cert.name} className="flex items-start gap-3">
-						<div className="mt-1 rounded-md bg-accent/10 p-2">
-							<Award className="h-4 w-4 text-accent" />
-						</div>
-						<div>
-							<h3 className="font-semibold">
-								{cert.url ? (
-									<a
-										href={cert.url}
-										target="_blank"
-										rel="noreferrer"
-										className="inline-flex items-center gap-1.5 underline-offset-2 hover:underline"
-									>
-										{cert.name}
-										<ExternalLink className="h-3 w-3 text-muted-foreground" />
-									</a>
-								) : (
-									cert.name
-								)}
-							</h3>
+			<div className="grid grid-cols-2 gap-3 sm:grid-cols-1">
+				{visibleCertifications.map((cert) => {
+					const content = (
+						<>
+							<div className="rounded-md bg-accent/10 p-2">
+								<Award className="h-4 w-4 text-accent" />
+							</div>
+							<h3 className="font-semibold">{cert.name}</h3>
 							<p className="text-sm text-muted-foreground">
 								{cert.issuer} &middot; {cert.year}
 							</p>
+						</>
+					)
+
+					return cert.url ? (
+						<a
+							key={cert.name}
+							href={cert.url}
+							target="_blank"
+							rel="noreferrer"
+							className={`${tileClass} hover:bg-primary/10`}
+						>
+							{content}
+						</a>
+					) : (
+						<div key={cert.name} className={tileClass}>
+							{content}
 						</div>
-					</div>
-				))}
+					)
+				})}
 			</div>
 		</div>
 	)
