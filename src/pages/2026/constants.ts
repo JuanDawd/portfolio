@@ -251,6 +251,7 @@ export const projectsList: Project[] = [
 			'Vitest',
 			'Playwright',
 			'Vercel',
+			'Claude Code',
 		],
 	},
 	{
@@ -274,7 +275,15 @@ export const projectsList: Project[] = [
 		image: '/2026/projects/drogueria.png',
 		deployment: 'https://www.drogueria-uno-a.com',
 		github: undefined,
-		technologies: ['React', 'Vite', 'Tailwind CSS', 'Radix UI', 'Vercel', 'Cloudflare'],
+		technologies: [
+			'React',
+			'Vite',
+			'Tailwind CSS',
+			'Radix UI',
+			'Vercel',
+			'Cloudflare',
+			'Claude Code',
+		],
 	},
 	{
 		title: 'Self-Hosted Infrastructure (Vaultwarden)',
