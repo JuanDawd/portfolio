@@ -90,7 +90,14 @@ export const experienceList = [
 			'Structured the UI as an Atomic Design component library (atoms → molecules → organisms → templates), documented in Storybook.',
 			'Worked in a 3-person team on a React 17 + MUI v5 app with React Hook Form and Zod.',
 		],
-		techStack: ['React', 'MUI', 'React Hook Form', 'Zod', 'Storybook', 'Swiper'],
+		techStack: [
+			'React',
+			'MUI',
+			'React Hook Form',
+			'Zod',
+			'Storybook',
+			'Swiper',
+		],
 	},
 	{
 		position: 'Full-Stack Developer',
@@ -179,14 +186,19 @@ export const certificationList = [
 		hidden: true, // superseded by JavaScript (Intermediate)
 	},
 	{ name: 'English Speaking Level Test', issuer: 'SmallTalk2Me', year: '2024' },
-	{ name: 'Learn to Code with Ruby', issuer: 'Udemy', year: '2021' },
+	{
+		name: 'Learn to Code with Ruby',
+		issuer: 'Udemy',
+		year: '2021',
+		hidden: true,
+	},
 	{
 		name: 'Business Process Modeling',
 		issuer: 'Avaya',
 		year: '2018',
 		hidden: true, // kept on record, not shown on the site
 	},
-	{ name: 'React (Basic)', issuer: 'HackerRank', year: '2022' },
+	{ name: 'React (Basic)', issuer: 'HackerRank', year: '2022', hidden: true },
 ]
 
 type Skill = { name: string; icon: string | undefined; hex: string }
@@ -274,7 +286,14 @@ export const projectsList: Project[] = [
 		image: '/2026/projects/amatis.png',
 		deployment: 'https://app.amatiscontrols.com/sites/',
 		github: undefined,
-		technologies: ['Next.js', 'Node.js', 'MySQL', 'MQTT', 'AWS', 'GitLab CI/CD'],
+		technologies: [
+			'Next.js',
+			'Node.js',
+			'MySQL',
+			'MQTT',
+			'AWS',
+			'GitLab CI/CD',
+		],
 		relatedExperience: 'Melt Studio',
 	},
 	{
