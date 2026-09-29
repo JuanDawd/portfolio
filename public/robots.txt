@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://juandawd-portfolio.vercel.app/sitemap.xml
+Sitemap: https://juandawd.dev/sitemap.xml
