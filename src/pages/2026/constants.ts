@@ -175,7 +175,12 @@ export const certificationList = [
 	{ name: 'JavaScript (Basic)', issuer: 'HackerRank', year: '2025' },
 	{ name: 'English Speaking Level Test', issuer: 'SmallTalk2Me', year: '2024' },
 	{ name: 'Learn to Code with Ruby', issuer: 'Udemy', year: '2021' },
-	{ name: 'Business Process Modeling', issuer: 'Avaya', year: '2018' },
+	{
+		name: 'Business Process Modeling',
+		issuer: 'Avaya',
+		year: '2018',
+		hidden: true, // kept on record, not shown on the site
+	},
 	{ name: 'React (Basic)', issuer: 'HackerRank', year: '2022' },
 ]
 
