@@ -1,9 +1,9 @@
-import { ExternalLink, LayoutDashboard } from 'lucide-react'
+import { Briefcase, ExternalLink, LayoutDashboard } from 'lucide-react'
 import { GithubIcon } from '@/components/icons/GithubIcon'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { projectsList } from '@/pages/2026/constants'
+import { experienceAnchor, projectsList } from '@/pages/2026/constants'
 
 export function ProjectsCard() {
 	return (
@@ -51,6 +51,15 @@ export function ProjectsCard() {
 						</div>
 
 						<div className="flex flex-col gap-3 p-4">
+							{project.relatedExperience && (
+								<a
+									href={`#${experienceAnchor(project.relatedExperience)}`}
+									className="inline-flex w-fit items-center gap-1.5 rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary hover:bg-primary/15"
+								>
+									<Briefcase className="h-3 w-3" />
+									Built during my work at {project.relatedExperience}
+								</a>
+							)}
 							{project.description && (
 								<p className="text-sm leading-relaxed text-foreground/70">
 									{project.description}

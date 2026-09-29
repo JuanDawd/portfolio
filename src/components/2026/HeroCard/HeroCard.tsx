@@ -32,7 +32,7 @@ export function HeroCard() {
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.4 }}
 				>
-					Frontend Developer
+					Full-Stack Developer
 				</motion.p>
 			</div>
 
