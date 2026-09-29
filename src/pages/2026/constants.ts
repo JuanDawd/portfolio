@@ -29,6 +29,8 @@ import {
 	siGooglecloud,
 	siVitest,
 	siJest,
+	siClaude,
+	siCursor,
 } from 'simple-icons'
 
 export const biography =
@@ -49,6 +51,7 @@ export const experienceList = [
 			'Automated release pipelines for 2 Android and 2 iOS apps via GitLab CI/CD, cutting release time from ~8 hours to 1-2.',
 			'Deployed and managed infrastructure on AWS (EC2, RDS, DynamoDB, S3 + CloudFront) over 2+ years.',
 			'Led architecture design, coordinated sprint tasks, and enforced coding standards and review practices.',
+			'Use Claude Code and Cursor in day-to-day development, keeping human review, tests and CI as the quality gate.',
 		],
 		techStack: [
 			'Next.js',
@@ -61,6 +64,8 @@ export const experienceList = [
 			'GitLab CI/CD',
 			'Google Cloud',
 			'AWS',
+			'Claude Code',
+			'Cursor',
 		],
 	},
 	{
@@ -205,6 +210,8 @@ export const skillsList: Skill[] = [
 	{ name: 'AWS', icon: undefined, hex: 'FF9900' },
 	{ name: 'Google Cloud', icon: siGooglecloud.path, hex: siGooglecloud.hex },
 	{ name: 'Figma', icon: siFigma.path, hex: siFigma.hex },
+	{ name: 'Claude Code', icon: siClaude.path, hex: siClaude.hex },
+	{ name: 'Cursor', icon: siCursor.path, hex: siCursor.hex },
 	{ name: 'Node.js', icon: siNodedotjs.path, hex: siNodedotjs.hex },
 	{ name: 'Express', icon: siExpress.path, hex: siExpress.hex },
 	{ name: 'WebSockets', icon: siSocketdotio.path, hex: siSocketdotio.hex },
