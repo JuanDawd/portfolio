@@ -172,7 +172,12 @@ export const educationList = [
 export const certificationList = [
 	{ name: 'Frontend Developer (React)', issuer: 'HackerRank', year: '2025' },
 	{ name: 'JavaScript (Intermediate)', issuer: 'HackerRank', year: '2025' },
-	{ name: 'JavaScript (Basic)', issuer: 'HackerRank', year: '2025' },
+	{
+		name: 'JavaScript (Basic)',
+		issuer: 'HackerRank',
+		year: '2025',
+		hidden: true, // superseded by JavaScript (Intermediate)
+	},
 	{ name: 'English Speaking Level Test', issuer: 'SmallTalk2Me', year: '2024' },
 	{ name: 'Learn to Code with Ruby', issuer: 'Udemy', year: '2021' },
 	{
