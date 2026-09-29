@@ -90,7 +90,14 @@ export const experienceList = [
 			'Structured the UI as an Atomic Design component library (atoms → molecules → organisms → templates), documented in Storybook.',
 			'Worked in a 3-person team on a React 17 + MUI v5 app with React Hook Form and Zod.',
 		],
-		techStack: ['React', 'MUI', 'React Hook Form', 'Zod', 'Storybook', 'Swiper'],
+		techStack: [
+			'React',
+			'MUI',
+			'React Hook Form',
+			'Zod',
+			'Storybook',
+			'Swiper',
+		],
 	},
 	{
 		position: 'Full-Stack Developer',
@@ -170,51 +177,90 @@ export const educationList = [
 ]
 
 export const certificationList = [
-	{ name: 'Frontend Developer (React)', issuer: 'HackerRank', year: '2025' },
-	{ name: 'JavaScript (Intermediate)', issuer: 'HackerRank', year: '2025' },
-	{ name: 'JavaScript (Basic)', issuer: 'HackerRank', year: '2025' },
-	{ name: 'English Speaking Level Test', issuer: 'SmallTalk2Me', year: '2024' },
-	{ name: 'Learn to Code with Ruby', issuer: 'Udemy', year: '2021' },
-	{ name: 'Business Process Modeling', issuer: 'Avaya', year: '2018' },
-	{ name: 'React (Basic)', issuer: 'HackerRank', year: '2022' },
+	{
+		name: 'Frontend Developer (React)',
+		issuer: 'HackerRank',
+		year: '2025',
+		url: 'https://www.hackerrank.com/certificates/9fc4057ac68d',
+	},
+	{
+		name: 'JavaScript (Intermediate)',
+		issuer: 'HackerRank',
+		year: '2025',
+		url: 'https://www.hackerrank.com/certificates/54fec5464786',
+	},
+	{
+		name: 'JavaScript (Basic)',
+		issuer: 'HackerRank',
+		year: '2025',
+		url: 'https://www.hackerrank.com/certificates/3b5755476aba',
+		hidden: true, // superseded by JavaScript (Intermediate)
+	},
+	{
+		name: 'English Speaking Level Test',
+		issuer: 'SmallTalk2Me',
+		year: '2024',
+		url: 'https://app.smalltalk2.me/cert/2a03cb19',
+	},
+	{
+		name: 'Learn to Code with Ruby',
+		issuer: 'Udemy',
+		year: '2021',
+		url: 'https://www.udemy.com/certificate/UC-19154019-547e-4a7e-bf2c-7cde9a5e3ee4/',
+		hidden: true,
+	},
+	{
+		name: 'Business Process Modeling',
+		issuer: 'Avaya',
+		year: '2018',
+		hidden: true, // kept on record, not shown on the site
+	},
+	{
+		name: 'React (Basic)',
+		issuer: 'HackerRank',
+		year: '2022',
+		url: 'https://www.hackerrank.com/certificates/917d335a6e8d',
+		hidden: true,
+	},
 ]
 
 type Skill = { name: string; icon: string | undefined; hex: string }
 
 export const skillsList: Skill[] = [
+	// Grouped by area: frontend, mobile, backend/data, testing, cloud/tooling, AI
 	{ name: 'React', icon: siReact.path, hex: siReact.hex },
 	{ name: 'Next.js', icon: siNextdotjs.path, hex: siNextdotjs.hex },
 	{ name: 'Angular', icon: siAngular.path, hex: siAngular.hex },
-	{ name: 'Flutter', icon: siFlutter.path, hex: siFlutter.hex },
-	{ name: 'Framer Motion', icon: siFramer.path, hex: siFramer.hex },
+	{ name: 'TypeScript', icon: siTypescript.path, hex: siTypescript.hex },
+	{ name: 'JavaScript', icon: siJavascript.path, hex: siJavascript.hex },
 	{ name: 'Redux', icon: siRedux.path, hex: siRedux.hex },
 	{ name: 'TanStack Query', icon: siReactquery.path, hex: siReactquery.hex },
 	{ name: 'Zod', icon: siZod.path, hex: siZod.hex },
 	{ name: 'Tailwind CSS', icon: siTailwindcss.path, hex: siTailwindcss.hex },
 	{ name: 'Sass', icon: siSass.path, hex: siSass.hex },
+	{ name: 'Framer Motion', icon: siFramer.path, hex: siFramer.hex },
+	{ name: 'Vite', icon: siVite.path, hex: siVite.hex },
+	{ name: 'Storybook', icon: siStorybook.path, hex: siStorybook.hex },
+	{ name: 'Flutter', icon: siFlutter.path, hex: siFlutter.hex },
+	{ name: 'Dart', icon: siDart.path, hex: siDart.hex },
+	{ name: 'Node.js', icon: siNodedotjs.path, hex: siNodedotjs.hex },
+	{ name: 'Express', icon: siExpress.path, hex: siExpress.hex },
+	{ name: 'WebSockets', icon: siSocketdotio.path, hex: siSocketdotio.hex },
 	{ name: 'PostgreSQL', icon: siPostgresql.path, hex: siPostgresql.hex },
-	{ name: 'MongoDB', icon: siMongodb.path, hex: siMongodb.hex },
 	{ name: 'MySQL', icon: siMysql.path, hex: siMysql.hex },
+	{ name: 'MongoDB', icon: siMongodb.path, hex: siMongodb.hex },
 	{ name: 'Firebase', icon: siFirebase.path, hex: siFirebase.hex },
 	{ name: 'DrizzleORM', icon: siDrizzle.path, hex: siDrizzle.hex },
 	{ name: 'Prisma', icon: siPrisma.path, hex: siPrisma.hex },
-	{ name: 'TypeScript', icon: siTypescript.path, hex: siTypescript.hex },
-	{ name: 'JavaScript', icon: siJavascript.path, hex: siJavascript.hex },
-	{ name: 'Dart', icon: siDart.path, hex: siDart.hex },
-	{ name: 'Vite', icon: siVite.path, hex: siVite.hex },
-	{ name: 'Git', icon: siGit.path, hex: siGit.hex },
-	{ name: 'Docker', icon: siDocker.path, hex: siDocker.hex },
-	{ name: 'Storybook', icon: siStorybook.path, hex: siStorybook.hex },
 	{ name: 'Vitest', icon: siVitest.path, hex: siVitest.hex },
 	{ name: 'Jest', icon: siJest.path, hex: siJest.hex },
+	{ name: 'Git', icon: siGit.path, hex: siGit.hex },
+	{ name: 'Docker', icon: siDocker.path, hex: siDocker.hex },
 	{ name: 'AWS', icon: undefined, hex: 'FF9900' },
 	{ name: 'Google Cloud', icon: siGooglecloud.path, hex: siGooglecloud.hex },
 	{ name: 'Figma', icon: siFigma.path, hex: siFigma.hex },
 	{ name: 'Claude Code', icon: siClaude.path, hex: siClaude.hex },
 	{ name: 'Cursor', icon: siCursor.path, hex: siCursor.hex },
-	{ name: 'Node.js', icon: siNodedotjs.path, hex: siNodedotjs.hex },
-	{ name: 'Express', icon: siExpress.path, hex: siExpress.hex },
-	{ name: 'WebSockets', icon: siSocketdotio.path, hex: siSocketdotio.hex },
 ]
 
 export type Project = {
@@ -263,7 +309,14 @@ export const projectsList: Project[] = [
 		image: '/2026/projects/amatis.png',
 		deployment: 'https://app.amatiscontrols.com/sites/',
 		github: undefined,
-		technologies: ['Next.js', 'Node.js', 'MySQL', 'MQTT', 'AWS', 'GitLab CI/CD'],
+		technologies: [
+			'Next.js',
+			'Node.js',
+			'MySQL',
+			'MQTT',
+			'AWS',
+			'GitLab CI/CD',
+		],
 		relatedExperience: 'Melt Studio',
 	},
 	{
