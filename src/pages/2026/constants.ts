@@ -145,6 +145,12 @@ export const experienceList = [
 	},
 ]
 
+export const experienceAnchor = (company: string) =>
+	`experience-${company
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-|-$/g, '')}`
+
 export const educationList = [
 	{
 		degree: "Master's Degree in Software Engineering and Computer Systems",
@@ -213,6 +219,8 @@ export type Project = {
 	deployment: string | undefined
 	github: string | undefined
 	technologies: string[]
+	// Company (as named in experienceList) whose job this project belongs to
+	relatedExperience?: string
 }
 
 export const projectsList: Project[] = [
@@ -222,7 +230,7 @@ export const projectsList: Project[] = [
 		role: 'Fullstack',
 		description:
 			'Salon-and-workshop operations platform replacing WhatsApp + Excel for LATAM SMBs. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
-		image: undefined,
+		image: '/2026/projects/befine.png',
 		deployment: undefined,
 		github: undefined,
 		technologies: [
@@ -248,6 +256,7 @@ export const projectsList: Project[] = [
 		deployment: 'https://app.amatiscontrols.com/sites/',
 		github: undefined,
 		technologies: ['Next.js', 'Node.js', 'MySQL', 'MQTT', 'AWS', 'GitLab CI/CD'],
+		relatedExperience: 'Melt Studio',
 	},
 	{
 		title: 'Droguería Uno A',
@@ -255,7 +264,7 @@ export const projectsList: Project[] = [
 		role: 'Frontend',
 		description:
 			'Public website for a pharmacy in Maicao, Colombia: services, schedule, promotions, testimonials, and a WhatsApp contact flow. Built with React 19, Vite, and Tailwind CSS v4 on Radix UI components, deployed on Vercel behind Cloudflare DNS.',
-		image: undefined,
+		image: '/2026/projects/drogueria.png',
 		deployment: 'https://www.drogueria-uno-a.com',
 		github: undefined,
 		technologies: ['React', 'Vite', 'Tailwind CSS', 'Radix UI', 'Vercel', 'Cloudflare'],
@@ -266,7 +275,7 @@ export const projectsList: Project[] = [
 		role: 'DevOps',
 		description:
 			'Self-hosted, Bitwarden-compatible password manager running in Docker on a Raspberry Pi at home. Exposed only through a Cloudflare Tunnel gated by Cloudflare Access (no open ports), with SQLite daily backups, SMTP for invites, and SSH access through the same tunnel. Diagnosed and fixed an ISP-level block on outbound SMTP ports by moving to implicit TLS on 465.',
-		image: undefined,
+		image: '/2026/projects/vaultwarden.svg',
 		deployment: undefined,
 		github: undefined,
 		technologies: [
@@ -288,6 +297,7 @@ export const projectsList: Project[] = [
 		deployment: 'https://www.overnights.com/',
 		github: undefined,
 		technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Vite'],
+		relatedExperience: 'Overnights Technologies Inc',
 	},
 	{
 		title: 'Selii',
@@ -295,7 +305,7 @@ export const projectsList: Project[] = [
 		role: 'Frontend',
 		description:
 			'Multi-tenant e-commerce storefront with slug-based business routing, product catalog, promotions, cart, and category filtering. Atomic design system (atoms → molecules → organisms) built with MUI v5 and documented in Storybook.',
-		image: undefined,
+		image: '/2025/projects/selii.png',
 		deployment: undefined,
 		github: undefined,
 		technologies: [
@@ -306,6 +316,7 @@ export const projectsList: Project[] = [
 			'Storybook',
 			'Swiper',
 		],
+		relatedExperience: 'Selii',
 	},
 	{
 		title: 'Faceself',
@@ -325,6 +336,7 @@ export const projectsList: Project[] = [
 			'Chart.js',
 			'Formik',
 		],
+		relatedExperience: 'Faceself',
 	},
 	{
 		title: 'Guarapo Blocks API',

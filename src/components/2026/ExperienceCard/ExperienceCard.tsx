@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
-import { experienceList } from '@/pages/2026/constants'
+import { experienceList, experienceAnchor } from '@/pages/2026/constants'
 
 export function ExperienceCard() {
 	return (
@@ -10,7 +10,7 @@ export function ExperienceCard() {
 			</h2>
 			<div className="flex flex-col gap-3 overflow-y-auto">
 				{experienceList.map((exp, i) => (
-					<div key={exp.company}>
+					<div key={exp.company} id={experienceAnchor(exp.company)} className="scroll-mt-24">
 						<div className="flex items-baseline justify-between gap-2">
 							<div className="min-w-0">
 								<h3 className="truncate font-semibold">{exp.position}</h3>
