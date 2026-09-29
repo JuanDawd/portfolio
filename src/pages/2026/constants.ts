@@ -32,11 +32,11 @@ import {
 } from 'simple-icons'
 
 export const biography =
-	'Full-Stack Developer with 8+ years of experience architecting and shipping production-grade web and mobile applications. Deep expertise in the React/Next.js ecosystem, with hands-on experience leading monorepo development, designing real-time data pipelines (Redis, MQTT, SSE), and owning CI/CD automation. Proven track record delivering end-to-end SaaS products independently and leading small engineering teams.'
+	'Full-Stack Developer with 4+ years of experience architecting and shipping production-grade web and mobile applications. Deep expertise in the React/Next.js ecosystem, with hands-on experience leading monorepo development, designing real-time data pipelines (Redis, MQTT, SSE), and owning CI/CD automation. Proven track record delivering end-to-end SaaS products independently and leading small engineering teams.'
 
 export const experienceList = [
 	{
-		position: 'Software Developer',
+		position: 'Full-Stack Developer',
 		company: 'Melt Studio',
 		companyLink: 'https://www.meltstudio.co/',
 		time: 'Mar 2024 - Present',
@@ -64,10 +64,10 @@ export const experienceList = [
 		],
 	},
 	{
-		position: 'Fullstack Developer',
+		position: 'Full-Stack Developer',
 		company: 'Overnights Technologies Inc',
 		companyLink: 'https://overnights.com/',
-		time: 'Jul 2023 - Oct 2023',
+		time: 'Jul 2023 - Dec 2023',
 		description: [
 			'Designed and optimized scalable RESTful APIs supporting cross-platform web and mobile clients.',
 			'Profiled and tuned backend services, reducing API latency and improving horizontal scalability.',
@@ -76,41 +76,63 @@ export const experienceList = [
 		techStack: ['React', 'Node.js', 'TypeScript', 'MongoDB', 'Vite'],
 	},
 	{
-		position: 'Mobile Developer',
-		company: 'Faceself',
+		position: 'Frontend Developer',
+		company: 'Selii',
 		companyLink: '',
-		time: 'Feb 2022 - Dec 2022',
+		time: 'Dec 2022 - Jul 2023',
 		description: [
-			'Built a cross-platform iOS/Android wellness app with 20+ screens using React + Ionic + Capacitor.',
-			'Implemented JWT auth flow, Chart.js analytics dashboard, and profile management screens.',
-			'Added offline support via Workbox service worker and integrated Redux Toolkit for state management.',
+			'Built the multi-tenant e-commerce storefront with slug-based business routing: per-business catalog, promotions, featured products, category filtering, and cart.',
+			'Structured the UI as an Atomic Design component library (atoms → molecules → organisms → templates), documented in Storybook.',
+			'Worked in a 3-person team on a React 17 + MUI v5 app with React Hook Form and Zod.',
 		],
-		techStack: ['React', 'Ionic', 'Capacitor', 'TypeScript', 'Redux', 'Chart.js', 'Formik'],
+		techStack: ['React', 'MUI', 'React Hook Form', 'Zod', 'Storybook', 'Swiper'],
 	},
 	{
-		position: 'Fullstack Developer',
-		company: 'CheeseOkay',
+		position: 'Full-Stack Developer',
+		company: 'Lácteos Mileto SAS (CheeseOkay)',
 		companyLink: '',
 		time: 'Feb 2022 - Dec 2022',
 		description: [
-			'Led migration from a legacy Angular 12 web app to a mobile-first Angular + Ionic + Capacitor rebuild after evaluating the original architecture.',
-			'Designed and implemented 20+ backend domain modules (products, stores, cart, orders, memberships, coupons, wholesale pricing) with Express + Sequelize + MySQL/PostgreSQL.',
-			'Integrated third-party services: ePayco (payments), Siigo (invoicing/accounting), Cloudinary (image hosting), Firebase Admin, and SendGrid.',
-			'Built the Ionic app with separate backoffice and customer-facing sections, targeting Android via Capacitor.',
+			'Worked on legacy code for a social e-commerce platform, migrating it to Angular 13.2 and adding PWA capabilities.',
+			'Upgraded the codebase to Angular 14 and helped move the product to a mobile-first Ionic PWA.',
+			'Implemented backend domain modules (products, cart, coupons, stores, addresses, discounts, purchases) with Express + TypeScript + Sequelize on MySQL/PostgreSQL, plus Cloudinary image uploads.',
 		],
 		techStack: [
 			'Angular',
 			'Ionic',
-			'Capacitor',
+			'PWA',
 			'Express',
 			'TypeScript',
 			'Sequelize',
 			'MySQL',
 			'PostgreSQL',
+			'Cloudinary',
 		],
 	},
 	{
-		position: 'Fullstack Developer',
+		position: 'Frontend Developer',
+		company: 'Faceself',
+		companyLink: '',
+		time: 'Feb 2022 - Dec 2022',
+		description: [
+			'Built a cross-platform iOS/Android wellness app (20+ screens) with React, Ionic and Capacitor: onboarding, auth, dashboard, profile and progress flows.',
+			'Implemented JWT auth with Formik + Yup validation, Redux Toolkit state management, and a Chart.js analytics view for user history.',
+			'Added PWA offline support with Workbox and a CI pipeline (GitHub Actions: ESLint, type-check, Jest) with pre-commit hooks.',
+		],
+		techStack: [
+			'React',
+			'Ionic',
+			'Capacitor',
+			'TypeScript',
+			'Redux',
+			'Chart.js',
+			'Formik',
+			'Yup',
+			'Workbox',
+		],
+	},
+	{
+		position: 'Full-Stack Developer',
 		company: 'Startup Doc.tors',
 		companyLink: '',
 		time: 'Jun 2020 - Nov 2020',
@@ -125,7 +147,7 @@ export const experienceList = [
 
 export const educationList = [
 	{
-		degree: "Master's Degree in Software Engineering",
+		degree: "Master's Degree in Software Engineering and Computer Systems",
 		institution: 'UNIR - Universidad Internacional de La Rioja',
 		time: '2023 - 2025',
 	},
@@ -141,8 +163,8 @@ export const certificationList = [
 	{ name: 'JavaScript (Intermediate)', issuer: 'HackerRank', year: '2025' },
 	{ name: 'JavaScript (Basic)', issuer: 'HackerRank', year: '2025' },
 	{ name: 'English Speaking Level Test', issuer: 'SmallTalk2Me', year: '2024' },
-	{ name: 'Learn to Code with Ruby', issuer: 'Udemy', year: '2023' },
-	{ name: 'Business Process Modeling', issuer: 'Avaya', year: '2023' },
+	{ name: 'Learn to Code with Ruby', issuer: 'Udemy', year: '2021' },
+	{ name: 'Business Process Modeling', issuer: 'Avaya', year: '2018' },
 	{ name: 'React (Basic)', issuer: 'HackerRank', year: '2022' },
 ]
 
@@ -217,6 +239,46 @@ export const projectsList: Project[] = [
 		],
 	},
 	{
+		title: 'Amatis',
+		type: 'Client Work',
+		role: 'Fullstack',
+		description:
+			'IoT lighting control platform for commercial buildings, built for the client Amatis through Melt Studio. Integration tokens API, Ports Tuning and firmware update flows, device management, and a web + mobile control app on a Next.js and Node.js monorepo.',
+		image: '/2026/projects/amatis.png',
+		deployment: 'https://app.amatiscontrols.com/sites/',
+		github: undefined,
+		technologies: ['Next.js', 'Node.js', 'MySQL', 'MQTT', 'AWS', 'GitLab CI/CD'],
+	},
+	{
+		title: 'Droguería Uno A',
+		type: 'Freelance',
+		role: 'Frontend',
+		description:
+			'Public website for a pharmacy in Maicao, Colombia: services, schedule, promotions, testimonials, and a WhatsApp contact flow. Built with React 19, Vite, and Tailwind CSS v4 on Radix UI components, deployed on Vercel behind Cloudflare DNS.',
+		image: undefined,
+		deployment: 'https://www.drogueria-uno-a.com',
+		github: undefined,
+		technologies: ['React', 'Vite', 'Tailwind CSS', 'Radix UI', 'Vercel', 'Cloudflare'],
+	},
+	{
+		title: 'Self-Hosted Infrastructure (Vaultwarden)',
+		type: 'Personal',
+		role: 'DevOps',
+		description:
+			'Self-hosted, Bitwarden-compatible password manager running in Docker on a Raspberry Pi at home. Exposed only through a Cloudflare Tunnel gated by Cloudflare Access (no open ports), with SQLite daily backups, SMTP for invites, and SSH access through the same tunnel. Diagnosed and fixed an ISP-level block on outbound SMTP ports by moving to implicit TLS on 465.',
+		image: undefined,
+		deployment: undefined,
+		github: undefined,
+		technologies: [
+			'Docker',
+			'Cloudflare Tunnel',
+			'Cloudflare Access',
+			'Linux',
+			'SQLite',
+			'Self-hosting',
+		],
+	},
+	{
 		title: 'Overnights',
 		type: 'Freelance',
 		role: 'Fullstack',
@@ -226,24 +288,6 @@ export const projectsList: Project[] = [
 		deployment: 'https://www.overnights.com/',
 		github: undefined,
 		technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Vite'],
-	},
-	{
-		title: 'Guarapo Blocks API',
-		type: 'Open Source',
-		role: 'Fullstack',
-		description:
-			'REST API and documentation system for a UI component blocks library. Full OpenAPI spec, PostgreSQL via Prisma, and a comprehensive Jest test suite.',
-		image: '/2025/projects/GuarapoSSR.png',
-		deployment: 'https://guarapo-ssr.vercel.app/docs',
-		github: 'https://github.com/JuanDawd/guarapo-ssr/tree/main',
-		technologies: [
-			'Next.js',
-			'TypeScript',
-			'Prisma',
-			'PostgreSQL',
-			'Jest',
-			'OpenAPI',
-		],
 	},
 	{
 		title: 'Selii',
@@ -283,15 +327,22 @@ export const projectsList: Project[] = [
 		],
 	},
 	{
-		title: 'Amatis',
-		type: 'Client Work',
+		title: 'Guarapo Blocks API',
+		type: 'Open Source',
 		role: 'Fullstack',
 		description:
-			'IoT lighting control platform for commercial buildings, built for the client Amatis through Melt Studio. Integration tokens API, Ports Tuning and firmware update flows, device management, and a web + mobile control app on a Next.js and Node.js monorepo.',
-		image: '/2026/projects/amatis.png',
-		deployment: 'https://app.amatiscontrols.com/sites/',
-		github: undefined,
-		technologies: ['Next.js', 'Node.js', 'MySQL', 'MQTT', 'AWS', 'GitLab CI/CD'],
+			'REST API and documentation system for a UI component blocks library. Full OpenAPI spec, PostgreSQL via Prisma, and a comprehensive Jest test suite.',
+		image: '/2025/projects/GuarapoSSR.png',
+		deployment: 'https://guarapo-ssr.vercel.app/docs',
+		github: 'https://github.com/JuanDawd/guarapo-ssr/tree/main',
+		technologies: [
+			'Next.js',
+			'TypeScript',
+			'Prisma',
+			'PostgreSQL',
+			'Jest',
+			'OpenAPI',
+		],
 	},
 ]
 
