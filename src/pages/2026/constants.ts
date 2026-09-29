@@ -177,19 +177,36 @@ export const educationList = [
 ]
 
 export const certificationList = [
-	{ name: 'Frontend Developer (React)', issuer: 'HackerRank', year: '2025' },
-	{ name: 'JavaScript (Intermediate)', issuer: 'HackerRank', year: '2025' },
+	{
+		name: 'Frontend Developer (React)',
+		issuer: 'HackerRank',
+		year: '2025',
+		url: 'https://www.hackerrank.com/certificates/9fc4057ac68d',
+	},
+	{
+		name: 'JavaScript (Intermediate)',
+		issuer: 'HackerRank',
+		year: '2025',
+		url: 'https://www.hackerrank.com/certificates/54fec5464786',
+	},
 	{
 		name: 'JavaScript (Basic)',
 		issuer: 'HackerRank',
 		year: '2025',
+		url: 'https://www.hackerrank.com/certificates/3b5755476aba',
 		hidden: true, // superseded by JavaScript (Intermediate)
 	},
-	{ name: 'English Speaking Level Test', issuer: 'SmallTalk2Me', year: '2024' },
+	{
+		name: 'English Speaking Level Test',
+		issuer: 'SmallTalk2Me',
+		year: '2024',
+		url: 'https://app.smalltalk2.me/cert/2a03cb19',
+	},
 	{
 		name: 'Learn to Code with Ruby',
 		issuer: 'Udemy',
 		year: '2021',
+		url: 'https://www.udemy.com/certificate/UC-19154019-547e-4a7e-bf2c-7cde9a5e3ee4/',
 		hidden: true,
 	},
 	{
@@ -198,7 +215,13 @@ export const certificationList = [
 		year: '2018',
 		hidden: true, // kept on record, not shown on the site
 	},
-	{ name: 'React (Basic)', issuer: 'HackerRank', year: '2022', hidden: true },
+	{
+		name: 'React (Basic)',
+		issuer: 'HackerRank',
+		year: '2022',
+		url: 'https://www.hackerrank.com/certificates/917d335a6e8d',
+		hidden: true,
+	},
 ]
 
 type Skill = { name: string; icon: string | undefined; hex: string }
