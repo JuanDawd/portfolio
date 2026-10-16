@@ -61,6 +61,7 @@ import type { YearDefinition } from '@/years'
 export default {
 	year: '$ARGUMENTS',
 	draft: true,
+	// ogImage: '/$ARGUMENTS/og-image.jpg', // 1200×630 in public/; defaults to /og-image.jpg
 	pages: [
 		{
 			path: '',
@@ -164,6 +165,15 @@ own (`grep stylesheet dist/$ARGUMENTS/index.html`).
    wording (e.g. `'Juan Dawd | PREV Portfolio'`). Don't touch its content otherwise.
 4. Make sure the new year's navbar links to the archive: render
    `otherYears('$ARGUMENTS').map(y => <a href={yearHref(y)}>{y}</a>)`.
-5. Update the "current default" line in `CLAUDE.md` (Routes section).
-6. Build and verify as in step 2, then also check `/PREV` renders and `dist/sitemap.xml`
-   lists `/`, `/PREV` and older years.
+5. Social preview: `/og-image.jpg` shows PREV's design. Either replace it with one in the
+   new year's style (1200×630), or add `public/$ARGUMENTS/og-image.jpg` and set
+   `ogImage` in the new year's `year.ts`. The build fails if `ogImage` points at a
+   missing file. PREV keeps whatever its `year.ts` says, so give PREV an `ogImage`
+   with the old image (e.g. `/PREV/og-image.jpg`) if it should keep it.
+6. Update the "currently {year}" note in `CLAUDE.md` (Routes line).
+7. Build and verify as in step 2, then also check:
+   - `/PREV` renders and `dist/sitemap.xml` lists `/`, `/PREV` and older years.
+   - The 404 page (`/does-not-exist`) — it is shared (`src/components/shared/NotFoundPage`)
+     and now renders in the new year's layout and tokens, so check it in light and dark.
+     If it needs a different look, give the year its own NotFound page rather than
+     restyling the shared one.

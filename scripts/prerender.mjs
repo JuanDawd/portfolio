@@ -3,6 +3,7 @@
 // chunks of its year, and its rendered markup inside #root, which main.tsx then
 // hydrates. Also writes sitemap.xml. The page list comes from the year registry
 // (src/years.ts), so new years and pages are picked up automatically.
+import { existsSync } from 'node:fs'
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
@@ -56,10 +57,18 @@ function replaceOnce(html, pattern, replacement) {
 	return html.replace(pattern, replacement)
 }
 
-function applyHead(html, { title, description, path, noindex }) {
+function applyHead(html, { title, description, path, noindex, ogImage }) {
 	const url = `${SITE_URL}${path}`
 	const t = escape(title)
 	const d = escape(description)
+	if (ogImage) {
+		if (!existsSync(resolve(distDir, `.${ogImage}`))) {
+			throw new Error(`prerender: ogImage ${ogImage} (${path}) is not in public/`)
+		}
+		const image = escape(`${SITE_URL}${ogImage}`)
+		html = replaceOnce(html, /(<meta property="og:image" content=")[^"]*/, `$1${image}`)
+		html = replaceOnce(html, /(<meta name="twitter:image" content=")[^"]*/, `$1${image}`)
+	}
 	html = replaceOnce(html, /<title>.*?<\/title>/, `<title>${t}</title>`)
 	html = replaceOnce(html, /(<meta name="description" content=")[^"]*/, `$1${d}`)
 	html = replaceOnce(html, /(<link rel="canonical" href=")[^"]*/, `$1${url}`)

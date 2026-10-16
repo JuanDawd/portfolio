@@ -3,6 +3,10 @@ import { CURRENT_YEAR, otherYears, yearHref, years } from './years'
 import { routePages } from './lib/seo'
 
 const modules = import.meta.glob('./pages/*/*.tsx')
+// URL paths of the images in public/ ('/public/og-image.jpg' → '/og-image.jpg')
+const publicFiles = Object.keys(import.meta.glob('/public/**/*.{jpg,jpeg,png,webp}')).map((f) =>
+	f.replace(/^\/public/, ''),
+)
 
 describe('year registry', () => {
 	it('serves the current year at the root and others under /{year}', () => {
@@ -24,6 +28,14 @@ describe('year registry', () => {
 	it('has unique page URLs', () => {
 		const paths = routePages().map((p) => p.meta.path)
 		expect(new Set(paths).size).toBe(paths.length)
+	})
+
+	it('points ogImage at a file in public/', () => {
+		for (const { year, ogImage } of years) {
+			if (!ogImage) continue
+			expect(ogImage, `${year} ogImage`).toMatch(/^\/.+\.(jpe?g|png|webp)$/)
+			expect(publicFiles, `${year} ogImage`).toContain(ogImage)
+		}
 	})
 
 	it('links only to published years', () => {
