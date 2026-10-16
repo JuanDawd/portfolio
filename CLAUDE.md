@@ -22,30 +22,36 @@ pnpm dlx shadcn@latest add <component>
 
 ### Multi-year scoping
 
-Each portfolio version is fully self-contained under a year namespace:
+Each portfolio year is a self-contained app inside a shared shell:
 
-- **Routes**: `/` → 2026 portfolio (current default), `/2025` → 2025 portfolio
-- **Components**: `src/components/{year}/` — year-specific components and local UI overrides
-- **Pages + data**: `src/pages/{year}/` — layouts, page components, and a `constants.ts` that holds all content data (bio, experience, projects, skills, certifications)
-- **Shared UI**: `src/components/ui/` — ShadcnUI-generated Radix primitives; committed to source, not generated at build time
+- **Registry**: `src/years.ts` discovers years from `src/pages/*/year.ts` (pages, titles, descriptions, `draft` flag). Routes (`src/App.tsx`), prerendered pages, the sitemap and navbar year links are all derived from it — no other place lists years.
+- **Routes**: `/` → `CURRENT_YEAR` (currently 2026), every other year at `/{year}`. Unknown URLs render the shared 404 inside the current year's layout.
+- **Pages + data**: `src/pages/{year}/` — `year.ts`, `Layout.tsx`, page components, `styles.css` and a `constants.ts` with the year's content
+- **Components**: `src/components/{year}/` — year-specific components (forked primitives go in `src/components/{year}/ui/`)
+- **Shared**: `src/components/ui/` (shadcn, styled only via tokens), `src/components/shared/` (icons, 404), `src/lib/`, `src/hooks/` — only code used by 2+ years
+- **Independence rules**: a year never imports another year's code. Cross-year links are plain `<a href={yearHref(year)}>` (full page load, so only one year's stylesheet is active); never hardcode year URLs — use `yearHref` / `otherYears` / `CURRENT_YEAR`. Past years are frozen snapshots.
 
-Adding a new year means creating a new route scope with its own component tree and constants — use the `/new-portfolio-year` skill for scaffolding.
+Adding or launching a year: use the `/new-portfolio-year` skill.
 
-### Routing
+### Build and prerendering
 
-Defined in `src/main.tsx` using React Router. Each year has a `Layout` component as the route wrapper with nested page routes.
+`pnpm build` = type-check → client build → SSR build of `src/entry-server.tsx` → `scripts/prerender.mjs`, which writes static HTML for every registry page (own `<head>`, the year's CSS and chunk preloads), `404.html` and `sitemap.xml`. `src/main.tsx` hydrates that HTML (or renders from scratch in dev). Per-page meta lives in `year.ts`; `usePageMeta` keeps the head in sync on client navigation.
+
+Preview a build with `npx serve dist` — it resolves routes and `404.html` like Vercel. `pnpm preview` falls back to the home page for every URL.
 
 ### Theme system
 
-A custom `ThemeProvider` lives in `src/lib/theme.tsx` (shared) and is re-exported per year via `src/components/{year}/theme-provider.tsx`. It handles `light`/`dark`/`system` modes using `localStorage` + `document.documentElement.classList`. Does **not** use `next-themes`.
+A custom `ThemeProvider` lives in `src/lib/theme.tsx` (shared; layouts import it directly). It handles `light`/`dark`/`system` modes using `localStorage` + the `dark` class on `<html>`, which an inline script in `index.html` sets before first paint. Does **not** use `next-themes`.
 
 ### CSS
 
-Tailwind v4 via `@tailwindcss/vite` plugin — config is CSS-native inside `src/index.css` using `@theme`. CSS variables use `oklch()` color space. Breakpoints are **desktop-first max-width** custom variants (`lg`, `md`, `sm`, `xs`) defined in `index.css` — this is intentional for 2025 compatibility, opposite to Tailwind's default mobile-first approach.
+Tailwind v4 via `@tailwindcss/vite`, CSS-native config. **Each year has its own Tailwind build** in `src/pages/{year}/styles.css` (imported by its Layout, so it only loads on that year's routes): `@import 'tailwindcss' source(none)`, the shared base `src/styles/shared.css` (token → utility mapping, neutral default tokens, shadcn variants, base layer), `@source` lines for the folders it uses, its fonts, and its design tokens on `:root` / `.dark` (`oklch()`).
+
+Breakpoints are per year: 2025 and 2026 import `src/styles/breakpoints-desktop-first.css` (max-width variants: `md:` means 767px and below). A year that doesn't import it gets Tailwind's default mobile-first breakpoints.
 
 ### Content data
 
-All portfolio content (bio, experience list, projects list, skills, certifications, social links) lives in `src/pages/{year}/constants.ts`. Updating portfolio content means editing only this file for that year.
+All portfolio content (bio, experience list, projects list, skills, certifications, social links) lives in `src/pages/{year}/constants.ts`; page titles/descriptions live in `src/pages/{year}/year.ts`. (2025 predates this and also keeps some content in `src/components/2025/*/Constants.ts`.)
 
 ### Skills icons
 
