@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { FramerImage } from '@/lib/FramerElements'
+import { FramerImage } from '@/components/2025/FramerElements'
 
 import type { ProjectSlideshowProps } from './ProjectSlideshow.types'
 

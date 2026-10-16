@@ -1,7 +1,7 @@
 import { Mail } from 'lucide-react'
 
-import { GithubIcon } from '@/components/icons/GithubIcon'
-import { LinkedInIcon } from '@/components/icons/LinkedInIcon'
+import { GithubIcon } from '@/components/shared/icons/GithubIcon'
+import { LinkedInIcon } from '@/components/shared/icons/LinkedInIcon'
 import { Button } from '@/components/ui/button'
 import { socialLinks } from '@/pages/2026/constants'
 

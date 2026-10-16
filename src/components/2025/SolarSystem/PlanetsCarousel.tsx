@@ -4,7 +4,7 @@ import {
 	Carousel,
 	CarouselContent,
 	CarouselItem,
-} from '@/components/2025/UI/carousel'
+} from '@/components/2025/ui/carousel'
 import { useEffect, useState } from 'react'
 
 export function PlanetsCarousel() {

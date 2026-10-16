@@ -1,10 +1,10 @@
 import { ExternalLink } from 'lucide-react'
 
 import { ProjectSlideshow } from '@/components/2025/ProjectSlideshow'
-import TooltipedElement from '@/components/2025/UI/TooltipedButton'
+import TooltipedElement from '@/components/2025/ui/TooltipedButton'
 
 import type { FeaturedProjectProps } from './projects.type'
-import { Button } from '@/components/2025/UI/button'
+import { Button } from '@/components/2025/ui/button'
 
 const FeaturedProject = ({
 	title,

@@ -1,0 +1,20 @@
+/*
+ * Desktop-first (max-width) breakpoints: `md:` means "767px and below".
+ * Opt-in per year — 2025 and 2026 are built on these. A year that doesn't
+ * import this file gets Tailwind's default mobile-first (min-width) breakpoints.
+ */
+@custom-variant 2xl (@media (max-width: 1535px));
+@custom-variant xl (@media (max-width: 1279px));
+@custom-variant lg (@media (max-width: 1023px));
+@custom-variant md (@media (max-width: 767px));
+@custom-variant sm (@media (max-width: 639px));
+@custom-variant xs (@media (max-width: 479px));
+
+@theme inline {
+	/* Remove default min-width breakpoints (replaced by the max-width variants above) */
+	--breakpoint-sm: initial;
+	--breakpoint-md: initial;
+	--breakpoint-lg: initial;
+	--breakpoint-xl: initial;
+	--breakpoint-2xl: initial;
+}

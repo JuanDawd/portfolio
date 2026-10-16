@@ -6,7 +6,7 @@ import {
 } from 'framer-motion'
 import { type ReactElement, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from '@/components/2025/UI/button'
+import { Button } from '@/components/2025/ui/button'
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const FramerImage = motion.img

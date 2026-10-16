@@ -2,15 +2,15 @@ import { useSyncExternalStore } from 'react'
 import { motion } from 'framer-motion'
 import { useTheme } from '@/lib/theme'
 import { MoonStar, Sun, ArrowLeft } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { CURRENT_YEAR, yearHref } from '@/years'
 
-import { GithubIcon } from '@/components/icons/GithubIcon'
-import { LinkedInIcon } from '@/components/icons/LinkedInIcon'
+import { GithubIcon } from '@/components/shared/icons/GithubIcon'
+import { LinkedInIcon } from '@/components/shared/icons/LinkedInIcon'
 
 import CustomMobileLink from './CustomMobileLink'
 
 import type { MobileNavbarProps } from './Navbar.types'
-import { Button } from '../UI/button'
+import { Button } from '../ui/button'
 
 const emptySubscribe = () => () => {}
 
@@ -39,17 +39,17 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
 				className="flex min-w-[70vw] flex-col items-center justify-between gap-10 rounded-lg bg-background/50 py-20 backdrop-blur-md"
 			>
 				<nav className="flex flex-col items-center justify-center">
-					<Link
-						to="/"
+					<a
+						href={yearHref(CURRENT_YEAR)}
 						onClick={handleClick}
 						className="group relative my-2 flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
 					>
 						<ArrowLeft className="h-3.5 w-3.5" />
-						2026
-					</Link>
-					<CustomMobileLink href="/2025" title="Home" toggle={handleClick} />
+						{CURRENT_YEAR}
+					</a>
+					<CustomMobileLink href={yearHref('2025')} title="Home" toggle={handleClick} />
 					<CustomMobileLink
-						href="/2025/projects"
+						href={yearHref('2025', 'projects')}
 						title="Projects"
 						toggle={handleClick}
 					/>

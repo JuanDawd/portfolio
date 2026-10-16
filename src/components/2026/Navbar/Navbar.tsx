@@ -3,6 +3,7 @@ import { useTheme } from '@/lib/theme'
 import { Link } from 'react-router-dom'
 import { Moon, Sun } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { otherYears, yearHref } from '@/years'
 
 const emptySubscribe = () => () => {}
 
@@ -22,17 +23,22 @@ export function Navbar() {
 	return (
 		<header className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md">
 			<nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-				<Link to="/" className="text-lg font-bold tracking-tight">
+				<Link to={yearHref('2026')} className="text-lg font-bold tracking-tight">
 					JD
 				</Link>
 
 				<div className="flex items-center gap-4">
-					<Link
-						to="/2025"
-						className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-					>
-						2025
-					</Link>
+					{/* Plain <a>: switching years is a full page load, so only one
+					    year's stylesheet is ever active */}
+					{otherYears('2026').map((year) => (
+						<a
+							key={year}
+							href={yearHref(year)}
+							className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+						>
+							{year}
+						</a>
+					))}
 
 					{mounted && (
 						<Button

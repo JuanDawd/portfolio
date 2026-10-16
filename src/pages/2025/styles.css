@@ -1,0 +1,69 @@
+/*
+ * 2025 stylesheet — a self-contained Tailwind build for this year only.
+ * Loaded by pages/2025/Layout.tsx, so it ships only on 2025 routes.
+ * Cross-year links do a full page load, so only one year's CSS is ever active.
+ */
+@import 'tailwindcss' source(none);
+@import '../../styles/shared.css';
+@import '../../styles/breakpoints-desktop-first.css';
+@import '@fontsource-variable/geist';
+@import '@fontsource/roboto-mono/400.css';
+@import '@fontsource/share-tech-mono/index.css';
+
+/* Classes are generated only from these files */
+@source '../../components/ui';
+@source '../../components/shared';
+@source '../../components/2025';
+@source '.';
+
+@theme inline {
+	--font-sans: 'Geist Variable', sans-serif;
+	--font-rob: 'Roboto Mono', monospace;
+	--font-share-tech: 'Share Tech Mono', monospace;
+}
+
+/* Navy / red */
+:root {
+	--background: hsl(210 40% 96%);
+	--foreground: hsl(0 0% 0%);
+	--card: hsl(210 40% 96%);
+	--card-foreground: hsl(0 0% 0%);
+	--popover: hsl(210 40% 96%);
+	--popover-foreground: hsl(0 0% 0%);
+	--primary: hsl(226 57% 21%);
+	--primary-foreground: hsl(210 40% 96%);
+	--secondary: hsl(0 93% 88%);
+	--secondary-foreground: hsl(0 0% 0%);
+	--muted: hsl(210 39% 20%);
+	--muted-foreground: hsl(0 0% 70%);
+	--accent: hsl(240 100% 55%);
+	--accent-foreground: hsl(210 40% 96%);
+	--destructive: hsl(0 85% 60%);
+	--destructive-foreground: hsl(0 0% 0%);
+	--border: hsl(210 39% 20%);
+	--input: hsl(210 39% 20%);
+	--ring: hsl(240 100% 40%);
+	--radius: 0.5rem;
+}
+
+.dark {
+	--background: hsl(222 46% 11%);
+	--foreground: hsl(0 0% 100%);
+	--card: hsl(222 46% 11%);
+	--card-foreground: hsl(0 0% 100%);
+	--popover: hsl(222 46% 11%);
+	--popover-foreground: hsl(0 0% 100%);
+	--primary: hsl(0 100% 28%);
+	--primary-foreground: hsl(0 0% 100%);
+	--secondary: hsl(226 57% 21%);
+	--secondary-foreground: hsl(0 0% 100%);
+	--muted: hsl(222 45% 80%);
+	--muted-foreground: hsl(0 0% 100%);
+	--accent: hsl(0 100% 55%);
+	--accent-foreground: hsl(222 46% 11%);
+	--destructive: hsl(0 62% 30%);
+	--destructive-foreground: hsl(0 0% 10%);
+	--border: hsl(222 46% 60%);
+	--input: hsl(222 45% 80%);
+	--ring: hsl(0 100% 60%);
+}

@@ -2,12 +2,12 @@ import { useSyncExternalStore } from 'react'
 import { useTheme } from '@/lib/theme'
 import { motion } from 'framer-motion'
 import { MoonStar, Sun, ArrowLeft } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { CURRENT_YEAR, yearHref } from '@/years'
 
-import { GithubIcon } from '@/components/icons/GithubIcon'
-import { LinkedInIcon } from '@/components/icons/LinkedInIcon'
+import { GithubIcon } from '@/components/shared/icons/GithubIcon'
+import { LinkedInIcon } from '@/components/shared/icons/LinkedInIcon'
 import CustomLink from './CustomLink'
-import { Button } from '../UI/button'
+import { Button } from '../ui/button'
 
 const emptySubscribe = () => () => {}
 
@@ -31,15 +31,15 @@ const DesktopNavbar = () => {
 	return (
 		<div className="flex w-full items-center justify-between lg:hidden">
 			<nav className="flex items-center">
-				<Link
-					to="/"
+				<a
+					href={yearHref(CURRENT_YEAR)}
 					className="mr-6 flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
 				>
 					<ArrowLeft className="h-3.5 w-3.5" />
-					2026
-				</Link>
-				<CustomLink href="/2025" title="Home" className="mr-4" />
-				<CustomLink href="/2025/projects" title="Projects" className="ml-4" />
+					{CURRENT_YEAR}
+				</a>
+				<CustomLink href={yearHref('2025')} title="Home" className="mr-4" />
+				<CustomLink href={yearHref('2025', 'projects')} title="Projects" className="ml-4" />
 			</nav>
 
 			<nav className="flex flex-wrap items-center justify-center">

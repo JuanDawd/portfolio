@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 
 interface BentoCardProps {
@@ -7,6 +7,8 @@ interface BentoCardProps {
   colSpan?: 1 | 2 | 3 | 4
   rowSpan?: 1 | 2 | 3
   className?: string
+  // Disable the entrance animation for above-the-fold cards so they paint immediately (LCP)
+  animate?: boolean
 }
 
 const colSpanMap = {
@@ -27,10 +29,11 @@ export function BentoCard({
   colSpan = 1,
   rowSpan = 1,
   className = '',
+  animate = true,
 }: BentoCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
+    <m.div
+      initial={animate ? { opacity: 0, y: 20 } : false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -41,6 +44,6 @@ export function BentoCard({
       >
         {children}
       </Card>
-    </motion.div>
+    </m.div>
   )
 }

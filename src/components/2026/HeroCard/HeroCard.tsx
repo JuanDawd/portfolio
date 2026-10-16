@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { m } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import {
 	DropdownMenu,
@@ -12,28 +11,28 @@ import { ChevronDown, FileDown } from 'lucide-react'
 export function HeroCard() {
 	return (
 		<div className="flex h-full flex-col items-center justify-center gap-6 text-center">
-			<Avatar className="h-28 w-28 border-2 border-primary/20">
-				<AvatarImage src="/2025/profilePic.webp" alt="Juan Dawd" />
-				<AvatarFallback className="text-2xl">JD</AvatarFallback>
-			</Avatar>
+			{/* Plain <img> (not Radix Avatar) so the photo is in the prerendered HTML */}
+			<img
+				src="/2026/profile.webp"
+				alt="Juan Dawd"
+				width={112}
+				height={112}
+				fetchPriority="high"
+				className="h-28 w-28 rounded-full border-2 border-primary/20 object-cover"
+			/>
 
 			<div className="space-y-2">
-				<motion.h1
-					className="text-4xl font-bold tracking-tight sm:text-3xl"
-					initial={{ opacity: 0, y: 10 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 0.2 }}
-				>
+				<h1 className="text-4xl font-bold tracking-tight sm:text-3xl">
 					Juan Dawd
-				</motion.h1>
-				<motion.p
+				</h1>
+				<m.p
 					className="text-lg text-muted-foreground"
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.4 }}
 				>
 					Full-Stack Developer
-				</motion.p>
+				</m.p>
 			</div>
 
 			<div className="flex gap-3">

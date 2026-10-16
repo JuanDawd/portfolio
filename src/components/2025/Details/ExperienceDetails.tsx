@@ -1,4 +1,4 @@
-import { Label } from '../UI/label'
+import { Label } from '../ui/label'
 
 import DetailsWrapper from './DetailsWrapper'
 

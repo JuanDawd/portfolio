@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -13,22 +13,14 @@ export default defineConfig({
   build: {
     // Target modern browsers — smaller output, no legacy polyfills
     target: 'es2020',
+    // Lets scripts/prerender.mjs preload each route's lazy chunks and CSS
+    manifest: !isSsrBuild,
     rollupOptions: {
-      output: {
+      // The SSR build (prerender only) externalizes deps, so manual chunks don't apply
+      output: isSsrBuild ? {} : {
         manualChunks: {
           // Core React runtime — cached across deploys
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          // Framer Motion is large (~100 KB gz) and used by the 2026 landing page
-          'vendor-motion': ['framer-motion'],
-          // Radix UI primitives shared by both year UIs
-          'vendor-radix': [
-            'radix-ui',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-slot',
-            '@radix-ui/react-switch',
-            '@radix-ui/react-tooltip',
-            '@radix-ui/react-label',
-          ],
           // simple-icons SVG path data — large but stable, benefits from long cache
           'vendor-icons': ['simple-icons'],
           // D3 is only used by the 2025 SolarSystem — isolate it from the 2026 bundle
@@ -45,4 +37,4 @@ export default defineConfig({
     setupFiles: ['./src/test/setup.ts'],
     css: false,
   },
-})
+}))

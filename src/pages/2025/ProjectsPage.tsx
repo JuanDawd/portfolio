@@ -1,20 +1,11 @@
-import { useEffect } from 'react'
-
 import AnimatedText from '@/components/2025/AnimatedText/AnimatedText'
-import Layout from '@/components/2025/UI/Layout'
+import Layout from '@/components/2025/ui/Layout'
 
 import FeaturedProject from './projects/FeaturedProject'
 import Project from './projects/Project'
 import { projectsConstants } from './projects/constants'
 
 export default function ProjectsPage() {
-	useEffect(() => {
-		document.title = 'JuanDawd | Projects'
-		return () => {
-			document.title = 'JuanDawd | Home'
-		}
-	}, [])
-
 	const { featuredProject, projects } = projectsConstants
 	return (
 		<Layout className="py-16">

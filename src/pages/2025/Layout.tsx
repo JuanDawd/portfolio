@@ -1,19 +1,16 @@
 import { Outlet } from 'react-router-dom'
-import { Analytics } from '@vercel/analytics/react'
-import '@fontsource/roboto-mono/400.css'
-import '@fontsource/share-tech-mono/index.css'
+import './styles.css'
 
-import { ThemeProvider } from '@/components/2026/theme-provider'
+import { ThemeProvider } from '@/lib/theme'
 import { Navbar } from '@/components/2025/Navbar'
-import Footer from '@/components/2025/UI/Footer'
+import Footer from '@/components/2025/ui/Footer'
 
 export default function Layout2025() {
 	return (
 		<ThemeProvider>
-			<div className="portfolio-2025 w-full bg-background font-roboto-mono">
+			<div className="w-full bg-background font-roboto-mono">
 				<Navbar />
 				<Outlet />
-				<Analytics />
 				<Footer />
 			</div>
 		</ThemeProvider>

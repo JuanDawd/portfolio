@@ -1,11 +1,11 @@
 import { ExternalLink } from 'lucide-react'
 
-import { FramerImage } from '@/lib/FramerElements'
+import { FramerImage } from '@/components/2025/FramerElements'
 
-import TooltipedElement from '@/components/2025/UI/TooltipedButton'
+import TooltipedElement from '@/components/2025/ui/TooltipedButton'
 
 import type { ProjectProps } from './projects.type'
-import { Button } from '@/components/2025/UI/button'
+import { Button } from '@/components/2025/ui/button'
 
 const Project = ({
 	title,

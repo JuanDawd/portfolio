@@ -1,4 +1,4 @@
-import { Button } from '../UI/button'
+import { Button } from '../ui/button'
 import {
 	DropdownMenu,
 	DropdownMenuTrigger,
@@ -6,7 +6,7 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
 	DropdownMenuGroup,
-} from '../UI/dropdown-menu'
+} from '../ui/dropdown-menu'
 import type { DropdownContextProps } from './DropdownContext.type'
 
 const DropdownContext = ({
