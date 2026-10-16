@@ -1,5 +1,5 @@
 const skill = (name: string) => `/2025/Skills/${name}.svg`
-const project = (name: string, ext = 'png') => `/2025/projects/${name}.${ext}`
+const project = (name: string) => `/2025/projects/${name}.webp`
 
 export const projectsConstants = {
 	featuredProject: {
@@ -23,7 +23,7 @@ export const projectsConstants = {
 			{ icon: skill('TwilioSendgrid'), name: 'Sendgrid' },
 		],
 		github: undefined,
-		image: project('overnights', 'webp'),
+		image: project('overnights'),
 		deployment: 'https://www.overnights.com/',
 		type: 'Freelance',
 		role: 'Fullstack',
@@ -59,7 +59,7 @@ export const projectsConstants = {
 			],
 			github:
 				'https://github.com/Juandawd/next.js-portfolio-with-framer-and-tailwindcss',
-			image: project('overnights', 'webp'),
+			image: project('overnights'),
 			type: 'Personal Development',
 			role: 'Frontend',
 			deployment:
