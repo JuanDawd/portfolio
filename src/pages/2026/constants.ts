@@ -283,7 +283,7 @@ export const projectsList: Project[] = [
 		role: 'Fullstack',
 		description:
 			'Salon-and-workshop operations platform replacing WhatsApp + Excel for LATAM SMBs. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
-		image: '/2026/projects/befine.png',
+		image: '/2026/projects/befine.webp',
 		deployment: undefined,
 		github: undefined,
 		technologies: [
@@ -306,7 +306,7 @@ export const projectsList: Project[] = [
 		role: 'Fullstack',
 		description:
 			'IoT lighting control platform for commercial buildings, built for the client Amatis through Melt Studio. Integration tokens API, Ports Tuning and firmware update flows, device management, and a web + mobile control app on a Next.js and Node.js monorepo.',
-		image: '/2026/projects/amatis.png',
+		image: '/2026/projects/amatis.webp',
 		deployment: 'https://app.amatiscontrols.com/sites/',
 		github: undefined,
 		technologies: [
@@ -325,7 +325,7 @@ export const projectsList: Project[] = [
 		role: 'Frontend',
 		description:
 			'Public website for a pharmacy in Maicao, Colombia: services, schedule, promotions, testimonials, and a WhatsApp contact flow. Built with React 19, Vite, and Tailwind CSS v4 on Radix UI components, deployed on Vercel behind Cloudflare DNS.',
-		image: '/2026/projects/drogueria.png',
+		image: '/2026/projects/drogueria.webp',
 		deployment: 'https://www.drogueria-uno-a.com',
 		github: undefined,
 		technologies: [
@@ -374,7 +374,7 @@ export const projectsList: Project[] = [
 		role: 'Frontend',
 		description:
 			'Multi-tenant e-commerce storefront with slug-based business routing, product catalog, promotions, cart, and category filtering. Atomic design system (atoms → molecules → organisms) built with MUI v5 and documented in Storybook.',
-		image: '/2025/projects/selii.png',
+		image: '/2026/projects/selii.webp',
 		deployment: undefined,
 		github: undefined,
 		technologies: [
@@ -393,7 +393,7 @@ export const projectsList: Project[] = [
 		role: 'Mobile',
 		description:
 			'Cross-platform iOS/Android wellness app with 20+ screens: onboarding, JWT auth, dashboard with chart analytics, profile management, and a PWA offline layer. Built with React + Ionic + Capacitor.',
-		image: '/2025/projects/faceself.png',
+		image: '/2026/projects/faceself.webp',
 		deployment: undefined,
 		github: undefined,
 		technologies: [
@@ -413,7 +413,7 @@ export const projectsList: Project[] = [
 		role: 'Fullstack',
 		description:
 			'REST API and documentation system for a UI component blocks library. Full OpenAPI spec, PostgreSQL via Prisma, and a comprehensive Jest test suite.',
-		image: '/2025/projects/GuarapoSSR.png',
+		image: '/2026/projects/GuarapoSSR.webp',
 		deployment: 'https://guarapo-ssr.vercel.app/docs',
 		github: 'https://github.com/JuanDawd/guarapo-ssr/tree/main',
 		technologies: [
