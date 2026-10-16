@@ -6,8 +6,7 @@
 @import 'tailwindcss' source(none);
 @import '../../styles/shared.css';
 @import '../../styles/breakpoints-desktop-first.css';
-@import '@fontsource-variable/geist';
-@import '@fontsource/roboto-mono/400.css';
+@import '@fontsource-variable/roboto-mono';
 @import '@fontsource/share-tech-mono/index.css';
 
 /* Classes are generated only from these files */
@@ -17,8 +16,7 @@
 @source '.';
 
 @theme inline {
-	--font-sans: 'Geist Variable', sans-serif;
-	--font-rob: 'Roboto Mono', monospace;
+	--font-sans: 'Roboto Mono Variable', monospace;
 	--font-share-tech: 'Share Tech Mono', monospace;
 }
 
