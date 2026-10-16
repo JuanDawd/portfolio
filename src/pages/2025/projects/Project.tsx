@@ -73,6 +73,7 @@ const Project = ({
 									href={github}
 									target="_blank"
 									rel="noreferrer"
+									aria-label="View source on GitHub"
 									className="text-lg font-semibold md:text-base"
 								>
 									{' '}

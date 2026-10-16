@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react'
 import { useTheme } from '@/lib/theme'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { MoonStar, Sun, ArrowLeft } from 'lucide-react'
 import { CURRENT_YEAR, yearHref } from '@/years'
 
@@ -30,7 +30,7 @@ const DesktopNavbar = () => {
 
 	return (
 		<div className="flex w-full items-center justify-between lg:hidden">
-			<nav className="flex items-center">
+			<nav aria-label="Main" className="flex items-center">
 				<a
 					href={yearHref(CURRENT_YEAR)}
 					className="mr-6 flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -42,8 +42,8 @@ const DesktopNavbar = () => {
 				<CustomLink href={yearHref('2025', 'projects')} title="Projects" className="ml-4" />
 			</nav>
 
-			<nav className="flex flex-wrap items-center justify-center">
-				<motion.a
+			<nav aria-label="Social" className="flex flex-wrap items-center justify-center">
+				<m.a
 					aria-label="Check more about me in my Github"
 					href="https://github.com/Juandawd"
 					target="_blank"
@@ -52,9 +52,10 @@ const DesktopNavbar = () => {
 					className="mr-3 w-6"
 				>
 					<GithubIcon />
-				</motion.a>
+				</m.a>
 
-				<motion.a
+				<m.a
+					aria-label="Check more about me in my LinkedIn"
 					href="https://linkedin.com/in/juandawd"
 					target="_blank"
 					whileHover={{ y: -2 }}
@@ -62,7 +63,7 @@ const DesktopNavbar = () => {
 					className="mx-3 w-6"
 				>
 					<LinkedInIcon />
-				</motion.a>
+				</m.a>
 
 				<Button
 					aria-label="Toggle Dark Mode"

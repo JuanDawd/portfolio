@@ -99,7 +99,7 @@ export function SolarSystemPlot({ width = 700, height = 700 }) {
   }
 
   const [planets, setPlanets] = useState<PlanetPosition[]>(
-    initializePlanetPositions()
+    initializePlanetPositions
   )
 
   useEffect(() => {

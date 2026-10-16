@@ -1,3 +1,4 @@
+import { domAnimation, LazyMotion } from 'framer-motion'
 import { Outlet } from 'react-router-dom'
 import './styles.css'
 
@@ -8,11 +9,13 @@ import Footer from '@/components/2025/ui/Footer'
 export default function Layout2025() {
 	return (
 		<ThemeProvider>
-			<div className="w-full bg-background font-roboto-mono">
-				<Navbar />
-				<Outlet />
-				<Footer />
-			</div>
+			<LazyMotion features={domAnimation}>
+				<div className="w-full bg-background font-roboto-mono">
+					<Navbar />
+					<Outlet />
+					<Footer />
+				</div>
+			</LazyMotion>
 		</ThemeProvider>
 	)
 }

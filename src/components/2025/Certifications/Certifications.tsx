@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useScroll } from 'framer-motion'
+import { m, useScroll } from 'framer-motion'
 import { CertificationList } from './Constants'
 import KnowledgeDetails from '../Details/KnowledgeDetails'
 
@@ -18,7 +18,7 @@ const Certifications = () => {
         ref={ref}
         className='relative mx-auto w-[75%]  lg:w-[90%] md:w-full '
       >
-        <motion.div
+        <m.div
           style={{ scaleY: scrollYProgress }}
           className='absolute left-9 top-0 mt-2 h-full w-1 origin-top bg-accent md:left-[30px] md:w-[2px] xs:left-[20px] '
         />
