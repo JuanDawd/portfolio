@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://juandawd.dev/sitemap.xml
+
+Sitemap: https://www.juandawd.dev/sitemap.xml

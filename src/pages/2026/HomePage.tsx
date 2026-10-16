@@ -12,7 +12,7 @@ export default function HomePage2026() {
 	return (
 		<main className="mx-auto max-w-5xl px-6 py-12">
 			<BentoGrid>
-				<BentoCard colSpan={2} rowSpan={2}>
+				<BentoCard colSpan={2} rowSpan={2} animate={false}>
 					<HeroCard />
 				</BentoCard>
 

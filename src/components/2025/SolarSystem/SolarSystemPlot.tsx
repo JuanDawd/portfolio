@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 import { PlanetsList } from './Constants'
-import { useD3Render } from '@/hooks/useD3Render'
+import { useD3Render } from './useD3Render'
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import type { Orbit, PlanetPosition } from './types'
 

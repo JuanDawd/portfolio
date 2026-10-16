@@ -1,16 +1,16 @@
 import { FileDown } from 'lucide-react'
 
-import Layout from '@/components/2025/UI/Layout'
-import { DropdownMenuItem } from '@/components/2025/UI/dropdown-menu'
+import Layout from '@/components/2025/ui/Layout'
+import { DropdownMenuItem } from '@/components/2025/ui/dropdown-menu'
 import { DropdownContext } from '@/components/2025/DropdownContext'
 
 import { Education } from '@/components/2025/Education'
 import { Experience } from '@/components/2025/Experience'
 import { Certifications } from '@/components/2025/Certifications'
 
-import { Biography } from './Constants'
+import { Biography } from './constants'
 import { AnimatedText } from '@/components/2025/AnimatedText'
-import { Button } from '@/components/2025/UI/button'
+import { Button } from '@/components/2025/ui/button'
 import { Skills } from '@/components/2025/Skills'
 
 export default function Home() {

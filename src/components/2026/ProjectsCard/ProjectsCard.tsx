@@ -1,5 +1,5 @@
 import { Briefcase, ExternalLink, LayoutDashboard } from 'lucide-react'
-import { GithubIcon } from '@/components/icons/GithubIcon'
+import { GithubIcon } from '@/components/shared/icons/GithubIcon'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'

@@ -9,6 +9,7 @@ node_modules
 
 # vite (root app)
 /dist
+/dist-server
 
 # production
 /build

@@ -3,7 +3,7 @@ import useEmblaCarousel, {
 	type UseEmblaCarouselType,
 } from 'embla-carousel-react'
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/2025/UI/button'
+import { Button } from '@/components/2025/ui/button'
 import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons'
 
 type CarouselApi = UseEmblaCarouselType[1]
