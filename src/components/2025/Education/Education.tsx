@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 
-import { motion, useScroll } from 'framer-motion'
+import { m, useScroll } from 'framer-motion'
 
 import KnowledgeDetails from '../Details/KnowledgeDetails'
 import { EducationList } from './Constants'
@@ -21,7 +21,7 @@ const Education = () => {
 				ref={ref}
 				className="relative mx-auto w-[75%]  lg:w-[90%] md:w-full "
 			>
-				<motion.div
+				<m.div
 					style={{ scaleY: scrollYProgress }}
 					className="absolute left-9 top-0 mt-2 h-full w-1 origin-top bg-accent md:left-7.5 md:w-0.5 xs:left-5 "
 				/>

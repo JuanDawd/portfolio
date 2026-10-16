@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 
-import { motion, useScroll } from 'framer-motion'
+import { m, useScroll } from 'framer-motion'
 
 import type { DetailsProps } from './Details.type'
 
@@ -23,7 +23,7 @@ const DetailsWrapper = ({ children }: DetailsProps) => {
 					viewBox="0 0 100 100"
 				>
 					<circle cx={75} cy={50} r={20} className=" fill-none stroke-1" />
-					<motion.circle
+					<m.circle
 						cx={75}
 						cy={50}
 						r={20}
@@ -38,13 +38,13 @@ const DetailsWrapper = ({ children }: DetailsProps) => {
 					/>
 				</svg>
 			</figure>
-			<motion.div
+			<m.div
 				initial={{ y: 50 }}
 				whileInView={{ y: 0 }}
 				transition={{ duration: 0.5, type: 'spring' }}
 			>
 				{children}
-			</motion.div>
+			</m.div>
 		</li>
 	)
 }

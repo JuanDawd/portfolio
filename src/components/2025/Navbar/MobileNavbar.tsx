@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { useTheme } from '@/lib/theme'
 import { MoonStar, Sun, ArrowLeft } from 'lucide-react'
 import { CURRENT_YEAR, yearHref } from '@/years'
@@ -33,12 +33,12 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
 
 	return (
 		<div className="fixed inset-0 z-30 flex items-center justify-center">
-			<motion.div
+			<m.div
 				initial={{ scale: 0, opacity: 0 }}
 				animate={{ scale: 1, opacity: 1 }}
 				className="flex min-w-[70vw] flex-col items-center justify-between gap-10 rounded-lg bg-background/50 py-20 backdrop-blur-md"
 			>
-				<nav className="flex flex-col items-center justify-center">
+				<nav aria-label="Main" className="flex flex-col items-center justify-center">
 					<a
 						href={yearHref(CURRENT_YEAR)}
 						onClick={handleClick}
@@ -55,8 +55,8 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
 					/>
 				</nav>
 
-				<nav className="flex flex-wrap items-center justify-center">
-					<motion.a
+				<nav aria-label="Social" className="flex flex-wrap items-center justify-center">
+					<m.a
 						aria-label="Check more about me in my Github"
 						href="https://github.com/Juandawd"
 						target="_blank"
@@ -65,9 +65,9 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
 						className="mr-3 w-6 sm:mr-1"
 					>
 						<GithubIcon />
-					</motion.a>
+					</m.a>
 
-					<motion.a
+					<m.a
 						aria-label="Check more about me in my LinkedIn"
 						href="https://linkedin.com/in/juandawd"
 						target="_blank"
@@ -76,7 +76,7 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
 						className="mx-3 w-6 sm:mx-1"
 					>
 						<LinkedInIcon />
-					</motion.a>
+					</m.a>
 					<Button
 						aria-label="Toggle Dark Mode"
 						className="ml-3 h-6 w-6 sm:ml-1"
@@ -95,7 +95,7 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
 						)}
 					</Button>
 				</nav>
-			</motion.div>
+			</m.div>
 		</div>
 	)
 }

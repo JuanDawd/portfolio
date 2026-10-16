@@ -1,5 +1,5 @@
 import {
-	motion,
+	m,
 	type TargetAndTransition,
 	type VariantLabels,
 	type ViewportOptions,
@@ -9,9 +9,9 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/components/2025/ui/button'
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const FramerImage = motion.img
+export const FramerImage = m.img
 // eslint-disable-next-line react-refresh/only-export-components
-export const FramerLink = motion.create(Link)
+export const FramerLink = m.create(Link)
 
 type FramerButtonProps = {
 	className: string
@@ -20,7 +20,7 @@ type FramerButtonProps = {
 	ariaLabel: string
 }
 
-const FramerButton = motion.create(Button)
+const FramerButton = m.create(Button)
 
 export const FramerButtonIcon = ({
 	className,
@@ -58,14 +58,14 @@ export const FramerLi = ({
 	viewport,
 }: FramerLiProps) => {
 	return (
-		<motion.li
+		<m.li
 			className={className}
 			initial={initial}
 			whileInView={whileInView}
 			viewport={viewport}
 		>
 			{children}
-		</motion.li>
+		</m.li>
 	)
 }
 
@@ -74,5 +74,5 @@ type FramerNavbarProps = {
 }
 
 export const FramerNavbar = ({ className }: FramerNavbarProps) => {
-	return <motion.header className={className}></motion.header>
+	return <m.header className={className}></m.header>
 }
