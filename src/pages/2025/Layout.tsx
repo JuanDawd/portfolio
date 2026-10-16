@@ -10,7 +10,7 @@ export default function Layout2025() {
 	return (
 		<ThemeProvider>
 			<LazyMotion features={domAnimation}>
-				<div className="w-full bg-background font-roboto-mono">
+				<div className="w-full bg-background">
 					<Navbar />
 					<Outlet />
 					<Footer />
