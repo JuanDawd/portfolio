@@ -19,6 +19,9 @@ export interface YearDefinition {
 	// Work in progress: reachable at /{year}, but noindex, left out of the
 	// sitemap and hidden from the other years' navbars
 	draft?: boolean
+	// Social preview image for this year's pages: a path in public/, 1200×630.
+	// Defaults to the shared /og-image.jpg
+	ogImage?: string
 	pages: YearPage[]
 }
 

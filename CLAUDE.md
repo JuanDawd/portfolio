@@ -24,7 +24,7 @@ pnpm dlx shadcn@latest add <component>
 
 Each portfolio year is a self-contained app inside a shared shell:
 
-- **Registry**: `src/years.ts` discovers years from `src/pages/*/year.ts` (pages, titles, descriptions, `draft` flag). Routes (`src/App.tsx`), prerendered pages, the sitemap and navbar year links are all derived from it — no other place lists years.
+- **Registry**: `src/years.ts` discovers years from `src/pages/*/year.ts` (pages, titles, descriptions, `draft` flag, optional `ogImage`). Routes (`src/App.tsx`), prerendered pages, the sitemap and navbar year links are all derived from it — no other place lists years.
 - **Routes**: `/` → `CURRENT_YEAR` (currently 2026), every other year at `/{year}`. Unknown URLs render the shared 404 inside the current year's layout.
 - **Pages + data**: `src/pages/{year}/` — `year.ts`, `Layout.tsx`, page components, `styles.css` and a `constants.ts` with the year's content
 - **Components**: `src/components/{year}/` — year-specific components (forked primitives go in `src/components/{year}/ui/`)
