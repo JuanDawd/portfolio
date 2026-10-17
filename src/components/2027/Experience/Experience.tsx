@@ -28,25 +28,24 @@ export function Experience() {
 								)}
 							</h3>
 							{job.clients && (
-								<ul aria-label={`Clients at ${job.company}`} className="grid max-w-[58ch] gap-1 sm:gap-2 sm:py-1">
-									{job.clients.map((client) => (
-										<li key={client.name} className="grid gap-0.5 text-sm">
+								<p className="flex flex-wrap items-center gap-x-2.5 font-mono text-[0.8125rem] text-muted-foreground">
+									{/* Phones: the label takes its own line so the three names fit on one row */}
+									<span className="basis-full sm:basis-auto">clients:</span>
+									{job.clients.map((client, n) => (
+										<span key={client.name} className="inline-flex items-center gap-2.5">
+											{n > 0 && <span aria-hidden="true" className="opacity-50">·</span>}
 											<a
 												href={client.url}
 												target="_blank"
 												rel="noreferrer"
-												className="inline-flex min-h-11 items-center gap-1.5 justify-self-start font-mono font-bold text-accent-text hover:underline sm:min-h-0"
+												className="inline-flex min-h-11 items-center gap-1 font-bold text-accent-text hover:underline sm:min-h-7"
 											>
-												<span aria-hidden="true" className="text-muted-foreground">
-													→
-												</span>
 												{client.name}
 												<ExternalLink aria-hidden="true" className="h-3 w-3" />
 											</a>
-											<span className="pl-[2.1ch] text-muted-foreground">{client.note}</span>
-										</li>
+										</span>
 									))}
-								</ul>
+								</p>
 							)}
 							<JobBullets id={`job-${i}`} lines={job.description} />
 							<TagList tags={job.techStack} label="Tech stack" />
