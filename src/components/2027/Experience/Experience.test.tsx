@@ -31,4 +31,17 @@ describe('2027 Experience', () => {
 			}
 		}
 	})
+
+	it('folds the older jobs behind one toggle below the list', async () => {
+		render(<Experience />)
+		const oldest = experienceList[experienceList.length - 1]
+		expect(screen.queryByText(oldest.description[0])).not.toBeInTheDocument()
+
+		const toggle = screen.getByRole('button', { name: `+${experienceList.length - 3} earlier roles` })
+		await userEvent.click(toggle)
+
+		expect(screen.getByText(oldest.description[0])).toBeInTheDocument()
+		expect(toggle).toHaveAttribute('aria-expanded', 'true')
+		expect(toggle).toHaveTextContent('show fewer roles')
+	})
 })

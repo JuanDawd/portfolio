@@ -7,12 +7,18 @@ import { experienceList } from '@/pages/2027/constants'
 
 // Bullets shown before the rest fold into "more"
 const VISIBLE_LINES = 3
+// Jobs shown before the older ones fold into "earlier roles"
+const VISIBLE_JOBS = 3
 
 export function Experience() {
+	const [showEarlier, setShowEarlier] = useState(false)
+	const earlier = experienceList.length - VISIBLE_JOBS
+	const jobs = showEarlier ? experienceList : experienceList.slice(0, VISIBLE_JOBS)
+
 	return (
 		<Section id="experience" command="git log ./" title="experience">
-			<ol className="panel divide-y divide-rule overflow-hidden rounded-xl">
-				{experienceList.map((job, i) => (
+			<ol id="experience-list" className="panel divide-y divide-rule overflow-hidden rounded-xl">
+				{jobs.map((job, i) => (
 					<li key={job.company + job.time} className="grid gap-2 p-4 sm:grid-cols-[10rem_1fr] sm:gap-5 sm:p-5">
 						<p className="font-mono text-xs text-muted-foreground sm:pt-1">{job.time}</p>
 						<div className="grid min-w-0 gap-2">
@@ -53,6 +59,17 @@ export function Experience() {
 					</li>
 				))}
 			</ol>
+			{earlier > 0 && (
+				<button
+					type="button"
+					aria-expanded={showEarlier}
+					aria-controls="experience-list"
+					onClick={() => setShowEarlier((open) => !open)}
+					className="mt-2 inline-flex min-h-11 items-center px-1 font-mono text-xs text-accent-text hover:underline"
+				>
+					{showEarlier ? 'show fewer roles' : `+${earlier} earlier roles`}
+				</button>
+			)}
 		</Section>
 	)
 }
