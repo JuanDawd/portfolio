@@ -1,10 +1,5 @@
 import { PlanetsList } from './Constants'
-import {
-	type CarouselApi,
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-} from '@/components/2025/ui/carousel'
+import { type CarouselApi, Carousel, CarouselContent, CarouselItem } from '@/components/2025/ui/carousel'
 import { useEffect, useState } from 'react'
 
 export function PlanetsCarousel() {
@@ -43,20 +38,11 @@ export function PlanetsCarousel() {
 			>
 				<CarouselContent>
 					{planets.map((planet) => (
-						<CarouselItem
-							key={planet.planet}
-							className="flex basis-1/3 flex-col items-center gap-2"
-						>
+						<CarouselItem key={planet.planet} className="flex basis-1/3 flex-col items-center gap-2">
 							<div className="h-8 w-8">
-								<img
-									src={planet.icon}
-									width={32}
-									height={32}
-									alt={planet.planet}
-									className="h-full w-full"
-								/>
+								<img src={planet.icon} width={32} height={32} alt={planet.planet} className="h-full w-full" />
 							</div>
-							<span className=" rounded-md bg-primary px-3 py-1 text-center text-xs text-primary-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2">
+							<span className="animate-in rounded-md bg-primary px-3 py-1 text-center text-xs text-primary-foreground fade-in-0 zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95">
 								{planet.planet}
 							</span>
 						</CarouselItem>

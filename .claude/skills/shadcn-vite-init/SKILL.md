@@ -9,27 +9,32 @@ allowed-tools: Bash, Read, Write, Glob
 Scaffold a new Vite + React + TypeScript + Shadcn UI project at root.
 
 ## When to Use
+
 - Full project re-scaffold from scratch
 - NOT for adding a new year (use `new-portfolio-year` instead)
 
 ## Prerequisites
+
 - Node.js 22+
 - pnpm 10+
 
 ## Steps
 
 ### 1. Initialize Vite Project
+
 ```bash
 pnpm create vite@latest . -- --template react-ts
 pnpm install
 ```
 
 ### 2. Install Tailwind CSS v4
+
 ```bash
 pnpm add -D tailwindcss @tailwindcss/vite
 ```
 
 Add the Tailwind plugin to `vite.config.ts`:
+
 ```ts
 import tailwindcss from '@tailwindcss/vite'
 
@@ -44,11 +49,13 @@ export default defineConfig({
 ```
 
 Import in `src/index.css`:
+
 ```css
-@import "tailwindcss";
+@import 'tailwindcss';
 ```
 
 ### 3. Initialize Shadcn
+
 ```bash
 pnpm dlx shadcn@latest init
 ```
@@ -56,12 +63,14 @@ pnpm dlx shadcn@latest init
 Select: New York style, Zinc base color, CSS variables enabled.
 
 ### 4. Install Core Dependencies
+
 ```bash
 pnpm add react-router-dom framer-motion lucide-react @vercel/analytics d3
 pnpm add -D @types/d3
 ```
 
 ### 5. Verify
+
 ```bash
 pnpm run dev
 pnpm run build

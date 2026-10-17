@@ -1,38 +1,38 @@
 {
-	"buildCommand": "pnpm run build",
-	"outputDirectory": "dist",
-	"framework": "vite",
-	"rewrites": [
-		{ "source": "/:year(\\d{4})", "destination": "/:year/index.html" },
-		{ "source": "/:year(\\d{4})/:page", "destination": "/:year/:page/index.html" }
-	],
-	"headers": [
-		{
-			"source": "/assets/(.*)",
-			"headers": [
-				{
-					"key": "Cache-Control",
-					"value": "public, max-age=31536000, immutable"
-				}
-			]
-		},
-		{
-			"source": "/(2025|2026|resume)/(.*)\\.(webp|png|jpg|jpeg|svg|pdf)",
-			"headers": [
-				{
-					"key": "Cache-Control",
-					"value": "public, max-age=86400, stale-while-revalidate=604800"
-				}
-			]
-		},
-		{
-			"source": "/og-image.jpg",
-			"headers": [
-				{
-					"key": "Cache-Control",
-					"value": "public, max-age=86400, stale-while-revalidate=604800"
-				}
-			]
-		}
-	]
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/:year(\\d{4})", "destination": "/:year/index.html" },
+    { "source": "/:year(\\d{4})/:page", "destination": "/:year/:page/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(2025|2026|resume)/(.*)\\.(webp|png|jpg|jpeg|svg|pdf)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/og-image.jpg",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    }
+  ]
 }
