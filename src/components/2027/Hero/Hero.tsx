@@ -20,7 +20,7 @@ export function Hero() {
 					Juan <span className="bg-primary px-[0.12em] text-primary-foreground [box-decoration-break:clone]">Dawd</span>
 				</h1>
 				{/* The positioning, in plain words: the one line a visitor should leave with */}
-				<p className="max-w-[34ch] text-xl leading-snug text-balance sm:text-2xl">
+				<p className="mt-2 max-w-[34ch] text-xl sm:mt-3 leading-snug text-balance sm:text-2xl">
 					I design, build and ship SaaS products end to end, on my own.
 				</p>
 			</div>
@@ -37,7 +37,7 @@ export function Hero() {
 					</li>
 					<li>
 						<span aria-hidden="true">&gt; </span>
-						real-time: redis, mqtt, sse
+						real-time: redis, mqtt, sse <span aria-hidden="true" className="gt-cursor" />
 					</li>
 				</ul>
 

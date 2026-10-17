@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { Section } from '@/components/2027/Section'
 import { TagList } from '@/components/2027/TagList'
 import { experienceList } from '@/pages/2027/constants'
@@ -9,7 +11,7 @@ export function Experience() {
 	return (
 		<Section id="experience" command="git log ./" title="experience">
 			<ol className="panel divide-y divide-rule overflow-hidden rounded-xl">
-				{experienceList.map((job) => (
+				{experienceList.map((job, i) => (
 					<li key={job.company + job.time} className="grid gap-2 p-4 sm:grid-cols-[10rem_1fr] sm:gap-5 sm:p-5">
 						<p className="font-mono text-xs text-muted-foreground sm:pt-1">{job.time}</p>
 						<div className="grid min-w-0 gap-2">
@@ -24,16 +26,7 @@ export function Experience() {
 									job.company
 								)}
 							</h3>
-							<Bullets lines={job.description.slice(0, VISIBLE_LINES)} />
-							{job.description.length > VISIBLE_LINES && (
-								<details className="group">
-									<summary className="inline-flex min-h-11 cursor-pointer list-none items-center font-mono text-xs text-accent-text hover:underline sm:min-h-0 [&::-webkit-details-marker]:hidden">
-										<span className="group-open:hidden">+{job.description.length - VISIBLE_LINES} more</span>
-										<span className="hidden group-open:inline">show less</span>
-									</summary>
-									<Bullets lines={job.description.slice(VISIBLE_LINES)} className="mt-1.5" />
-								</details>
-							)}
+							<JobBullets id={`job-${i}`} lines={job.description} />
 							<TagList tags={job.techStack} label="Tech stack" />
 						</div>
 					</li>
@@ -43,17 +36,35 @@ export function Experience() {
 	)
 }
 
-function Bullets({ lines, className = '' }: { lines: string[]; className?: string }) {
+// One list: the extra lines join it when expanded, and the toggle always sits below it
+function JobBullets({ id, lines }: { id: string; lines: string[] }) {
+	const [expanded, setExpanded] = useState(false)
+	const hidden = lines.length - VISIBLE_LINES
+	const shown = expanded || hidden <= 0 ? lines : lines.slice(0, VISIBLE_LINES)
+
 	return (
-		<ul className={`grid max-w-[58ch] gap-1.5 text-sm leading-relaxed text-muted-foreground ${className}`}>
-			{lines.map((line) => (
-				<li key={line} className="grid grid-cols-[1ch_1fr] gap-2">
-					<span aria-hidden="true" className="font-mono text-accent-text">
-						›
-					</span>
-					<span>{line}</span>
-				</li>
-			))}
-		</ul>
+		<div className="grid justify-items-start gap-1.5">
+			<ul id={id} className="grid max-w-[58ch] gap-1.5 text-sm leading-relaxed text-muted-foreground">
+				{shown.map((line) => (
+					<li key={line} className="grid grid-cols-[1ch_1fr] gap-2">
+						<span aria-hidden="true" className="font-mono text-accent-text">
+							›
+						</span>
+						<span>{line}</span>
+					</li>
+				))}
+			</ul>
+			{hidden > 0 && (
+				<button
+					type="button"
+					aria-expanded={expanded}
+					aria-controls={id}
+					onClick={() => setExpanded((open) => !open)}
+					className="inline-flex min-h-11 items-center font-mono text-xs text-accent-text hover:underline sm:min-h-0"
+				>
+					{expanded ? 'show less' : `+${hidden} more`}
+				</button>
+			)}
+		</div>
 	)
 }

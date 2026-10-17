@@ -122,4 +122,26 @@
 		-webkit-backdrop-filter: blur(16px) saturate(160%);
 		backdrop-filter: blur(16px) saturate(160%);
 	}
+
+	/* Blinking terminal cursor */
+	.gt-cursor {
+		display: inline-block;
+		width: 0.6em;
+		height: 1.05em;
+		vertical-align: -0.18em;
+		background: var(--accent-text);
+		animation: gt-blink 1s steps(1) infinite;
+	}
+}
+
+@keyframes gt-blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gt-cursor {
+		animation: none;
+	}
 }
