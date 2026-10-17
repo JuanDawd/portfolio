@@ -70,7 +70,6 @@ export const experienceList: Experience[] = [
 		description: [
 			'Leading Amatis, a smart-building IoT platform, across web and iOS/Android.',
 			'Starting team on Raíz · Cooltura, a culture diagnostic with real-time Typeform sync; MVP shipped in 7 weeks.',
-			'About 4 months on Suscripciones, a subscription platform for online stores, building its prototype.',
 			'Architected and delivered 4 scalable web/mobile solutions within the Next.js App Router ecosystem.',
 			'Built and maintained a Turborepo monorepo housing admin, user, and mobile app targets.',
 			'Implemented Redis caching layers and orchestrated MQTT pipelines for real-time device-to-database data ingestion.',
