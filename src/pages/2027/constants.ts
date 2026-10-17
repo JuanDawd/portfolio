@@ -157,12 +157,6 @@ export const experienceList = [
 	},
 ]
 
-export const experienceAnchor = (company: string) =>
-	`experience-${company
-		.toLowerCase()
-		.replace(/[^a-z0-9]+/g, '-')
-		.replace(/^-|-$/g, '')}`
-
 export const educationList = [
 	{
 		degree: "Master's Degree in Software Engineering and Computer Systems",
@@ -272,8 +266,6 @@ export type Project = {
 	deployment: string | undefined
 	github: string | undefined
 	technologies: string[]
-	// Company (as named in experienceList) whose job this project belongs to
-	relatedExperience?: string
 }
 
 export const projectsList: Project[] = [
@@ -299,25 +291,6 @@ export const projectsList: Project[] = [
 			'Vercel',
 			'Claude Code',
 		],
-	},
-	{
-		title: 'Amatis',
-		type: 'Client Work',
-		role: 'Fullstack',
-		description:
-			'IoT lighting control platform for commercial buildings, built for the client Amatis through Melt Studio. Integration tokens API, Ports Tuning and firmware update flows, device management, and a web + mobile control app on a Next.js and Node.js monorepo.',
-		image: '/2027/projects/amatis.webp',
-		deployment: 'https://app.amatiscontrols.com/sites/',
-		github: undefined,
-		technologies: [
-			'Next.js',
-			'Node.js',
-			'MySQL',
-			'MQTT',
-			'AWS',
-			'GitLab CI/CD',
-		],
-		relatedExperience: 'Melt Studio',
 	},
 	{
 		title: 'Droguería Uno A',
@@ -355,57 +328,6 @@ export const projectsList: Project[] = [
 			'SQLite',
 			'Self-hosting',
 		],
-	},
-	{
-		title: 'Overnights',
-		type: 'Freelance',
-		role: 'Fullstack',
-		description:
-			'Travel platform for accommodation search with kosher-friendly establishment filtering. Full-stack React + Node.js app serving real users in production.',
-		image: '/2027/projects/overnights.webp',
-		deployment: 'https://www.overnights.com/',
-		github: undefined,
-		technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Vite'],
-		relatedExperience: 'Overnights Technologies Inc',
-	},
-	{
-		title: 'Selii',
-		type: 'Freelance',
-		role: 'Frontend',
-		description:
-			'Multi-tenant e-commerce storefront with slug-based business routing, product catalog, promotions, cart, and category filtering. Atomic design system (atoms → molecules → organisms) built with MUI v5 and documented in Storybook.',
-		image: '/2027/projects/selii.webp',
-		deployment: undefined,
-		github: undefined,
-		technologies: [
-			'React',
-			'MUI',
-			'React Hook Form',
-			'Zod',
-			'Storybook',
-			'Swiper',
-		],
-		relatedExperience: 'Selii',
-	},
-	{
-		title: 'Faceself',
-		type: 'Freelance',
-		role: 'Mobile',
-		description:
-			'Cross-platform iOS/Android wellness app with 20+ screens: onboarding, JWT auth, dashboard with chart analytics, profile management, and a PWA offline layer. Built with React + Ionic + Capacitor.',
-		image: '/2027/projects/faceself.webp',
-		deployment: undefined,
-		github: undefined,
-		technologies: [
-			'React',
-			'Ionic',
-			'TypeScript',
-			'Redux',
-			'Capacitor',
-			'Chart.js',
-			'Formik',
-		],
-		relatedExperience: 'Faceself',
 	},
 	{
 		title: 'Guarapo Blocks API',

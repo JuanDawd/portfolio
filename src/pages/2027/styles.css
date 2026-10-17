@@ -28,7 +28,7 @@
 	--color-rule: var(--rule);
 }
 
-/* Light: cool grey page, pale red fill with dark red text */
+/* Light: cool grey page, white glass on the hero, flatter grey panels, solid red primary */
 :root {
 	--background: oklch(0.961 0.003 264.5);
 	--foreground: oklch(0.158 0.007 258.4);
@@ -36,8 +36,8 @@
 	--card-foreground: oklch(0.158 0.007 258.4);
 	--popover: oklch(0.985 0.002 264);
 	--popover-foreground: oklch(0.158 0.007 258.4);
-	--primary: oklch(0.89 0.043 14.4);
-	--primary-foreground: oklch(0.449 0.161 23.6);
+	--primary: oklch(0.503 0.176 23.4);
+	--primary-foreground: oklch(0.985 0.002 264);
 	--secondary: oklch(0.93 0.006 264);
 	--secondary-foreground: oklch(0.158 0.007 258.4);
 	--muted: oklch(0.93 0.006 264);
@@ -51,6 +51,7 @@
 	--radius: 0.5rem;
 
 	--accent-text: oklch(0.503 0.176 23.4);
+	--panel: oklch(0.938 0.005 264);
 	--glass: oklch(1 0 0 / 58%);
 	--glass-border: oklch(0.158 0.007 258.4 / 12%);
 	--glass-highlight: oklch(1 0 0 / 90%);
@@ -80,6 +81,7 @@
 	--ring: oklch(0.716 0.145 18.3);
 
 	--accent-text: oklch(0.716 0.145 18.3);
+	--panel: oklch(0.2 0.009 258);
 	--glass: oklch(1 0 0 / 7%);
 	--glass-border: oklch(1 0 0 / 16%);
 	--glass-highlight: oklch(1 0 0 / 18%);
@@ -108,7 +110,7 @@
 
 	/* Plain surface for content sections; glass stays on the navbar and hero */
 	.panel {
-		background: var(--card);
+		background: var(--panel);
 		border: 1px solid var(--rule);
 	}
 
