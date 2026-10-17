@@ -34,12 +34,13 @@ export function Hero() {
 				</li>
 			</ul>
 
-			<div className="flex flex-wrap gap-2 font-mono text-sm">
+			{/* Phone: one full-width button per row. sm+: side by side. */}
+			<div className="grid gap-2 font-mono text-sm sm:flex sm:flex-wrap">
 				<a
 					href="/resume/JuanDawd_ATS_Eng_CV.pdf"
 					target="_blank"
 					rel="noreferrer"
-					className="inline-flex min-h-11 items-center rounded-md bg-primary px-4 font-bold text-primary-foreground transition-opacity hover:opacity-90"
+					className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-4 font-bold text-primary-foreground transition-opacity hover:opacity-90"
 				>
 					./resume.pdf
 				</a>
@@ -48,13 +49,13 @@ export function Hero() {
 					target="_blank"
 					rel="noreferrer"
 					lang="es"
-					className="glass inline-flex min-h-11 items-center rounded-md px-4 transition-colors hover:text-accent-text"
+					className="glass inline-flex min-h-11 items-center justify-center rounded-md px-4 transition-colors hover:text-accent-text"
 				>
 					./hoja-de-vida.pdf
 				</a>
 				<a
 					href="#contact"
-					className="glass inline-flex min-h-11 items-center rounded-md px-4 transition-colors hover:text-accent-text"
+					className="glass inline-flex min-h-11 items-center justify-center rounded-md px-4 transition-colors hover:text-accent-text"
 				>
 					contact --me
 				</a>
