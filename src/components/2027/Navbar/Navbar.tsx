@@ -28,7 +28,7 @@ export function Navbar() {
 		<header className="sticky top-3 z-50 px-3 sm:top-4 sm:px-6">
 			<nav
 				aria-label="Main"
-				className="glass mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-lg py-1.5 pr-1.5 pl-4 font-mono text-sm"
+				className="glass mx-auto flex max-w-5xl 2xl:max-w-7xl items-center justify-between gap-3 rounded-lg py-1.5 pr-1.5 pl-4 font-mono text-sm"
 			>
 				<Link to={yearHref('2027')} className="font-bold">
 					~/juandawd

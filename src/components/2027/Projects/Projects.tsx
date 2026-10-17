@@ -9,7 +9,7 @@ export function Projects() {
 		<Section id="work" command="ls ./" title="projects" aside={`${projectsList.length} total`}>
 			<ol className="glass divide-y divide-rule overflow-hidden rounded-xl">
 				{projectsList.map((project, i) => (
-					<li key={project.title} className="grid gap-3 p-4 sm:grid-cols-[1fr_11rem] sm:gap-5 sm:p-5">
+					<li key={project.title} className="grid gap-3 p-4 sm:grid-cols-[1fr_11rem] sm:gap-5 lg:grid-cols-[1fr_18rem] lg:gap-8 sm:p-5">
 						<div className="grid min-w-0 content-start gap-2">
 							<div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
 								<span className="font-mono text-xs text-muted-foreground tabular-nums">

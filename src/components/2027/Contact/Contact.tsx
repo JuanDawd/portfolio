@@ -22,7 +22,7 @@ export function Contact() {
 
 	return (
 		<Section id="contact" command="./" title="contact">
-			<div className="glass grid gap-5 rounded-xl p-5 sm:p-8">
+			<div className="glass grid gap-5 rounded-xl p-5 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-10">
 				<p className="max-w-[48ch] text-lg leading-snug">
 					Building something with React, Next.js or real-time data? I'd like to hear about it.
 				</p>
