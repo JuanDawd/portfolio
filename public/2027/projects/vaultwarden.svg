@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Vaultwarden self-hosting architecture: browser, Cloudflare Access, Cloudflare Tunnel, Raspberry Pi running Docker with Vaultwarden and SQLite backups">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1116"/>
+      <stop offset="1" stop-color="#101a22"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5eead4"/>
+    </marker>
+    <style>
+      text { font-family: ui-monospace, "SF Mono", Menlo, monospace; fill: #e2e8f0; }
+      .t { font-size: 26px; font-weight: 600; }
+      .s { font-size: 18px; fill: #94a3b8; }
+      .box { fill: #16222c; stroke: #2b3f4e; stroke-width: 2; }
+      .hl { fill: #12302e; stroke: #5eead4; stroke-width: 2; }
+      .line { stroke: #5eead4; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+
+  <text x="640" y="90" text-anchor="middle" class="t" style="font-size:34px">Self-hosted password manager</text>
+  <text x="640" y="128" text-anchor="middle" class="s">No open ports · zero-trust access</text>
+
+  <rect class="box" x="60" y="290" width="220" height="140" rx="16"/>
+  <text x="170" y="350" text-anchor="middle" class="t">Browser</text>
+  <text x="170" y="384" text-anchor="middle" class="s">Bitwarden client</text>
+
+  <rect class="hl" x="350" y="290" width="240" height="140" rx="16"/>
+  <text x="470" y="350" text-anchor="middle" class="t">Cloudflare</text>
+  <text x="470" y="384" text-anchor="middle" class="s">Access (auth gate)</text>
+
+  <rect class="hl" x="660" y="290" width="240" height="140" rx="16"/>
+  <text x="780" y="350" text-anchor="middle" class="t">Tunnel</text>
+  <text x="780" y="384" text-anchor="middle" class="s">outbound only</text>
+
+  <rect class="box" x="960" y="190" width="270" height="340" rx="16"/>
+  <text x="1095" y="236" text-anchor="middle" class="t">Raspberry Pi</text>
+  <rect class="hl" x="985" y="266" width="220" height="92" rx="12"/>
+  <text x="1095" y="306" text-anchor="middle" class="t" style="font-size:22px">Docker</text>
+  <text x="1095" y="336" text-anchor="middle" class="s" style="font-size:16px">Vaultwarden</text>
+  <rect class="box" x="985" y="380" width="220" height="60" rx="12"/>
+  <text x="1095" y="418" text-anchor="middle" class="s" style="font-size:16px">SQLite + daily backups</text>
+  <rect class="box" x="985" y="452" width="220" height="60" rx="12"/>
+  <text x="1095" y="490" text-anchor="middle" class="s" style="font-size:16px">SMTP · SSH via tunnel</text>
+
+  <path class="line" d="M280 360 H345"/>
+  <path class="line" d="M590 360 H655"/>
+  <path class="line" d="M900 360 H955"/>
+</svg>

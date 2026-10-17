@@ -1,0 +1,149 @@
+/*
+ * 2027 stylesheet — a self-contained Tailwind build for this year only.
+ * Loaded by pages/2027/Layout.tsx, so it ships only on 2027 routes.
+ * Mobile-first: Tailwind's default min-width breakpoints (md: = 768px and up).
+ *
+ * Design: "Glass Terminal" — a frosted glass navbar and hero over a still blue wash,
+ * plain panels below, and a command-line voice. Palette: Signal Red (graphite +
+ * cool blue wash + red accent). Dark is the main theme; light follows the
+ * visitor's system setting. Every text pair is WCAG AA (≥ 4.5:1) in both themes.
+ */
+@import 'tailwindcss' source(none);
+@import '../../styles/shared.css';
+@import '@fontsource-variable/onest';
+@import '@fontsource-variable/jetbrains-mono';
+
+/* Classes are generated only from these files */
+@source '../../components/ui';
+@source '../../components/shared';
+@source '../../components/2027';
+@source '.';
+
+@theme inline {
+	--font-sans: 'Onest Variable', system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+	--color-accent-text: var(--accent-text);
+	--color-glass: var(--glass);
+	--color-glass-border: var(--glass-border);
+	--color-rule: var(--rule);
+}
+
+/* Light: cool grey page, white glass on the hero, flatter grey panels, solid red primary */
+:root {
+	--background: oklch(0.961 0.003 264.5);
+	--foreground: oklch(0.158 0.007 258.4);
+	--card: oklch(0.985 0.002 264);
+	--card-foreground: oklch(0.158 0.007 258.4);
+	--popover: oklch(0.985 0.002 264);
+	--popover-foreground: oklch(0.158 0.007 258.4);
+	--primary: oklch(0.503 0.176 23.4);
+	--primary-foreground: oklch(0.985 0.002 264);
+	--secondary: oklch(0.93 0.006 264);
+	--secondary-foreground: oklch(0.158 0.007 258.4);
+	--muted: oklch(0.93 0.006 264);
+	--muted-foreground: oklch(0.464 0.018 251.3);
+	--accent: oklch(0.93 0.006 264);
+	--accent-foreground: oklch(0.158 0.007 258.4);
+	--destructive: oklch(0.503 0.176 23.4);
+	--border: oklch(0.158 0.007 258.4 / 12%);
+	--input: oklch(0.158 0.007 258.4 / 16%);
+	--ring: oklch(0.503 0.176 23.4);
+	--radius: 0.5rem;
+
+	--accent-text: oklch(0.503 0.176 23.4);
+	--panel: oklch(0.938 0.005 264);
+	--glass: oklch(1 0 0 / 58%);
+	--glass-border: oklch(0.158 0.007 258.4 / 12%);
+	--glass-highlight: oklch(1 0 0 / 90%);
+	--rule: oklch(0.158 0.007 258.4 / 10%);
+	--wash: oklch(0.825 0.087 268.6);
+}
+
+/* Dark (main): graphite page, softened red accent, cool blue wash */
+.dark {
+	--background: oklch(0.158 0.007 258.4);
+	--foreground: oklch(0.963 0.003 247.9);
+	--card: oklch(0.2 0.009 258);
+	--card-foreground: oklch(0.963 0.003 247.9);
+	--popover: oklch(0.2 0.009 258);
+	--popover-foreground: oklch(0.963 0.003 247.9);
+	--primary: oklch(0.664 0.172 20.1);
+	--primary-foreground: oklch(0.158 0.007 258.4);
+	--secondary: oklch(0.24 0.01 258);
+	--secondary-foreground: oklch(0.963 0.003 247.9);
+	--muted: oklch(0.24 0.01 258);
+	--muted-foreground: oklch(0.711 0.018 250.9);
+	--accent: oklch(0.26 0.012 258);
+	--accent-foreground: oklch(0.963 0.003 247.9);
+	--destructive: oklch(0.716 0.145 18.3);
+	--border: oklch(1 0 0 / 14%);
+	--input: oklch(1 0 0 / 18%);
+	--ring: oklch(0.716 0.145 18.3);
+
+	--accent-text: oklch(0.716 0.145 18.3);
+	--panel: oklch(0.2 0.009 258);
+	--glass: oklch(1 0 0 / 7%);
+	--glass-border: oklch(1 0 0 / 16%);
+	--glass-highlight: oklch(1 0 0 / 18%);
+	--rule: oklch(1 0 0 / 12%);
+	--wash: oklch(0.556 0.227 265);
+}
+
+@layer components {
+	/* Page backdrop: one still wash of blue at the top that the glass panels blur */
+	.gt-backdrop {
+		position: relative;
+		isolation: isolate;
+	}
+	.gt-backdrop::before {
+		content: '';
+		position: fixed;
+		inset: 0;
+		z-index: -1;
+		pointer-events: none;
+		background: linear-gradient(
+			to bottom,
+			color-mix(in oklch, var(--wash) 22%, transparent) 0%,
+			transparent 55vh
+		);
+	}
+
+	/* Plain surface for content sections; glass stays on the navbar and hero */
+	.panel {
+		background: var(--panel);
+		border: 1px solid var(--rule);
+	}
+
+	/* Frosted panel: translucent fill, hairline border, light along the top edge */
+	.glass {
+		background: var(--glass);
+		border: 1px solid var(--glass-border);
+		box-shadow:
+			inset 0 1px 0 var(--glass-highlight),
+			0 12px 32px -16px oklch(0 0 0 / 45%);
+		-webkit-backdrop-filter: blur(16px) saturate(160%);
+		backdrop-filter: blur(16px) saturate(160%);
+	}
+
+	/* Blinking terminal cursor */
+	.gt-cursor {
+		display: inline-block;
+		width: 0.6em;
+		height: 1.05em;
+		vertical-align: -0.18em;
+		background: var(--accent-text);
+		animation: gt-blink 1s steps(1) infinite;
+	}
+}
+
+@keyframes gt-blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gt-cursor {
+		animation: none;
+	}
+}
