@@ -7,7 +7,7 @@ export function Background() {
 	return (
 		<div className="grid gap-8 md:grid-cols-2 md:gap-5">
 			<Section id="education" command="cat ./" title="education">
-				<ul className="glass divide-y divide-rule overflow-hidden rounded-xl">
+				<ul className="panel divide-y divide-rule overflow-hidden rounded-xl">
 					{educationList.map((item) => (
 						<li key={item.degree} className="grid gap-1 p-4 sm:p-5">
 							<p className="font-mono text-xs text-muted-foreground">{item.time}</p>
@@ -19,7 +19,7 @@ export function Background() {
 			</Section>
 
 			<Section id="certifications" command="ls ./" title="certifications">
-				<ul className="glass divide-y divide-rule overflow-hidden rounded-xl">
+				<ul className="panel divide-y divide-rule overflow-hidden rounded-xl">
 					{certifications.map((cert) => (
 						<li key={cert.name}>
 							{cert.url ? (

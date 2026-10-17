@@ -3,9 +3,9 @@
  * Loaded by pages/2027/Layout.tsx, so it ships only on 2027 routes.
  * Mobile-first: Tailwind's default min-width breakpoints (md: = 768px and up).
  *
- * Design: "Glass Terminal" — frosted glass panels over a slow blue glow, with
- * monospace headings and a command-line voice. Palette: Signal Red (graphite +
- * cool blue glow + red accent). Dark is the main theme; light follows the
+ * Design: "Glass Terminal" — a frosted glass navbar and hero over a still blue wash,
+ * plain panels below, and a command-line voice. Palette: Signal Red (graphite +
+ * cool blue wash + red accent). Dark is the main theme; light follows the
  * visitor's system setting. Every text pair is WCAG AA (≥ 4.5:1) in both themes.
  */
 @import 'tailwindcss' source(none);
@@ -55,14 +55,10 @@
 	--glass-border: oklch(0.158 0.007 258.4 / 12%);
 	--glass-highlight: oklch(1 0 0 / 90%);
 	--rule: oklch(0.158 0.007 258.4 / 10%);
-	--grid-line: oklch(0.158 0.007 258.4 / 4%);
-	--glow-1: oklch(0.825 0.087 268.6);
-	--glow-2: oklch(0.889 0.013 255.5);
-	--glow-3: oklch(0.873 0.062 270.9);
-	--glow-opacity: 0.75;
+	--wash: oklch(0.825 0.087 268.6);
 }
 
-/* Dark (main): graphite page, softened red accent, cool blue glow */
+/* Dark (main): graphite page, softened red accent, cool blue wash */
 .dark {
 	--background: oklch(0.158 0.007 258.4);
 	--foreground: oklch(0.963 0.003 247.9);
@@ -88,15 +84,11 @@
 	--glass-border: oklch(1 0 0 / 16%);
 	--glass-highlight: oklch(1 0 0 / 18%);
 	--rule: oklch(1 0 0 / 12%);
-	--grid-line: oklch(1 0 0 / 3.5%);
-	--glow-1: oklch(0.556 0.227 265);
-	--glow-2: oklch(0.511 0.036 252.9);
-	--glow-3: oklch(0.293 0.06 263.6);
-	--glow-opacity: 0.4;
+	--wash: oklch(0.556 0.227 265);
 }
 
 @layer components {
-	/* Page backdrop: a slow blue glow and a faint terminal grid, behind everything */
+	/* Page backdrop: one still wash of blue at the top that the glass panels blur */
 	.gt-backdrop {
 		position: relative;
 		isolation: isolate;
@@ -104,28 +96,20 @@
 	.gt-backdrop::before {
 		content: '';
 		position: fixed;
-		inset: -20%;
-		z-index: -2;
-		pointer-events: none;
-		background:
-			radial-gradient(38% 32% at 22% 18%, var(--glow-1) 0%, transparent 70%),
-			radial-gradient(34% 38% at 82% 48%, var(--glow-2) 0%, transparent 70%),
-			radial-gradient(30% 28% at 35% 88%, var(--glow-3) 0%, transparent 70%);
-		filter: blur(60px);
-		opacity: var(--glow-opacity);
-		animation: gt-drift 24s ease-in-out infinite alternate;
-	}
-	.gt-backdrop::after {
-		content: '';
-		position: fixed;
 		inset: 0;
 		z-index: -1;
 		pointer-events: none;
-		background-image:
-			linear-gradient(var(--grid-line) 1px, transparent 1px),
-			linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-		background-size: 28px 28px;
-		mask-image: linear-gradient(to bottom, #000 0%, transparent 70%);
+		background: linear-gradient(
+			to bottom,
+			color-mix(in oklch, var(--wash) 22%, transparent) 0%,
+			transparent 55vh
+		);
+	}
+
+	/* Plain surface for content sections; glass stays on the navbar and hero */
+	.panel {
+		background: var(--card);
+		border: 1px solid var(--rule);
 	}
 
 	/* Frosted panel: translucent fill, hairline border, light along the top edge */
@@ -137,33 +121,5 @@
 			0 12px 32px -16px oklch(0 0 0 / 45%);
 		-webkit-backdrop-filter: blur(16px) saturate(160%);
 		backdrop-filter: blur(16px) saturate(160%);
-	}
-
-	/* Blinking terminal cursor */
-	.gt-cursor {
-		display: inline-block;
-		width: 0.6em;
-		height: 1.05em;
-		vertical-align: -0.18em;
-		background: var(--accent-text);
-		animation: gt-blink 1s steps(1) infinite;
-	}
-}
-
-@keyframes gt-drift {
-	to {
-		transform: translate(6%, -4%) rotate(16deg) scale(1.06);
-	}
-}
-@keyframes gt-blink {
-	50% {
-		opacity: 0;
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.gt-backdrop::before,
-	.gt-cursor {
-		animation: none;
 	}
 }

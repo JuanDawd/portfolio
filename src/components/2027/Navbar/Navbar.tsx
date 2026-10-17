@@ -48,17 +48,30 @@ export function Navbar() {
 						))}
 					</ul>
 
+					{/* Phones: contact is the one section link; the archive lives in the footer */}
+					<a
+						href="#contact"
+						className="inline-flex h-11 items-center rounded px-2 text-muted-foreground transition-colors hover:text-foreground md:hidden"
+					>
+						contact
+					</a>
+
 					{/* Plain <a>: switching years is a full page load, so only one
 					    year's stylesheet is ever active */}
-					{otherYears('2027').map((year) => (
-						<a
-							key={year}
-							href={yearHref(year)}
-							className="inline-flex h-11 items-center rounded px-2 text-muted-foreground transition-colors hover:text-foreground md:h-9"
-						>
-							{year}
-						</a>
-					))}
+					<div className="hidden items-center md:flex">
+						<span aria-hidden="true" className="pl-2 text-muted-foreground/70">
+							archive/
+						</span>
+						{otherYears('2027').map((year) => (
+							<a
+								key={year}
+								href={yearHref(year)}
+								className="inline-flex h-9 items-center rounded px-1.5 text-muted-foreground transition-colors hover:text-foreground"
+							>
+								{year}
+							</a>
+						))}
+					</div>
 
 					<button
 						type="button"

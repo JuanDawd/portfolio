@@ -1,4 +1,4 @@
-import { biography, experienceList } from '@/pages/2027/constants'
+import { experienceList } from '@/pages/2027/constants'
 
 const current = experienceList[0]
 
@@ -6,35 +6,38 @@ export function Hero() {
 	return (
 		<section
 			aria-labelledby="hero-title"
-			className="glass grid gap-6 rounded-xl p-5 sm:p-8 lg:grid-cols-[auto_1fr] lg:gap-10"
+			className="glass grid gap-5 rounded-xl p-5 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-x-12 lg:p-10"
 		>
-			<div className="grid content-start gap-5">
-				<p className="font-mono text-sm text-muted-foreground" aria-hidden="true">
+			{/* lg+: name and pitch on the left, terminal output and actions on the right */}
+			<div className="grid gap-4">
+				<p className="mb-1 font-mono text-sm text-muted-foreground" aria-hidden="true">
 					<span className="text-accent-text">$</span> whoami
 				</p>
-
 				<h1
 					id="hero-title"
-					className="font-mono text-5xl leading-[0.95] font-extrabold tracking-tighter uppercase sm:text-7xl"
+					className="font-mono text-5xl leading-[0.95] font-extrabold tracking-tighter uppercase whitespace-nowrap sm:text-7xl 2xl:text-8xl"
 				>
-					Juan{' '}
-					<span className="bg-primary px-[0.12em] text-primary-foreground [box-decoration-break:clone]">
-						Dawd
-					</span>
+					Juan <span className="bg-primary px-[0.12em] text-primary-foreground [box-decoration-break:clone]">Dawd</span>
 				</h1>
+				{/* The positioning, in plain words: the one line a visitor should leave with */}
+				<p className="max-w-[34ch] text-xl leading-snug text-balance sm:text-2xl">
+					I design, build and ship SaaS products end to end, on my own.
+				</p>
+			</div>
 
-				<ul className="grid gap-1 font-mono text-sm leading-relaxed sm:text-base">
+			<div className="grid gap-5">
+				<ul className="grid gap-1 font-mono text-sm leading-relaxed text-muted-foreground sm:text-base">
 					<li>
-						<span aria-hidden="true" className="text-muted-foreground">&gt; </span>
+						<span aria-hidden="true">&gt; </span>
 						{current.position.toLowerCase()} @ {current.company.toLowerCase()}
 					</li>
 					<li>
-						<span aria-hidden="true" className="text-muted-foreground">&gt; </span>
+						<span aria-hidden="true">&gt; </span>
 						react · next.js · node.js · postgres
 					</li>
 					<li>
-						<span aria-hidden="true" className="text-muted-foreground">&gt; </span>
-						real-time: redis, mqtt, sse <span aria-hidden="true" className="gt-cursor" />
+						<span aria-hidden="true">&gt; </span>
+						real-time: redis, mqtt, sse
 					</li>
 				</ul>
 
@@ -64,14 +67,6 @@ export function Hero() {
 						contact --me
 					</a>
 				</div>
-			</div>
-
-			{/* Wide screens: the bio fills the right half of the card */}
-			<div className="grid content-start gap-3 border-t border-rule pt-5 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
-				<p className="font-mono text-sm text-muted-foreground" aria-hidden="true">
-					<span className="text-accent-text">$</span> cat ./about.md
-				</p>
-				<p className="max-w-[60ch] text-sm leading-relaxed text-muted-foreground sm:text-base">{biography}</p>
 			</div>
 		</section>
 	)

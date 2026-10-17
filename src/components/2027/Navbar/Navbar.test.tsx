@@ -47,7 +47,10 @@ describe('2027 Navbar', () => {
 	it('links to the page sections', () => {
 		renderNavbar()
 		expect(screen.getByRole('link', { name: 'work' })).toHaveAttribute('href', '#work')
-		expect(screen.getByRole('link', { name: 'contact' })).toHaveAttribute('href', '#contact')
+		// One contact link for phones, one in the md+ section list
+		for (const link of screen.getAllByRole('link', { name: 'contact' })) {
+			expect(link).toHaveAttribute('href', '#contact')
+		}
 	})
 
 	it('toggles between light and dark', async () => {
