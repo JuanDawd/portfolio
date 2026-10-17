@@ -1,3 +1,3 @@
 export type ProjectSlideshowProps = {
-  imagesArray: string[]
+	imagesArray: string[]
 }

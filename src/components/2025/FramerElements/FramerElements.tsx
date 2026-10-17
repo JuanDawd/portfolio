@@ -1,9 +1,4 @@
-import {
-	m,
-	type TargetAndTransition,
-	type VariantLabels,
-	type ViewportOptions,
-} from 'framer-motion'
+import { m, type TargetAndTransition, type VariantLabels, type ViewportOptions } from 'framer-motion'
 import { type ReactElement, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/2025/ui/button'
@@ -22,12 +17,7 @@ type FramerButtonProps = {
 
 const FramerButton = m.create(Button)
 
-export const FramerButtonIcon = ({
-	className,
-	children,
-	href,
-	ariaLabel,
-}: FramerButtonProps) => {
+export const FramerButtonIcon = ({ className, children, href, ariaLabel }: FramerButtonProps) => {
 	return (
 		<FramerButton
 			whileHover={{ y: -2 }}
@@ -50,20 +40,9 @@ type FramerLiProps = {
 	viewport: ViewportOptions
 }
 
-export const FramerLi = ({
-	className,
-	children,
-	initial,
-	whileInView,
-	viewport,
-}: FramerLiProps) => {
+export const FramerLi = ({ className, children, initial, whileInView, viewport }: FramerLiProps) => {
 	return (
-		<m.li
-			className={className}
-			initial={initial}
-			whileInView={whileInView}
-			viewport={viewport}
-		>
+		<m.li className={className} initial={initial} whileInView={whileInView} viewport={viewport}>
 			{children}
 		</m.li>
 	)

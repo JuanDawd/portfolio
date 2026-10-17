@@ -19,10 +19,7 @@ const DesktopNavbar = () => {
 		() => false,
 	)
 
-	const isDark =
-		theme === 'system' && resolvedTheme
-			? resolvedTheme === 'dark'
-			: theme === 'dark'
+	const isDark = theme === 'system' && resolvedTheme ? resolvedTheme === 'dark' : theme === 'dark'
 
 	const handleChangeMode = () => {
 		setTheme(isDark ? 'light' : 'dark')
