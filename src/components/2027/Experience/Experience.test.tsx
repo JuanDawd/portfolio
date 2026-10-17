@@ -22,4 +22,13 @@ describe('2027 Experience', () => {
 		expect(line.closest('ul')).toBe(screen.getByText(longJob.description[0]).closest('ul'))
 		expect(line.compareDocumentPosition(toggle) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
 	})
+
+	it('links each client project to its case study', () => {
+		render(<Experience />)
+		for (const job of experienceList.filter((j) => j.clients)) {
+			for (const client of job.clients!) {
+				expect(screen.getByRole('link', { name: client.name })).toHaveAttribute('href', client.url)
+			}
+		}
+	})
 })

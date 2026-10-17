@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ExternalLink } from 'lucide-react'
 
 import { Section } from '@/components/2027/Section'
 import { TagList } from '@/components/2027/TagList'
@@ -26,6 +27,27 @@ export function Experience() {
 									job.company
 								)}
 							</h3>
+							{job.clients && (
+								<ul aria-label={`Clients at ${job.company}`} className="grid max-w-[58ch] gap-1 sm:gap-2 sm:py-1">
+									{job.clients.map((client) => (
+										<li key={client.name} className="grid gap-0.5 text-sm">
+											<a
+												href={client.url}
+												target="_blank"
+												rel="noreferrer"
+												className="inline-flex min-h-11 items-center gap-1.5 justify-self-start font-mono font-bold text-accent-text hover:underline sm:min-h-0"
+											>
+												<span aria-hidden="true" className="text-muted-foreground">
+													→
+												</span>
+												{client.name}
+												<ExternalLink aria-hidden="true" className="h-3 w-3" />
+											</a>
+											<span className="pl-[2.1ch] text-muted-foreground">{client.note}</span>
+										</li>
+									))}
+								</ul>
+							)}
 							<JobBullets id={`job-${i}`} lines={job.description} />
 							<TagList tags={job.techStack} label="Tech stack" />
 						</div>

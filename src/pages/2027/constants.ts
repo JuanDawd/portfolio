@@ -36,12 +36,40 @@ import {
 export const biography =
 	'Full-Stack Developer with 4+ years of experience architecting and shipping production-grade web and mobile applications. Deep expertise in the React/Next.js ecosystem, with hands-on experience leading monorepo development, designing real-time data pipelines (Redis, MQTT, SSE), and owning CI/CD automation. Proven track record delivering end-to-end SaaS products independently and leading small engineering teams.'
 
-export const experienceList = [
+export type Experience = {
+	position: string
+	company: string
+	companyLink: string
+	time: string
+	description: string[]
+	techStack: string[]
+	// Client projects within this job, each linking to its public case study
+	clients?: { name: string; url: string; note: string }[]
+}
+
+export const experienceList: Experience[] = [
 	{
 		position: 'Full-Stack Developer',
 		company: 'Melt Studio',
 		companyLink: 'https://www.meltstudio.co/',
 		time: 'Mar 2024 - Present',
+		clients: [
+			{
+				name: 'Amatis',
+				url: 'https://www.meltstudio.co/case-studies/amatis',
+				note: 'Smart-building IoT platform, web + iOS/Android. My main project since 2024.',
+			},
+			{
+				name: 'Raíz · Cooltura',
+				url: 'https://www.meltstudio.co/case-studies/raiz',
+				note: 'Culture diagnostic with real-time Typeform sync. Starting team; MVP shipped in 7 weeks.',
+			},
+			{
+				name: 'Suscripciones',
+				url: 'https://www.meltstudio.co/case-studies/suscripciones',
+				note: 'Subscription platform for online stores. About 4 months on the prototype.',
+			},
+		],
 		description: [
 			'Currently leading development on Amatis - a customer-facing platform - across web and mobile targets.',
 			'Architected and delivered 4 scalable web/mobile solutions within the Next.js App Router ecosystem.',
