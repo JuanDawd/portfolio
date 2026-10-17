@@ -1,0 +1,9 @@
+dist
+dist-server
+coverage
+public
+pnpm-lock.yaml
+.pnpm-store
+
+# scripts/prerender.mjs matches this file with regexes
+index.html
