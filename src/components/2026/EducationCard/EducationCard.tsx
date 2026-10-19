@@ -4,9 +4,7 @@ import { educationList } from '@/pages/2026/constants'
 export function EducationCard() {
 	return (
 		<div className="flex h-full flex-col gap-4">
-			<h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-				Education
-			</h2>
+			<h2 className="text-sm font-semibold tracking-widest text-muted-foreground uppercase">Education</h2>
 			<div className="flex flex-col gap-4">
 				{educationList.map((edu) => (
 					<div key={edu.degree} className="flex items-start gap-3">

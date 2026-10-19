@@ -36,9 +36,7 @@ describe('Navbar', () => {
 
 	it('renders the theme toggle button', () => {
 		renderNavbar()
-		expect(
-			screen.getByRole('button', { name: 'Toggle theme' }),
-		).toBeInTheDocument()
+		expect(screen.getByRole('button', { name: 'Toggle theme' })).toBeInTheDocument()
 	})
 
 	it('toggles theme on click', async () => {

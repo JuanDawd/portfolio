@@ -9,9 +9,7 @@ export function CertificationsCard() {
 
 	return (
 		<div className="flex h-full flex-col gap-4">
-			<h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-				Certifications
-			</h2>
+			<h2 className="text-sm font-semibold tracking-widest text-muted-foreground uppercase">Certifications</h2>
 			<div className="grid grid-cols-2 gap-3 sm:grid-cols-1">
 				{visibleCertifications.map((cert) => {
 					const content = (

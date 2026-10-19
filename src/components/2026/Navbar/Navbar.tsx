@@ -15,10 +15,7 @@ export function Navbar() {
 		() => false,
 	)
 
-	const isDark =
-		theme === 'system' && resolvedTheme
-			? resolvedTheme === 'dark'
-			: theme === 'dark'
+	const isDark = theme === 'system' && resolvedTheme ? resolvedTheme === 'dark' : theme === 'dark'
 
 	return (
 		<header className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md">
@@ -48,11 +45,7 @@ export function Navbar() {
 							aria-label="Toggle theme"
 							className="h-9 w-9"
 						>
-							{isDark ? (
-								<Sun className="h-4 w-4" />
-							) : (
-								<Moon className="h-4 w-4" />
-							)}
+							{isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
 						</Button>
 					)}
 				</div>

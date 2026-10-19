@@ -34,9 +34,7 @@ const definitions = import.meta.glob<YearDefinition>('./pages/*/year.ts', {
 })
 
 // Newest first
-export const years: YearDefinition[] = Object.values(definitions).sort((a, b) =>
-	b.year.localeCompare(a.year),
-)
+export const years: YearDefinition[] = Object.values(definitions).sort((a, b) => b.year.localeCompare(a.year))
 
 const current = years.find((y) => y.year === CURRENT_YEAR)
 if (!current) {

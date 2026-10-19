@@ -5,9 +5,7 @@ import { experienceList, experienceAnchor } from '@/pages/2026/constants'
 export function ExperienceCard() {
 	return (
 		<div className="flex h-full flex-col gap-4">
-			<h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-				Experience
-			</h2>
+			<h2 className="text-sm font-semibold tracking-widest text-muted-foreground uppercase">Experience</h2>
 			<div className="flex flex-col gap-3 overflow-y-auto">
 				{experienceList.map((exp, i) => (
 					<div key={exp.company} id={experienceAnchor(exp.company)} className="scroll-mt-24">
@@ -29,9 +27,7 @@ export function ExperienceCard() {
 									)}
 								</p>
 							</div>
-							<span className="shrink-0 text-xs text-muted-foreground">
-								{exp.time}
-							</span>
+							<span className="shrink-0 text-xs text-muted-foreground">{exp.time}</span>
 						</div>
 						{Array.isArray(exp.description) ? (
 							<ul className="mt-1 list-inside list-disc space-y-0.5 text-sm leading-relaxed text-foreground/80">
@@ -40,9 +36,7 @@ export function ExperienceCard() {
 								))}
 							</ul>
 						) : (
-							<p className="mt-1 text-sm leading-relaxed text-foreground/80">
-								{exp.description}
-							</p>
+							<p className="mt-1 text-sm leading-relaxed text-foreground/80">{exp.description}</p>
 						)}
 						{exp.techStack?.length > 0 && (
 							<div className="mt-2 flex flex-wrap gap-1">

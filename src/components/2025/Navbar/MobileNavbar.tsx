@@ -22,10 +22,7 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
 		() => false,
 	)
 
-	const isDark =
-		theme === 'system' && resolvedTheme
-			? resolvedTheme === 'dark'
-			: theme === 'dark'
+	const isDark = theme === 'system' && resolvedTheme ? resolvedTheme === 'dark' : theme === 'dark'
 
 	const handleChangeMode = () => {
 		setTheme(isDark ? 'light' : 'dark')
@@ -48,11 +45,7 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
 						{CURRENT_YEAR}
 					</a>
 					<CustomMobileLink href={yearHref('2025')} title="Home" toggle={handleClick} />
-					<CustomMobileLink
-						href={yearHref('2025', 'projects')}
-						title="Projects"
-						toggle={handleClick}
-					/>
+					<CustomMobileLink href={yearHref('2025', 'projects')} title="Projects" toggle={handleClick} />
 				</nav>
 
 				<nav aria-label="Social" className="flex flex-wrap items-center justify-center">
