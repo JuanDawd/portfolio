@@ -251,13 +251,13 @@ export type Project = {
 
 export const projectsList: Project[] = [
 	{
-		title: 'Innovation Befine',
-		type: 'Personal SaaS',
+		title: 'Atelier',
+		type: 'White-label SaaS',
 		role: 'Fullstack',
 		description:
-			'Salon-and-workshop operations platform replacing WhatsApp + Excel for LATAM SMBs. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
-		image: '/2026/projects/befine.webp',
-		deployment: undefined,
+			'White-label operations platform for LATAM salons and workshops, replacing WhatsApp + Excel; Innovations Befine is the first client. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
+		image: '/2026/projects/atelier.webp',
+		deployment: 'https://atelier.juandawd.dev',
 		github: undefined,
 		technologies: [
 			'Next.js',
