@@ -66,7 +66,7 @@ export const experienceList: Experience[] = [
 		],
 		description: [
 			'Leading Amatis, a smart-building IoT platform, across web and iOS/Android.',
-			'Starting team on Raíz · Cooltura, a culture diagnostic with real-time Typeform sync; MVP shipped in 7 weeks.',
+			'Starting team on Raíz · Cooltura for Caramelo Escaso, a culture diagnostic with real-time Typeform sync; MVP shipped in 7 weeks.',
 			'Automated release pipelines for 2 Android and 2 iOS apps via GitLab CI/CD, cutting release time from ~8 hours to 1-2.',
 			'Led architecture for 4 web and mobile products on the Next.js App Router, coordinating sprints and enforcing coding standards and code review.',
 			'Built and maintained a Turborepo monorepo housing admin, user, and mobile app targets.',
@@ -267,24 +267,23 @@ export type Project = {
 export const projectsList: Project[] = [
 	{
 		title: 'Atelier',
-		type: 'SaaS · in use at Innovation Befine',
+		type: 'White-label SaaS',
 		role: 'Fullstack',
 		description:
-			'Salon-and-workshop operations platform replacing WhatsApp + Excel for LATAM SMBs, in daily use at Innovation Befine. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
-		image: '/2027/projects/befine.webp',
+			'White-label operations platform for LATAM salons and workshops, replacing WhatsApp + Excel. Shipped to each client and hosted where it suits them; Innovation Befine, the first client, runs it on a server on its own premises. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
+		image: '/2027/projects/atelier.webp',
 		deployment: 'https://atelier.juandawd.dev/',
 		github: undefined,
 		technologies: [
 			'Next.js',
 			'Turborepo',
-			'Neon Postgres',
+			'PostgreSQL',
 			'DrizzleORM',
 			'Better Auth',
 			'TanStack Query',
 			'Zustand',
 			'Vitest',
 			'Playwright',
-			'Vercel',
 			'Claude Code',
 		],
 	},
