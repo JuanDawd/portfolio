@@ -16,7 +16,7 @@ const DetailsWrapper = ({ children }: DetailsProps) => {
 			className="mx-auto my-8 flex w-[60%] flex-col items-start justify-between first:mt-0 last:mb-0 md:w-[80%]"
 		>
 			<figure className="absolute left-0 stroke-accent">
-				<svg className="-rotate-90 md:h-15 md:w-15 xs:h-10 xs:w-10" width={75} height={75} viewBox="0 0 100 100">
+				<svg className="xs:h-10 xs:w-10 -rotate-90 md:h-15 md:w-15" width={75} height={75} viewBox="0 0 100 100">
 					<circle cx={75} cy={50} r={20} className="fill-none stroke-1" />
 					<m.circle
 						cx={75}

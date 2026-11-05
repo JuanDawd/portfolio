@@ -6,7 +6,7 @@ export function Hero() {
 	return (
 		<section
 			aria-labelledby="hero-title"
-			className="glass grid gap-5 rounded-xl p-5 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-x-12 lg:p-10 sm:p-8"
+			className="glass grid gap-5 rounded-xl p-5 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-x-12 lg:p-10"
 		>
 			{/* lg+: name and pitch on the left, terminal output and actions on the right */}
 			<div className="grid gap-4">
@@ -15,7 +15,7 @@ export function Hero() {
 				</p>
 				<h1
 					id="hero-title"
-					className="font-mono text-5xl leading-[0.95] font-extrabold tracking-tighter whitespace-nowrap uppercase 2xl:text-8xl sm:text-7xl"
+					className="font-mono text-5xl leading-[0.95] font-extrabold tracking-tighter whitespace-nowrap uppercase sm:text-7xl 2xl:text-8xl"
 				>
 					Juan <span className="bg-primary [box-decoration-break:clone] px-[0.12em] text-primary-foreground">Dawd</span>
 				</h1>
@@ -56,13 +56,13 @@ export function Hero() {
 						target="_blank"
 						rel="noreferrer"
 						lang="es"
-						className="glass hover:text-accent-text inline-flex min-h-11 items-center justify-center rounded-md px-4 transition-colors"
+						className="glass inline-flex min-h-11 items-center justify-center rounded-md px-4 transition-colors hover:text-accent-text"
 					>
 						./hoja-de-vida.pdf
 					</a>
 					<a
 						href="#contact"
-						className="glass hover:text-accent-text inline-flex min-h-11 items-center justify-center rounded-md px-4 transition-colors"
+						className="glass inline-flex min-h-11 items-center justify-center rounded-md px-4 transition-colors hover:text-accent-text"
 					>
 						contact --me
 					</a>

@@ -22,7 +22,7 @@ export function Contact() {
 	return (
 		<Section id="contact" command="./" title="contact">
 			{/* The closing bookend: glass like the hero, restating the pitch, email first */}
-			<div className="glass grid gap-6 rounded-xl p-5 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-12 lg:p-10 sm:p-8">
+			<div className="glass grid gap-6 rounded-xl p-5 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-12 lg:p-10">
 				<p className="max-w-[30ch] text-2xl leading-snug text-balance sm:text-3xl">
 					Have a product to build, or a team that needs someone who can ship one? Write to me.
 				</p>
@@ -39,7 +39,7 @@ export function Contact() {
 							type="button"
 							onClick={copyEmail}
 							aria-label={copied ? 'Email copied' : 'Copy email'}
-							className="glass hover:text-accent-text inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-md transition-colors"
+							className="glass inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-md transition-colors hover:text-accent-text"
 						>
 							{copied ? (
 								<Check aria-hidden="true" className="h-5 w-5" />
@@ -57,7 +57,7 @@ export function Contact() {
 							href={socialLinks.github}
 							target="_blank"
 							rel="noreferrer"
-							className="hover:text-accent-text inline-flex min-h-11 items-center gap-2 transition-colors"
+							className="inline-flex min-h-11 items-center gap-2 transition-colors hover:text-accent-text"
 						>
 							<GithubIcon aria-hidden="true" className="h-4 w-4" />
 							github
@@ -66,7 +66,7 @@ export function Contact() {
 							href={socialLinks.linkedin}
 							target="_blank"
 							rel="noreferrer"
-							className="hover:text-accent-text inline-flex min-h-11 items-center gap-2 transition-colors"
+							className="inline-flex min-h-11 items-center gap-2 transition-colors hover:text-accent-text"
 						>
 							<LinkedInIcon aria-hidden="true" className="h-4 w-4" />
 							linkedin
@@ -75,7 +75,7 @@ export function Contact() {
 				</div>
 			</div>
 
-			<footer className="border-rule mt-10 flex items-center gap-3 border-t px-1 pt-4 font-mono text-xs text-muted-foreground">
+			<footer className="mt-10 flex items-center gap-3 border-t border-rule px-1 pt-4 font-mono text-xs text-muted-foreground">
 				<span>© 2027 Juan Dawd</span>
 			</footer>
 		</Section>

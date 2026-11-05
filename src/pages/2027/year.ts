@@ -2,9 +2,6 @@ import type { YearDefinition } from '@/years'
 
 export default {
 	year: '2027',
-	// Work in progress: live at /2027 but noindex, out of the sitemap and
-	// not linked from other years. Remove when launching.
-	draft: true,
 	ogImage: '/2027/og-image.jpg',
 	pages: [
 		{

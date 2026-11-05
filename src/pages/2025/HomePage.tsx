@@ -16,7 +16,7 @@ import { Skills } from '@/components/2025/Skills'
 export default function Home() {
 	return (
 		<Layout className="pt-16">
-			<AnimatedText text="Passion Fuels Purpose!" className="mb-16 lg:text-7xl! sm:mb-8 sm:text-6xl! xs:text-4xl!" />
+			<AnimatedText text="Passion Fuels Purpose!" className="xs:text-4xl! mb-16 sm:mb-8 sm:text-6xl! lg:text-7xl!" />
 			<div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
 				<div className="col-span-4 flex flex-col items-center justify-center md:order-2 md:col-span-8">
 					<h2 className="mb-4 text-2xl font-bold text-secondary-foreground/75 uppercase">Biography</h2>

@@ -60,7 +60,7 @@ export function Navbar() {
 
 					<YearSwitcher
 						year="2027"
-						className="border-glass-border h-11 font-mono text-muted-foreground hover:text-foreground md:h-9"
+						className="h-11 border-glass-border font-mono text-muted-foreground hover:text-foreground md:h-9"
 					/>
 
 					<button

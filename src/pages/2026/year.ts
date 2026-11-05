@@ -6,9 +6,8 @@ export default {
 		{
 			path: '',
 			component: 'HomePage',
-			title: 'Juan Dawd | Full-Stack Developer — React, Next.js, Node.js',
-			description:
-				'Full-Stack Developer with 4+ years shipping production web and mobile apps with React, Next.js, Node.js and TypeScript.',
+			title: 'Juan Dawd | 2026 Portfolio',
+			description: "The 2026 edition of Juan Dawd's portfolio: projects, experience, skills and certifications.",
 		},
 	],
 } satisfies YearDefinition

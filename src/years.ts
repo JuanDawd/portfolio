@@ -26,7 +26,7 @@ export interface YearDefinition {
 }
 
 // The year served at "/". Every other year is served at "/{year}".
-export const CURRENT_YEAR = '2026'
+export const CURRENT_YEAR = '2027'
 
 const definitions = import.meta.glob<YearDefinition>('./pages/*/year.ts', {
 	eager: true,

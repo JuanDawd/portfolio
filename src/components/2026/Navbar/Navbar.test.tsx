@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { MemoryRouter } from 'react-router-dom'
 import { ThemeProvider } from '@/lib/theme'
+import { yearHref } from '@/years'
 import { Navbar } from './Navbar'
 
 function renderNavbar() {
@@ -25,7 +26,7 @@ describe('Navbar', () => {
 		renderNavbar()
 		const brand = screen.getByRole('link', { name: 'JD' })
 		expect(brand).toBeInTheDocument()
-		expect(brand).toHaveAttribute('href', '/')
+		expect(brand).toHaveAttribute('href', yearHref('2026'))
 	})
 
 	it('renders a year switcher showing 2026', () => {
