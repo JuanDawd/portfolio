@@ -28,10 +28,9 @@ describe('Navbar', () => {
 		expect(brand).toHaveAttribute('href', '/')
 	})
 
-	it('renders a link to the 2025 portfolio', () => {
+	it('renders a year switcher showing 2026', () => {
 		renderNavbar()
-		const link = screen.getByRole('link', { name: '2025' })
-		expect(link).toHaveAttribute('href', '/2025')
+		expect(screen.getByRole('button', { name: /Portfolio year: 2026/ })).toBeInTheDocument()
 	})
 
 	it('renders the theme toggle button', () => {

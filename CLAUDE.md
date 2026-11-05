@@ -31,7 +31,7 @@ Each portfolio year is a self-contained app inside a shared shell:
 - **Pages + data**: `src/pages/{year}/` — `year.ts`, `Layout.tsx`, page components, `styles.css` and a `constants.ts` with the year's content
 - **Components**: `src/components/{year}/` — year-specific components (forked primitives go in `src/components/{year}/ui/`)
 - **Shared**: `src/components/ui/` (shadcn, styled only via tokens), `src/components/shared/` (icons, 404), `src/lib/`, `src/hooks/` — only code used by 2+ years
-- **Independence rules**: a year never imports another year's code. Cross-year links are plain `<a href={yearHref(year)}>` (full page load, so only one year's stylesheet is active); never hardcode year URLs — use `yearHref` / `otherYears` / `CURRENT_YEAR`. Past years are frozen snapshots.
+- **Independence rules**: a year never imports another year's code. Cross-year links are plain `<a href={yearHref(year)}>` (full page load, so only one year's stylesheet is active); never hardcode year URLs — use `yearHref` / `otherYears` / `CURRENT_YEAR`. Every year's navbar renders the shared `YearSwitcher` (`src/components/shared/YearSwitcher`), which lists published years from the registry. Past years are frozen snapshots.
 
 Adding or launching a year: use the `/new-portfolio-year` skill.
 

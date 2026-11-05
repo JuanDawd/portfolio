@@ -54,3 +54,9 @@ export function yearHref(year: string, page = ''): string {
 export function otherYears(year: string): string[] {
 	return years.filter((y) => !y.draft && y.year !== year).map((y) => y.year)
 }
+
+// Years offered by a year switcher on `year`'s pages, newest first: the published
+// years plus `year` itself (so a draft still shows where the visitor is)
+export function switcherYears(year: string): string[] {
+	return years.filter((y) => !y.draft || y.year === year).map((y) => y.year)
+}

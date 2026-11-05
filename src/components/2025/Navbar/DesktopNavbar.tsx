@@ -1,8 +1,9 @@
 import { useSyncExternalStore } from 'react'
 import { useTheme } from '@/lib/theme'
 import { m } from 'framer-motion'
-import { MoonStar, Sun, ArrowLeft } from 'lucide-react'
-import { CURRENT_YEAR, yearHref } from '@/years'
+import { MoonStar, Sun } from 'lucide-react'
+import { YearSwitcher } from '@/components/shared/YearSwitcher'
+import { yearHref } from '@/years'
 
 import { GithubIcon } from '@/components/shared/icons/GithubIcon'
 import { LinkedInIcon } from '@/components/shared/icons/LinkedInIcon'
@@ -28,13 +29,7 @@ const DesktopNavbar = () => {
 	return (
 		<div className="flex w-full items-center justify-between lg:hidden">
 			<nav aria-label="Main" className="flex items-center">
-				<a
-					href={yearHref(CURRENT_YEAR)}
-					className="mr-6 flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
-				>
-					<ArrowLeft className="h-3.5 w-3.5" />
-					{CURRENT_YEAR}
-				</a>
+				<YearSwitcher year="2025" align="start" className="mr-6" />
 				<CustomLink href={yearHref('2025')} title="Home" className="mr-4" />
 				<CustomLink href={yearHref('2025', 'projects')} title="Projects" className="ml-4" />
 			</nav>

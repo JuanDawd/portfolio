@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Logo from './Logo'
 import MobileNavbar from './MobileNavbar'
 import DesktopNavbar from './DesktopNavbar'
+import { YearSwitcher } from '@/components/shared/YearSwitcher'
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -38,6 +39,11 @@ const Navbar = () => {
 			<DesktopNavbar />
 
 			{isOpen && <MobileNavbar handleClick={handleClick} />}
+
+			{/* Phones and tablets: the desktop bar (and its year switcher) is hidden */}
+			<div className="hidden lg:block">
+				<YearSwitcher year="2025" />
+			</div>
 
 			<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
 				<Logo />

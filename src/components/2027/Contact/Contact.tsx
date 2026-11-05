@@ -5,7 +5,6 @@ import { GithubIcon } from '@/components/shared/icons/GithubIcon'
 import { LinkedInIcon } from '@/components/shared/icons/LinkedInIcon'
 import { Section } from '@/components/2027/Section'
 import { socialLinks } from '@/pages/2027/constants'
-import { otherYears, yearHref } from '@/years'
 
 export function Contact() {
 	const [copied, setCopied] = useState(false)
@@ -76,23 +75,8 @@ export function Contact() {
 				</div>
 			</div>
 
-			<footer className="border-rule mt-10 flex items-center justify-between gap-3 border-t px-1 pt-2 font-mono text-xs text-muted-foreground">
+			<footer className="border-rule mt-10 flex items-center gap-3 border-t px-1 pt-4 font-mono text-xs text-muted-foreground">
 				<span>© 2027 Juan Dawd</span>
-				<nav aria-label="Previous years" className="-mr-2 flex items-center">
-					<span aria-hidden="true" className="mr-1">
-						archive/
-					</span>
-					{/* Plain <a>: switching years is a full page load */}
-					{otherYears('2027').map((year) => (
-						<a
-							key={year}
-							href={yearHref(year)}
-							className="hover:text-accent-text inline-flex min-h-11 items-center px-2 transition-colors"
-						>
-							{year}
-						</a>
-					))}
-				</nav>
 			</footer>
 		</Section>
 	)

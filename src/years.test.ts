@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { CURRENT_YEAR, otherYears, yearHref, years } from './years'
+import { CURRENT_YEAR, otherYears, switcherYears, yearHref, years } from './years'
 import { routePages } from './lib/seo'
 
 const modules = import.meta.glob('./pages/*/*.tsx')
@@ -43,6 +43,15 @@ describe('year registry', () => {
 		for (const { year } of years) {
 			expect(otherYears(year)).not.toContain(year)
 			for (const draft of drafts) expect(otherYears(year)).not.toContain(draft)
+		}
+	})
+
+	it('switches between published years plus the one being viewed', () => {
+		const drafts = years.filter((y) => y.draft).map((y) => y.year)
+		for (const { year } of years) {
+			const options = switcherYears(year)
+			expect(options).toContain(year)
+			for (const draft of drafts) if (draft !== year) expect(options).not.toContain(draft)
 		}
 	})
 })

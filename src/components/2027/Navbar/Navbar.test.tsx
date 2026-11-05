@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { MemoryRouter } from 'react-router-dom'
 import { ThemeProvider } from '@/lib/theme'
-import { otherYears, yearHref } from '@/years'
+import { yearHref } from '@/years'
 import { Navbar } from './Navbar'
 
 function renderNavbar() {
@@ -37,11 +37,9 @@ describe('2027 Navbar', () => {
 		expect(screen.getByRole('link', { name: '~/juandawd' })).toHaveAttribute('href', yearHref('2027'))
 	})
 
-	it('links every other published year with a full page load', () => {
+	it('has a year switcher showing 2027', () => {
 		renderNavbar()
-		for (const year of otherYears('2027')) {
-			expect(screen.getByRole('link', { name: year })).toHaveAttribute('href', yearHref(year))
-		}
+		expect(screen.getByRole('button', { name: /Portfolio year: 2027/ })).toBeInTheDocument()
 	})
 
 	it('links to the page sections', () => {
