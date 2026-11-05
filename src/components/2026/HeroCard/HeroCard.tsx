@@ -1,11 +1,6 @@
 import { m } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import {
-	DropdownMenu,
-	DropdownMenuTrigger,
-	DropdownMenuContent,
-	DropdownMenuItem,
-} from '@/components/ui/dropdown-menu'
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@/components/ui/dropdown-menu'
 import { ChevronDown, FileDown } from 'lucide-react'
 
 export function HeroCard() {
@@ -22,9 +17,7 @@ export function HeroCard() {
 			/>
 
 			<div className="space-y-2">
-				<h1 className="text-4xl font-bold tracking-tight sm:text-3xl">
-					Juan Dawd
-				</h1>
+				<h1 className="text-4xl font-bold tracking-tight sm:text-3xl">Juan Dawd</h1>
 				<m.p
 					className="text-lg text-muted-foreground"
 					initial={{ opacity: 0 }}
@@ -46,23 +39,13 @@ export function HeroCard() {
 					</DropdownMenuTrigger>
 					<DropdownMenuContent>
 						<DropdownMenuItem asChild>
-							<a
-								href="/resume/JuanDawd_ATS_Eng_CV.pdf"
-								download
-								target="_blank"
-								rel="noreferrer"
-							>
+							<a href="/resume/JuanDawd_ATS_Eng_CV.pdf" download target="_blank" rel="noreferrer">
 								<FileDown className="h-4 w-4" />
 								English
 							</a>
 						</DropdownMenuItem>
 						<DropdownMenuItem asChild>
-							<a
-								href="/resume/JuanDawd_ATS_Esp_CV.pdf"
-								download
-								target="_blank"
-								rel="noreferrer"
-							>
+							<a href="/resume/JuanDawd_ATS_Esp_CV.pdf" download target="_blank" rel="noreferrer">
 								<FileDown className="h-4 w-4" />
 								Español
 							</a>

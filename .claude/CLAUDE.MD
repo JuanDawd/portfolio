@@ -1,12 +1,14 @@
 # Portfolio Project Context
 
 ## Architecture
+
 - **Stack**: Vite 7 + React 19 + TypeScript 5.9 + Tailwind CSS v4 + Shadcn UI
 - **Package Manager**: pnpm 10
 - **Deployment**: Vercel (static hosting, every route prerendered at build time)
 - **Routing**: react-router-dom, routes generated from the year registry (`src/years.ts`)
 
 ## Versioning Strategy
+
 - **Root (`/`)**: the current year (`CURRENT_YEAR` in `src/years.ts`); older years at `/{year}`
 - **Years**: self-contained — own pages, components, content and Tailwind stylesheet
 - **Components**: `src/components/{year}/` per year; `src/components/ui/` and `src/components/shared/` shared
@@ -14,6 +16,7 @@
 - New year → `/new-portfolio-year` skill
 
 ## Tech Preferences
+
 - TypeScript strict mode
 - Tailwind v4 for styling (via `@tailwindcss/vite` plugin)
 - Shadcn UI for base components
@@ -22,6 +25,7 @@
 - D3 for data visualizations
 
 ## File Patterns
+
 - Components: `src/components/{year}/{Feature}/` with barrel exports
 - Pages: `src/pages/{year}/`
 - Shared UI: `src/components/ui/` (shadcn, token-driven); shared app components: `src/components/shared/`

@@ -11,9 +11,7 @@ function isDark(hex: string) {
 export function SkillsCard() {
 	return (
 		<div className="flex h-full flex-col gap-4">
-			<h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-				Skills
-			</h2>
+			<h2 className="text-sm font-semibold tracking-widest text-muted-foreground uppercase">Skills</h2>
 			<div className="flex flex-wrap gap-2 after:grow-[999] after:content-['']">
 				{skillsList.map(({ name, icon, hex }) => (
 					<Badge

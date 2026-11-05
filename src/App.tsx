@@ -12,10 +12,7 @@ import { CURRENT_YEAR, years, yearHref } from '@/years'
 // Every year's layout and pages are lazy chunks, so a route only downloads its own
 // year. The prerendered HTML is visible immediately and scripts/prerender.mjs
 // modulepreloads the route's chunks, so hydration doesn't wait on a waterfall.
-const pageModules = import.meta.glob<{ default: ComponentType }>([
-	'./pages/*/*.tsx',
-	'!./pages/**/*.test.tsx',
-])
+const pageModules = import.meta.glob<{ default: ComponentType }>(['./pages/*/*.tsx', '!./pages/**/*.test.tsx'])
 
 function lazyModule(year: string, name: string) {
 	const load = pageModules[`./pages/${year}/${name}.tsx`]
@@ -75,10 +72,7 @@ export default function App() {
 								)
 							})}
 							{year === CURRENT_YEAR && (
-								<Route
-									path="*"
-									element={<RoutePage meta={notFoundMeta} Page={NotFoundPage} />}
-								/>
+								<Route path="*" element={<RoutePage meta={notFoundMeta} Page={NotFoundPage} />} />
 							)}
 						</Route>
 					))}

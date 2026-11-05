@@ -9,11 +9,7 @@ import {
 } from '../ui/dropdown-menu'
 import type { DropdownContextProps } from './DropdownContext.type'
 
-const DropdownContext = ({
-	triggerButtonTittle,
-	triggerButtonIcon,
-	children,
-}: DropdownContextProps) => {
+const DropdownContext = ({ triggerButtonTittle, triggerButtonIcon, children }: DropdownContextProps) => {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
@@ -22,7 +18,7 @@ const DropdownContext = ({
 					{triggerButtonIcon}
 				</Button>
 			</DropdownMenuTrigger>
-			<DropdownMenuContent className=" bg-none">
+			<DropdownMenuContent className="bg-none">
 				<DropdownMenuLabel>Languages</DropdownMenuLabel>
 				<DropdownMenuSeparator />
 				<DropdownMenuGroup>{children}</DropdownMenuGroup>

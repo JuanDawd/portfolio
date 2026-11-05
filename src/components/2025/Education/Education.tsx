@@ -14,16 +14,11 @@ const Education = () => {
 
 	return (
 		<div className="my-32">
-			<h2 className="mb-32 w-full text-center text-8xl font-bold md:mb-16 md:text-6xl xs:text-4xl">
-				Education
-			</h2>
-			<div
-				ref={ref}
-				className="relative mx-auto w-[75%]  lg:w-[90%] md:w-full "
-			>
+			<h2 className="mb-32 w-full text-center text-8xl font-bold md:mb-16 md:text-6xl xs:text-4xl">Education</h2>
+			<div ref={ref} className="relative mx-auto w-[75%] lg:w-[90%] md:w-full">
 				<m.div
 					style={{ scaleY: scrollYProgress }}
-					className="absolute left-9 top-0 mt-2 h-full w-1 origin-top bg-accent md:left-7.5 md:w-0.5 xs:left-5 "
+					className="absolute top-0 left-9 mt-2 h-full w-1 origin-top bg-accent md:left-7.5 md:w-0.5 xs:left-5"
 				/>
 				<ul className="ml-4 flex w-full flex-col items-start justify-between xs:ml-2">
 					{EducationList.map((value, key) => (

@@ -1,4 +1,4 @@
 export type AnimatedTextProps = {
-  text: string
-  className?: string
+	text: string
+	className?: string
 }

@@ -7,18 +7,10 @@ import TooltipedElement from '@/components/2025/ui/TooltipedButton'
 import type { ProjectProps } from './projects.type'
 import { Button } from '@/components/2025/ui/button'
 
-const Project = ({
-	title,
-	technologies,
-	github,
-	image,
-	type,
-	role,
-	deployment,
-}: ProjectProps) => {
+const Project = ({ title, technologies, github, image, type, role, deployment }: ProjectProps) => {
 	return (
 		<article className="relative flex w-full flex-col items-center justify-start rounded-2xl border border-solid border-foreground bg-background p-6 md:min-h-[382px] xs:p-4">
-			<div className="absolute left-3 top-3 -z-10 h-[100%] w-[100%] rounded-[1.75rem] bg-primary/10" />
+			<div className="absolute top-3 left-3 -z-10 h-[100%] w-[100%] rounded-[1.75rem] bg-primary/10" />
 
 			<FramerImage
 				src={image}
@@ -34,21 +26,10 @@ const Project = ({
 
 					<span>{role}</span>
 				</div>
-				<TooltipedElement
-					tTMessage={
-						deployment === '' ? 'This project has no demo.' : 'Check the demo.'
-					}
-				>
+				<TooltipedElement tTMessage={deployment === '' ? 'This project has no demo.' : 'Check the demo.'}>
 					{deployment !== '' ? (
-						<a
-							href={deployment}
-							target="_blank"
-							rel="noreferrer"
-							className="underline-offset-2 hover:underline"
-						>
-							<h2 className="my-2 w-full text-left text-3xl font-bold lg:text-2xl ">
-								{title}
-							</h2>
+						<a href={deployment} target="_blank" rel="noreferrer" className="underline-offset-2 hover:underline">
+							<h2 className="my-2 w-full text-left text-3xl font-bold lg:text-2xl">{title}</h2>
 						</a>
 					) : (
 						<h2 className="my-2 w-full text-left text-3xl font-bold underline-offset-2 hover:underline lg:text-2xl">
@@ -85,11 +66,7 @@ const Project = ({
 					<div className="mt-2 flex flex-wrap items-center justify-start gap-2">
 						{technologies.map(({ icon, name }, key) => (
 							<TooltipedElement tTMessage={name} key={name + '-' + key}>
-								<img
-									src={icon}
-									alt={name}
-									className=" h-5 w-5  md:h-4 md:w-4"
-								/>
+								<img src={icon} alt={name} className="h-5 w-5 md:h-4 md:w-4" />
 							</TooltipedElement>
 						))}
 					</div>

@@ -12,9 +12,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const distDir = resolve(root, 'dist')
 const serverDir = resolve(root, 'dist-server')
 
-const { render, routePages, SITE_URL } = await import(
-	pathToFileURL(resolve(serverDir, 'entry-server.js')).href
-)
+const { render, routePages, SITE_URL } = await import(pathToFileURL(resolve(serverDir, 'entry-server.js')).href)
 
 // '/' → index.html, '/2025/projects' → 2025/projects/index.html, '/404' → 404.html
 // (Vercel serves 404.html, with a 404 status, for any unmatched URL)
@@ -49,8 +47,7 @@ function preloadTags(entries, template) {
 	].join('\n    ')
 }
 
-const escape = (s) =>
-	s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+const escape = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
 function replaceOnce(html, pattern, replacement) {
 	if (!pattern.test(html)) throw new Error(`prerender: pattern not found in template: ${pattern}`)
@@ -78,11 +75,7 @@ function applyHead(html, { title, description, path, noindex, ogImage }) {
 	html = replaceOnce(html, /(<meta name="twitter:title" content=")[^"]*/, `$1${t}`)
 	html = replaceOnce(html, /(<meta name="twitter:description" content=")[^"]*/, `$1${d}`)
 	if (noindex) {
-		html = replaceOnce(
-			html,
-			/<link rel="canonical"[^>]*>/,
-			'<meta name="robots" content="noindex" />',
-		)
+		html = replaceOnce(html, /<link rel="canonical"[^>]*>/, '<meta name="robots" content="noindex" />')
 	}
 	return html
 }

@@ -9,11 +9,13 @@ pnpm dev          # Start dev server (Vite HMR)
 pnpm build        # Type-check (tsc -b) then production build
 pnpm preview      # Preview production build locally
 pnpm lint         # ESLint
+pnpm format       # Prettier (write); pnpm format:check runs in CI
 pnpm test         # Run tests once (Vitest)
 pnpm test:watch   # Run tests in watch mode
 ```
 
 Add new ShadcnUI components via:
+
 ```bash
 pnpm dlx shadcn@latest add <component>
 ```

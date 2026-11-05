@@ -57,13 +57,11 @@ export const projectsConstants = {
 				{ icon: skill('Tailwind'), name: 'Tailwind' },
 				{ icon: skill('TypeScript'), name: 'TypeScript' },
 			],
-			github:
-				'https://github.com/Juandawd/next.js-portfolio-with-framer-and-tailwindcss',
+			github: 'https://github.com/Juandawd/next.js-portfolio-with-framer-and-tailwindcss',
 			image: project('overnights'),
 			type: 'Personal Development',
 			role: 'Frontend',
-			deployment:
-				'https://next-js-portfolio-with-framer-and-tailwindcss.vercel.app/',
+			deployment: 'https://next-js-portfolio-with-framer-and-tailwindcss.vercel.app/',
 		},
 		{
 			title: 'Guarapo-SSR',

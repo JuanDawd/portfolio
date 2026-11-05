@@ -16,39 +16,21 @@ import { Skills } from '@/components/2025/Skills'
 export default function Home() {
 	return (
 		<Layout className="pt-16">
-			<AnimatedText
-				text="Passion Fuels Purpose!"
-				className="mb-16 lg:text-7xl! sm:mb-8 sm:text-6xl! xs:text-4xl!"
-			/>
+			<AnimatedText text="Passion Fuels Purpose!" className="mb-16 lg:text-7xl! sm:mb-8 sm:text-6xl! xs:text-4xl!" />
 			<div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
-				<div className="col-span-4 flex flex-col items-center justify-center md:order-2  md:col-span-8">
-					<h2 className="mb-4 text-2xl font-bold uppercase text-secondary-foreground/75">
-						Biography
-					</h2>
+				<div className="col-span-4 flex flex-col items-center justify-center md:order-2 md:col-span-8">
+					<h2 className="mb-4 text-2xl font-bold text-secondary-foreground/75 uppercase">Biography</h2>
 
 					<p className="text-lg font-medium">{Biography[0]}</p>
 					<div className="flex w-full flex-row items-center justify-around pt-24">
-						<DropdownContext
-							triggerButtonTittle={'Resume'}
-							triggerButtonIcon={<FileDown size={20} />}
-						>
+						<DropdownContext triggerButtonTittle={'Resume'} triggerButtonIcon={<FileDown size={20} />}>
 							<DropdownMenuItem>
-								<a
-									href="/resume/JuanDawd_ATS_Eng_CV.pdf"
-									download
-									target="_blank"
-									rel="noreferrer"
-								>
+								<a href="/resume/JuanDawd_ATS_Eng_CV.pdf" download target="_blank" rel="noreferrer">
 									English
 								</a>
 							</DropdownMenuItem>
 							<DropdownMenuItem>
-								<a
-									href="/resume/JuanDawd_ATS_Esp_CV.pdf"
-									download
-									target="_blank"
-									rel="noreferrer"
-								>
+								<a href="/resume/JuanDawd_ATS_Esp_CV.pdf" download target="_blank" rel="noreferrer">
 									Spanish
 								</a>
 							</DropdownMenuItem>
@@ -58,7 +40,7 @@ export default function Home() {
 								href="mailto:JuanDawdB@gmail.com"
 								target="_blank"
 								rel="noreferrer"
-								className="ml-4 text-lg font-medium capitalize md:text-base "
+								className="ml-4 text-lg font-medium capitalize md:text-base"
 							>
 								Contact Me
 							</a>
@@ -67,12 +49,8 @@ export default function Home() {
 				</div>
 
 				<div className="relative col-span-4 h-max rounded-2xl border-2 border-solid border-primary-foreground bg-background p-4 md:order-1 md:col-span-8">
-					<div className="absolute left-3 top-3 -z-10 h-full w-[100%] rounded-[1.75rem] bg-primary/10" />
-					<img
-						src="/2025/profilePic.webp"
-						alt="JuanDawd"
-						className="h-auto w-full rounded-2xl"
-					/>
+					<div className="absolute top-3 left-3 -z-10 h-full w-[100%] rounded-[1.75rem] bg-primary/10" />
+					<img src="/2025/profilePic.webp" alt="JuanDawd" className="h-auto w-full rounded-2xl" />
 				</div>
 			</div>
 

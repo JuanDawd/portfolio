@@ -8,15 +8,10 @@ import { experienceAnchor, projectsList } from '@/pages/2026/constants'
 export function ProjectsCard() {
 	return (
 		<div className="flex h-full flex-col gap-4">
-			<h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-				Projects
-			</h2>
+			<h2 className="text-sm font-semibold tracking-widest text-muted-foreground uppercase">Projects</h2>
 			<div className="grid grid-cols-2 gap-4 sm:grid-cols-1">
 				{projectsList.map((project) => (
-					<Card
-						key={project.title}
-						className="group overflow-hidden border-border/30 bg-secondary/30 p-0"
-					>
+					<Card key={project.title} className="group overflow-hidden border-border/30 bg-secondary/30 p-0">
 						<div className="relative aspect-video overflow-hidden">
 							{project.image ? (
 								<>
@@ -28,10 +23,8 @@ export function ProjectsCard() {
 										className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
 									/>
 									<div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
-									<div className="absolute bottom-3 left-3 right-3">
-										<h3 className="font-semibold text-card-foreground">
-											{project.title}
-										</h3>
+									<div className="absolute right-3 bottom-3 left-3">
+										<h3 className="font-semibold text-card-foreground">{project.title}</h3>
 										<p className="text-xs text-muted-foreground">
 											{project.type} &middot; {project.role}
 										</p>
@@ -61,9 +54,7 @@ export function ProjectsCard() {
 								</a>
 							)}
 							{project.description && (
-								<p className="text-sm leading-relaxed text-foreground/70">
-									{project.description}
-								</p>
+								<p className="text-sm leading-relaxed text-foreground/70">{project.description}</p>
 							)}
 							<div className="flex flex-wrap gap-1.5">
 								{project.technologies.map((tech) => (
@@ -75,29 +66,15 @@ export function ProjectsCard() {
 
 							<div className="flex gap-2">
 								{project.deployment && (
-									<Button
-										variant="ghost"
-										size="sm"
-										className="h-8 px-2"
-										asChild
-									>
-										<a
-											href={project.deployment}
-											target="_blank"
-											rel="noreferrer"
-										>
+									<Button variant="ghost" size="sm" className="h-8 px-2" asChild>
+										<a href={project.deployment} target="_blank" rel="noreferrer">
 											<ExternalLink className="mr-1 h-3.5 w-3.5" />
 											Demo
 										</a>
 									</Button>
 								)}
 								{project.github && (
-									<Button
-										variant="ghost"
-										size="sm"
-										className="h-8 px-2"
-										asChild
-									>
+									<Button variant="ghost" size="sm" className="h-8 px-2" asChild>
 										<a href={project.github} target="_blank" rel="noreferrer">
 											<GithubIcon className="mr-1 h-3.5 w-3.5" />
 											Code

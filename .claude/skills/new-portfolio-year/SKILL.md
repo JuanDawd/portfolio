@@ -2,7 +2,7 @@
 name: new-portfolio-year
 description: Scaffold a new yearly portfolio version (e.g. 2027) with its own pages, components, stylesheet, breakpoints and fonts, registered as a draft. Also covers launching it (making it the year served at "/") and archiving the previous year. Use when starting or launching an annual portfolio.
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep
-argument-hint: "[year]"
+argument-hint: '[year]'
 ---
 
 # New Portfolio Year
@@ -55,28 +55,30 @@ Minimal files for a fresh design (also create an empty `src/components/$ARGUMENT
 and a `constants.ts` for the year's content as soon as there is any):
 
 `src/pages/$ARGUMENTS/year.ts`
+
 ```ts
 import type { YearDefinition } from '@/years'
 
 export default {
-	year: '$ARGUMENTS',
-	draft: true,
-	// ogImage: '/$ARGUMENTS/og-image.jpg', // 1200×630 in public/; defaults to /og-image.jpg
-	pages: [
-		{
-			path: '',
-			component: 'HomePage',
-			// Placeholders — final wording before launch
-			title: 'Juan Dawd | Full-Stack Developer',
-			description: '…',
-		},
-	],
+  year: '$ARGUMENTS',
+  draft: true,
+  // ogImage: '/$ARGUMENTS/og-image.jpg', // 1200×630 in public/; defaults to /og-image.jpg
+  pages: [
+    {
+      path: '',
+      component: 'HomePage',
+      // Placeholders — final wording before launch
+      title: 'Juan Dawd | Full-Stack Developer',
+      description: '…',
+    },
+  ],
 } satisfies YearDefinition
 ```
 
 `src/pages/$ARGUMENTS/styles.css` — mobile-first by default (Tailwind's normal
 min-width breakpoints). Add `@import '../../styles/breakpoints-desktop-first.css';`
 after the shared import only if this year should be desktop-first like 2025/2026.
+
 ```css
 @import 'tailwindcss' source(none);
 @import '../../styles/shared.css';
@@ -89,28 +91,30 @@ after the shared import only if this year should be desktop-first like 2025/2026
 @source '.';
 
 @theme inline {
-	--font-sans: 'Geist Variable', sans-serif;
+  --font-sans: 'Geist Variable', sans-serif;
 }
 
 /* Design tokens — every shadcn/ui component reads these */
 :root {
-	--background: oklch(1 0 0);
-	--foreground: oklch(0.15 0 0);
-	--primary: oklch(0.55 0.2 260);
-	--primary-foreground: oklch(0.98 0 0);
-	/* …card, popover, secondary, muted, accent, border, input, ring, radius —
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.15 0 0);
+  --primary: oklch(0.55 0.2 260);
+  --primary-foreground: oklch(0.98 0 0);
+  /* …card, popover, secondary, muted, accent, border, input, ring, radius —
 	   src/pages/2026/styles.css has the full list to copy from */
 }
 
 .dark {
-	--background: oklch(0.13 0 0);
-	--foreground: oklch(0.96 0 0);
-	/* … */
+  --background: oklch(0.13 0 0);
+  --foreground: oklch(0.96 0 0);
+  /* … */
 }
 ```
+
 Any token not defined here falls back to the neutral defaults in `src/styles/shared.css`.
 
 `src/pages/$ARGUMENTS/Layout.tsx`
+
 ```tsx
 import { Outlet } from 'react-router-dom'
 import './styles.css'
@@ -118,24 +122,25 @@ import './styles.css'
 import { ThemeProvider } from '@/lib/theme'
 
 export default function Layout() {
-	return (
-		<ThemeProvider>
-			<div className="min-h-screen bg-background font-sans text-foreground">
-				<Outlet />
-			</div>
-		</ThemeProvider>
-	)
+  return (
+    <ThemeProvider>
+      <div className="min-h-screen bg-background font-sans text-foreground">
+        <Outlet />
+      </div>
+    </ThemeProvider>
+  )
 }
 ```
 
 `src/pages/$ARGUMENTS/HomePage.tsx`
+
 ```tsx
 export default function HomePage() {
-	return (
-		<main className="mx-auto max-w-5xl px-6 py-12">
-			<h1 className="text-4xl font-bold">Juan Dawd</h1>
-		</main>
-	)
+  return (
+    <main className="mx-auto max-w-5xl px-6 py-12">
+      <h1 className="text-4xl font-bold">Juan Dawd</h1>
+    </main>
+  )
 }
 ```
 
@@ -152,6 +157,7 @@ years), so it can be deployed while in progress.
 pnpm lint && pnpm test && pnpm build   # build fails loudly on a bad registry entry
 npx serve dist                         # serves like Vercel (dir index + 404.html)
 ```
+
 Open `/$ARGUMENTS`, and check `/` and the older years still look the same. The build log
 lists every prerendered page; `dist/$ARGUMENTS/index.html` must link a CSS file of its
 own (`grep stylesheet dist/$ARGUMENTS/index.html`).
@@ -170,7 +176,9 @@ own (`grep stylesheet dist/$ARGUMENTS/index.html`).
    `ogImage` in the new year's `year.ts`. The build fails if `ogImage` points at a
    missing file. PREV keeps whatever its `year.ts` says, so give PREV an `ogImage`
    with the old image (e.g. `/PREV/og-image.jpg`) if it should keep it.
-6. Update the "currently {year}" note in `CLAUDE.md` (Routes line).
+6. Update the "currently {year}" note in `CLAUDE.md` (Routes line), and point
+   `tailwindStylesheet` in `.prettierrc.json` at `./src/pages/{year}/styles.css` so
+   Prettier sorts classes with the new year's tokens (then run `pnpm format`).
 7. Build and verify as in step 2, then also check:
    - `/PREV` renders and `dist/sitemap.xml` lists `/`, `/PREV` and older years.
    - The 404 page (`/does-not-exist`) — it is shared (`src/components/shared/NotFoundPage`)

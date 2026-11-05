@@ -6,30 +6,30 @@ import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist', 'dist-server']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      js.configs.recommended,
-      tseslint.configs.recommended,
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
-    ],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-    },
-  },
-  {
-    // Prerender entry runs only at build time — Fast Refresh doesn't apply
-    files: ['src/entry-server.tsx'],
-    rules: { 'react-refresh/only-export-components': 'off' },
-  },
-  {
-    files: ['scripts/**/*.mjs'],
-    extends: [js.configs.recommended],
-    languageOptions: {
-      globals: globals.node,
-    },
-  },
+	globalIgnores(['dist', 'dist-server']),
+	{
+		files: ['**/*.{ts,tsx}'],
+		extends: [
+			js.configs.recommended,
+			tseslint.configs.recommended,
+			reactHooks.configs.flat.recommended,
+			reactRefresh.configs.vite,
+		],
+		languageOptions: {
+			ecmaVersion: 2020,
+			globals: globals.browser,
+		},
+	},
+	{
+		// Prerender entry runs only at build time — Fast Refresh doesn't apply
+		files: ['src/entry-server.tsx'],
+		rules: { 'react-refresh/only-export-components': 'off' },
+	},
+	{
+		files: ['scripts/**/*.mjs'],
+		extends: [js.configs.recommended],
+		languageOptions: {
+			globals: globals.node,
+		},
+	},
 ])
