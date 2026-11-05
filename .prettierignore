@@ -7,3 +7,8 @@ pnpm-lock.yaml
 
 # scripts/prerender.mjs matches this file with regexes
 index.html
+
+# Vendored Impeccable skill and its generated reports
+.claude/skills/impeccable
+.claude/agents/impeccable-*
+.impeccable

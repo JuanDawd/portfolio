@@ -9,7 +9,7 @@ import { Button } from '@/components/2025/ui/button'
 
 const Project = ({ title, technologies, github, image, type, role, deployment }: ProjectProps) => {
 	return (
-		<article className="relative flex w-full flex-col items-center justify-start rounded-2xl border border-solid border-foreground bg-background p-6 md:min-h-[382px] xs:p-4">
+		<article className="xs:p-4 relative flex w-full flex-col items-center justify-start rounded-2xl border border-solid border-foreground bg-background p-6 md:min-h-[382px]">
 			<div className="absolute top-3 left-3 -z-10 h-[100%] w-[100%] rounded-[1.75rem] bg-primary/10" />
 
 			<FramerImage
@@ -21,7 +21,7 @@ const Project = ({ title, technologies, github, image, type, role, deployment }:
 			/>
 
 			<div className="mt-4 flex w-full flex-col items-start justify-between">
-				<div className="flex w-full items-center justify-between text-xl font-medium text-secondary-foreground/50 lg:text-lg md:gap-1 md:text-base">
+				<div className="flex w-full items-center justify-between text-xl font-medium text-secondary-foreground/50 md:gap-1 md:text-base lg:text-lg">
 					<span>{type}</span>
 
 					<span>{role}</span>
@@ -39,7 +39,7 @@ const Project = ({ title, technologies, github, image, type, role, deployment }:
 				</TooltipedElement>
 				<div className="my-2 flex w-full flex-col gap-2">
 					<div className="flex w-full items-center justify-between">
-						<span className="text-xl font-medium text-secondary-foreground/50 lg:text-lg md:text-base">
+						<span className="text-xl font-medium text-secondary-foreground/50 md:text-base lg:text-lg">
 							Technologies
 						</span>
 

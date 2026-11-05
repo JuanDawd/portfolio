@@ -11,7 +11,7 @@
   "bracketSpacing": true,
   "endOfLine": "lf",
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindStylesheet": "./src/pages/2026/styles.css",
+  "tailwindStylesheet": "./src/pages/2027/styles.css",
   "tailwindFunctions": ["cn", "cva"],
   "overrides": [
     {

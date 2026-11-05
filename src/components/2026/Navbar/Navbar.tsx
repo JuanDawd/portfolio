@@ -3,7 +3,8 @@ import { useTheme } from '@/lib/theme'
 import { Link } from 'react-router-dom'
 import { Moon, Sun } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { otherYears, yearHref } from '@/years'
+import { YearSwitcher } from '@/components/shared/YearSwitcher'
+import { yearHref } from '@/years'
 
 const emptySubscribe = () => () => {}
 
@@ -25,17 +26,7 @@ export function Navbar() {
 				</Link>
 
 				<div className="flex items-center gap-4">
-					{/* Plain <a>: switching years is a full page load, so only one
-					    year's stylesheet is ever active */}
-					{otherYears('2026').map((year) => (
-						<a
-							key={year}
-							href={yearHref(year)}
-							className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-						>
-							{year}
-						</a>
-					))}
+					<YearSwitcher year="2026" className="text-muted-foreground hover:text-foreground" />
 
 					{mounted && (
 						<Button

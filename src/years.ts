@@ -26,7 +26,7 @@ export interface YearDefinition {
 }
 
 // The year served at "/". Every other year is served at "/{year}".
-export const CURRENT_YEAR = '2026'
+export const CURRENT_YEAR = '2027'
 
 const definitions = import.meta.glob<YearDefinition>('./pages/*/year.ts', {
 	eager: true,
@@ -53,4 +53,10 @@ export function yearHref(year: string, page = ''): string {
 // Published years other than `year`, newest first — for year switcher links
 export function otherYears(year: string): string[] {
 	return years.filter((y) => !y.draft && y.year !== year).map((y) => y.year)
+}
+
+// Years offered by a year switcher on `year`'s pages, newest first: the published
+// years plus `year` itself (so a draft still shows where the visitor is)
+export function switcherYears(year: string): string[] {
+	return years.filter((y) => !y.draft || y.year === year).map((y) => y.year)
 }

@@ -169,8 +169,9 @@ own (`grep stylesheet dist/$ARGUMENTS/index.html`).
    moves to `/PREV` automatically (routes, prerender, sitemap, navbar links).
 3. Archive PREV: in `src/pages/PREV/year.ts`, change page titles/descriptions to archive
    wording (e.g. `'Juan Dawd | PREV Portfolio'`). Don't touch its content otherwise.
-4. Make sure the new year's navbar links to the archive: render
-   `otherYears('$ARGUMENTS').map(y => <a href={yearHref(y)}>{y}</a>)`.
+4. Make sure the new year's navbar renders the shared year switcher, visible on phones too:
+   `<YearSwitcher year="$ARGUMENTS" className="…" />` from `@/components/shared/YearSwitcher`.
+   It lists every published year, so older years pick up the new one automatically.
 5. Social preview: `/og-image.jpg` shows PREV's design. Either replace it with one in the
    new year's style (1200×630), or add `public/$ARGUMENTS/og-image.jpg` and set
    `ogImage` in the new year's `year.ts`. The build fails if `ogImage` points at a

@@ -1,8 +1,8 @@
 import { useSyncExternalStore } from 'react'
 import { m } from 'framer-motion'
 import { useTheme } from '@/lib/theme'
-import { MoonStar, Sun, ArrowLeft } from 'lucide-react'
-import { CURRENT_YEAR, yearHref } from '@/years'
+import { MoonStar, Sun } from 'lucide-react'
+import { yearHref } from '@/years'
 
 import { GithubIcon } from '@/components/shared/icons/GithubIcon'
 import { LinkedInIcon } from '@/components/shared/icons/LinkedInIcon'
@@ -36,14 +36,6 @@ const MobileNavbar = ({ handleClick }: MobileNavbarProps) => {
 				className="flex min-w-[70vw] flex-col items-center justify-between gap-10 rounded-lg bg-background/50 py-20 backdrop-blur-md"
 			>
 				<nav aria-label="Main" className="flex flex-col items-center justify-center">
-					<a
-						href={yearHref(CURRENT_YEAR)}
-						onClick={handleClick}
-						className="group relative my-2 flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
-					>
-						<ArrowLeft className="h-3.5 w-3.5" />
-						{CURRENT_YEAR}
-					</a>
 					<CustomMobileLink href={yearHref('2025')} title="Home" toggle={handleClick} />
 					<CustomMobileLink href={yearHref('2025', 'projects')} title="Projects" toggle={handleClick} />
 				</nav>

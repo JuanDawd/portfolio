@@ -38,3 +38,5 @@ package-lock.json
 # vscode
 .vscode
 PROFILE.md
+# Impeccable engine binary (16 MB): the launcher downloads it to ~/.impeccable/bin on first run
+.claude/skills/impeccable/scripts/bin/
