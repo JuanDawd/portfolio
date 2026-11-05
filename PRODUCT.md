@@ -21,7 +21,7 @@ Juan Dawd's personal portfolio: a full-stack developer (React, Next.js, Node.js,
 
 ## Positioning
 
-Juan ships whole SaaS products solo, end to end. Atelier (salon and workshop operations, in production at the client Innovation Befine: real-time cashier dashboard over SSE, payroll engine, offline PWA, RBAC) is the proof. Real-time pipelines (Redis, MQTT, SSE) and the web + mobile + infra range support this but are secondary.
+Juan ships whole SaaS products solo, end to end. Atelier (salon and workshop operations, in production at the client Innovations Befine: real-time cashier dashboard over SSE, payroll engine, offline PWA, RBAC) is the proof. Real-time pipelines (Redis, MQTT, SSE) and the web + mobile + infra range support this but are secondary.
 
 ## Operating Context
 

@@ -270,7 +270,7 @@ export const projectsList: Project[] = [
 		type: 'White-label SaaS',
 		role: 'Fullstack',
 		description:
-			'White-label operations platform for LATAM salons and workshops, replacing WhatsApp + Excel. Shipped to each client and hosted where it suits them; Innovation Befine, the first client, runs it on a server on its own premises. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
+			'White-label operations platform for LATAM salons and workshops, replacing WhatsApp + Excel. Shipped to each client and hosted where it suits them; Innovations Befine, the first client, runs it on a server on its own premises. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
 		image: '/2027/projects/atelier.webp',
 		deployment: 'https://atelier.juandawd.dev/',
 		github: undefined,
