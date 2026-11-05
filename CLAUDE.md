@@ -41,6 +41,15 @@ Adding or launching a year: use the `/new-portfolio-year` skill.
 
 Preview a build with `npx serve dist` — it resolves routes and `404.html` like Vercel. `pnpm preview` falls back to the home page for every URL.
 
+### Hosting
+
+The site is static, so any host that serves `dist/` works. Two configs live side by side while the domain moves from Vercel to Cloudflare:
+
+- **Vercel** (`vercel.json`): rewrites `/{year}` to its `index.html` and sets cache headers.
+- **Cloudflare Workers static assets** (`wrangler.jsonc` + `public/_headers`): no Worker code; `html_handling: drop-trailing-slash` serves `/{year}` and `not_found_handling: 404-page` serves `404.html` with a 404. `pnpm cf:preview` runs the build under `wrangler dev`; `pnpm cf:deploy` deploys it.
+
+Keep the cache rules in `vercel.json` and `public/_headers` in sync until Vercel is retired. `_headers` can't match by file extension, so it lists image folders and files explicitly: add a line when a year adds static files outside `/{year}/projects/`.
+
 ### Theme system
 
 A custom `ThemeProvider` lives in `src/lib/theme.tsx` (shared; layouts import it directly). It handles `light`/`dark`/`system` modes using `localStorage` + the `dark` class on `<html>`, which an inline script in `index.html` sets before first paint. Does **not** use `next-themes`.

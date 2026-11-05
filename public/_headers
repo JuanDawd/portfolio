@@ -1,0 +1,24 @@
+# Cloudflare cache headers (same rules as vercel.json). HTML keeps Cloudflare's
+# default (revalidate every time), so only static files are listed here.
+
+# Hashed build output never changes
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images and CVs: a day fresh, a week stale-while-revalidate
+/resume/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/:year/projects/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/2025/Skills/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/2025/profilePic.webp
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/2026/profile.webp
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/2026/portfolio.webp
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/:year/og-image.jpg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/og-image.jpg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

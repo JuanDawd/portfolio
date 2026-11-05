@@ -1,0 +1,15 @@
+// Cloudflare Workers static-assets config: the prerendered dist/ is served as
+// is, with no Worker code. Replaces vercel.json once the domain moves over.
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "juandawd-portfolio",
+	"compatibility_date": "2026-10-30",
+	"assets": {
+		"directory": "./dist",
+		// /2026 serves dist/2026/index.html, and /2026/ redirects to /2026
+		// (the URLs the sitemap and canonical tags use)
+		"html_handling": "drop-trailing-slash",
+		// Unknown URLs get dist/404.html with a 404 status
+		"not_found_handling": "404-page",
+	},
+}
