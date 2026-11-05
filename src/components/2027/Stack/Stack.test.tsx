@@ -8,7 +8,9 @@ describe('2027 Stack', () => {
 		render(<Stack />)
 		for (const area of skillAreas) {
 			const list = screen.getByRole('list', { name: area })
-			const names = within(list).getAllByRole('listitem').map((item) => item.textContent)
+			const names = within(list)
+				.getAllByRole('listitem')
+				.map((item) => item.textContent)
 			expect(names).toEqual(skillsList.filter((skill) => skill.area === area).map((skill) => skill.name))
 		}
 	})

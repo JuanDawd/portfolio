@@ -23,7 +23,7 @@ export function Projects() {
 							width={960}
 							height={540}
 							decoding="async"
-							className="aspect-video w-full border-b border-rule object-cover object-top lg:h-full lg:border-r lg:border-b-0"
+							className="border-rule aspect-video w-full border-b object-cover object-top lg:h-full lg:border-r lg:border-b-0"
 						/>
 					)}
 					<div className="grid content-start gap-3 p-5 sm:p-8">
@@ -40,11 +40,11 @@ export function Projects() {
 					</div>
 				</article>
 
-				<ol className="panel divide-y divide-rule overflow-hidden rounded-xl">
+				<ol className="panel divide-rule divide-y overflow-hidden rounded-xl">
 					{rest.map((project) => (
 						<li
 							key={project.title}
-							className="grid gap-3 p-4 sm:grid-cols-[1fr_11rem] sm:gap-5 sm:p-5 lg:grid-cols-[1fr_16rem] lg:gap-8"
+							className="grid gap-3 p-4 lg:grid-cols-[1fr_16rem] lg:gap-8 sm:grid-cols-[1fr_11rem] sm:gap-5 sm:p-5"
 						>
 							<div className="grid min-w-0 content-start gap-2">
 								<h3 className="font-mono text-base font-extrabold tracking-tight uppercase">{project.title}</h3>
@@ -62,7 +62,7 @@ export function Projects() {
 									height={540}
 									loading="lazy"
 									decoding="async"
-									className="order-first aspect-video w-full rounded-md border border-rule object-cover sm:order-none"
+									className="border-rule order-first aspect-video w-full rounded-md border object-cover sm:order-none"
 								/>
 							)}
 						</li>
@@ -99,7 +99,7 @@ function Links({ project }: { project: Project }) {
 					href={project.deployment}
 					target="_blank"
 					rel="noreferrer"
-					className="inline-flex min-h-11 items-center gap-1.5 text-accent-text hover:underline sm:min-h-0"
+					className="text-accent-text inline-flex min-h-11 items-center gap-1.5 hover:underline sm:min-h-0"
 				>
 					<ExternalLink aria-hidden="true" className="h-3.5 w-3.5" />
 					open {project.title}
@@ -110,7 +110,7 @@ function Links({ project }: { project: Project }) {
 					href={project.github}
 					target="_blank"
 					rel="noreferrer"
-					className="inline-flex min-h-11 items-center gap-1.5 text-accent-text hover:underline sm:min-h-0"
+					className="text-accent-text inline-flex min-h-11 items-center gap-1.5 hover:underline sm:min-h-0"
 				>
 					<GithubIcon aria-hidden="true" className="h-3.5 w-3.5" />
 					source

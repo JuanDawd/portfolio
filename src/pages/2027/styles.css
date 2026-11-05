@@ -101,11 +101,7 @@
 		inset: 0;
 		z-index: -1;
 		pointer-events: none;
-		background: linear-gradient(
-			to bottom,
-			color-mix(in oklch, var(--wash) 22%, transparent) 0%,
-			transparent 55vh
-		);
+		background: linear-gradient(to bottom, color-mix(in oklch, var(--wash) 22%, transparent) 0%, transparent 55vh);
 	}
 
 	/* Plain surface for content sections; glass stays on the navbar and hero */

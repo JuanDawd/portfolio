@@ -4,9 +4,7 @@ import { projectsList } from '@/pages/2027/constants'
 import { Projects } from './Projects'
 
 // URL paths of the files in public/2027 ('/public/2027/x.webp' → '/2027/x.webp')
-const publicFiles = Object.keys(import.meta.glob('/public/2027/**/*')).map((f) =>
-	f.replace(/^\/public/, ''),
-)
+const publicFiles = Object.keys(import.meta.glob('/public/2027/**/*')).map((f) => f.replace(/^\/public/, ''))
 
 describe('2027 Projects', () => {
 	it('lists every project with its title', () => {

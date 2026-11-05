@@ -10,7 +10,10 @@ describe('2027 Hero', () => {
 
 	it('offers both CVs and the contact section', () => {
 		render(<Hero />)
-		expect(screen.getByRole('link', { name: './resume.pdf' })).toHaveAttribute('href', '/resume/JuanDawd_ATS_Eng_CV.pdf')
+		expect(screen.getByRole('link', { name: './resume.pdf' })).toHaveAttribute(
+			'href',
+			'/resume/JuanDawd_ATS_Eng_CV.pdf',
+		)
 		const spanish = screen.getByRole('link', { name: './hoja-de-vida.pdf' })
 		expect(spanish).toHaveAttribute('href', '/resume/JuanDawd_ATS_Esp_CV.pdf')
 		expect(spanish).toHaveAttribute('lang', 'es')

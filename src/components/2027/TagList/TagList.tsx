@@ -11,7 +11,10 @@ export function TagList({ tags, label }: TagListProps) {
 	return (
 		<ul className="flex flex-wrap items-center gap-1.5" aria-label={label}>
 			{tags.slice(0, VISIBLE).map((tag) => (
-				<li key={tag} className="rounded border border-rule px-1.5 py-0.5 font-mono text-[0.6875rem] text-muted-foreground">
+				<li
+					key={tag}
+					className="border-rule rounded border px-1.5 py-0.5 font-mono text-[0.6875rem] text-muted-foreground"
+				>
 					{tag}
 				</li>
 			))}

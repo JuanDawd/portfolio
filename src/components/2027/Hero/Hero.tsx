@@ -6,7 +6,7 @@ export function Hero() {
 	return (
 		<section
 			aria-labelledby="hero-title"
-			className="glass grid gap-5 rounded-xl p-5 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-x-12 lg:p-10"
+			className="glass grid gap-5 rounded-xl p-5 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-x-12 lg:p-10 sm:p-8"
 		>
 			{/* lg+: name and pitch on the left, terminal output and actions on the right */}
 			<div className="grid gap-4">
@@ -15,12 +15,12 @@ export function Hero() {
 				</p>
 				<h1
 					id="hero-title"
-					className="font-mono text-5xl leading-[0.95] font-extrabold tracking-tighter uppercase whitespace-nowrap sm:text-7xl 2xl:text-8xl"
+					className="font-mono text-5xl leading-[0.95] font-extrabold tracking-tighter whitespace-nowrap uppercase 2xl:text-8xl sm:text-7xl"
 				>
-					Juan <span className="bg-primary px-[0.12em] text-primary-foreground [box-decoration-break:clone]">Dawd</span>
+					Juan <span className="bg-primary [box-decoration-break:clone] px-[0.12em] text-primary-foreground">Dawd</span>
 				</h1>
 				{/* The positioning, in plain words: the one line a visitor should leave with */}
-				<p className="mt-2 max-w-[34ch] text-xl sm:mt-3 leading-snug text-balance sm:text-2xl">
+				<p className="mt-2 max-w-[34ch] text-xl leading-snug text-balance sm:mt-3 sm:text-2xl">
 					I design, build and ship SaaS products end to end, on my own.
 				</p>
 			</div>
@@ -56,13 +56,13 @@ export function Hero() {
 						target="_blank"
 						rel="noreferrer"
 						lang="es"
-						className="glass inline-flex min-h-11 items-center justify-center rounded-md px-4 transition-colors hover:text-accent-text"
+						className="glass hover:text-accent-text inline-flex min-h-11 items-center justify-center rounded-md px-4 transition-colors"
 					>
 						./hoja-de-vida.pdf
 					</a>
 					<a
 						href="#contact"
-						className="glass inline-flex min-h-11 items-center justify-center rounded-md px-4 transition-colors hover:text-accent-text"
+						className="glass hover:text-accent-text inline-flex min-h-11 items-center justify-center rounded-md px-4 transition-colors"
 					>
 						contact --me
 					</a>
