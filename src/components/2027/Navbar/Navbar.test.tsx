@@ -55,14 +55,16 @@ describe('2027 Navbar', () => {
 
 	it('toggles between light and dark', async () => {
 		renderNavbar()
-		const toggle = screen.getByRole('button', { name: 'Toggle theme' })
+		const toggle = screen.getByRole('button', { name: 'Dark theme' })
 
 		await userEvent.click(toggle)
 		expect(localStorage.getItem('theme')).toBe('dark')
 		expect(document.documentElement).toHaveClass('dark')
+		expect(toggle).toHaveAttribute('aria-pressed', 'true')
 
 		await userEvent.click(toggle)
 		expect(localStorage.getItem('theme')).toBe('light')
 		expect(document.documentElement).not.toHaveClass('dark')
+		expect(toggle).toHaveAttribute('aria-pressed', 'false')
 	})
 })

@@ -76,7 +76,9 @@ export function Navbar() {
 					<button
 						type="button"
 						onClick={() => setTheme(isDark ? 'light' : 'dark')}
-						aria-label="Toggle theme"
+						aria-label="Dark theme"
+						// Before hydration the theme is unknown, so the state is left out
+						aria-pressed={mounted ? isDark : undefined}
 						className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-foreground md:h-9 md:w-9"
 					>
 						{mounted && (isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />)}

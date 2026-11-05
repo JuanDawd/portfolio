@@ -33,9 +33,6 @@ import {
 	siCursor,
 } from 'simple-icons'
 
-export const biography =
-	'Full-Stack Developer with 4+ years of experience architecting and shipping production-grade web and mobile applications. Deep expertise in the React/Next.js ecosystem, with hands-on experience leading monorepo development, designing real-time data pipelines (Redis, MQTT, SSE), and owning CI/CD automation. Proven track record delivering end-to-end SaaS products independently and leading small engineering teams.'
-
 export type Experience = {
 	position: string
 	company: string
@@ -70,13 +67,12 @@ export const experienceList: Experience[] = [
 		description: [
 			'Leading Amatis, a smart-building IoT platform, across web and iOS/Android.',
 			'Starting team on Raíz · Cooltura, a culture diagnostic with real-time Typeform sync; MVP shipped in 7 weeks.',
-			'Architected and delivered scalable web and mobile solutions within the Next.js App Router ecosystem.',
+			'Automated release pipelines for 2 Android and 2 iOS apps via GitLab CI/CD, cutting release time from ~8 hours to 1-2.',
+			'Led architecture for 4 web and mobile products on the Next.js App Router, coordinating sprints and enforcing coding standards and code review.',
 			'Built and maintained a Turborepo monorepo housing admin, user, and mobile app targets.',
 			'Implemented Redis caching layers and orchestrated MQTT pipelines for real-time device-to-database data ingestion.',
 			'Designed and optimized PostgreSQL and MySQL schemas and views (including AWS RDS writer/reader setups), resolving collation issues.',
-			'Automated release pipelines for 2 Android and 2 iOS apps via GitLab CI/CD, cutting release time from ~8 hours to 1-2.',
 			'Deployed and managed infrastructure on AWS (EC2, RDS, DynamoDB, S3 + CloudFront) over 2+ years.',
-			'Led architecture design, coordinated sprint tasks, and enforced coding standards and review practices.',
 			'Use Claude Code and Cursor in day-to-day development, keeping human review, tests and CI as the quality gate.',
 		],
 		techStack: [
@@ -297,13 +293,13 @@ export type Project = {
 
 export const projectsList: Project[] = [
 	{
-		title: 'Innovation Befine',
-		type: 'Personal SaaS',
+		title: 'Atelier',
+		type: 'SaaS · in use at Innovation Befine',
 		role: 'Fullstack',
 		description:
-			'Salon-and-workshop operations platform replacing WhatsApp + Excel for LATAM SMBs. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
+			'Salon-and-workshop operations platform replacing WhatsApp + Excel for LATAM SMBs, in daily use at Innovation Befine. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
 		image: '/2027/projects/befine.webp',
-		deployment: undefined,
+		deployment: 'https://atelier.juandawd.dev/',
 		github: undefined,
 		technologies: [
 			'Next.js',
