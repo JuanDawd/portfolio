@@ -5,6 +5,8 @@ import { Moon, Sun } from 'lucide-react'
 import { useTheme } from '@/lib/theme'
 import { YearSwitcher } from '@/components/shared/YearSwitcher'
 import { yearHref } from '@/years'
+import logoLight from './logo-light.svg'
+import logoDark from './logo-dark.svg'
 
 const emptySubscribe = () => () => {}
 
@@ -32,8 +34,10 @@ export function Navbar() {
 				aria-label="Main"
 				className="glass mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-lg py-1.5 pr-1.5 pl-4 font-mono text-sm 2xl:max-w-7xl"
 			>
-				<Link to={yearHref('2027')} className="font-bold">
-					~/juandawd
+				{/* The two marks swap with the .dark class, so the right one shows before hydration */}
+				<Link to={yearHref('2027')} aria-label="Juan Dawd, home" className="shrink-0">
+					<img src={logoLight} alt="" width={34} height={32} className="h-8 w-auto dark:hidden" />
+					<img src={logoDark} alt="" width={34} height={32} className="hidden h-8 w-auto dark:block" />
 				</Link>
 
 				<div className="flex items-center gap-1">

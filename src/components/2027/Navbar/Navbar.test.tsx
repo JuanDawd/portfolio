@@ -34,7 +34,7 @@ describe('2027 Navbar', () => {
 
 	it('links the brand to the 2027 home page', () => {
 		renderNavbar()
-		expect(screen.getByRole('link', { name: '~/juandawd' })).toHaveAttribute('href', yearHref('2027'))
+		expect(screen.getByRole('link', { name: 'Juan Dawd, home' })).toHaveAttribute('href', yearHref('2027'))
 	})
 
 	it('has a year switcher showing 2027', () => {
