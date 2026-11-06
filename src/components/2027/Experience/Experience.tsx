@@ -52,7 +52,7 @@ export function Experience() {
 												href={client.url}
 												target="_blank"
 												rel="noreferrer"
-												className="inline-flex min-h-11 items-center gap-1 font-bold text-accent-text hover:underline sm:min-h-7"
+												className="inline-flex min-h-11 items-center gap-1 font-bold text-accent-text hover:underline pointer-fine:min-h-7"
 											>
 												{client.name}
 												<ExternalLink aria-hidden="true" className="h-3 w-3" />
@@ -106,7 +106,7 @@ function JobBullets({ id, lines }: { id: string; lines: string[] }) {
 					aria-expanded={expanded}
 					aria-controls={id}
 					onClick={() => setExpanded((open) => !open)}
-					className="inline-flex min-h-11 items-center font-mono text-xs text-accent-text hover:underline sm:min-h-0"
+					className="inline-flex min-h-11 items-center font-mono text-xs text-accent-text hover:underline pointer-fine:min-h-7"
 				>
 					{expanded ? 'show less' : `+${hidden} more`}
 				</button>

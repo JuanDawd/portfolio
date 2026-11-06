@@ -121,6 +121,12 @@
 		backdrop-filter: blur(16px) saturate(160%);
 	}
 
+	/* Controls that sit on glass: a solid tint, so they stand apart from it without a second blur */
+	.glass-flat {
+		background: color-mix(in oklch, var(--background) 72%, transparent);
+		border: 1px solid var(--glass-border);
+	}
+
 	/* Blinking terminal cursor */
 	.gt-cursor {
 		display: inline-block;
@@ -129,6 +135,25 @@
 		vertical-align: -0.18em;
 		background: var(--accent-text);
 		animation: gt-blink 1s steps(1) infinite;
+	}
+}
+
+@layer base {
+	/* A solid ring in the accent: at least 3:1 on every surface in both themes */
+	:focus-visible {
+		outline: 2px solid var(--ring);
+		outline-offset: 2px;
+	}
+
+	/* Nav links glide to their section instead of jumping */
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			scroll-behavior: smooth;
+		}
+	}
+
+	::selection {
+		background: color-mix(in oklch, var(--primary) 32%, transparent);
 	}
 }
 

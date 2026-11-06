@@ -1,4 +1,4 @@
-import { useSyncExternalStore, type MouseEvent } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore, type MouseEvent } from 'react'
 import { flushSync } from 'react-dom'
 import { Link } from 'react-router-dom'
 import { Moon, Sun } from 'lucide-react'
@@ -11,14 +11,86 @@ import { Logo } from './Logo'
 const emptySubscribe = () => () => {}
 
 const sections = [
-	{ id: 'work', label: 'work' },
+	{ id: 'work', label: 'projects' },
 	{ id: 'experience', label: 'experience' },
 	{ id: 'stack', label: 'stack' },
 	{ id: 'education', label: 'education' },
 	{ id: 'contact', label: 'contact' },
 ]
+const sectionIds = sections.map((s) => s.id)
+
+// The section whose top has passed just under the navbar, for the nav's "you are here" mark.
+// A clicked link wins until its smooth scroll ends, so short sections like stack still light up
+const SPY_LINE = 140
+
+function useActiveSection(ids: string[]) {
+	const [active, setActive] = useState<string | null>(null)
+	const locked = useRef(false)
+
+	useEffect(() => {
+		function update() {
+			if (locked.current) return
+			let current: string | null = null
+			for (const id of ids) {
+				const el = document.getElementById(id)
+				if (el && el.getBoundingClientRect().top <= SPY_LINE) current = id
+			}
+			// The last section may never reach the line, so the bottom of the page selects it
+			if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) current = ids[ids.length - 1]
+			setActive(current)
+		}
+		update()
+		addEventListener('scroll', update, { passive: true })
+		return () => removeEventListener('scroll', update)
+	}, [ids])
+
+	// Glides to the section with a slow ease in and out (CSS smooth scrolling is too quick and
+	// can't be timed). The clicked link stays marked until the glide ends, and any wheel, touch
+	// or key press hands control back to the visitor
+	function select(e: MouseEvent<HTMLAnchorElement>, id: string) {
+		const el = document.getElementById(id)
+		if (!el) return
+		e.preventDefault()
+		history.pushState(null, '', `#${id}`)
+		setActive(id)
+
+		const from = scrollY
+		const margin = parseFloat(getComputedStyle(el).scrollMarginTop) || 0
+		const max = document.documentElement.scrollHeight - innerHeight
+		const to = Math.min(max, Math.max(0, el.getBoundingClientRect().top + scrollY - margin))
+		const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+		if (reduce || Math.abs(to - from) < 2) {
+			scrollTo({ top: to, behavior: 'instant' })
+			return
+		}
+
+		// Longer trips take longer, within 0.9s to 1.6s
+		const duration = Math.min(1600, 900 + Math.abs(to - from) * 0.15)
+		const start = performance.now()
+		let frame = 0
+		const stop = () => {
+			cancelAnimationFrame(frame)
+			locked.current = false
+			for (const type of ['wheel', 'touchstart', 'keydown'] as const) removeEventListener(type, stop)
+		}
+		for (const type of ['wheel', 'touchstart', 'keydown'] as const) addEventListener(type, stop, { passive: true })
+		locked.current = true
+
+		const step = (now: number) => {
+			const t = Math.min(1, (now - start) / duration)
+			const eased = t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2
+			scrollTo({ top: from + (to - from) * eased, behavior: 'instant' })
+			if (t < 1) frame = requestAnimationFrame(step)
+			else stop()
+		}
+		frame = requestAnimationFrame(step)
+	}
+
+	return [active, select] as const
+}
 
 export function Navbar() {
+	const [active, select] = useActiveSection(sectionIds)
 	const { setTheme, resolvedTheme } = useTheme()
 	// The theme is only known in the browser, so the toggle renders after hydration
 	const mounted = useSyncExternalStore(
@@ -58,17 +130,23 @@ export function Navbar() {
 				aria-label="Main"
 				className="glass mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-lg py-1.5 pr-1.5 pl-4 font-mono text-sm 2xl:max-w-7xl"
 			>
-				<Link to={yearHref('2027')} aria-label="Juan Dawd, home" className="shrink-0">
+				<Link
+					to={yearHref('2027')}
+					aria-label="Juan Dawd, home"
+					className="-my-1.5 -ml-2 inline-flex min-h-11 shrink-0 items-center rounded-md px-2"
+				>
 					<Logo />
 				</Link>
 
-				<div className="flex items-center gap-1">
+				<div className="flex items-center gap-0.5 md:gap-1">
 					<ul className="hidden items-center gap-1 md:flex">
 						{sections.map(({ id, label }) => (
 							<li key={id}>
 								<a
 									href={`#${id}`}
-									className="rounded px-2 py-1.5 text-muted-foreground transition-colors hover:text-foreground"
+									onClick={(e) => select(e, id)}
+									aria-current={active === id ? 'location' : undefined}
+									className="rounded px-2 py-1.5 text-muted-foreground underline-offset-[6px] transition-[color,text-decoration-color] duration-300 hover:text-foreground aria-[current=location]:text-foreground aria-[current=location]:underline aria-[current=location]:decoration-accent-text aria-[current=location]:decoration-2"
 								>
 									{label}
 								</a>
@@ -76,10 +154,18 @@ export function Navbar() {
 						))}
 					</ul>
 
-					{/* Phones: contact is the one section link */}
+					{/* Phones: the two exits, the CVs in the hero and the email at the contact card */}
+					<a
+						href="#cv"
+						onClick={(e) => select(e, 'cv')}
+						className="inline-flex h-11 items-center rounded px-1 text-muted-foreground transition-colors hover:text-foreground md:hidden"
+					>
+						cv
+					</a>
 					<a
 						href="#contact"
-						className="inline-flex h-11 items-center rounded px-2 text-muted-foreground transition-colors hover:text-foreground md:hidden"
+						onClick={(e) => select(e, 'contact')}
+						className="inline-flex h-11 items-center rounded px-1 text-muted-foreground transition-colors hover:text-foreground md:hidden"
 					>
 						contact
 					</a>

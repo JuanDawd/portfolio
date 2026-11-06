@@ -31,6 +31,8 @@ import {
 	siJest,
 	siClaude,
 	siCursor,
+	siRedis,
+	siMqtt,
 } from 'simple-icons'
 
 export type Experience = {
@@ -65,9 +67,9 @@ export const experienceList: Experience[] = [
 			},
 		],
 		description: [
-			'Delivered 4 web and mobile client projects, including Amatis (IoT lighting control) and Raíz for Caramelo Escaso (cultural-maturity assessment), on Next.js and React.',
-			"Designed and deployed Raíz's questionnaire module (Next.js 15, tRPC, Drizzle/PostgreSQL): sends assessments to each company's respondents and ingests every answer through webhooks, in production for about 2 years.",
 			'Automated release pipelines for 2 Android and 2 iOS apps with GitLab CI/CD, cutting release time from about 8 hours to 1-2.',
+			"Designed and deployed Raíz's questionnaire module (Next.js 15, tRPC, Drizzle/PostgreSQL): sends assessments to each company's respondents and ingests every answer through webhooks, in production for about 2 years.",
+			'Delivered 4 web and mobile client projects, including Amatis (IoT lighting control) and Raíz for Caramelo Escaso (cultural-maturity assessment), on Next.js and React.',
 			'Own features end to end on Amatis, a long-lived IoT lighting platform (Express/MySQL API, Next.js web app, Capacitor mobile app): scoped integration tokens and a refresh-token auth flow.',
 			"Built Raíz's results comparison view: a pyramid-shaped radar chart comparing a company's first, later and baseline questionnaires.",
 			'Act as de-facto tech lead on client work: coordinate sprint tasks, enforce coding standards and run code reviews.',
@@ -198,7 +200,6 @@ export const certificationList = [
 		issuer: 'Udemy',
 		year: '2021',
 		url: 'https://www.udemy.com/certificate/UC-19154019-547e-4a7e-bf2c-7cde9a5e3ee4/',
-		hidden: true,
 	},
 	{
 		name: 'Business Process Modeling',
@@ -211,47 +212,56 @@ export const certificationList = [
 		issuer: 'HackerRank',
 		year: '2022',
 		url: 'https://www.hackerrank.com/certificates/917d335a6e8d',
-		hidden: true,
+		hidden: true, // superseded by Frontend Developer (React)
 	},
 ]
 
 export const skillAreas = ['frontend & mobile', 'backend & data', 'testing, cloud & tools'] as const
 
-type Skill = { name: string; icon: string | undefined; hex: string; area: (typeof skillAreas)[number] }
+// Core skills show first; the rest fold behind "show all"
+type Skill = { name: string; icon: string; hex: string; area: (typeof skillAreas)[number]; core?: boolean }
+
+// simple-icons has no AWS mark, so AWS gets a plain cloud (Material Icons, Apache 2.0)
+const cloudIcon =
+	'M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z'
+
+export const languages = 'Spanish and English'
 
 export const skillsList: Skill[] = [
-	{ name: 'React', icon: siReact.path, hex: siReact.hex, area: 'frontend & mobile' },
-	{ name: 'Next.js', icon: siNextdotjs.path, hex: siNextdotjs.hex, area: 'frontend & mobile' },
+	{ name: 'React', icon: siReact.path, hex: siReact.hex, area: 'frontend & mobile', core: true },
+	{ name: 'Next.js', icon: siNextdotjs.path, hex: siNextdotjs.hex, area: 'frontend & mobile', core: true },
 	{ name: 'Angular', icon: siAngular.path, hex: siAngular.hex, area: 'frontend & mobile' },
-	{ name: 'TypeScript', icon: siTypescript.path, hex: siTypescript.hex, area: 'frontend & mobile' },
+	{ name: 'TypeScript', icon: siTypescript.path, hex: siTypescript.hex, area: 'frontend & mobile', core: true },
 	{ name: 'JavaScript', icon: siJavascript.path, hex: siJavascript.hex, area: 'frontend & mobile' },
 	{ name: 'Redux', icon: siRedux.path, hex: siRedux.hex, area: 'frontend & mobile' },
-	{ name: 'TanStack Query', icon: siReactquery.path, hex: siReactquery.hex, area: 'frontend & mobile' },
+	{ name: 'TanStack Query', icon: siReactquery.path, hex: siReactquery.hex, area: 'frontend & mobile', core: true },
 	{ name: 'Zod', icon: siZod.path, hex: siZod.hex, area: 'frontend & mobile' },
-	{ name: 'Tailwind CSS', icon: siTailwindcss.path, hex: siTailwindcss.hex, area: 'frontend & mobile' },
+	{ name: 'Tailwind CSS', icon: siTailwindcss.path, hex: siTailwindcss.hex, area: 'frontend & mobile', core: true },
 	{ name: 'Sass', icon: siSass.path, hex: siSass.hex, area: 'frontend & mobile' },
 	{ name: 'Framer Motion', icon: siFramer.path, hex: siFramer.hex, area: 'frontend & mobile' },
 	{ name: 'Vite', icon: siVite.path, hex: siVite.hex, area: 'frontend & mobile' },
 	{ name: 'Storybook', icon: siStorybook.path, hex: siStorybook.hex, area: 'frontend & mobile' },
 	{ name: 'Flutter', icon: siFlutter.path, hex: siFlutter.hex, area: 'frontend & mobile' },
 	{ name: 'Dart', icon: siDart.path, hex: siDart.hex, area: 'frontend & mobile' },
-	{ name: 'Node.js', icon: siNodedotjs.path, hex: siNodedotjs.hex, area: 'backend & data' },
+	{ name: 'Node.js', icon: siNodedotjs.path, hex: siNodedotjs.hex, area: 'backend & data', core: true },
 	{ name: 'Express', icon: siExpress.path, hex: siExpress.hex, area: 'backend & data' },
+	{ name: 'Redis', icon: siRedis.path, hex: siRedis.hex, area: 'backend & data', core: true },
+	{ name: 'MQTT', icon: siMqtt.path, hex: siMqtt.hex, area: 'backend & data', core: true },
 	{ name: 'WebSockets', icon: siSocketdotio.path, hex: siSocketdotio.hex, area: 'backend & data' },
-	{ name: 'PostgreSQL', icon: siPostgresql.path, hex: siPostgresql.hex, area: 'backend & data' },
+	{ name: 'PostgreSQL', icon: siPostgresql.path, hex: siPostgresql.hex, area: 'backend & data', core: true },
 	{ name: 'MySQL', icon: siMysql.path, hex: siMysql.hex, area: 'backend & data' },
 	{ name: 'MongoDB', icon: siMongodb.path, hex: siMongodb.hex, area: 'backend & data' },
 	{ name: 'Firebase', icon: siFirebase.path, hex: siFirebase.hex, area: 'backend & data' },
-	{ name: 'DrizzleORM', icon: siDrizzle.path, hex: siDrizzle.hex, area: 'backend & data' },
+	{ name: 'DrizzleORM', icon: siDrizzle.path, hex: siDrizzle.hex, area: 'backend & data', core: true },
 	{ name: 'Prisma', icon: siPrisma.path, hex: siPrisma.hex, area: 'backend & data' },
-	{ name: 'Vitest', icon: siVitest.path, hex: siVitest.hex, area: 'testing, cloud & tools' },
+	{ name: 'Vitest', icon: siVitest.path, hex: siVitest.hex, area: 'testing, cloud & tools', core: true },
 	{ name: 'Jest', icon: siJest.path, hex: siJest.hex, area: 'testing, cloud & tools' },
 	{ name: 'Git', icon: siGit.path, hex: siGit.hex, area: 'testing, cloud & tools' },
-	{ name: 'Docker', icon: siDocker.path, hex: siDocker.hex, area: 'testing, cloud & tools' },
-	{ name: 'AWS', icon: undefined, hex: 'FF9900', area: 'testing, cloud & tools' },
+	{ name: 'Docker', icon: siDocker.path, hex: siDocker.hex, area: 'testing, cloud & tools', core: true },
+	{ name: 'AWS', icon: cloudIcon, hex: 'FF9900', area: 'testing, cloud & tools', core: true },
 	{ name: 'Google Cloud', icon: siGooglecloud.path, hex: siGooglecloud.hex, area: 'testing, cloud & tools' },
 	{ name: 'Figma', icon: siFigma.path, hex: siFigma.hex, area: 'testing, cloud & tools' },
-	{ name: 'Claude Code', icon: siClaude.path, hex: siClaude.hex, area: 'testing, cloud & tools' },
+	{ name: 'Claude Code', icon: siClaude.path, hex: siClaude.hex, area: 'testing, cloud & tools', core: true },
 	{ name: 'Cursor', icon: siCursor.path, hex: siCursor.hex, area: 'testing, cloud & tools' },
 ]
 
@@ -260,7 +270,11 @@ export type Project = {
 	type: string
 	role: string
 	description: string
+	// Short proof lines, shown as terminal output under the description
+	highlights?: string[]
 	image: string | undefined
+	// Smaller copies of the image for narrower screens (srcset syntax)
+	imageSrcSet?: string
 	deployment: string | undefined
 	github: string | undefined
 	technologies: string[]
@@ -272,8 +286,17 @@ export const projectsList: Project[] = [
 		type: 'White-label SaaS',
 		role: 'Fullstack',
 		description:
-			'White-label operations platform for LATAM salons and workshops, replacing WhatsApp and Excel. Shipped to each client and hosted where it suits them; Innovations Befine, the first client, runs it on a server on its own premises. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
+			'Operations platform for LATAM salons and workshops that replaces WhatsApp and Excel. White-label: shipped to each client and hosted where it suits them.',
+		highlights: [
+			'in production at Innovations Befine, on a server at its own premises',
+			'live cashier dashboard (server-sent events)',
+			'payroll engine for three pay models',
+			'keeps working offline (PWA with an IndexedDB queue)',
+			'four staff roles, each with its own permissions',
+		],
 		image: '/2027/projects/atelier.webp',
+		imageSrcSet:
+			'/2027/projects/atelier-640.webp 640w, /2027/projects/atelier-960.webp 960w, /2027/projects/atelier-1280.webp 1280w, /2027/projects/atelier.webp 1920w',
 		deployment: 'https://atelier.juandawd.dev/',
 		github: undefined,
 		technologies: [
@@ -294,7 +317,7 @@ export const projectsList: Project[] = [
 		type: 'Freelance',
 		role: 'Frontend',
 		description:
-			'Public website for a pharmacy in Maicao, Colombia: services, schedule, promotions, testimonials, and a WhatsApp contact flow. Built with React 19, Vite, and Tailwind CSS v4 on Radix UI components, deployed on Vercel behind Cloudflare DNS.',
+			'Public website for a pharmacy in Maicao, Colombia, where customers check services, opening hours and promotions, then reach the store on WhatsApp. Built with React 19, Vite and Tailwind CSS v4 on Radix UI.',
 		image: '/2027/projects/drogueria.webp',
 		deployment: 'https://www.drogueria-uno-a.com',
 		github: undefined,
