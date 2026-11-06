@@ -1,12 +1,12 @@
-import { useSyncExternalStore } from 'react'
+import { useSyncExternalStore, type MouseEvent } from 'react'
+import { flushSync } from 'react-dom'
 import { Link } from 'react-router-dom'
 import { Moon, Sun } from 'lucide-react'
 
 import { useTheme } from '@/lib/theme'
 import { YearSwitcher } from '@/components/shared/YearSwitcher'
 import { yearHref } from '@/years'
-import logoLight from './logo-light.svg'
-import logoDark from './logo-dark.svg'
+import { Logo } from './Logo'
 
 const emptySubscribe = () => () => {}
 
@@ -28,16 +28,38 @@ export function Navbar() {
 	)
 	const isDark = resolvedTheme === 'dark'
 
+	// The new theme grows out of the toggle as a circle. Browsers without view transitions,
+	// and visitors who prefer reduced motion, get an instant switch
+	function toggleTheme(e: MouseEvent<HTMLButtonElement>) {
+		const next = isDark ? 'light' : 'dark'
+		if (!document.startViewTransition || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+			setTheme(next)
+			return
+		}
+		const { left, top, width, height } = e.currentTarget.getBoundingClientRect()
+		const x = left + width / 2
+		const y = top + height / 2
+		const r = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y))
+		const transition = document.startViewTransition(() => {
+			flushSync(() => setTheme(next))
+			document.documentElement.classList.toggle('dark', next === 'dark')
+		})
+		transition.ready.then(() => {
+			document.documentElement.animate(
+				{ clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${r}px at ${x}px ${y}px)`] },
+				{ duration: 650, easing: 'cubic-bezier(.4,0,.2,1)', pseudoElement: '::view-transition-new(root)' },
+			)
+		})
+	}
+
 	return (
 		<header className="sticky top-3 z-50 px-3 sm:top-4 sm:px-6">
 			<nav
 				aria-label="Main"
 				className="glass mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-lg py-1.5 pr-1.5 pl-4 font-mono text-sm 2xl:max-w-7xl"
 			>
-				{/* The two marks swap with the .dark class, so the right one shows before hydration */}
 				<Link to={yearHref('2027')} aria-label="Juan Dawd, home" className="shrink-0">
-					<img src={logoLight} alt="" width={34} height={32} className="h-8 w-auto dark:hidden" />
-					<img src={logoDark} alt="" width={34} height={32} className="hidden h-8 w-auto dark:block" />
+					<Logo />
 				</Link>
 
 				<div className="flex items-center gap-1">
@@ -69,7 +91,7 @@ export function Navbar() {
 
 					<button
 						type="button"
-						onClick={() => setTheme(isDark ? 'light' : 'dark')}
+						onClick={toggleTheme}
 						aria-label="Dark theme"
 						// Before hydration the theme is unknown, so the state is left out
 						aria-pressed={mounted ? isDark : undefined}

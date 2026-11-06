@@ -143,3 +143,19 @@
 		animation: none;
 	}
 }
+
+/* Theme switch: the new page is revealed by a circle (animated from the Navbar toggle).
+   The logo is lifted out of the page snapshot so its own colour sweep stays visible */
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation: none;
+	mix-blend-mode: normal;
+}
+
+::view-transition-old(jd-logo) {
+	display: none;
+}
+
+::view-transition-new(jd-logo) {
+	animation: none;
+}
