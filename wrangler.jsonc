@@ -2,7 +2,7 @@
 // is, with no Worker code. Replaces vercel.json once the domain moves over.
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "juandawd-portfolio",
+	"name": "portfolio",
 	"compatibility_date": "2026-10-30",
 	"assets": {
 		"directory": "./dist",

@@ -1,6 +1,6 @@
 import { CURRENT_YEAR, years, yearHref } from '@/years'
 
-export const SITE_URL = 'https://www.juandawd.dev'
+export const SITE_URL = 'https://juandawd.dev'
 
 export interface PageMeta {
 	title: string

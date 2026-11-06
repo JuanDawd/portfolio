@@ -48,6 +48,8 @@ The site is static, so any host that serves `dist/` works. Two configs live side
 - **Vercel** (`vercel.json`): rewrites `/{year}` to its `index.html` and sets cache headers.
 - **Cloudflare Workers static assets** (`wrangler.jsonc` + `public/_headers`): no Worker code; `html_handling: drop-trailing-slash` serves `/{year}` and `not_found_handling: 404-page` serves `404.html` with a 404. `pnpm cf:preview` runs the build under `wrangler dev`; `pnpm cf:deploy` deploys it.
 
+The canonical domain is `https://juandawd.dev` (`SITE_URL` in `src/lib/seo.ts`, plus `index.html` and `robots.txt`); `www` redirects to it. The Cloudflare Worker is named `portfolio`.
+
 Keep the cache rules in `vercel.json` and `public/_headers` in sync until Vercel is retired. `_headers` can't match by file extension, so it lists image folders and files explicitly: add a line when a year adds static files outside `/{year}/projects/`.
 
 ### Theme system
