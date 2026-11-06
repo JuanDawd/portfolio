@@ -3,7 +3,7 @@
 // chunks of its year, and its rendered markup inside #root, which main.tsx then
 // hydrates. Also writes sitemap.xml. The page list comes from the year registry
 // (src/years.ts), so new years and pages are picked up automatically.
-import { existsSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
@@ -41,7 +41,15 @@ function preloadTags(entries, template) {
 	}
 	// Skip files the template already loads
 	const missing = (f) => !template.includes(`/${f}"`)
+	// The Latin variable font files the year's stylesheet uses, so text paints in its own font
+	// on first load instead of swapping in after the CSS is parsed
+	const fonts = new Set()
+	for (const f of css) {
+		const source = readFileSync(resolve(distDir, f), 'utf8')
+		for (const [url] of source.matchAll(/\/assets\/[\w.-]+-latin-wght-normal-[\w-]+\.woff2/g)) fonts.add(url)
+	}
 	return [
+		...[...fonts].map((url) => `<link rel="preload" as="font" type="font/woff2" crossorigin href="${url}">`),
 		...[...css].filter(missing).map((f) => `<link rel="stylesheet" crossorigin href="/${f}">`),
 		...[...js].filter(missing).map((f) => `<link rel="modulepreload" crossorigin href="/${f}">`),
 	].join('\n    ')

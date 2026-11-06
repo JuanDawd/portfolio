@@ -1,4 +1,13 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
+import {
+	createContext,
+	useCallback,
+	useContext,
+	useEffect,
+	useLayoutEffect,
+	useMemo,
+	useState,
+	type ReactNode,
+} from 'react'
 
 type Theme = 'light' | 'dark' | 'system'
 
@@ -34,7 +43,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 		return () => mql.removeEventListener('change', handler)
 	}, [])
 
-	useEffect(() => {
+	// The one place the app sets the class (index.html sets it once before first paint).
+	// A layout effect, so it applies in the same commit, e.g. inside a view transition's flushSync
+	useLayoutEffect(() => {
 		const root = document.documentElement
 		root.classList.toggle('dark', resolvedTheme === 'dark')
 	}, [resolvedTheme])

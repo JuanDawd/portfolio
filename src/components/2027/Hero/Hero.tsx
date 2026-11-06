@@ -8,7 +8,7 @@ export function Hero() {
 	return (
 		<section
 			aria-labelledby="hero-title"
-			className="glass grid min-w-0 gap-5 rounded-xl p-5 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-x-12 lg:p-10"
+			className="slab grid min-w-0 gap-5 rounded-xl p-5 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-x-12 lg:p-10"
 		>
 			{/* lg+: name and pitch on the left, terminal output and actions on the right */}
 			<div className="grid min-w-0 gap-4">
