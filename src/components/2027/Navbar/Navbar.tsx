@@ -1,4 +1,4 @@
-import { useEffect, useState, useSyncExternalStore, type MouseEvent } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore, type MouseEvent } from 'react'
 import { flushSync } from 'react-dom'
 import { Link } from 'react-router-dom'
 import { Moon, Sun } from 'lucide-react'
@@ -19,26 +19,49 @@ const sections = [
 ]
 const sectionIds = sections.map((s) => s.id)
 
-// The section crossing the middle of the screen, for the nav's "you are here" mark
+// The section whose top has passed just under the navbar, for the nav's "you are here" mark.
+// A clicked link wins until its smooth scroll ends, so short sections like stack still light up
+const SPY_LINE = 140
+
 function useActiveSection(ids: string[]) {
 	const [active, setActive] = useState<string | null>(null)
+	const locked = useRef(false)
+
 	useEffect(() => {
-		const targets = ids.map((id) => document.getElementById(id)).filter((el) => el !== null)
-		if (targets.length === 0 || !('IntersectionObserver' in window)) return
-		const observer = new IntersectionObserver(
-			(entries) => {
-				for (const entry of entries) if (entry.isIntersecting) setActive(entry.target.id)
-			},
-			{ rootMargin: '-45% 0px -50% 0px' },
-		)
-		targets.forEach((el) => observer.observe(el))
-		return () => observer.disconnect()
+		function update() {
+			if (locked.current) return
+			let current: string | null = null
+			for (const id of ids) {
+				const el = document.getElementById(id)
+				if (el && el.getBoundingClientRect().top <= SPY_LINE) current = id
+			}
+			// The last section may never reach the line, so the bottom of the page selects it
+			if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) current = ids[ids.length - 1]
+			setActive(current)
+		}
+		update()
+		addEventListener('scroll', update, { passive: true })
+		return () => removeEventListener('scroll', update)
 	}, [ids])
-	return active
+
+	function select(id: string) {
+		setActive(id)
+		locked.current = true
+		const release = () => {
+			locked.current = false
+			clearTimeout(timer)
+			removeEventListener('scrollend', release)
+		}
+		// scrollend isn't everywhere yet, so a timeout releases the lock too
+		const timer = setTimeout(release, 1200)
+		addEventListener('scrollend', release)
+	}
+
+	return [active, select] as const
 }
 
 export function Navbar() {
-	const active = useActiveSection(sectionIds)
+	const [active, select] = useActiveSection(sectionIds)
 	const { setTheme, resolvedTheme } = useTheme()
 	// The theme is only known in the browser, so the toggle renders after hydration
 	const mounted = useSyncExternalStore(
@@ -92,8 +115,9 @@ export function Navbar() {
 							<li key={id}>
 								<a
 									href={`#${id}`}
+									onClick={() => select(id)}
 									aria-current={active === id ? 'location' : undefined}
-									className="rounded px-2 py-1.5 text-muted-foreground underline-offset-[6px] transition-colors hover:text-foreground aria-[current=location]:text-foreground aria-[current=location]:underline aria-[current=location]:decoration-accent-text aria-[current=location]:decoration-2"
+									className="rounded px-2 py-1.5 text-muted-foreground underline-offset-[6px] transition-[color,text-decoration-color] duration-300 hover:text-foreground aria-[current=location]:text-foreground aria-[current=location]:underline aria-[current=location]:decoration-accent-text aria-[current=location]:decoration-2"
 								>
 									{label}
 								</a>
@@ -101,7 +125,7 @@ export function Navbar() {
 						))}
 					</ul>
 
-					{/* Phones: the two exits, the CVs and the email, both at the contact card */}
+					{/* Phones: the two exits, the CVs in the hero and the email at the contact card */}
 					<a
 						href="#cv"
 						className="inline-flex h-11 items-center rounded px-1 text-muted-foreground transition-colors hover:text-foreground md:hidden"

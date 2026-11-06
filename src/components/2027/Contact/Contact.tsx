@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Check, Copy, FileText } from 'lucide-react'
+import { Check, Copy } from 'lucide-react'
 
 import { GithubIcon } from '@/components/shared/icons/GithubIcon'
 import { LinkedInIcon } from '@/components/shared/icons/LinkedInIcon'
@@ -24,7 +24,7 @@ export function Contact() {
 	return (
 		<Section id="contact" command="./" title="contact">
 			{/* The closing bookend: glass like the hero, restating the pitch, email first */}
-			<div className="glass grid gap-6 rounded-xl p-5 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-12 lg:p-10">
+			<div className="glass grid gap-6 rounded-xl p-5 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12 lg:p-10">
 				<p className="max-w-[30ch] text-2xl leading-snug text-balance sm:text-3xl">
 					Have a product to build, or a team that needs someone who can ship one? Write to me.
 				</p>
@@ -33,7 +33,7 @@ export function Contact() {
 					<div className="flex gap-2">
 						<a
 							href={`mailto:${socialLinks.email}`}
-							className="inline-flex min-h-14 min-w-0 flex-1 items-center justify-center rounded-md bg-primary px-3 text-sm font-bold text-primary-foreground transition-opacity select-all hover:opacity-90 sm:flex-none sm:px-5 sm:text-lg"
+							className="inline-flex min-h-14 min-w-0 flex-1 items-center justify-center rounded-md bg-primary px-3 text-sm font-bold text-primary-foreground transition-opacity select-all hover:opacity-90 sm:px-5 sm:text-lg"
 						>
 							{socialLinks.email}
 						</a>
@@ -58,29 +58,6 @@ export function Contact() {
 							Couldn't copy it. Select the address above instead.
 						</p>
 					)}
-
-					{/* The CVs again, so the second exit is at hand at the end of the page too */}
-					<div id="cv" className="grid scroll-mt-24 gap-2 text-sm sm:flex sm:flex-wrap">
-						<a
-							href="/resume/JuanDawd_ATS_Eng_CV.pdf"
-							target="_blank"
-							rel="noreferrer"
-							className="glass-flat inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-4 transition-colors hover:text-accent-text"
-						>
-							<FileText aria-hidden="true" className="h-4 w-4" />
-							./resume.pdf
-						</a>
-						<a
-							href="/resume/JuanDawd_ATS_Esp_CV.pdf"
-							target="_blank"
-							rel="noreferrer"
-							lang="es"
-							className="glass-flat inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-4 transition-colors hover:text-accent-text"
-						>
-							<FileText aria-hidden="true" className="h-4 w-4" />
-							./hoja-de-vida.pdf
-						</a>
-					</div>
 
 					<div className="flex flex-wrap gap-x-5 text-sm text-muted-foreground">
 						<a

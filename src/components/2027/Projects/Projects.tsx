@@ -21,7 +21,8 @@ export function Projects() {
 						<img
 							src={featured.image}
 							srcSet={featured.imageSrcSet}
-							sizes="(min-width: 1536px) 768px, (min-width: 1024px) 614px, calc(100vw - 24px)"
+							// lg+: the image fills the card's full height, so it's cropped and drawn wider than its column
+							sizes="(min-width: 1024px) 1280px, calc(100vw - 24px)"
 							alt=""
 							width={960}
 							height={540}

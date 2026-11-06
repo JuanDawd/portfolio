@@ -54,7 +54,7 @@ export function Hero() {
 				</ul>
 
 				{/* Phone: one full-width button per row. sm+: side by side. */}
-				<div className="grid gap-2 font-mono text-sm sm:flex sm:flex-wrap">
+				<div id="cv" className="grid scroll-mt-24 gap-2 font-mono text-sm sm:flex sm:flex-wrap">
 					<a
 						href="/resume/JuanDawd_ATS_Eng_CV.pdf"
 						target="_blank"

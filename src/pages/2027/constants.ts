@@ -181,7 +181,6 @@ export const certificationList = [
 		issuer: 'HackerRank',
 		year: '2025',
 		url: 'https://www.hackerrank.com/certificates/54fec5464786',
-		hidden: true, // the React certificate already covers it
 	},
 	{
 		name: 'JavaScript (Basic)',
@@ -195,14 +194,12 @@ export const certificationList = [
 		issuer: 'SmallTalk2Me',
 		year: '2024',
 		url: 'https://app.smalltalk2.me/cert/2a03cb19',
-		hidden: true, // the languages line under education says it plainly
 	},
 	{
 		name: 'Learn to Code with Ruby',
 		issuer: 'Udemy',
 		year: '2021',
 		url: 'https://www.udemy.com/certificate/UC-19154019-547e-4a7e-bf2c-7cde9a5e3ee4/',
-		hidden: true,
 	},
 	{
 		name: 'Business Process Modeling',
@@ -215,7 +212,7 @@ export const certificationList = [
 		issuer: 'HackerRank',
 		year: '2022',
 		url: 'https://www.hackerrank.com/certificates/917d335a6e8d',
-		hidden: true,
+		hidden: true, // superseded by Frontend Developer (React)
 	},
 ]
 
