@@ -44,17 +44,46 @@ function useActiveSection(ids: string[]) {
 		return () => removeEventListener('scroll', update)
 	}, [ids])
 
-	function select(id: string) {
+	// Glides to the section with a slow ease in and out (CSS smooth scrolling is too quick and
+	// can't be timed). The clicked link stays marked until the glide ends, and any wheel, touch
+	// or key press hands control back to the visitor
+	function select(e: MouseEvent<HTMLAnchorElement>, id: string) {
+		const el = document.getElementById(id)
+		if (!el) return
+		e.preventDefault()
+		history.pushState(null, '', `#${id}`)
 		setActive(id)
-		locked.current = true
-		const release = () => {
-			locked.current = false
-			clearTimeout(timer)
-			removeEventListener('scrollend', release)
+
+		const from = scrollY
+		const margin = parseFloat(getComputedStyle(el).scrollMarginTop) || 0
+		const max = document.documentElement.scrollHeight - innerHeight
+		const to = Math.min(max, Math.max(0, el.getBoundingClientRect().top + scrollY - margin))
+		const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+		if (reduce || Math.abs(to - from) < 2) {
+			scrollTo({ top: to, behavior: 'instant' })
+			return
 		}
-		// scrollend isn't everywhere yet, so a timeout releases the lock too
-		const timer = setTimeout(release, 1200)
-		addEventListener('scrollend', release)
+
+		// Longer trips take longer, within 0.9s to 1.6s
+		const duration = Math.min(1600, 900 + Math.abs(to - from) * 0.15)
+		const start = performance.now()
+		let frame = 0
+		const stop = () => {
+			cancelAnimationFrame(frame)
+			locked.current = false
+			for (const type of ['wheel', 'touchstart', 'keydown'] as const) removeEventListener(type, stop)
+		}
+		for (const type of ['wheel', 'touchstart', 'keydown'] as const) addEventListener(type, stop, { passive: true })
+		locked.current = true
+
+		const step = (now: number) => {
+			const t = Math.min(1, (now - start) / duration)
+			const eased = t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2
+			scrollTo({ top: from + (to - from) * eased, behavior: 'instant' })
+			if (t < 1) frame = requestAnimationFrame(step)
+			else stop()
+		}
+		frame = requestAnimationFrame(step)
 	}
 
 	return [active, select] as const
@@ -115,7 +144,7 @@ export function Navbar() {
 							<li key={id}>
 								<a
 									href={`#${id}`}
-									onClick={() => select(id)}
+									onClick={(e) => select(e, id)}
 									aria-current={active === id ? 'location' : undefined}
 									className="rounded px-2 py-1.5 text-muted-foreground underline-offset-[6px] transition-[color,text-decoration-color] duration-300 hover:text-foreground aria-[current=location]:text-foreground aria-[current=location]:underline aria-[current=location]:decoration-accent-text aria-[current=location]:decoration-2"
 								>
@@ -128,12 +157,14 @@ export function Navbar() {
 					{/* Phones: the two exits, the CVs in the hero and the email at the contact card */}
 					<a
 						href="#cv"
+						onClick={(e) => select(e, 'cv')}
 						className="inline-flex h-11 items-center rounded px-1 text-muted-foreground transition-colors hover:text-foreground md:hidden"
 					>
 						cv
 					</a>
 					<a
 						href="#contact"
+						onClick={(e) => select(e, 'contact')}
 						className="inline-flex h-11 items-center rounded px-1 text-muted-foreground transition-colors hover:text-foreground md:hidden"
 					>
 						contact
