@@ -23,8 +23,8 @@ export function Contact() {
 
 	return (
 		<Section id="contact" command="./" title="contact">
-			{/* The closing bookend: a slab like the hero, restating the pitch, email first */}
-			<div className="slab grid gap-6 rounded-xl p-5 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12 lg:p-10">
+			{/* The closing bookend: glass like the hero, restating the pitch, email first */}
+			<div className="glass grid gap-6 rounded-xl p-5 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12 lg:p-10">
 				<p className="max-w-[30ch] text-2xl leading-snug text-balance sm:text-3xl">
 					Have a product to build, or a team that needs someone who can ship one? Write to me.
 				</p>

@@ -28,7 +28,7 @@
 	--color-rule: var(--rule);
 }
 
-/* Light: cool grey page, white slabs for the hero and contact, flatter grey panels, solid red primary */
+/* Light: cool grey page, white glass on the hero, flatter grey panels, solid red primary */
 :root {
 	--background: oklch(0.961 0.003 264.5);
 	--foreground: oklch(0.158 0.007 258.4);
@@ -53,7 +53,7 @@
 	--accent-text: oklch(0.503 0.176 23.4);
 	--panel: oklch(0.938 0.005 264);
 	--glass: oklch(1 0 0 / 58%);
-	--slab: oklch(0.99 0.002 264);
+	--glass-solid: oklch(0.99 0.002 264);
 	--glass-border: oklch(0.158 0.007 258.4 / 12%);
 	--glass-highlight: oklch(1 0 0 / 90%);
 	--rule: oklch(0.158 0.007 258.4 / 10%);
@@ -84,7 +84,7 @@
 	--accent-text: oklch(0.716 0.145 18.3);
 	--panel: oklch(0.2 0.009 258);
 	--glass: oklch(1 0 0 / 7%);
-	--slab: oklch(0.205 0.01 258);
+	--glass-solid: oklch(0.205 0.01 258);
 	--glass-border: oklch(1 0 0 / 16%);
 	--glass-highlight: oklch(1 0 0 / 18%);
 	--rule: oklch(1 0 0 / 12%);
@@ -92,7 +92,7 @@
 }
 
 @layer components {
-	/* Page backdrop: one still wash of blue at the top, which the navbar's glass blurs */
+	/* Page backdrop: one still wash of blue at the top that the glass panels blur */
 	.gt-backdrop {
 		position: relative;
 		isolation: isolate;
@@ -112,9 +112,7 @@
 		border: 1px solid var(--rule);
 	}
 
-	/* Frosted bar: translucent fill that blurs the page scrolling under it. Only the sticky
-	   navbar uses it: it is the one surface with moving content behind it, and each blur is a
-	   cost on every scrolled frame */
+	/* Frosted panel: translucent fill, hairline border, light along the top edge */
 	.glass {
 		background: var(--glass);
 		border: 1px solid var(--glass-border);
@@ -125,16 +123,19 @@
 		backdrop-filter: blur(16px) saturate(160%);
 	}
 
-	/* The hero and contact bookends: solid, lifted a step off the page, lit by the blue wash
-	   from the top corner and along the top edge. No blur: nothing moves behind them */
-	.slab {
-		background:
-			radial-gradient(120% 90% at 100% 0%, color-mix(in oklch, var(--wash) 16%, transparent), transparent 60%),
-			var(--slab);
-		border: 1px solid var(--glass-border);
-		box-shadow:
-			inset 0 1px 0 var(--glass-highlight),
-			0 12px 32px -16px oklch(0 0 0 / 45%);
+	/* Visitors who ask their device for less transparency, and browsers that can't blur,
+	   get the same panel solid, so text on it never sits over a see-through fill */
+	@media (prefers-reduced-transparency: reduce) {
+		.glass {
+			background: var(--glass-solid);
+			-webkit-backdrop-filter: none;
+			backdrop-filter: none;
+		}
+	}
+	@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+		.glass {
+			background: var(--glass-solid);
+		}
 	}
 
 	/* Controls that sit on glass: a solid tint, so they stand apart from it without a second blur */
