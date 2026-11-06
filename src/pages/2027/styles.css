@@ -53,6 +53,7 @@
 	--accent-text: oklch(0.503 0.176 23.4);
 	--panel: oklch(0.938 0.005 264);
 	--glass: oklch(1 0 0 / 58%);
+	--glass-solid: oklch(0.99 0.002 264);
 	--glass-border: oklch(0.158 0.007 258.4 / 12%);
 	--glass-highlight: oklch(1 0 0 / 90%);
 	--rule: oklch(0.158 0.007 258.4 / 10%);
@@ -83,6 +84,7 @@
 	--accent-text: oklch(0.716 0.145 18.3);
 	--panel: oklch(0.2 0.009 258);
 	--glass: oklch(1 0 0 / 7%);
+	--glass-solid: oklch(0.205 0.01 258);
 	--glass-border: oklch(1 0 0 / 16%);
 	--glass-highlight: oklch(1 0 0 / 18%);
 	--rule: oklch(1 0 0 / 12%);
@@ -119,6 +121,21 @@
 			0 12px 32px -16px oklch(0 0 0 / 45%);
 		-webkit-backdrop-filter: blur(16px) saturate(160%);
 		backdrop-filter: blur(16px) saturate(160%);
+	}
+
+	/* Visitors who ask their device for less transparency, and browsers that can't blur,
+	   get the same panel solid, so text on it never sits over a see-through fill */
+	@media (prefers-reduced-transparency: reduce) {
+		.glass {
+			background: var(--glass-solid);
+			-webkit-backdrop-filter: none;
+			backdrop-filter: none;
+		}
+	}
+	@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+		.glass {
+			background: var(--glass-solid);
+		}
 	}
 
 	/* Controls that sit on glass: a solid tint, so they stand apart from it without a second blur */
