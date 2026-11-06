@@ -112,7 +112,7 @@ export const experienceList: Experience[] = [
 		description: [
 			'Built the multi-tenant e-commerce storefront with slug-based business routing: per-business catalog, promotions, featured products, category filtering, and cart.',
 			'Structured the UI as an Atomic Design component library (atoms → molecules → organisms → templates), documented in Storybook.',
-			'Worked in a 3-person team on a React 17 + MUI v5 app with React Hook Form and Zod.',
+			'Worked in a 3-person team on a React 17 and MUI v5 app with React Hook Form and Zod.',
 		],
 		techStack: ['React', 'MUI', 'React Hook Form', 'Zod', 'Storybook', 'Swiper'],
 	},
@@ -135,7 +135,7 @@ export const experienceList: Experience[] = [
 		time: 'Feb 2022 - Dec 2022',
 		description: [
 			'Built a cross-platform iOS/Android wellness app (20+ screens) with React, Ionic and Capacitor: onboarding, auth, dashboard, profile and progress flows.',
-			'Implemented JWT auth with Formik + Yup validation, Redux Toolkit state management, and a Chart.js analytics view for user history.',
+			'Implemented JWT auth with Formik and Yup validation, Redux Toolkit state management, and a Chart.js analytics view for user history.',
 			'Added PWA offline support with Workbox and a CI pipeline (GitHub Actions: ESLint, type-check, Jest) with pre-commit hooks.',
 		],
 		techStack: ['React', 'Ionic', 'Capacitor', 'TypeScript', 'Redux', 'Chart.js', 'Formik', 'Yup', 'Workbox'],
@@ -146,7 +146,7 @@ export const experienceList: Experience[] = [
 		companyLink: '',
 		time: 'Jun 2020 - Nov 2020',
 		description: [
-			'Implemented REST APIs and business logic with Express.js + TypeScript, streamlining MVP backend processes.',
+			'Implemented REST APIs and business logic with Express.js and TypeScript, streamlining MVP backend processes.',
 			'Prototyped cross-platform mobile app in Flutter, enabling early-stage investor demos.',
 			'Collaborated on MVP scoping, aligning technical feasibility with business objectives.',
 		],
@@ -272,7 +272,7 @@ export const projectsList: Project[] = [
 		type: 'White-label SaaS',
 		role: 'Fullstack',
 		description:
-			'White-label operations platform for LATAM salons and workshops, replacing WhatsApp + Excel. Shipped to each client and hosted where it suits them; Innovations Befine, the first client, runs it on a server on its own premises. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
+			'White-label operations platform for LATAM salons and workshops, replacing WhatsApp and Excel. Shipped to each client and hosted where it suits them; Innovations Befine, the first client, runs it on a server on its own premises. Real-time cashier dashboard via native SSE, three-model payroll engine, offline PWA with IndexedDB queue, and RBAC with four roles.',
 		image: '/2027/projects/atelier.webp',
 		deployment: 'https://atelier.juandawd.dev/',
 		github: undefined,
