@@ -4,6 +4,13 @@
 	"$schema": "./node_modules/wrangler/config-schema.json",
 	"name": "portfolio",
 	"compatibility_date": "2026-10-30",
+	// Both hostnames are attached on every deploy (Cloudflare creates the DNS
+	// records and certificates). juandawd.dev is canonical; a zone Redirect Rule
+	// sends www to it.
+	"routes": [
+		{ "pattern": "juandawd.dev", "custom_domain": true },
+		{ "pattern": "www.juandawd.dev", "custom_domain": true },
+	],
 	"assets": {
 		"directory": "./dist",
 		// /2026 serves dist/2026/index.html, and /2026/ redirects to /2026
