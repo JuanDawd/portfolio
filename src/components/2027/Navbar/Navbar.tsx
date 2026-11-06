@@ -113,8 +113,8 @@ export function Navbar() {
 		const y = top + height / 2
 		const r = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y))
 		const transition = document.startViewTransition(() => {
+			// The theme provider sets the .dark class in a layout effect, which flushSync runs here
 			flushSync(() => setTheme(next))
-			document.documentElement.classList.toggle('dark', next === 'dark')
 		})
 		transition.ready.then(() => {
 			document.documentElement.animate(
