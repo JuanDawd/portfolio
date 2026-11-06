@@ -11,6 +11,9 @@
 		{ "pattern": "juandawd.dev", "custom_domain": true },
 		{ "pattern": "www.juandawd.dev", "custom_domain": true },
 	],
+	// Pull request builds run `wrangler preview`, which needs this block (it can
+	// stay empty: assets and compatibility settings are read from the top level)
+	"previews": {},
 	"assets": {
 		"directory": "./dist",
 		// /2026 serves dist/2026/index.html, and /2026/ redirects to /2026

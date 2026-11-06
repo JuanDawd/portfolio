@@ -44,7 +44,8 @@ describe('2027 Navbar', () => {
 
 	it('links to the page sections', () => {
 		renderNavbar()
-		expect(screen.getByRole('link', { name: 'work' })).toHaveAttribute('href', '#work')
+		expect(screen.getByRole('link', { name: 'projects' })).toHaveAttribute('href', '#work')
+		expect(screen.getByRole('link', { name: 'cv' })).toHaveAttribute('href', '#cv')
 		// One contact link for phones, one in the md+ section list
 		for (const link of screen.getAllByRole('link', { name: 'contact' })) {
 			expect(link).toHaveAttribute('href', '#contact')

@@ -1,4 +1,4 @@
-import { useSyncExternalStore, type MouseEvent } from 'react'
+import { useEffect, useState, useSyncExternalStore, type MouseEvent } from 'react'
 import { flushSync } from 'react-dom'
 import { Link } from 'react-router-dom'
 import { Moon, Sun } from 'lucide-react'
@@ -11,14 +11,34 @@ import { Logo } from './Logo'
 const emptySubscribe = () => () => {}
 
 const sections = [
-	{ id: 'work', label: 'work' },
+	{ id: 'work', label: 'projects' },
 	{ id: 'experience', label: 'experience' },
 	{ id: 'stack', label: 'stack' },
 	{ id: 'education', label: 'education' },
 	{ id: 'contact', label: 'contact' },
 ]
+const sectionIds = sections.map((s) => s.id)
+
+// The section crossing the middle of the screen, for the nav's "you are here" mark
+function useActiveSection(ids: string[]) {
+	const [active, setActive] = useState<string | null>(null)
+	useEffect(() => {
+		const targets = ids.map((id) => document.getElementById(id)).filter((el) => el !== null)
+		if (targets.length === 0 || !('IntersectionObserver' in window)) return
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) if (entry.isIntersecting) setActive(entry.target.id)
+			},
+			{ rootMargin: '-45% 0px -50% 0px' },
+		)
+		targets.forEach((el) => observer.observe(el))
+		return () => observer.disconnect()
+	}, [ids])
+	return active
+}
 
 export function Navbar() {
+	const active = useActiveSection(sectionIds)
 	const { setTheme, resolvedTheme } = useTheme()
 	// The theme is only known in the browser, so the toggle renders after hydration
 	const mounted = useSyncExternalStore(
@@ -58,17 +78,22 @@ export function Navbar() {
 				aria-label="Main"
 				className="glass mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-lg py-1.5 pr-1.5 pl-4 font-mono text-sm 2xl:max-w-7xl"
 			>
-				<Link to={yearHref('2027')} aria-label="Juan Dawd, home" className="shrink-0">
+				<Link
+					to={yearHref('2027')}
+					aria-label="Juan Dawd, home"
+					className="-my-1.5 -ml-2 inline-flex min-h-11 shrink-0 items-center rounded-md px-2"
+				>
 					<Logo />
 				</Link>
 
-				<div className="flex items-center gap-1">
+				<div className="flex items-center gap-0.5 md:gap-1">
 					<ul className="hidden items-center gap-1 md:flex">
 						{sections.map(({ id, label }) => (
 							<li key={id}>
 								<a
 									href={`#${id}`}
-									className="rounded px-2 py-1.5 text-muted-foreground transition-colors hover:text-foreground"
+									aria-current={active === id ? 'location' : undefined}
+									className="rounded px-2 py-1.5 text-muted-foreground underline-offset-[6px] transition-colors hover:text-foreground aria-[current=location]:text-foreground aria-[current=location]:underline aria-[current=location]:decoration-accent-text aria-[current=location]:decoration-2"
 								>
 									{label}
 								</a>
@@ -76,10 +101,16 @@ export function Navbar() {
 						))}
 					</ul>
 
-					{/* Phones: contact is the one section link */}
+					{/* Phones: the two exits, the CVs and the email, both at the contact card */}
+					<a
+						href="#cv"
+						className="inline-flex h-11 items-center rounded px-1 text-muted-foreground transition-colors hover:text-foreground md:hidden"
+					>
+						cv
+					</a>
 					<a
 						href="#contact"
-						className="inline-flex h-11 items-center rounded px-2 text-muted-foreground transition-colors hover:text-foreground md:hidden"
+						className="inline-flex h-11 items-center rounded px-1 text-muted-foreground transition-colors hover:text-foreground md:hidden"
 					>
 						contact
 					</a>

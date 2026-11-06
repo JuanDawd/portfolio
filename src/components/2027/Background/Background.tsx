@@ -1,5 +1,5 @@
 import { Section } from '@/components/2027/Section'
-import { certificationList, educationList } from '@/pages/2027/constants'
+import { certificationList, educationList, languages } from '@/pages/2027/constants'
 
 const certifications = certificationList.filter((c) => !c.hidden)
 
@@ -15,6 +15,10 @@ export function Background() {
 							<p className="text-sm text-muted-foreground">{item.institution}</p>
 						</li>
 					))}
+					<li className="grid gap-1 p-4 sm:p-5">
+						<p className="font-mono text-xs text-muted-foreground">languages</p>
+						<p className="text-sm font-semibold">{languages}</p>
+					</li>
 				</ul>
 			</Section>
 

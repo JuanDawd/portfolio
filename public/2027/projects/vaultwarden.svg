@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Vaultwarden self-hosting architecture: browser, Cloudflare Access, Cloudflare Tunnel, Raspberry Pi running Docker with Vaultwarden and SQLite backups">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Homelab architecture: browser, Cloudflare Access, Cloudflare Tunnel, then a Proxmox server with LXC containers and Docker running Vaultwarden, Paperless-ngx and Nextcloud, with Pi-hole DNS and nightly snapshot backups">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0b1116"/>
@@ -18,32 +18,39 @@
   </defs>
   <rect width="1280" height="720" fill="url(#bg)"/>
 
-  <text x="640" y="90" text-anchor="middle" class="t" style="font-size:34px">Self-hosted password manager</text>
-  <text x="640" y="128" text-anchor="middle" class="s">No open ports · zero-trust access</text>
+  <text x="640" y="84" text-anchor="middle" class="t" style="font-size:34px">Self-hosted homelab</text>
+  <text x="640" y="122" text-anchor="middle" class="s">No open ports · zero-trust access</text>
 
-  <rect class="box" x="60" y="290" width="220" height="140" rx="16"/>
-  <text x="170" y="350" text-anchor="middle" class="t">Browser</text>
-  <text x="170" y="384" text-anchor="middle" class="s">Bitwarden client</text>
+  <rect class="box" x="40" y="300" width="200" height="130" rx="16"/>
+  <text x="140" y="356" text-anchor="middle" class="t">Browser</text>
+  <text x="140" y="390" text-anchor="middle" class="s">any device</text>
 
-  <rect class="hl" x="350" y="290" width="240" height="140" rx="16"/>
-  <text x="470" y="350" text-anchor="middle" class="t">Cloudflare</text>
-  <text x="470" y="384" text-anchor="middle" class="s">Access (auth gate)</text>
+  <rect class="hl" x="300" y="300" width="210" height="130" rx="16"/>
+  <text x="405" y="356" text-anchor="middle" class="t">Cloudflare</text>
+  <text x="405" y="390" text-anchor="middle" class="s">Access (auth gate)</text>
 
-  <rect class="hl" x="660" y="290" width="240" height="140" rx="16"/>
-  <text x="780" y="350" text-anchor="middle" class="t">Tunnel</text>
-  <text x="780" y="384" text-anchor="middle" class="s">outbound only</text>
+  <rect class="hl" x="570" y="300" width="190" height="130" rx="16"/>
+  <text x="665" y="356" text-anchor="middle" class="t">Tunnel</text>
+  <text x="665" y="390" text-anchor="middle" class="s">outbound only</text>
 
-  <rect class="box" x="960" y="190" width="270" height="340" rx="16"/>
-  <text x="1095" y="236" text-anchor="middle" class="t">Raspberry Pi</text>
-  <rect class="hl" x="985" y="266" width="220" height="92" rx="12"/>
-  <text x="1095" y="306" text-anchor="middle" class="t" style="font-size:22px">Docker</text>
-  <text x="1095" y="336" text-anchor="middle" class="s" style="font-size:16px">Vaultwarden</text>
-  <rect class="box" x="985" y="380" width="220" height="60" rx="12"/>
-  <text x="1095" y="418" text-anchor="middle" class="s" style="font-size:16px">SQLite + daily backups</text>
-  <rect class="box" x="985" y="452" width="220" height="60" rx="12"/>
-  <text x="1095" y="490" text-anchor="middle" class="s" style="font-size:16px">SMTP · SSH via tunnel</text>
+  <rect class="box" x="820" y="160" width="420" height="440" rx="16"/>
+  <text x="1030" y="204" text-anchor="middle" class="t">Proxmox server</text>
 
-  <path class="line" d="M280 360 H345"/>
-  <path class="line" d="M590 360 H655"/>
-  <path class="line" d="M900 360 H955"/>
+  <rect class="hl" x="845" y="226" width="370" height="196" rx="12"/>
+  <text x="1030" y="262" text-anchor="middle" class="t" style="font-size:22px">LXC containers + Docker</text>
+  <rect class="box" x="865" y="282" width="330" height="36" rx="8"/>
+  <text x="1030" y="307" text-anchor="middle" class="s" style="font-size:16px">Vaultwarden</text>
+  <rect class="box" x="865" y="326" width="330" height="36" rx="8"/>
+  <text x="1030" y="351" text-anchor="middle" class="s" style="font-size:16px">Paperless-ngx</text>
+  <rect class="box" x="865" y="370" width="330" height="36" rx="8"/>
+  <text x="1030" y="395" text-anchor="middle" class="s" style="font-size:16px">Nextcloud · and more</text>
+
+  <rect class="box" x="845" y="438" width="370" height="60" rx="12"/>
+  <text x="1030" y="475" text-anchor="middle" class="s" style="font-size:16px">Pi-hole DNS · firewall rules</text>
+  <rect class="box" x="845" y="514" width="370" height="60" rx="12"/>
+  <text x="1030" y="551" text-anchor="middle" class="s" style="font-size:16px">Nightly snapshot backups</text>
+
+  <path class="line" d="M240 365 H295"/>
+  <path class="line" d="M510 365 H565"/>
+  <path class="line" d="M760 365 H815"/>
 </svg>

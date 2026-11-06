@@ -17,13 +17,17 @@ export function Projects() {
 					className="panel grid overflow-hidden rounded-xl lg:grid-cols-[3fr_2fr]"
 				>
 					{featured.image && (
+						// The first image on the page, so it loads first. lg+: anchored left so the app's sidebar stays whole
 						<img
 							src={featured.image}
+							srcSet={featured.imageSrcSet}
+							sizes="(min-width: 1536px) 768px, (min-width: 1024px) 614px, calc(100vw - 24px)"
 							alt=""
 							width={960}
 							height={540}
+							fetchPriority="high"
 							decoding="async"
-							className="aspect-video w-full border-b border-rule object-cover object-top lg:h-full lg:border-r lg:border-b-0"
+							className="aspect-video w-full border-b border-rule object-cover object-top lg:h-full lg:border-r lg:border-b-0 lg:object-left-top"
 						/>
 					)}
 					<div className="grid content-start gap-3 p-5 sm:p-8">
@@ -35,6 +39,18 @@ export function Projects() {
 						</h3>
 						<Meta project={featured} note="built solo" />
 						<p className="max-w-[52ch] leading-relaxed text-muted-foreground">{featured.description}</p>
+						{featured.highlights && (
+							<ul className="grid gap-1 font-mono text-sm leading-snug" aria-label="Highlights">
+								{featured.highlights.map((line) => (
+									<li key={line} className="grid grid-cols-[1.5ch_1fr] gap-1.5">
+										<span aria-hidden="true" className="text-accent-text">
+											&gt;
+										</span>
+										<span>{line}</span>
+									</li>
+								))}
+							</ul>
+						)}
 						<TagList tags={featured.technologies} label="Technologies" />
 						<Links project={featured} />
 					</div>
@@ -99,7 +115,7 @@ function Links({ project }: { project: Project }) {
 					href={project.deployment}
 					target="_blank"
 					rel="noreferrer"
-					className="inline-flex min-h-11 items-center gap-1.5 text-accent-text hover:underline sm:min-h-0"
+					className="inline-flex min-h-11 items-center gap-1.5 text-accent-text hover:underline pointer-fine:min-h-7"
 				>
 					<ExternalLink aria-hidden="true" className="h-3.5 w-3.5" />
 					open {project.title}
@@ -110,7 +126,7 @@ function Links({ project }: { project: Project }) {
 					href={project.github}
 					target="_blank"
 					rel="noreferrer"
-					className="inline-flex min-h-11 items-center gap-1.5 text-accent-text hover:underline sm:min-h-0"
+					className="inline-flex min-h-11 items-center gap-1.5 text-accent-text hover:underline pointer-fine:min-h-7"
 				>
 					<GithubIcon aria-hidden="true" className="h-3.5 w-3.5" />
 					source
